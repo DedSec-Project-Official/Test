@@ -470,6 +470,64 @@
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Why do I need termux-setup-storage?" data-gr="Γιατί χρειάζομαι το termux-setup-storage;">Why do I need termux-setup-storage?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Because Termux does not automatically get access to your shared storage. Running termux-setup-storage asks Android for the permission and prepares the usual shared-storage links so folders like Downloads become easier to reach." data-gr="Επειδή το Termux δεν αποκτά αυτόματα πρόσβαση στο shared storage σας. Το termux-setup-storage ζητά την άδεια από το Android και ετοιμάζει τα συνηθισμένα links για το shared storage ώστε φάκελοι όπως τα Downloads να είναι πιο εύκολα προσβάσιμοι.">Because Termux does not automatically get access to your shared storage. Running termux-setup-storage asks Android for the permission and prepares the usual shared-storage links so folders like Downloads become easier to reach.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="What useful Termux add-ons should I know?" data-gr="Ποια χρήσιμα πρόσθετα του Termux πρέπει να ξέρω;">What useful Termux add-ons should I know?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Useful add-ons include Termux:API for Android/device integrations, Termux:Styling for colors and fonts, Termux:Widget for home-screen shortcuts, Termux:Boot for startup scripts, and Termux:Float for a floating terminal window." data-gr="Χρήσιμα πρόσθετα περιλαμβάνουν το Termux:API για ενσωματώσεις με το Android/τη συσκευή, το Termux:Styling για χρώματα και γραμματοσειρές, το Termux:Widget για συντομεύσεις στην αρχική οθόνη, το Termux:Boot για scripts εκκίνησης και το Termux:Float για πλωτό παράθυρο τερματικού.">Useful add-ons include Termux:API for Android/device integrations, Termux:Styling for colors and fonts, Termux:Widget for home-screen shortcuts, Termux:Boot for startup scripts, and Termux:Float for a floating terminal window.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Why should I update all Termux packages together?" data-gr="Γιατί πρέπει να ενημερώνω όλα τα πακέτα του Termux μαζί;">Why should I update all Termux packages together?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Termux uses a rolling-release style package environment. Partial upgrades can leave binaries and libraries out of sync, so a full package update is usually safer than fixing one dependency at a time forever." data-gr="Το Termux χρησιμοποιεί περιβάλλον πακέτων τύπου rolling release. Οι μερικές ενημερώσεις μπορούν να αφήσουν binaries και βιβλιοθήκες εκτός συγχρονισμού, γι’ αυτό μια πλήρης ενημέρωση πακέτων είναι συνήθως πιο ασφαλής από το να διορθώνετε μία εξάρτηση τη φορά για πάντα.">Termux uses a rolling-release style package environment. Partial upgrades can leave binaries and libraries out of sync, so a full package update is usually safer than fixing one dependency at a time forever.</p><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-upgrade-all')">Copy</button><code id="code-upgrade-all">pkg update &amp;&amp; pkg upgrade -y</code></div></div></div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="What is the safest first-time setup order in Termux?" data-gr="Ποια είναι η ασφαλέστερη σειρά πρώτης ρύθμισης στο Termux;">What is the safest first-time setup order in Termux?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="For most users, the clean order is: install official Termux, open it once, allow storage, update all packages, install the main tools you need, and only then move into project-specific commands." data-gr="Για τους περισσότερους χρήστες, η σωστή σειρά είναι: εγκατάσταση του επίσημου Termux, ένα πρώτο άνοιγμα, άδεια αποθήκευσης, ενημέρωση όλων των πακέτων, εγκατάσταση των βασικών εργαλείων και μόνο μετά εντολές του project.">
+For most users, the clean order is: install official Termux, open it once, allow storage, update all packages, install the main tools you need, and only then move into project-specific commands.
+</p>
+<div class="note"><strong data-en="Recommended order" data-gr="Προτεινόμενη σειρά">Recommended order</strong></div>
+<div class="code-container">
+<button class="copy-btn" onclick="copyToClipboard(this, 'code-termux-first-order')">Copy</button>
+<code id="code-termux-first-order">termux-setup-storage &amp;&amp; pkg update &amp;&amp; pkg upgrade &amp;&amp; pkg install python git unzip curl wget nano</code>
+</div>
+<p data-en="After that, move into the project folder and follow that project’s own install steps." data-gr="Μετά από αυτό, μπείτε στον φάκελο του project και ακολουθήστε τα δικά του βήματα εγκατάστασης.">
+After that, move into the project folder and follow that project’s own install steps.
+</p>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="What is the Downloads folder path in Termux?" data-gr="Ποιο είναι το path του φακέλου Downloads στο Termux;">What is the Downloads folder path in Termux?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="On most Android phones, the shared Downloads folder appears in Termux at the path below after you run termux-setup-storage." data-gr="Στα περισσότερα Android κινητά, ο κοινόχρηστος φάκελος Downloads εμφανίζεται στο Termux στο παρακάτω path αφού τρέξετε termux-setup-storage.">
+On most Android phones, the shared Downloads folder appears in Termux at the path below after you run termux-setup-storage.
+</p>
+<div class="code-container">
+<button class="copy-btn" onclick="copyToClipboard(this, 'code-downloads-path')">Copy</button>
+<code id="code-downloads-path">/storage/emulated/0/Download</code>
+</div>
+<p data-en="This is the folder used by many install commands, ZIP extraction steps, and export features." data-gr="Αυτός είναι ο φάκελος που χρησιμοποιούν πολλές εντολές εγκατάστασης, βήματα αποσυμπίεσης ZIP και λειτουργίες εξαγωγής.">
+This is the folder used by many install commands, ZIP extraction steps, and export features.
+</p>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="How do I unzip a downloaded project ZIP into a Termux folder?" data-gr="Πώς αποσυμπιέζω ένα κατεβασμένο ZIP project σε φάκελο του Termux;">How do I unzip a downloaded project ZIP into a Termux folder?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Use unzip with a source ZIP path and a target folder. The -o flag overwrites older files when you are updating an existing project." data-gr="Χρησιμοποιήστε unzip με path του ZIP και φάκελο προορισμού. Το -o αντικαθιστά παλαιότερα αρχεία όταν ενημερώνετε ένα υπάρχον project.">
+Use unzip with a source ZIP path and a target folder. The -o flag overwrites older files when you are updating an existing project.
+</p>
+<div class="code-container">
+<button class="copy-btn" onclick="copyToClipboard(this, 'code-unzip-project-faq')">Copy</button>
+<code id="code-unzip-project-faq">mkdir -p ~/DedSec &amp;&amp; unzip -o "/storage/emulated/0/Download/PROJECT.zip" -d ~/DedSec</code>
+</div>
+<p data-en="Replace PROJECT.zip with the real ZIP name you downloaded." data-gr="Αντικαταστήστε το PROJECT.zip με το πραγματικό όνομα του ZIP που κατεβάσατε.">
+Replace PROJECT.zip with the real ZIP name you downloaded.
+</p>
+</div>
+</div>
 </div>
 </div><div class="category">
 <div class="category-header">
@@ -504,6 +562,54 @@ pkg uninstall python</code></div></div></div>
 exit</code></div></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="How do I check free space or folder size?" data-gr="Πώς ελέγχω ελεύθερο χώρο ή μέγεθος φακέλου;">How do I check free space or folder size?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-space-check')">Copy</button><code id="code-space-check">df -h
 du -sh foldername</code></div></div></div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="How do I return to my project folder fast?" data-gr="Πώς επιστρέφω γρήγορα στον φάκελο του project μου;">How do I return to my project folder fast?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Use cd to jump back into the folder where your scripts live. After changing folders, run pwd so you can confirm the exact location before launching anything." data-gr="Χρησιμοποιήστε cd για να επιστρέψετε στον φάκελο όπου βρίσκονται τα scripts σας. Αφού αλλάξετε φάκελο, τρέξτε pwd για να επιβεβαιώσετε την ακριβή τοποθεσία πριν ανοίξετε οτιδήποτε.">
+Use cd to jump back into the folder where your scripts live. After changing folders, run pwd so you can confirm the exact location before launching anything.
+</p>
+<div class="code-container">
+<button class="copy-btn" onclick="copyToClipboard(this, 'code-project-folder-fast')">Copy</button>
+<code id="code-project-folder-fast">cd ~/DedSec &amp;&amp; pwd</code>
+</div>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="How do I check that I am inside the correct folder before running a command?" data-gr="Πώς ελέγχω ότι είμαι μέσα στον σωστό φάκελο πριν τρέξω μια εντολή;">How do I check that I am inside the correct folder before running a command?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Two of the safest commands are pwd and ls. pwd shows where you are. ls shows what files are there. If the script name is missing, move with cd first." data-gr="Δύο από τις ασφαλέστερες εντολές είναι οι pwd και ls. Η pwd δείχνει πού βρίσκεστε. Η ls δείχνει ποια αρχεία υπάρχουν εκεί. Αν λείπει το όνομα του script, μετακινηθείτε πρώτα με cd.">
+Two of the safest commands are pwd and ls. pwd shows where you are. ls shows what files are there. If the script name is missing, move with cd first.
+</p>
+<div class="code-container">
+<button class="copy-btn" onclick="copyToClipboard(this, 'code-check-folder-before-run')">Copy</button>
+<code id="code-check-folder-before-run">pwd &amp;&amp; ls</code>
+</div>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="How do I see what a script saved in Downloads?" data-gr="Πώς βλέπω τι αποθήκευσε ένα script στα Downloads;">How do I see what a script saved in Downloads?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="When a script says it exported files to Android Downloads, list that folder directly from Termux." data-gr="Όταν ένα script λέει ότι έκανε εξαγωγή αρχείων στα Android Downloads, εμφανίστε απευθείας αυτόν τον φάκελο από το Termux.">
+When a script says it exported files to Android Downloads, list that folder directly from Termux.
+</p>
+<div class="code-container">
+<button class="copy-btn" onclick="copyToClipboard(this, 'code-list-downloads-faq')">Copy</button>
+<code id="code-list-downloads-faq">ls -lh /storage/emulated/0/Download</code>
+</div>
+</div>
+</div>
 </div>
 </div><div class="category">
 <div class="category-header">
@@ -522,8 +628,112 @@ cd DedSec &amp;&amp; bash Setup.sh</code></div></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Is the project available in Greek too?" data-gr="Υπάρχει το project και στα Ελληνικά;">Is the project available in Greek too?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Yes. The site includes English and Greek content, and the interface can switch language. The FAQ and assistant also support both languages." data-gr="Ναι. Το site περιλαμβάνει περιεχόμενο στα Αγγλικά και στα Ελληνικά και το περιβάλλον μπορεί να αλλάξει γλώσσα. Το FAQ και ο βοηθός υποστηρίζουν επίσης και τις δύο γλώσσες.">Yes. The site includes English and Greek content, and the interface can switch language. The FAQ and assistant also support both languages.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where do I learn what each tool does?" data-gr="Πού μαθαίνω τι κάνει κάθε εργαλείο;">Where do I learn what each tool does?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use the Learn About The Tools page. It groups the project into categories and gives descriptions for each script so you can browse by purpose instead of guessing from filenames." data-gr="Χρησιμοποιήστε τη σελίδα Μάθετε για τα Εργαλεία. Χωρίζει το project σε κατηγορίες και δίνει περιγραφές για κάθε script ώστε να ψάχνετε ανά σκοπό αντί να μαντεύετε από τα filenames.">Use the Learn About The Tools page. It groups the project into categories and gives descriptions for each script so you can browse by purpose instead of guessing from filenames.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where do I report bugs or contact the project?" data-gr="Πού αναφέρω bugs ή πού επικοινωνώ με το project;">Where do I report bugs or contact the project?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use GitHub Issues for reproducible bugs. Use the Contact &amp; Credits page for broader support, project communication, and contact-style questions." data-gr="Χρησιμοποιήστε τα GitHub Issues για αναπαραγώγιμα bugs. Χρησιμοποιήστε τη σελίδα Επικοινωνία &amp; Συντελεστές για γενικότερη υποστήριξη, επικοινωνία με το project και ερωτήσεις τύπου επικοινωνίας.">Use GitHub Issues for reproducible bugs. Use the Contact &amp; Credits page for broader support, project communication, and contact-style questions.</p></div></div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="What page should a beginner open first on the site?" data-gr="Ποια σελίδα πρέπει να ανοίξει πρώτα ένας αρχάριος στο site;">What page should a beginner open first on the site?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
 </div>
-</div></div>
+<div class="tool-description">
+<p data-en="A simple beginner path is: Home for the overview, Guide For Installation for setup, Learn About The Tools for explanations, FAQ for quick fixes, and Contact &amp; Credits when you want support or project links." data-gr="Μία απλή διαδρομή για αρχάριο είναι: Αρχική για τη γενική εικόνα, Οδηγός Εγκατάστασης για τη ρύθμιση, Μάθετε για τα Εργαλεία για τις εξηγήσεις, FAQ για γρήγορες λύσεις και Επικοινωνία &amp; Συντελεστές όταν θέλετε υποστήριξη ή links του project.">
+A simple beginner path is: Home for the overview, Guide For Installation for setup, Learn About The Tools for explanations, FAQ for quick fixes, and Contact &amp; Credits when you want support or project links.
+</p>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="Where are exclusive or sponsors-only scripts explained?" data-gr="Πού εξηγούνται τα exclusive ή sponsors-only scripts;">Where are exclusive or sponsors-only scripts explained?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Use the exclusive pages when you want details about locked, sponsor-tier, or specially documented scripts. Those pages explain what the tool is, the intended use, and where it fits on the site." data-gr="Χρησιμοποιήστε τις exclusive σελίδες όταν θέλετε λεπτομέρειες για locked, sponsor-tier ή ειδικά τεκμηριωμένα scripts. Αυτές οι σελίδες εξηγούν τι είναι το εργαλείο, τη σκοπούμενη χρήση του και πού ταιριάζει στο site.">
+Use the exclusive pages when you want details about locked, sponsor-tier, or specially documented scripts. Those pages explain what the tool is, the intended use, and where it fits on the site.
+</p>
+<p><a href="butsystem-exclusive.html">ButSystem Exclusive</a></p>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="Where do I find contact and credits information quickly?" data-gr="Πού βρίσκω γρήγορα πληροφορίες επικοινωνίας και συντελεστών;">Where do I find contact and credits information quickly?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Open the Contact &amp; Credits page for support routes, project communication, and contributor credit information in one place." data-gr="Ανοίξτε τη σελίδα Επικοινωνία &amp; Συντελεστές για τρόπους υποστήριξης, επικοινωνία του project και πληροφορίες συντελεστών συγκεντρωμένα σε ένα μέρος.">
+Open the Contact &amp; Credits page for support routes, project communication, and contributor credit information in one place.
+</p>
+<p><a href="contact-credits.html">Contact &amp; Credits</a></p>
+</div>
+</div>
+
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="Where do I learn what each script does before running it?" data-gr="Πού μαθαίνω τι κάνει κάθε script πριν το τρέξω;">Where do I learn what each script does before running it?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Use the Learn About The Tools page to read descriptions and understand the role of each script before you run anything in Termux." data-gr="Χρησιμοποιήστε τη σελίδα Μάθετε για τα Εργαλεία για να διαβάσετε περιγραφές και να καταλάβετε τον ρόλο κάθε script πριν τρέξετε οτιδήποτε στο Termux.">
+Use the Learn About The Tools page to read descriptions and understand the role of each script before you run anything in Termux.
+</p>
+<p><a href="learn-about-the-tools.html">Learn About The Tools</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="category">
+<div class="category-header">
+<h3 data-en="Website Assistant &amp; Navigation" data-gr="Βοηθός Website &amp; Πλοήγηση">Website Assistant &amp; Navigation</h3>
+<i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="tools-list">
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="How does the website assistant work?" data-gr="Πώς λειτουργεί ο βοηθός του website;">How does the website assistant work?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="The assistant matches words, short phrases, categories, and quick prompts to the closest answer stored in the website data. It is designed to help you jump to the right page or get a short answer without opening every section manually." data-gr="Ο βοηθός ταιριάζει λέξεις, μικρές φράσεις, κατηγορίες και γρήγορα prompts με την πιο σχετική απάντηση που είναι αποθηκευμένη στα δεδομένα του website. Είναι σχεδιασμένος για να σας οδηγεί στη σωστή σελίδα ή να σας δίνει μια σύντομη απάντηση χωρίς να ανοίγετε χειροκίνητα κάθε ενότητα.">
+The assistant matches words, short phrases, categories, and quick prompts to the closest answer stored in the website data. It is designed to help you jump to the right page or get a short answer without opening every section manually.
+</p>
+</div>
+</div>
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="What can I tap in the assistant?" data-gr="Τι μπορώ να πατήσω στον βοηθό;">What can I tap in the assistant?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="You can tap starter prompts, category buttons, tool names, Termux topics, or short requests such as install termux, ButSystem.py, guide for installation, or contact the project." data-gr="Μπορείτε να πατήσετε starter prompts, κουμπιά κατηγοριών, ονόματα εργαλείων, θέματα γύρω από το Termux ή μικρά αιτήματα όπως install termux, ButSystem.py, guide for installation ή contact the project.">
+You can tap starter prompts, category buttons, tool names, Termux topics, or short requests such as install termux, ButSystem.py, guide for installation, or contact the project.
+</p>
+</div>
+</div>
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="Why does the assistant sometimes show related choices?" data-gr="Γιατί ο βοηθός μερικές φορές δείχνει σχετικές επιλογές;">Why does the assistant sometimes show related choices?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="If more than one topic is close to your prompt, the assistant shows related choices so you can pick the best match instead of getting the wrong page directly." data-gr="Αν περισσότερα από ένα θέματα είναι κοντά στο prompt σας, ο βοηθός εμφανίζει σχετικές επιλογές ώστε να διαλέξετε το καλύτερο ταίριασμα αντί να σας ανοίξει κατευθείαν λάθος σελίδα.">
+If more than one topic is close to your prompt, the assistant shows related choices so you can pick the best match instead of getting the wrong page directly.
+</p>
+</div>
+</div>
+<div class="tool-item">
+<div class="tool-header">
+<h4 class="tool-title" data-en="How do I reset the assistant to the start screen?" data-gr="Πώς επαναφέρω τον βοηθό στην αρχική οθόνη;">How do I reset the assistant to the start screen?</h4>
+<i class="fas fa-chevron-down tool-expand-icon"></i>
+</div>
+<div class="tool-description">
+<p data-en="Use the ⌂ button in the assistant header to return to the welcome screen. Use refresh to reload the live assistant data, and use close to hide the panel." data-gr="Χρησιμοποιήστε το κουμπί ⌂ στην κεφαλίδα του βοηθού για να επιστρέψετε στην οθόνη καλωσορίσματος. Χρησιμοποιήστε την ανανέωση για να φορτώσετε ξανά τα ζωντανά δεδομένα του βοηθού και το κλείσιμο για να κρύψετε το πάνελ.">
+Use the ⌂ button in the assistant header to return to the welcome screen. Use refresh to reload the live assistant data, and use close to hide the panel.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="contact-cta">
 <button class="contact-page-btn" onclick="window.location.href='contact-credits.html'">
 <span data-en="Still need help? Contact Us" data-gr="Χρειάζεστε ακόμα βοήθεια; Επικοινωνία">Still need help? Contact Us</span>
