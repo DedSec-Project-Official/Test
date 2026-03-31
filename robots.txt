@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ded-sec.space/sitemap.xml
