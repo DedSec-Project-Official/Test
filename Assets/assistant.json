@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updated": "2026-03-16",
+  "version": 6,
+  "updated": "2026-04-01",
   "ui": {
     "buttonLabel": {
       "en": "Help",
@@ -1036,6 +1036,67 @@
             "initial setup",
             "first steps"
           ]
+        },
+        {
+          "q": {
+            "en": "What order should I follow when opening Termux for the first time?",
+            "gr": "Ποια σειρά πρέπει να ακολουθήσω όταν ανοίγω το Termux για πρώτη φορά;"
+          },
+          "a": {
+            "en": "Best beginner order: install official Termux, open it once, run termux-setup-storage, then run pkg update && pkg upgrade, then install the main tools you need such as python, git, unzip, curl, and wget. After that, move into your project folder and run the project instructions.",
+            "gr": "Η καλύτερη σειρά για αρχάριους είναι: εγκατάστησε το επίσημο Termux, άνοιξέ το μία φορά, τρέξε termux-setup-storage, μετά pkg update && pkg upgrade και έπειτα εγκατέστησε τα βασικά εργαλεία που χρειάζεσαι όπως python, git, unzip, curl και wget. Μετά μπες στον φάκελο του project και ακολούθησε τις οδηγίες του project."
+          },
+          "link": {
+            "en": "Pages/guide-for-installation.html",
+            "gr": "Pages/guide-for-installation.html"
+          },
+          "tags": [
+            "first termux setup",
+            "first steps",
+            "initial setup",
+            "termux first time",
+            "setup order"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I find the Downloads path in Termux?",
+            "gr": "Πώς βρίσκω το path των Downloads στο Termux;"
+          },
+          "a": {
+            "en": "On most Android phones, the shared Downloads folder is available in Termux at /storage/emulated/0/Download after you run termux-setup-storage. That is the path used by many DedSec Project instructions when opening ZIP files or exporting results.",
+            "gr": "Στα περισσότερα Android κινητά, ο κοινόχρηστος φάκελος Downloads είναι διαθέσιμος στο Termux στο /storage/emulated/0/Download αφού τρέξεις termux-setup-storage. Αυτό είναι το path που χρησιμοποιούν πολλές οδηγίες του DedSec Project όταν ανοίγουν ZIP αρχεία ή κάνουν export αποτελέσματα."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "downloads path",
+            "download folder",
+            "storage emulated 0",
+            "termux downloads"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I unzip a downloaded DedSec project ZIP into a folder?",
+            "gr": "Πώς αποσυμπιέζω ένα κατεβασμένο ZIP του DedSec project σε φάκελο;"
+          },
+          "a": {
+            "en": "Use unzip -o \"<zip path>\" -d <target folder>. Example: unzip -o \"/storage/emulated/0/Download/PROJECT.zip\" -d ~/DedSec. The -o flag overwrites older files, which is useful when refreshing a project with newer files.",
+            "gr": "Χρησιμοποίησε unzip -o \"<path του zip>\" -d <φάκελος προορισμού>. Παράδειγμα: unzip -o \"/storage/emulated/0/Download/PROJECT.zip\" -d ~/DedSec. Το -o αντικαθιστά παλαιότερα αρχεία, κάτι χρήσιμο όταν ανανεώνεις ένα project με νεότερα αρχεία."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "unzip project",
+            "zip install",
+            "extract zip",
+            "downloaded zip"
+          ]
         }
       ]
     },
@@ -1514,6 +1575,66 @@
             "free space",
             "folder size",
             "storage usage"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I return to my project folder quickly in Termux?",
+            "gr": "Πώς επιστρέφω γρήγορα στον φάκελο του project μου στο Termux;"
+          },
+          "a": {
+            "en": "Use cd followed by the folder path, such as cd ~/DedSec or cd ~/DedSec/Scripts. Then run pwd to confirm where you are before launching files. This is one of the easiest ways to avoid “file not found” mistakes.",
+            "gr": "Χρησιμοποίησε cd και μετά το path του φακέλου, όπως cd ~/DedSec ή cd ~/DedSec/Scripts. Μετά τρέξε pwd για να επιβεβαιώσεις πού βρίσκεσαι πριν ανοίξεις αρχεία. Αυτός είναι ένας από τους πιο εύκολους τρόπους να αποφύγεις λάθη τύπου “file not found”."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "project folder",
+            "cd project",
+            "pwd",
+            "where am i"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I check that I am inside the correct folder before running a command?",
+            "gr": "Πώς ελέγχω ότι είμαι μέσα στον σωστό φάκελο πριν τρέξω μια εντολή;"
+          },
+          "a": {
+            "en": "Run pwd to print your current folder, and ls to list the files inside it. If you do not see the script or files you expect, move with cd first. Checking pwd + ls before running commands prevents many common Termux mistakes.",
+            "gr": "Τρέξε pwd για να εμφανίσεις τον τρέχοντα φάκελο και ls για να δεις τα αρχεία που έχει μέσα. Αν δεν βλέπεις το script ή τα αρχεία που περιμένεις, μετακινήσου πρώτα με cd. Ο έλεγχος pwd + ls πριν από εντολές προλαμβάνει πολλά συνηθισμένα λάθη στο Termux."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "correct folder",
+            "pwd ls",
+            "before running command",
+            "where am i"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I see what a script saved in Downloads?",
+            "gr": "Πώς βλέπω τι αποθήκευσε ένα script στα Downloads;"
+          },
+          "a": {
+            "en": "Use ls /storage/emulated/0/Download to list files in Android Downloads. You can also use ls -lh for a more readable view with file sizes. This is useful when a script says it exported ZIP, TXT, image, or JSON files there.",
+            "gr": "Χρησιμοποίησε ls /storage/emulated/0/Download για να δεις τα αρχεία στα Android Downloads. Μπορείς επίσης να χρησιμοποιήσεις ls -lh για πιο ευανάγνωστη προβολή με μεγέθη αρχείων. Αυτό είναι χρήσιμο όταν ένα script λέει ότι έκανε export ZIP, TXT, εικόνες ή JSON αρχεία εκεί."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "saved files downloads",
+            "export path",
+            "ls download",
+            "see saved files"
           ]
         }
       ]
@@ -4400,6 +4521,86 @@
             "fdroid package",
             "installation page"
           ]
+        },
+        {
+          "q": {
+            "en": "How does the website assistant work?",
+            "gr": "Πώς λειτουργεί ο βοηθός του website;"
+          },
+          "a": {
+            "en": "The website assistant is a front-end helper that matches tapped words, phrases, categories, and preset topics to the closest answer stored in Assets/assistant.json. It does not need a backend. It uses the site data to guide you toward the right page, quick answer, or related topic.",
+            "gr": "Ο βοηθός του website είναι ένας front-end βοηθός που ταιριάζει λέξεις, φράσεις, κατηγορίες και έτοιμα θέματα που πατάς με την πιο σχετική απάντηση που είναι αποθηκευμένη στο Assets/assistant.json. Δεν χρειάζεται backend. Χρησιμοποιεί τα δεδομένα του site για να σε οδηγήσει στη σωστή σελίδα, γρήγορη απάντηση ή σχετικό θέμα."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "website assistant",
+            "assistant help",
+            "how assistant works",
+            "site assistant"
+          ]
+        },
+        {
+          "q": {
+            "en": "What can I tap or search in the website assistant?",
+            "gr": "Τι μπορώ να πατήσω ή να αναζητήσω στον βοηθό του website;"
+          },
+          "a": {
+            "en": "You can tap category buttons, starter prompts, script names, site pages, Termux words, or short phrases such as “install termux”, “ButSystem.py”, “guide for installation”, or “contact the project”. The assistant is designed for fast navigation as well as quick explanations.",
+            "gr": "Μπορείς να πατήσεις κουμπιά κατηγοριών, έτοιμα prompts, ονόματα script, σελίδες του site, λέξεις γύρω από το Termux ή μικρές φράσεις όπως “install termux”, “ButSystem.py”, “guide for installation” ή “contact the project”. Ο βοηθός είναι σχεδιασμένος τόσο για γρήγορη πλοήγηση όσο και για σύντομες εξηγήσεις."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "assistant prompts",
+            "assistant search",
+            "tap in assistant",
+            "assistant examples"
+          ]
+        },
+        {
+          "q": {
+            "en": "Why does the assistant sometimes show related results instead of one exact answer?",
+            "gr": "Γιατί ο βοηθός μερικές φορές δείχνει σχετικά αποτελέσματα αντί για μία ακριβή απάντηση;"
+          },
+          "a": {
+            "en": "When your prompt matches several close topics, the assistant shows related choices so you can pick the best fit instead of forcing a wrong answer. This is helpful when a word belongs to more than one script, category, or page.",
+            "gr": "Όταν το prompt σου ταιριάζει με αρκετά κοντινά θέματα, ο βοηθός δείχνει σχετικές επιλογές ώστε να διαλέξεις την καλύτερη αντί να δώσει αναγκαστικά λάθος απάντηση. Αυτό βοηθά όταν μία λέξη ανήκει σε περισσότερα από ένα scripts, κατηγορίες ή σελίδες."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "related topics",
+            "assistant results",
+            "multiple matches",
+            "assistant choices"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I reset the website assistant back to the start screen?",
+            "gr": "Πώς επαναφέρω τον βοηθό του website στην αρχική οθόνη;"
+          },
+          "a": {
+            "en": "Use the ⌂ button in the assistant header to return to the start state with the welcome card and topic buttons. The refresh button reloads the live assistant data, and the close button simply hides the panel.",
+            "gr": "Χρησιμοποίησε το κουμπί ⌂ στην κεφαλίδα του βοηθού για να επιστρέψεις στην αρχική κατάσταση με την κάρτα καλωσορίσματος και τα κουμπιά θεμάτων. Το κουμπί ανανέωσης φορτώνει ξανά τα ζωντανά δεδομένα του βοηθού και το κουμπί κλεισίματος απλώς κρύβει το πάνελ."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "assistant home button",
+            "reset assistant",
+            "assistant start screen",
+            "assistant refresh"
+          ]
         }
       ]
     },
@@ -4651,6 +4852,86 @@
             "educational use",
             "permission based"
           ]
+        },
+        {
+          "q": {
+            "en": "What is the best page order for a beginner on the site?",
+            "gr": "Ποια είναι η καλύτερη σειρά σελίδων για έναν αρχάριο στο site;"
+          },
+          "a": {
+            "en": "A strong beginner path is: Home page for the overview, Guide For Installation for the setup, Learn About The Tools to understand each script, FAQ for common problems and commands, then Contact & Credits when you want support or project links.",
+            "gr": "Μία καλή διαδρομή για αρχάριο είναι: Αρχική σελίδα για τη γενική εικόνα, Οδηγός Εγκατάστασης για τη ρύθμιση, Μάθετε για τα Εργαλεία για να κατανοήσεις κάθε script, FAQ για συνηθισμένα προβλήματα και εντολές, και μετά Επικοινωνία & Συντελεστές όταν θέλεις υποστήριξη ή links του project."
+          },
+          "link": {
+            "en": "index.html",
+            "gr": "index.html"
+          },
+          "tags": [
+            "best page order",
+            "beginner path",
+            "site order",
+            "where to start"
+          ]
+        },
+        {
+          "q": {
+            "en": "Where are the exclusive or sponsors-only scripts explained?",
+            "gr": "Πού εξηγούνται τα exclusive ή sponsors-only scripts;"
+          },
+          "a": {
+            "en": "The exclusive side of the site explains sponsor-only or restricted scripts, their purpose, and the boundaries around them. Use the dedicated exclusive page when you want details about locked or sponsor-tier tools.",
+            "gr": "Η exclusive πλευρά του site εξηγεί τα sponsor-only ή restricted scripts, τον σκοπό τους και τα όρια γύρω από αυτά. Χρησιμοποίησε τη σχετική exclusive σελίδα όταν θέλεις λεπτομέρειες για κλειδωμένα ή sponsor-tier εργαλεία."
+          },
+          "link": {
+            "en": "Pages/butsystem-exclusive.html",
+            "gr": "Pages/butsystem-exclusive.html"
+          },
+          "tags": [
+            "exclusive scripts",
+            "sponsors only",
+            "locked tools",
+            "exclusive page"
+          ]
+        },
+        {
+          "q": {
+            "en": "Where do I find contact and credits information?",
+            "gr": "Πού βρίσκω πληροφορίες επικοινωνίας και συντελεστών;"
+          },
+          "a": {
+            "en": "Open the Contact & Credits page to find support routes, collaboration points, project communication details, and contributor credits collected in one place.",
+            "gr": "Άνοιξε τη σελίδα Επικοινωνία & Συντελεστές για να βρεις τρόπους υποστήριξης, σημεία συνεργασίας, στοιχεία επικοινωνίας του project και συντελεστές συγκεντρωμένα σε ένα μέρος."
+          },
+          "link": {
+            "en": "Pages/contact-credits.html",
+            "gr": "Pages/contact-credits.html"
+          },
+          "tags": [
+            "contact and credits",
+            "credits page",
+            "contact page",
+            "support page"
+          ]
+        },
+        {
+          "q": {
+            "en": "Where do I learn what each script does before using it?",
+            "gr": "Πού μαθαίνω τι κάνει κάθε script πριν το χρησιμοποιήσω;"
+          },
+          "a": {
+            "en": "Use the Learn About The Tools page to see tool descriptions, categories, and explanations before running anything. It is the best site section for understanding the role of each script first.",
+            "gr": "Χρησιμοποίησε τη σελίδα Μάθετε για τα Εργαλεία για να δεις περιγραφές εργαλείων, κατηγορίες και εξηγήσεις πριν τρέξεις οτιδήποτε. Είναι η καλύτερη ενότητα του site για να καταλάβεις πρώτα τον ρόλο κάθε script."
+          },
+          "link": {
+            "en": "Pages/learn-about-the-tools.html",
+            "gr": "Pages/learn-about-the-tools.html"
+          },
+          "tags": [
+            "learn the tools",
+            "what each script does",
+            "tool descriptions",
+            "before using script"
+          ]
         }
       ]
     }
@@ -4658,10 +4939,38 @@
   "starterPrompts": [
     {
       "label": {
+        "en": "Guide For Installation",
+        "gr": "Οδηγός Εγκατάστασης"
+      },
+      "query": "guide for installation"
+    },
+    {
+      "label": {
+        "en": "Learn About The Tools",
+        "gr": "Μάθετε για τα Εργαλεία"
+      },
+      "query": "learn about the tools"
+    },
+    {
+      "label": {
+        "en": "What is DedSec Project?",
+        "gr": "Τι είναι το DedSec Project;"
+      },
+      "query": "what is dedsec project"
+    },
+    {
+      "label": {
         "en": "Install Termux",
         "gr": "Εγκατάσταση Termux"
       },
       "query": "install termux"
+    },
+    {
+      "label": {
+        "en": "Downloads path",
+        "gr": "Path των Downloads"
+      },
+      "query": "downloads path in termux"
     },
     {
       "label": {
@@ -4679,31 +4988,10 @@
     },
     {
       "label": {
-        "en": "Fix package errors",
-        "gr": "Διόρθωση σφαλμάτων πακέτων"
+        "en": "Contacts And Credits",
+        "gr": "Επικοινωνία και Συντελεστές"
       },
-      "query": "fix package errors"
-    },
-    {
-      "label": {
-        "en": "Storage permission",
-        "gr": "Άδεια αποθήκευσης"
-      },
-      "query": "termux storage permission"
-    },
-    {
-      "label": {
-        "en": "Find files in Downloads",
-        "gr": "Βρες αρχεία στα Downloads"
-      },
-      "query": "find files downloads"
-    },
-    {
-      "label": {
-        "en": "Devices Finder.py",
-        "gr": "Devices Finder.py"
-      },
-      "query": "Devices Finder.py"
+      "query": "contact and credits"
     },
     {
       "label": {
@@ -4714,17 +5002,17 @@
     },
     {
       "label": {
-        "en": "Bug Hunter.py",
-        "gr": "Bug Hunter.py"
+        "en": "Exclusive scripts",
+        "gr": "Exclusive scripts"
       },
-      "query": "Bug Hunter.py"
+      "query": "exclusive scripts"
     },
     {
       "label": {
-        "en": "Password Master.py",
-        "gr": "Password Master.py"
+        "en": "Website assistant",
+        "gr": "Βοηθός website"
       },
-      "query": "Password Master.py"
+      "query": "website assistant"
     },
     {
       "label": {
