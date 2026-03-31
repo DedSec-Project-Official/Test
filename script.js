@@ -1335,11 +1335,13 @@ return file;
                 currentLanguage === 'gr' ? 'Πάτησε το πιο σωστό αποτέλεσμα.' : 'Tap the best matching result.'
             );
         };
-        const respondWithAnswer = (item, promptLabel = '') => {
+        const respondWithAnswer = (item, promptLabel = '', options = {}) => {
             if (!item) return;
             removeSuggestionMessages();
             const userLabel = promptLabel || prettyItemLabel(item);
-            createMessage('user', userLabel);
+            if (!options.suppressUserMessage) {
+                createMessage('user', userLabel);
+            }
             saveRecentTopic({ label: userLabel, query: item._question, itemKey: item._key });
             clearTyping();
             const typingMessage = createMessage('assistant', '', { typing: true });
@@ -1409,7 +1411,7 @@ return file;
                 const second = matches[1];
                 const directAnswer = top.score >= 122 || (top.score >= 88 && (!second || (top.score - second.score) >= 20));
                 if (directAnswer) {
-                    respondWithAnswer(top.item, promptLabel || cleanQuery);
+                    respondWithAnswer(top.item, promptLabel || cleanQuery, { suppressUserMessage: true });
                     return;
                 }
 
