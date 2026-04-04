@@ -1779,12 +1779,6 @@ return file;
         const page = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.getAttribute('href').includes(page)));
 
-        const isLiteDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches && (((navigator.deviceMemory || 8) <= 4) || ((navigator.hardwareConcurrency || 8) <= 6));
-        if (isLiteDevice) {
-            document.body.classList.add('lite-device');
-            document.documentElement.classList.add('lite-device');
-        }
-
         // Reveal animations removed for maximum speed
     }
 

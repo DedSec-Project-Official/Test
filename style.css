@@ -5372,105 +5372,12 @@ body.light-theme .back-to-top-trigger:hover {
 
 
 /* ============================================================================
-   ARROW FIX + LOW-END DEVICE PERFORMANCE MODE
+   ASSISTANT RESTORE + SPEED PASS
    ============================================================================ */
-.back-to-top-trigger {
-    background: var(--retro-button) !important;
-    background-image:
-        linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08) 30%, rgba(0,0,0,0.18) 100%),
-        var(--retro-button) !important;
-    opacity: 1;
-}
-
-body.lite-device,
-html.lite-device {
+html {
     scroll-behavior: auto !important;
 }
 
-body.lite-device {
-    background-image:
-        linear-gradient(180deg, rgba(7,3,12,0.98), rgba(31,11,44,0.98)),
-        repeating-linear-gradient(90deg, rgba(205,147,255,0.05) 0, rgba(205,147,255,0.05) 1px, transparent 1px, transparent 28px) !important;
-    background-attachment: scroll !important;
-}
-
-body.light-theme.lite-device {
-    background-image:
-        linear-gradient(180deg, rgba(255,255,255,0.99), rgba(244,236,255,0.99)),
-        repeating-linear-gradient(90deg, rgba(123,31,162,0.05) 0, rgba(123,31,162,0.05) 1px, transparent 1px, transparent 28px) !important;
-    background-attachment: scroll !important;
-}
-
-body.lite-device .hero-section,
-body.lite-device .page-header,
-body.lite-device .feature-card,
-body.lite-device .community-card,
-body.lite-device .tool-item,
-body.lite-device .category,
-body.lite-device .glance-card,
-body.lite-device .step-card,
-body.lite-device .stat-card,
-body.lite-device .job-experience-card,
-body.lite-device .portfolio-card,
-body.lite-device .support-section,
-body.lite-device .main-footer {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-}
-
-body.lite-device .feature-card,
-body.lite-device .community-card,
-body.lite-device .tool-item,
-body.lite-device .category,
-body.lite-device .glance-card,
-body.lite-device .step-card,
-body.lite-device .stat-card,
-body.lite-device .job-experience-card,
-body.lite-device .portfolio-card,
-body.lite-device .code-container,
-body.lite-device .search-results,
-body.lite-device .faq-button-group,
-body.lite-device .screen,
-body.lite-device .phone-container,
-body.lite-device .nav-menu,
-body.lite-device .assistant-panel,
-body.lite-device .main-nav {
-    background-image:
-        linear-gradient(180deg, rgba(255,255,255,0.1) 0, rgba(255,255,255,0.1) 5px, transparent 5px),
-        linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0)) !important;
-    box-shadow:
-        inset 1px 1px 0 rgba(255,255,255,0.16),
-        inset -1px -1px 0 rgba(0,0,0,0.46),
-        0 6px 12px rgba(0,0,0,0.14) !important;
-}
-
-body.lite-device .nav-action-btn,
-body.lite-device .nav-link,
-body.lite-device .burger-menu,
-body.lite-device .feature-cta,
-body.lite-device .copy-btn,
-body.lite-device .language-button,
-body.lite-device .btn-primary,
-body.lite-device .btn-ghost,
-body.lite-device .main-footer .footer-mini-btn,
-body.lite-device .store-page .inline-cta,
-body.lite-device .assistant-close,
-body.lite-device .assistant-home,
-body.lite-device .assistant-refresh,
-body.lite-device .assistant-chip,
-body.lite-device .assistant-open-link,
-body.lite-device .back-to-top-trigger {
-    box-shadow:
-        inset 1px 1px 0 rgba(255,255,255,0.28),
-        inset -1px -1px 0 rgba(0,0,0,0.58) !important;
-    text-shadow: none !important;
-}
-
-
-/* ============================================================================
-   REVEAL ANIMATIONS REMOVED
-   ============================================================================ */
 .hero-section,
 .page-header,
 .feature-card,
@@ -5487,4 +5394,72 @@ body.lite-device .back-to-top-trigger {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+}
+
+.back-to-top-trigger {
+    background: var(--retro-button) !important;
+    background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08) 30%, rgba(0,0,0,0.18) 100%),
+        var(--retro-button) !important;
+}
+
+body {
+    background-image:
+        linear-gradient(180deg, rgba(7,3,12,0.98), rgba(31,11,44,0.98)),
+        repeating-linear-gradient(90deg, rgba(205,147,255,0.05) 0, rgba(205,147,255,0.05) 1px, transparent 1px, transparent 28px) !important;
+    background-attachment: scroll !important;
+}
+
+body.light-theme {
+    background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.99), rgba(244,236,255,0.99)),
+        repeating-linear-gradient(90deg, rgba(123,31,162,0.05) 0, rgba(123,31,162,0.05) 1px, transparent 1px, transparent 28px) !important;
+    background-attachment: scroll !important;
+}
+
+.main-nav,
+.nav-menu,
+.assistant-panel,
+.feature-card,
+.community-card,
+.tool-item,
+.category,
+.glance-card,
+.step-card,
+.stat-card,
+.job-experience-card,
+.portfolio-card,
+.code-container,
+.search-results,
+.faq-button-group,
+.screen,
+.phone-container {
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.14),
+        inset -1px -1px 0 rgba(0,0,0,0.42),
+        0 6px 12px rgba(0,0,0,0.14) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.nav-action-btn,
+.nav-link,
+.burger-menu,
+.feature-cta,
+.copy-btn,
+.language-button,
+.btn-primary,
+.btn-ghost,
+.main-footer .footer-mini-btn,
+.store-page .inline-cta,
+.assistant-close,
+.assistant-home,
+.assistant-refresh,
+.assistant-chip,
+.assistant-open-link,
+.back-to-top-trigger {
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.24),
+        inset -1px -1px 0 rgba(0,0,0,0.52) !important;
+    text-shadow: none !important;
 }
