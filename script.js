@@ -91,33 +91,71 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = document.querySelector('link[rel="icon" i]') || document.querySelector('link[rel="shortcut icon" i]');
         if (icon) icon.href = url;
     };
+
+
+    const updateNavControls = () => {
+        const isLight = document.body.classList.contains('light-theme');
+
+        const themeBtn = document.getElementById('nav-theme-switcher');
+        if (themeBtn) {
+            const themeIcon = themeBtn.querySelector('.nav-theme-icon');
+            if (themeIcon) {
+                themeIcon.classList.remove('fa-sun', 'fa-moon');
+                themeIcon.classList.add(isLight ? 'fa-moon' : 'fa-sun');
+            }
+            themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+            themeBtn.setAttribute('title', isLight ? 'Dark theme' : 'Light theme');
+        }
+
+        const langBtn = document.getElementById('nav-lang-switcher');
+        if (langBtn) {
+            const langLabel = langBtn.querySelector('.nav-action-label');
+            const nextIsGreek = currentLanguage === 'en';
+            if (langLabel) langLabel.textContent = nextIsGreek ? 'ΕΛ' : 'EN';
+            langBtn.setAttribute('aria-label', nextIsGreek ? 'Change language to Greek' : 'Change language to English');
+            langBtn.setAttribute('title', nextIsGreek ? 'Ελληνικά' : 'English');
+        }
+
+        const burgerMenu = document.getElementById('burger-menu');
+        const burgerLabel = burgerMenu?.querySelector('.burger-label');
+        if (burgerLabel) burgerLabel.textContent = currentLanguage === 'gr' ? 'Μενού' : 'Menu';
+        if (burgerMenu) burgerMenu.setAttribute('aria-label', currentLanguage === 'gr' ? 'Μενού' : 'Menu');
+    };
     // --- NAVIGATION FUNCTIONALITY ---
     function initializeNavigation() {
         const burgerMenu = document.getElementById('burger-menu');
         const navMenu = document.getElementById('nav-menu');
+
+        const setMenuState = (isOpen) => {
+            if (!burgerMenu || !navMenu) return;
+            burgerMenu.classList.toggle('active', isOpen);
+            navMenu.classList.toggle('active', isOpen);
+            burgerMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.classList.toggle('menu-open', isOpen);
+        };
         
         if (burgerMenu && navMenu) {
+            burgerMenu.setAttribute('aria-expanded', 'false');
             burgerMenu.addEventListener('click', () => {
-                burgerMenu.classList.toggle('active');
-                navMenu.classList.toggle('active');
+                setMenuState(!navMenu.classList.contains('active'));
             });
         }
 
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu?.classList.remove('active');
-                navMenu?.classList.remove('active');
-            });
+            link.addEventListener('click', () => setMenuState(false));
         });
 
         document.addEventListener('click', (e) => {
             if (navMenu?.classList.contains('active')) {
                 const navActions = document.querySelector('.nav-actions');
                 if (!navMenu.contains(e.target) && !burgerMenu?.contains(e.target) && !navActions?.contains(e.target)) {
-                    burgerMenu?.classList.remove('active');
-                    navMenu?.classList.remove('active');
+                    setMenuState(false);
                 }
             }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu?.classList.contains('active')) setMenuState(false);
         });
     }
 
@@ -128,12 +166,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Restore saved theme
         if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-theme');
+        updateNavControls();
 
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-theme');
             const isLight = document.body.classList.contains('light-theme');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
             if (typeof applyThemeAssets === 'function') applyThemeAssets();
+            updateNavControls();
         });
     }
 
@@ -177,6 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sync assistant UI language
         if (typeof window.__updateAssistantLanguage === 'function') {
             window.__updateAssistantLanguage();
+        }
+
+        updateNavControls();
+
+        const backToTopBtn = document.querySelector('.back-to-top-trigger');
+        if (backToTopBtn) {
+            backToTopBtn.setAttribute('aria-label', currentLanguage === 'gr' ? 'Επιστροφή στην κορυφή' : 'Back to top');
+            backToTopBtn.setAttribute('title', currentLanguage === 'gr' ? 'Κορυφή' : 'Top');
         }
 
         // Keep the navbar compact (so the injected logo doesn't get clipped)
@@ -1472,6 +1520,8 @@ return file;
         };
         const setOpen = (open) => {
             shell.classList.toggle('open', open);
+            document.body.classList.toggle('assistant-open', open);
+            document.documentElement.classList.toggle('assistant-open', open);
             panel.setAttribute('aria-hidden', open ? 'false' : 'true');
             trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
             if (open) {
@@ -1482,6 +1532,27 @@ return file;
                 clearTyping();
             }
         };
+
+
+        const navMenu = document.getElementById('nav-menu');
+        if (navMenu && !navMenu.querySelector('.nav-link-assistant')) {
+            const assistantNavBtn = document.createElement('button');
+            assistantNavBtn.type = 'button';
+            assistantNavBtn.className = 'nav-link nav-link-assistant';
+            assistantNavBtn.setAttribute('data-en', 'Assistant');
+            assistantNavBtn.setAttribute('data-gr', 'Βοηθός');
+            assistantNavBtn.textContent = currentLanguage === 'gr' ? 'Βοηθός' : 'Assistant';
+            assistantNavBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                document.body.classList.remove('menu-open');
+                document.getElementById('burger-menu')?.classList.remove('active');
+                document.getElementById('nav-menu')?.classList.remove('active');
+                document.getElementById('burger-menu')?.setAttribute('aria-expanded', 'false');
+                requestAnimationFrame(() => setOpen(true));
+            });
+            navMenu.appendChild(assistantNavBtn);
+        }
 
         trigger.addEventListener('click', () => setOpen(!shell.classList.contains('open')));
         closeBtn.addEventListener('click', () => setOpen(false));
@@ -1559,6 +1630,35 @@ return file;
     }
 
     // --- DEEP-LINK ANCHORS (Deterministic IDs) ---
+
+    function initializeBackToTop() {
+        if (document.querySelector('.back-to-top-trigger')) return;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'back-to-top-trigger';
+        button.setAttribute('aria-label', currentLanguage === 'gr' ? 'Επιστροφή στην κορυφή' : 'Back to top');
+        button.setAttribute('title', currentLanguage === 'gr' ? 'Κορυφή' : 'Top');
+        button.innerHTML = '<span class="back-to-top-icon" aria-hidden="true">↑</span>';
+        document.body.appendChild(button);
+
+        const syncVisibility = () => {
+            const show = (window.scrollY || window.pageYOffset || 0) > 120;
+            button.classList.toggle('visible', show);
+        };
+
+        button.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', syncVisibility, { passive: true });
+        window.addEventListener('resize', syncVisibility, { passive: true });
+        syncVisibility();
+    }
+
+
+    function initializePageTransitions() {}
+
     function initializeDeepLinks() {
         const slugifyLocal = (str) => {
             return (str || '')
@@ -1631,6 +1731,7 @@ return file;
 // --- MAIN INIT ---
     function init() {
         initializeNavigation();
+        initializePageTransitions();
         initializeDeepLinks();
         initializeThemeSwitcher();
         initializeBrandingAndLinks();
@@ -1639,6 +1740,7 @@ return file;
         initializeToolCategories('.categories-container');
         initializeToolCategories('#faq-container');
         initializeAssistant();
+        initializeBackToTop();
         
         // Language Switcher (Navbar)
         document.getElementById('nav-lang-switcher')?.addEventListener('click', () => {
@@ -1677,21 +1779,13 @@ return file;
         const page = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.getAttribute('href').includes(page)));
 
-        // Reveal Animations (skip on mobile + for reduced-motion users)
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const isMobileLite = window.matchMedia('(max-width: 820px)').matches || window.matchMedia('(hover: none)').matches;
-
-        if (!prefersReducedMotion && !isMobileLite) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('animate-in');
-                        observer.unobserve(e.target);
-                    }
-                });
-            });
-            document.querySelectorAll('.feature-card, .tool-item, .category').forEach(el => observer.observe(el));
+        const isLiteDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches && (((navigator.deviceMemory || 8) <= 4) || ((navigator.hardwareConcurrency || 8) <= 6));
+        if (isLiteDevice) {
+            document.body.classList.add('lite-device');
+            document.documentElement.classList.add('lite-device');
         }
+
+        // Reveal animations removed for maximum speed
     }
 
     init();
