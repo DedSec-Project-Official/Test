@@ -5840,3 +5840,20 @@ body.light-theme .category-intro {
         margin-top: 14px !important;
     }
 }
+
+/* === Fixed navbar spacing: always keep visible gap below nav (2026-04-05ah) === */
+:root{
+    --hero-nav-gap: 16px;
+}
+
+@media (max-width: 640px){
+    .phone-container{
+        padding-top: calc(var(--nav-h, 70px) + var(--hero-nav-gap)) !important;
+    }
+    .home-screen{
+        padding-top: 0 !important;
+    }
+    .hero-section{
+        margin-top: 0 !important;
+    }
+}
