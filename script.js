@@ -91,6 +91,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = document.querySelector('link[rel="icon" i]') || document.querySelector('link[rel="shortcut icon" i]');
         if (icon) icon.href = url;
     };
+
+    const refreshCompactNavButtons = () => {
+        const themeBtn = document.getElementById('nav-theme-switcher');
+        const themeLabel = themeBtn?.querySelector('.nav-theme-label');
+        const isLight = document.body.classList.contains('light-theme');
+        if (themeLabel) {
+            themeLabel.textContent = isLight ? (themeLabel.dataset.dark || '☾') : (themeLabel.dataset.light || '☀');
+        }
+        if (themeBtn) {
+            themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+            themeBtn.title = isLight ? 'Dark' : 'Light';
+        }
+
+        const langBtn = document.getElementById('nav-lang-switcher');
+        const langLabel = langBtn?.querySelector('.nav-lang-label');
+        if (langLabel) {
+            langLabel.textContent = currentLanguage === 'en' ? (langLabel.dataset.en || 'ΕΛ') : (langLabel.dataset.gr || 'EN');
+        }
+        if (langBtn) {
+            langBtn.setAttribute('aria-label', currentLanguage === 'en' ? 'Change language to Greek' : 'Change language to English');
+            langBtn.title = currentLanguage === 'en' ? 'ΕΛ' : 'EN';
+        }
+    };
     // --- NAVIGATION FUNCTIONALITY ---
     function initializeNavigation() {
         const burgerMenu = document.getElementById('burger-menu');
@@ -134,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isLight = document.body.classList.contains('light-theme');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
             if (typeof applyThemeAssets === 'function') applyThemeAssets();
+            refreshCompactNavButtons();
         });
     }
 
@@ -178,6 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof window.__updateAssistantLanguage === 'function') {
             window.__updateAssistantLanguage();
         }
+
+        refreshCompactNavButtons();
 
         // Keep the navbar compact (so the injected logo doesn't get clipped)
         applyNavbarWordStack();
@@ -736,8 +762,10 @@ return file;
 
         const assistantPath = assetUrl('Assets/assistant.json');
         const recentTopicsKey = 'dedsec_assistant_recent_topics_v2';
+        const pageMount = document.querySelector('[data-assistant-page]');
+        const isPageMode = !!pageMount;
         const shell = document.createElement('section');
-        shell.className = 'assistant-shell';
+        shell.className = `assistant-shell${isPageMode ? ' assistant-shell--page' : ''}`;
         shell.setAttribute('aria-label', 'Assistant');
         shell.innerHTML = `
             <div class="assistant-panel" aria-hidden="true" id="dedsec-assistant-panel">
@@ -765,7 +793,7 @@ return file;
                 <span class="assistant-trigger-text"></span>
             </button>
         `;
-        document.body.appendChild(shell);
+        (pageMount || document.body).appendChild(shell);
 
         const panel = shell.querySelector('.assistant-panel');
         const trigger = shell.querySelector('.assistant-trigger');
@@ -1471,31 +1499,34 @@ return file;
             renderStartState();
         };
         const setOpen = (open) => {
-            shell.classList.toggle('open', open);
-            panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-            trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-            if (open) {
+            const nextOpen = isPageMode ? true : !!open;
+            shell.classList.toggle('open', nextOpen);
+            panel.setAttribute('aria-hidden', nextOpen ? 'false' : 'true');
+            trigger.setAttribute('aria-expanded', nextOpen ? 'true' : 'false');
+            if (nextOpen) {
                 refreshAssistantData(false).finally(() => {
-                    setTimeout(() => closeBtn.focus({ preventScroll: true }), 40);
+                    if (!isPageMode) setTimeout(() => closeBtn.focus({ preventScroll: true }), 40);
                 });
             } else {
                 clearTyping();
             }
         };
 
-        trigger.addEventListener('click', () => setOpen(!shell.classList.contains('open')));
-        closeBtn.addEventListener('click', () => setOpen(false));
+        if (!isPageMode) {
+            trigger.addEventListener('click', () => setOpen(!shell.classList.contains('open')));
+            closeBtn.addEventListener('click', () => setOpen(false));
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && shell.classList.contains('open')) setOpen(false);
+            });
+            document.addEventListener('click', (e) => {
+                if (!shell.classList.contains('open')) return;
+                const path = typeof e.composedPath === 'function' ? e.composedPath() : [];
+                if (path.includes(shell) || shell.contains(e.target)) return;
+                setOpen(false);
+            });
+        }
         homeBtn.addEventListener('click', () => resetAssistant());
         refreshBtn.addEventListener('click', () => refreshAssistantData(true));
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && shell.classList.contains('open')) setOpen(false);
-        });
-        document.addEventListener('click', (e) => {
-            if (!shell.classList.contains('open')) return;
-            const path = typeof e.composedPath === 'function' ? e.composedPath() : [];
-            if (path.includes(shell) || shell.contains(e.target)) return;
-            setOpen(false);
-        });
 
         window.__updateAssistantLanguage = () => {
             applyUiStrings();
@@ -1515,6 +1546,148 @@ return file;
         createMessage('assistant', currentLanguage === 'gr' ? 'Άνοιξε το παράθυρο για να φορτώσει ο βοηθός.' : 'Open the panel to load the assistant.', {
             heading: 'Assistant'
         });
+
+        if (isPageMode) {
+            setOpen(true);
+        }
+    }
+
+
+    function initializeBorderSnake() {
+        let snake = document.getElementById('border-snake');
+        if (!snake) {
+            snake = document.createElement('div');
+            snake.id = 'border-snake';
+            document.body.appendChild(snake);
+        }
+        snake.style.display = 'block';
+
+        const inset = 8;
+        const speed = 320; // px per second
+        let rafId = null;
+        let lastTs = null;
+        let distance = 0;
+
+        const animate = (ts) => {
+            if (!document.body.contains(snake)) return;
+            if (lastTs == null) lastTs = ts;
+            const dt = Math.max(0, (ts - lastTs) / 1000);
+            lastTs = ts;
+
+            const w = Math.max(40, window.innerWidth - inset * 2);
+            const h = Math.max(40, window.innerHeight - inset * 2);
+            const perimeter = (w * 2) + (h * 2);
+            distance = (distance + speed * dt) % perimeter;
+
+            let x = inset;
+            let y = inset;
+            let rotate = 0;
+
+            if (distance <= w) {
+                x = inset + distance;
+                y = inset;
+                rotate = 0;
+            } else if (distance <= w + h) {
+                x = inset + w;
+                y = inset + (distance - w);
+                rotate = 90;
+            } else if (distance <= (w * 2) + h) {
+                x = inset + (w - (distance - (w + h)));
+                y = inset + h;
+                rotate = 180;
+            } else {
+                x = inset;
+                y = inset + (h - (distance - ((w * 2) + h)));
+                rotate = 270;
+            }
+
+            snake.style.left = `${x}px`;
+            snake.style.top = `${y}px`;
+            snake.style.transform = `translate(-50%, -50%) rotate(${rotate}deg)`;
+            rafId = requestAnimationFrame(animate);
+        };
+
+        const reset = () => {
+            lastTs = null;
+        };
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            snake.remove();
+            return;
+        }
+
+        window.addEventListener('resize', reset, { passive: true });
+        window.addEventListener('orientationchange', reset, { passive: true });
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(animate);
+    }
+
+
+    function forceSquareNavControls() {
+        document.querySelectorAll('.nav-action-btn, #nav-search, .burger-menu, .nav-menu .nav-link').forEach((el) => {
+            el.style.borderRadius = '0px';
+            el.style.webkitBorderRadius = '0px';
+        });
+    }
+
+
+    function forceSquareButtonCorners() {
+        const selectors = [
+            'button', 'a.btn', '.btn', '.btn-primary', '.btn-ghost', '.nav-action-btn', '.nav-lang-btn', '.nav-theme-btn', '#nav-search',
+            '.burger-menu', '.nav-link', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.copy-btn', '.footer-mini-btn',
+            '.app-icon', '.assistant-chip', '.assistant-open-link', '.assistant-home', '.assistant-refresh', '.assistant-close',
+            '.assistant-trigger', '.search-close', '.close-modal', '.payment-btn', '.sponsor-btn', '.faq-link-btn', '.language-selection-btn',
+            '.theme-selection-btn', '.accept-btn', '.decline-btn', '.carousel-nav-btn', '.prev-btn', '.next-btn', '.nm-btn'
+        ].join(',');
+        document.querySelectorAll(selectors).forEach((el) => {
+            el.style.borderRadius = '0px';
+            el.style.borderTopLeftRadius = '0px';
+            el.style.borderTopRightRadius = '0px';
+            el.style.borderBottomLeftRadius = '0px';
+            el.style.borderBottomRightRadius = '0px';
+            el.style.webkitBorderRadius = '0px';
+        });
+    }
+
+
+    function forceSharpCornersEverywhere() {
+        const selectors = [
+            '.hero-section', '.content-section', '.trust-item', '.features-grid .feature-card', '.community-grid .community-card',
+            '.category', '.category-header', '.tool-item', '.tool-header', '.tool-description', '.callout', '.glance-card', '.badge',
+            '.contact-grid .app-icon', '.footer-mini-btn', '.footer-link-buttons a', '.sponsor-btn', '.main-footer', '.assistant-panel',
+            '.assistant-bubble', '.assistant-chip', '.assistant-open-link', '.assistant-inline-code', '.assistant-rich-section',
+            '.code-container', '.modal-content', '.screen', '.phone-container', '.search-modal', '.search-input', '.search-close',
+            '.nav-menu', '.nav-action-btn', '#nav-search', '.burger-menu', '.nav-menu .nav-link', '.copy-btn', '.btn', '.btn-primary',
+            '.btn-ghost', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.payment-btn', '.faq-link-btn',
+            '.language-selection-btn', '.theme-selection-btn', '.accept-btn', '.decline-btn', '.carousel-nav-btn', '.prev-btn',
+            '.next-btn', '.nm-btn'
+        ].join(',');
+        document.querySelectorAll(selectors).forEach((el) => {
+            el.style.borderRadius = '0px';
+            el.style.borderTopLeftRadius = '0px';
+            el.style.borderTopRightRadius = '0px';
+            el.style.borderBottomLeftRadius = '0px';
+            el.style.borderBottomRightRadius = '0px';
+            el.style.webkitBorderRadius = '0px';
+        });
+    }
+
+
+    function initializeHolographicScroll() {
+        let ticking = false;
+        const apply = () => {
+            const y = window.scrollY || window.pageYOffset || 0;
+            document.documentElement.style.setProperty('--scroll-shift', `${y}px`);
+            ticking = false;
+        };
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(apply);
+        };
+        apply();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
     }
 
 
@@ -1634,11 +1807,17 @@ return file;
         initializeDeepLinks();
         initializeThemeSwitcher();
         initializeBrandingAndLinks();
+        const oldSnake = document.getElementById('border-snake'); if (oldSnake) oldSnake.remove();
+        refreshCompactNavButtons();
         initializeSearch();
+        forceSquareNavControls();
+        forceSquareButtonCorners();
+        forceSharpCornersEverywhere();
+        setTimeout(() => { forceSquareButtonCorners(); forceSharpCornersEverywhere(); }, 80);
         initializeCarousels();
         initializeToolCategories('.categories-container');
         initializeToolCategories('#faq-container');
-        initializeAssistant();
+        if (document.querySelector('[data-assistant-page]')) initializeAssistant();
         
         // Language Switcher (Navbar)
         document.getElementById('nav-lang-switcher')?.addEventListener('click', () => {

@@ -1,6 +1,6 @@
 {
   "version": 6,
-  "updated": "2026-04-01",
+  "updated": "2026-04-05",
   "ui": {
     "buttonLabel": {
       "en": "Help",
@@ -4934,6 +4934,234 @@
           ]
         }
       ]
+    },
+    {
+      "id": "termux-daily-use",
+      "label": {
+        "en": "Termux Daily Use",
+        "gr": "Καθημερινή Χρήση Termux"
+      },
+      "items": [
+        {
+          "q": {
+            "en": "Where is my Downloads folder in Termux?",
+            "gr": "Πού είναι ο φάκελος Downloads στο Termux;"
+          },
+          "a": {
+            "en": "Main idea: On Android, the shared Downloads folder usually appears inside Termux after you run `termux-setup-storage`.\n\nUse these common paths: `/storage/emulated/0/Download` and `~/storage/downloads`.\n\nUseful commands: `ls -lh /storage/emulated/0/Download`, `cd /storage/emulated/0/Download`, and `termux-setup-storage` if the folder is missing.",
+            "gr": "Κύρια ιδέα: Στο Android, ο κοινόχρηστος φάκελος Downloads εμφανίζεται συνήθως στο Termux αφού τρέξεις `termux-setup-storage`.\n\nΧρήσιμα paths: `/storage/emulated/0/Download` και `~/storage/downloads`.\n\nΧρήσιμες εντολές: `ls -lh /storage/emulated/0/Download`, `cd /storage/emulated/0/Download` και `termux-setup-storage` αν λείπει ο φάκελος."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "downloads",
+            "download folder",
+            "storage",
+            "termux storage",
+            "path",
+            "android downloads"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I unzip files in Termux?",
+            "gr": "Πώς κάνω unzip αρχεία στο Termux;"
+          },
+          "a": {
+            "en": "Install `unzip` if needed with `pkg install unzip -y`. Then extract with `unzip -o \"archive.zip\" -d target_folder`. The `-o` flag overwrites older files when you are updating a project.",
+            "gr": "Εγκατέστησε το `unzip` αν χρειάζεται με `pkg install unzip -y`. Μετά κάνε εξαγωγή με `unzip -o \"archive.zip\" -d target_folder`. Το `-o` κάνει overwrite παλιότερα αρχεία όταν ενημερώνεις ένα project."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "zip",
+            "unzip",
+            "extract",
+            "archive",
+            "overwrite",
+            "termux unzip"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I run a Python script with spaces in its name?",
+            "gr": "Πώς τρέχω Python script με κενά στο όνομα;"
+          },
+          "a": {
+            "en": "Use quotes around the filename. Example: `python \"Offline Survival.py\"`. The same idea works with `cd` paths that include spaces.",
+            "gr": "Χρησιμοποίησε εισαγωγικά γύρω από το όνομα αρχείου. Παράδειγμα: `python \"Offline Survival.py\"`. Το ίδιο ισχύει και για paths στο `cd` που έχουν κενά."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "spaces",
+            "python filename",
+            "quoted path",
+            "script name",
+            "termux command"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I update Termux packages safely?",
+            "gr": "Πώς ενημερώνω με ασφάλεια τα πακέτα του Termux;"
+          },
+          "a": {
+            "en": "Use `pkg update && pkg upgrade -y`. After that, reinstall only the tools you actually need. Avoid mixing packages from unsupported Termux sources.",
+            "gr": "Χρησιμοποίησε `pkg update && pkg upgrade -y`. Μετά εγκατάστησε ξανά μόνο τα εργαλεία που πραγματικά χρειάζεσαι. Απόφυγε να ανακατεύεις πακέτα από μη υποστηριζόμενες πηγές Termux."
+          },
+          "link": {
+            "en": "Pages/guide-for-installation.html",
+            "gr": "Pages/guide-for-installation.html"
+          },
+          "tags": [
+            "update",
+            "upgrade",
+            "packages",
+            "pkg",
+            "termux update"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I find a file quickly in Termux?",
+            "gr": "Πώς βρίσκω γρήγορα ένα αρχείο στο Termux;"
+          },
+          "a": {
+            "en": "Useful commands: `find ~/storage/downloads -iname \"*name*\"`, `find . -maxdepth 2 -type f`, and `ls -lh`. For large folders, search from the most likely base path first instead of scanning everything.",
+            "gr": "Χρήσιμες εντολές: `find ~/storage/downloads -iname \"*name*\"`, `find . -maxdepth 2 -type f` και `ls -lh`. Για μεγάλους φακέλους, ξεκίνα από το πιο πιθανό base path αντί να σαρώσεις τα πάντα."
+          },
+          "link": {
+            "en": "Pages/faq.html",
+            "gr": "Pages/faq.html"
+          },
+          "tags": [
+            "find file",
+            "search file",
+            "find command",
+            "ls",
+            "termux files"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dedsec-tool-help",
+      "label": {
+        "en": "DedSec Tool Help",
+        "gr": "Βοήθεια Εργαλείων DedSec"
+      },
+      "items": [
+        {
+          "q": {
+            "en": "Where can I read what each tool does?",
+            "gr": "Πού μπορώ να διαβάσω τι κάνει κάθε εργαλείο;"
+          },
+          "a": {
+            "en": "Open the Learn About The Tools page. It collects tool descriptions, save locations, and project notes in one place so you can understand a script before running it.",
+            "gr": "Άνοιξε τη σελίδα Learn About The Tools. Συγκεντρώνει περιγραφές εργαλείων, τοποθεσίες αποθήκευσης και σημειώσεις του project ώστε να καταλαβαίνεις ένα script πριν το τρέξεις."
+          },
+          "link": {
+            "en": "Pages/learn-about-the-tools.html",
+            "gr": "Pages/learn-about-the-tools.html"
+          },
+          "tags": [
+            "what does tool do",
+            "learn about the tools",
+            "tool descriptions",
+            "tool help"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I know where a DedSec script saves output?",
+            "gr": "Πώς ξέρω πού αποθηκεύει output ένα DedSec script;"
+          },
+          "a": {
+            "en": "Check the tool entry on Learn About The Tools and the FAQ. Most scripts list a save/output path such as `~/storage/downloads/...`, `/storage/emulated/0/Download/...`, or a project folder inside Termux home.",
+            "gr": "Έλεγξε την καταχώρηση του εργαλείου στο Learn About The Tools και στο FAQ. Τα περισσότερα scripts γράφουν save/output path όπως `~/storage/downloads/...`, `/storage/emulated/0/Download/...` ή φάκελο project μέσα στο Termux home."
+          },
+          "link": {
+            "en": "Pages/learn-about-the-tools.html",
+            "gr": "Pages/learn-about-the-tools.html"
+          },
+          "tags": [
+            "save location",
+            "output path",
+            "downloads folder",
+            "tool output",
+            "where saved"
+          ]
+        },
+        {
+          "q": {
+            "en": "How do I know which tools are sponsor-only?",
+            "gr": "Πώς ξέρω ποια εργαλεία είναι sponsor-only;"
+          },
+          "a": {
+            "en": "Look for the Sponsors-Only section on the tools page. That area separates restricted tools from the rest of the public project pages.",
+            "gr": "Κοίτα την ενότητα Sponsors-Only στη σελίδα εργαλείων. Εκεί ξεχωρίζονται τα περιορισμένα εργαλεία από τις υπόλοιπες δημόσιες σελίδες του project."
+          },
+          "link": {
+            "en": "Pages/learn-about-the-tools.html",
+            "gr": "Pages/learn-about-the-tools.html"
+          },
+          "tags": [
+            "sponsor only",
+            "restricted tools",
+            "sponsors-only",
+            "paid tools"
+          ]
+        },
+        {
+          "q": {
+            "en": "Where should I start if I am new to DedSec Project?",
+            "gr": "Από πού να ξεκινήσω αν είμαι νέος στο DedSec Project;"
+          },
+          "a": {
+            "en": "Best order: Guide For Installation first, then Learn About The Tools, then FAQ, and after that use the Assistant for quick matches and follow-up questions.",
+            "gr": "Η καλύτερη σειρά είναι: πρώτα Guide For Installation, μετά Learn About The Tools, μετά FAQ, και ύστερα χρησιμοποίησε τον Assistant για γρήγορα matches και follow-up ερωτήσεις."
+          },
+          "link": {
+            "en": "index.html",
+            "gr": "index.html"
+          },
+          "tags": [
+            "start here",
+            "beginner",
+            "new user",
+            "where start",
+            "dedsec project order"
+          ]
+        },
+        {
+          "q": {
+            "en": "Can the Assistant help me find tools and Termux answers?",
+            "gr": "Μπορεί ο Assistant να με βοηθήσει να βρω εργαλεία και απαντήσεις για Termux;"
+          },
+          "a": {
+            "en": "Yes. The Assistant page is meant to help with tool discovery, Termux basics, common project questions, and quick page matching across the site data.",
+            "gr": "Ναι. Η σελίδα Assistant είναι φτιαγμένη για να βοηθά με αναζήτηση εργαλείων, βασικά του Termux, συχνές ερωτήσεις του project και γρήγορο ταίριασμα σελίδων από τα δεδομένα του site."
+          },
+          "link": {
+            "en": "Pages/assistant.html",
+            "gr": "Pages/assistant.html"
+          },
+          "tags": [
+            "assistant",
+            "find tool",
+            "termux answer",
+            "site helper",
+            "faq helper"
+          ]
+        }
+      ]
     }
   ],
   "starterPrompts": [
@@ -5020,6 +5248,26 @@
         "gr": "Χρειάζεται root;"
       },
       "query": "need root"
+    },
+    {
+      "en": "Where is Downloads in Termux?",
+      "gr": "Πού είναι το Downloads στο Termux;"
+    },
+    {
+      "en": "How do I unzip files?",
+      "gr": "Πώς κάνω unzip αρχεία;"
+    },
+    {
+      "en": "Where do DedSec tools save output?",
+      "gr": "Πού αποθηκεύουν output τα εργαλεία DedSec;"
+    },
+    {
+      "en": "Which tools are sponsor-only?",
+      "gr": "Ποια εργαλεία είναι sponsor-only;"
+    },
+    {
+      "en": "I am new, where should I start?",
+      "gr": "Είμαι νέος, από πού να ξεκινήσω;"
     }
   ]
 }

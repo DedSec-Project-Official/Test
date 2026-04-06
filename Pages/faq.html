@@ -52,7 +52,7 @@
 <span class="burger-line"></span>
 <span class="burger-line"></span>
 <span class="burger-line"></span>
-<span class="burger-label" data-en="Menu" data-gr="Μενού">Menu</span>
+<span class="burger-label" data-en="MENU" data-gr="MENU">MENU</span>
 </button>
 <div class="nav-menu" id="nav-menu">
 <a class="nav-link" data-en="Home" data-gr="Αρχική" href="/">Home</a>
@@ -61,16 +61,17 @@
 <a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθετε για τα Εργαλεία" href="learn-about-the-tools.html">Learn About The Tools</a>
 <a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="butsystem-exclusive.html">ButSystem.py (Exclusive)</a>
 <a class="nav-link active" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="faq.html">Frequently Asked Questions</a>
+<a class="nav-link" data-en="Assistant" data-gr="Βοηθός" href="assistant.html">Assistant</a>
 <a class="nav-link" data-en="Collaborations" data-gr="Συνεργασίες" href="collaborations.html">Collaborations</a>
 <a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="contact-credits.html">Contact &amp; Credits</a>
 <a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="privacy-policy.html">Privacy Policy</a>
 </div>
 <div class="nav-actions">
-<button class="nav-action-btn" id="nav-theme-switcher">
-<span class="nav-action-label" data-en="Change Theme" data-gr="Αλλαγή Θέματος">Change Theme</span>
+<button aria-label="Toggle theme" class="nav-action-btn nav-theme-btn" id="nav-theme-switcher" type="button">
+<span aria-hidden="true" class="nav-action-label nav-theme-label" data-light="☀" data-dark="☾">☀</span>
 </button>
-<button class="nav-action-btn" id="nav-lang-switcher">
-<span class="nav-action-label" data-en="Αλλαγή Γλώσσας" data-gr="Change Language">Αλλαγή Γλώσσας</span>
+<button aria-label="Change language" class="nav-action-btn nav-lang-btn" id="nav-lang-switcher" type="button">
+<span class="nav-action-label nav-lang-label" data-en="ΕΛ" data-gr="EN">ΕΛ</span>
 </button>
 </div>
 </div>
@@ -739,6 +740,36 @@ Use the ⌂ button in the assistant header to return to the welcome screen. Use 
 <span data-en="Still need help? Contact Us" data-gr="Χρειάζεστε ακόμα βοήθεια; Επικοινωνία">Still need help? Contact Us</span>
 </button>
 </div>
+
+<div class="category">
+<div class="category-header">
+<h3 data-en="Termux Daily Usage &amp; File Handling" data-gr="Καθημερινή Χρήση Termux &amp; Διαχείριση Αρχείων">Termux Daily Usage &amp; File Handling</h3>
+<i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="tools-list">
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where is the Downloads folder in Termux?" data-gr="Πού είναι ο φάκελος Downloads στο Termux;">Where is the Downloads folder in Termux?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="After you run termux-setup-storage, the shared Downloads folder is usually available through /storage/emulated/0/Download and also through ~/storage/downloads." data-gr="Αφού τρέξεις termux-setup-storage, ο κοινόχρηστος φάκελος Downloads είναι συνήθως διαθέσιμος μέσω /storage/emulated/0/Download και επίσης μέσω ~/storage/downloads.">After you run termux-setup-storage, the shared Downloads folder is usually available through /storage/emulated/0/Download and also through ~/storage/downloads.</p><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-download-paths-extra')">Copy</button><code id="code-download-paths-extra">ls -lh /storage/emulated/0/Download
+ls -lh ~/storage/downloads</code></div></div></div>
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="How do I unzip and overwrite old files?" data-gr="Πώς κάνω unzip και overwrite παλιά αρχεία;">How do I unzip and overwrite old files?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Install unzip if it is missing, then use the -o flag when you want a newer archive to replace older project files." data-gr="Εγκατέστησε το unzip αν λείπει και μετά χρησιμοποίησε το flag -o όταν θέλεις ένα νεότερο archive να αντικαταστήσει παλιότερα αρχεία του project.">Install unzip if it is missing, then use the -o flag when you want a newer archive to replace older project files.</p><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-unzip-overwrite-extra')">Copy</button><code id="code-unzip-overwrite-extra">pkg install unzip -y
+unzip -o "archive.zip" -d target_folder</code></div></div></div>
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="How do I run a Python script with spaces in its name?" data-gr="Πώς τρέχω Python script με κενά στο όνομα;">How do I run a Python script with spaces in its name?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use quotes around the filename or path. This works for both running scripts and changing directories." data-gr="Χρησιμοποίησε εισαγωγικά γύρω από το όνομα αρχείου ή το path. Αυτό δουλεύει και για την εκτέλεση scripts και για την αλλαγή φακέλου.">Use quotes around the filename or path. This works for both running scripts and changing directories.</p><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-spaces-extra')">Copy</button><code id="code-spaces-extra">python "Offline Survival.py"
+cd "/storage/emulated/0/Download/My Folder"</code></div></div></div>
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="How do I find a file quickly in Termux?" data-gr="Πώς βρίσκω γρήγορα ένα αρχείο στο Termux;">How do I find a file quickly in Termux?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use find from the most likely base folder first instead of searching your whole device at once." data-gr="Χρησιμοποίησε το find ξεκινώντας από τον πιο πιθανό βασικό φάκελο αντί να ψάχνεις όλη τη συσκευή μονομιάς.">Use find from the most likely base folder first instead of searching your whole device at once.</p><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-find-extra')">Copy</button><code id="code-find-extra">find ~/storage/downloads -iname "*dedsec*"
+find . -maxdepth 2 -type f</code></div></div></div>
+</div>
+</div>
+<div class="category">
+<div class="category-header">
+<h3 data-en="DedSec Tools &amp; Project Help" data-gr="Βοήθεια Εργαλείων DedSec &amp; Project">DedSec Tools &amp; Project Help</h3>
+<i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="tools-list">
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where can I read what each tool does?" data-gr="Πού μπορώ να διαβάσω τι κάνει κάθε εργαλείο;">Where can I read what each tool does?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use the Learn About The Tools page. It is the best place to read descriptions, outputs, and notes before running a script." data-gr="Χρησιμοποίησε τη σελίδα Learn About The Tools. Είναι το καλύτερο σημείο για να διαβάσεις περιγραφές, outputs και σημειώσεις πριν τρέξεις ένα script.">Use the Learn About The Tools page. It is the best place to read descriptions, outputs, and notes before running a script.</p></div></div>
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="How do I know where a DedSec tool saves output?" data-gr="Πώς ξέρω πού αποθηκεύει output ένα εργαλείο DedSec;">How do I know where a DedSec tool saves output?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Check both Learn About The Tools and the Assistant. Most tools list a save path such as ~/storage/downloads/... or /storage/emulated/0/Download/..." data-gr="Έλεγξε και το Learn About The Tools και τον Assistant. Τα περισσότερα εργαλεία γράφουν save path όπως ~/storage/downloads/... ή /storage/emulated/0/Download/...">Check both Learn About The Tools and the Assistant. Most tools list a save path such as ~/storage/downloads/... or /storage/emulated/0/Download/...</p></div></div>
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Which tools are sponsor-only?" data-gr="Ποια εργαλεία είναι sponsor-only;">Which tools are sponsor-only?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Look for the Sponsors-Only section on the tools page. That section separates restricted tools from the public parts of the project." data-gr="Κοίτα την ενότητα Sponsors-Only στη σελίδα εργαλείων. Εκεί ξεχωρίζονται τα περιορισμένα εργαλεία από τα δημόσια μέρη του project.">Look for the Sponsors-Only section on the tools page. That section separates restricted tools from the public parts of the project.</p></div></div>
+<div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where should a new user start?" data-gr="Από πού πρέπει να ξεκινήσει ένας νέος χρήστης;">Where should a new user start?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Best order: Guide For Installation first, Learn About The Tools second, FAQ third, and then Assistant for quick matches and follow-up help." data-gr="Η καλύτερη σειρά είναι: πρώτα Guide For Installation, μετά Learn About The Tools, τρίτο το FAQ και μετά ο Assistant για γρήγορα matches και επιπλέον βοήθεια.">Best order: Guide For Installation first, Learn About The Tools second, FAQ third, and then Assistant for quick matches and follow-up help.</p></div></div>
+</div>
+</div>
+
 </div>
 <footer class="main-footer">
 <div data-lang-section="en">

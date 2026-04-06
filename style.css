@@ -3421,6 +3421,16 @@ body.light-theme .step-card{ background: rgba(255,255,255,0.86); }
     pointer-events: none;
 }
 
+.assistant-shell--page {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    pointer-events: auto;
+}
+
 .assistant-panel {
     position: absolute;
     right: 0;
@@ -3853,6 +3863,67 @@ body.light-theme .assistant-chip {
 
 
 
+.assistant-shell--page .assistant-panel {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 760px);
+    max-height: none;
+    margin: 0 auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transform-origin: center top;
+}
+
+.assistant-shell--page .assistant-trigger,
+.assistant-shell--page .assistant-close {
+    display: none;
+}
+
+.assistant-shell--page .assistant-chat {
+    min-height: min(72vh, 760px);
+    max-height: none;
+}
+
+.assistant-page-content {
+    padding-bottom: 40px;
+}
+
+.assistant-page-note {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid var(--nm-border);
+    background: rgba(var(--glow-rgb), 0.08);
+    box-shadow: var(--shadow-elev-1);
+}
+
+.assistant-page-note p {
+    margin: 0;
+}
+
+.assistant-page-root {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .assistant-shell--page .assistant-panel {
+        width: 100%;
+        border-radius: 22px;
+    }
+
+    .assistant-shell--page .assistant-chat {
+        min-height: 68vh;
+    }
+
+    .assistant-page-note {
+        padding: 13px 14px;
+    }
+}
+
 .assistant-inline-link {
     color: var(--nm-text-accent);
     text-decoration: underline;
@@ -3864,4 +3935,1930 @@ body.light-theme .assistant-chip {
 .assistant-inline-link:focus-visible {
     color: var(--nm-text-accent);
     opacity: 0.92;
+}
+
+
+/* === Compact nav controls + equal home cards (2026-04-05) === */
+.nav-actions{
+    gap:8px;
+    align-items:center;
+}
+
+.nav-action-btn{
+    min-width:44px;
+    width:44px;
+    height:44px;
+    padding:0;
+    border-radius:12px;
+    font-size:1rem;
+    font-weight:700;
+}
+
+.nav-action-btn i{font-size:1rem;}
+
+.nav-action-btn .nav-action-label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+    line-height:1;
+    white-space:nowrap;
+    text-align:center;
+    font-size:0.95rem;
+    font-weight:800;
+    letter-spacing:0.03em;
+}
+
+.nav-theme-btn .nav-theme-label{
+    font-size:1.18rem;
+}
+
+.nav-lang-btn .nav-lang-label{
+    font-size:0.9rem;
+}
+
+.burger-menu{
+    min-width:54px;
+    width:54px;
+    min-height:54px;
+    gap:3px;
+}
+
+.burger-label{
+    font-size:0.56rem;
+    font-weight:800;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    margin-top:1px;
+    line-height:1;
+}
+
+.home-screen .features-grid{
+    grid-template-columns:repeat(auto-fit, minmax(180px, 220px));
+    justify-content:center;
+    justify-items:center;
+    gap:16px;
+    max-width:980px;
+    margin:24px auto 44px;
+}
+
+.home-screen .feature-card{
+    width:100%;
+    max-width:220px;
+    min-height:186px;
+    padding:12px;
+    border-radius:18px;
+}
+
+.home-screen .feature-icon-wrapper{
+    width:42px;
+    height:42px;
+    margin-bottom:10px;
+}
+
+.home-screen .feature-icon{
+    font-size:1.35rem;
+}
+
+.home-screen .feature-title{
+    font-size:0.92rem;
+    margin-bottom:8px;
+}
+
+.home-screen .feature-description{
+    font-size:0.72rem;
+    line-height:1.25;
+    margin-bottom:8px;
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.home-screen .feature-cta{
+    margin-top:auto;
+    font-size:0.78rem;
+    gap:6px;
+}
+
+.home-screen .community-section{
+    padding-top:18px;
+    padding-bottom:18px;
+}
+
+.home-screen .community-grid{
+    grid-template-columns:repeat(auto-fit, minmax(160px, 190px));
+    justify-content:center;
+    gap:14px;
+    max-width:430px;
+    margin:22px auto 0;
+}
+
+.home-screen .community-card{
+    width:100%;
+    max-width:190px;
+    min-height:108px;
+    padding:16px 12px;
+    gap:10px;
+    border-radius:18px;
+}
+
+.home-screen .community-card i{
+    font-size:1.8rem;
+}
+
+.home-screen .community-card span{
+    font-size:0.82rem;
+    line-height:1.2;
+}
+
+@media (min-width: 980px){
+    .nav-action-btn{
+        width:46px;
+        min-width:46px;
+        height:46px;
+    }
+
+    .home-screen .features-grid{
+        grid-template-columns:repeat(4, 220px);
+    }
+
+    .home-screen .community-grid{
+        grid-template-columns:repeat(2, 190px);
+    }
+}
+
+@media (max-width: 520px){
+    .nav-actions{gap:6px;}
+    .nav-action-btn{
+        width:42px;
+        min-width:42px;
+        height:42px;
+    }
+    .nav-action-btn .nav-action-label{font-size:0.88rem;}
+    .nav-theme-btn .nav-theme-label{font-size:1.08rem;}
+    .burger-menu{
+        min-width:50px;
+        width:50px;
+        min-height:50px;
+    }
+    .home-screen .features-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        max-width:460px;
+    }
+    .home-screen .feature-card{
+        max-width:none;
+        min-height:178px;
+    }
+    .home-screen .community-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        max-width:400px;
+    }
+    .home-screen .community-card{
+        max-width:none;
+    }
+}
+
+@media (max-width: 360px){
+    .home-screen .features-grid,
+    .home-screen .community-grid{
+        grid-template-columns:1fr;
+        max-width:220px;
+    }
+}
+
+
+/* === Final compact card pass (2026-04-05b) === */
+.features-grid{
+    justify-content:center;
+    justify-items:center;
+}
+
+.features-grid .feature-card{
+    width:100%;
+    height:100%;
+    min-height:190px;
+    max-width:240px;
+    padding:12px;
+}
+
+.features-grid .feature-card .feature-icon-wrapper,
+.features-grid .feature-card > i:first-child{
+    margin-bottom:10px;
+}
+
+.features-grid .feature-card > i:first-child{
+    font-size:1.45rem;
+    color:var(--nm-accent);
+}
+
+.features-grid .feature-card h3,
+.features-grid .feature-card .feature-title{
+    font-size:0.94rem;
+    margin-bottom:8px;
+}
+
+.features-grid .feature-card p,
+.features-grid .feature-card .feature-description{
+    font-size:0.72rem;
+    line-height:1.24;
+}
+
+.features-grid .feature-card .feature-cta{
+    margin-top:auto;
+}
+
+.community-grid{
+    justify-content:center;
+    justify-items:center;
+}
+
+.community-grid .community-card{
+    width:100%;
+    max-width:190px;
+    min-height:108px;
+    padding:16px 12px;
+    gap:10px;
+}
+
+.community-grid .community-card i{
+    font-size:1.8rem;
+}
+
+.community-grid .community-card span{
+    font-size:0.82rem;
+    line-height:1.2;
+}
+
+/* Keep informational page cards readable while still uniform */
+.page-content .features-grid{
+    gap:16px;
+}
+
+.page-content .features-grid .feature-card{
+    align-items:flex-start;
+    text-align:left;
+}
+
+@media (min-width: 980px){
+    .page-content .features-grid{
+        grid-template-columns:repeat(auto-fit, minmax(200px, 240px));
+    }
+}
+
+@media (max-width: 520px){
+    .page-content .features-grid,
+    .home-screen .features-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:12px;
+    }
+    .page-content .features-grid .feature-card,
+    .home-screen .features-grid .feature-card{
+        max-width:none;
+        min-height:178px;
+    }
+    .community-grid{
+        gap:12px;
+    }
+}
+
+@media (max-width: 360px){
+    .page-content .features-grid,
+    .home-screen .features-grid,
+    .community-grid{
+        grid-template-columns:1fr;
+        max-width:220px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+
+/* === Unified square navbar controls + visible burger icon (2026-04-05c) === */
+.nav-container{
+    gap:8px;
+    align-items:center;
+}
+
+.nav-actions{
+    gap:8px !important;
+    align-items:center;
+}
+
+.nav-action-btn,
+.burger-menu{
+    width:50px !important;
+    min-width:50px !important;
+    height:50px !important;
+    min-height:50px !important;
+    padding:6px !important;
+    border-radius:12px !important;
+    background:var(--nm-container) !important;
+    border:1px solid var(--nm-border) !important;
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.burger-menu{
+    gap:2px !important;
+    margin-left:0 !important;
+    margin-inline-start:0 !important;
+}
+
+.burger-menu:hover,
+.nav-action-btn:hover{
+    background:var(--nm-accent) !important;
+    border-color:var(--nm-accent) !important;
+}
+
+.burger-menu .burger-line{
+    display:block;
+    width:20px !important;
+    height:2px !important;
+    border-radius:999px;
+    background:var(--nm-text) !important;
+    opacity:1 !important;
+}
+
+.burger-menu:hover .burger-line{
+    background:var(--nm-text-on-accent) !important;
+}
+
+.burger-label{
+    font-size:0.44rem !important;
+    font-weight:800;
+    letter-spacing:0.14em;
+    margin-top:1px;
+    opacity:1 !important;
+}
+
+.burger-menu:hover .burger-label{
+    color:var(--nm-text-on-accent) !important;
+}
+
+@media (max-width: 520px){
+    .nav-container,
+    .nav-actions{
+        gap:6px !important;
+    }
+
+    .nav-action-btn,
+    .burger-menu{
+        width:46px !important;
+        min-width:46px !important;
+        height:46px !important;
+        min-height:46px !important;
+    }
+
+    .burger-menu .burger-line{
+        width:18px !important;
+    }
+
+    .burger-label{
+        font-size:0.4rem !important;
+    }
+}
+
+
+/* === MENU-only square button (2026-04-05d) === */
+.burger-menu .burger-line{
+    display:none !important;
+}
+
+.burger-menu{
+    gap:0 !important;
+}
+
+.burger-label{
+    margin-top:0 !important;
+    font-size:0.56rem !important;
+    letter-spacing:0.14em;
+}
+
+
+/* === Navbar centering + tighter bordered menu list (2026-04-05e) === */
+.nav-action-btn{
+    justify-content:center !important;
+    align-items:center !important;
+    text-align:center;
+}
+
+.nav-action-btn i,
+.nav-action-btn .nav-action-label{
+    margin:0 auto !important;
+    align-self:center !important;
+}
+
+#nav-search{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+}
+
+#nav-search span{
+    display:none !important;
+}
+
+#nav-search i{
+    margin:0 !important;
+    font-size:1.15rem;
+}
+
+.nav-theme-btn .nav-theme-label,
+.nav-lang-btn .nav-lang-label,
+.burger-label{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100%;
+    text-align:center;
+}
+
+.nav-menu{
+    gap:11px !important;
+    padding-top:14px !important;
+    padding-bottom:14px !important;
+}
+
+.nav-menu .nav-link{
+    border:1px solid var(--nm-border) !important;
+    background:rgba(255,255,255,0.02) !important;
+    min-height:44px;
+    padding:6px 12px !important;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+}
+
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link.active{
+    border-color:var(--nm-accent) !important;
+}
+
+@media (max-width:520px){
+    .nav-menu{
+        gap:10px !important;
+        padding-top:12px !important;
+        padding-bottom:12px !important;
+    }
+
+    .nav-menu .nav-link{
+        min-height:40px;
+        padding:5px 10px !important;
+        font-size:0.86rem;
+    }
+}
+
+
+/* === Assistant page full chat mode (2026-04-05f) === */
+.assistant-page-body{
+    overflow:hidden;
+}
+
+.assistant-page-body .page-header,
+.assistant-page-body .assistant-page-note,
+.assistant-page-body .main-footer{
+    display:none !important;
+}
+
+.assistant-page-body .assistant-page-content{
+    max-width:none;
+    height:calc((var(--vh, 1vh) * 100) - var(--nav-h, 70px));
+    padding:calc(var(--nav-h, 70px) + 10px) 12px 12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+}
+
+.assistant-page-body .assistant-page-content > .content-section{
+    flex:1 1 auto;
+    min-height:0;
+    padding:0;
+    margin:0 auto;
+    width:min(100%, 900px);
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    overflow:hidden;
+}
+
+.assistant-page-body .assistant-page-root,
+.assistant-page-body .assistant-shell,
+.assistant-page-body .assistant-shell--page,
+.assistant-page-body .assistant-shell--page .assistant-panel,
+.assistant-page-body .assistant-shell--page .assistant-body,
+.assistant-page-body .assistant-shell--page .assistant-chat{
+    height:100%;
+    min-height:0;
+}
+
+.assistant-page-body .assistant-shell--page .assistant-panel{
+    width:min(100%, 900px);
+    border-radius:24px;
+}
+
+.assistant-page-body .assistant-shell--page .assistant-chat{
+    max-height:none;
+    min-height:0;
+}
+
+@media (max-width: 640px){
+    .assistant-page-body .assistant-page-content{
+        padding:calc(var(--nav-h, 70px) + 8px) 8px 8px;
+    }
+
+    .assistant-page-body .assistant-shell--page .assistant-panel{
+        border-radius:20px;
+    }
+}
+
+
+/* === Hard-center top nav controls + cleaner assistant header (2026-04-05g) === */
+.nav-action-btn,
+.burger-menu{
+    position:relative;
+    overflow:hidden;
+}
+
+#nav-search i,
+.nav-theme-btn .nav-theme-label,
+.nav-lang-btn .nav-lang-label,
+.burger-menu .burger-label{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    transform:translate(-50%, -50%) !important;
+    margin:0 !important;
+    width:auto !important;
+    height:auto !important;
+    line-height:1 !important;
+    text-align:center !important;
+    display:block !important;
+}
+
+#nav-search i{
+    font-size:1.2rem !important;
+}
+
+.nav-theme-btn .nav-theme-label{
+    font-size:1.15rem !important;
+}
+
+.nav-lang-btn .nav-lang-label,
+.burger-menu .burger-label{
+    font-size:0.92rem !important;
+}
+
+.burger-menu .burger-label{
+    font-size:0.52rem !important;
+    letter-spacing:0.14em;
+}
+
+.assistant-page-body .assistant-subtitle{
+    display:none !important;
+}
+
+.assistant-page-body .assistant-title{
+    font-family:var(--font-secondary);
+    font-size:1.6rem;
+    line-height:1.12;
+    color:var(--nm-text-accent);
+    letter-spacing:0.01em;
+}
+
+.assistant-page-body .assistant-header{
+    padding:18px 18px 14px;
+}
+
+.assistant-page-body .assistant-title-wrap{
+    display:flex;
+    align-items:center;
+    min-height:38px;
+}
+
+@media (max-width:520px){
+    .nav-lang-btn .nav-lang-label{font-size:0.88rem !important;}
+    .burger-menu .burger-label{font-size:0.48rem !important;}
+    .assistant-page-body .assistant-title{font-size:1.42rem;}
+}
+
+
+/* === Wider mobile reading layout with lighter framing (2026-04-05h) === */
+@media (max-width: 640px){
+    .phone-container{
+        padding-left:8px !important;
+        padding-right:8px !important;
+    }
+
+    .home-screen,
+    .page-content{
+        padding-left:8px !important;
+        padding-right:8px !important;
+    }
+
+    .hero-section,
+    .content-section{
+        border:none !important;
+        box-shadow:none !important;
+    }
+
+    .hero-section{
+        padding:28px 10px 24px !important;
+        margin-bottom:24px;
+    }
+
+    .content-section{
+        padding:14px 8px !important;
+        background:transparent !important;
+        margin-bottom:14px;
+    }
+
+    .hero-subtitle,
+    .hero-kicker,
+    .content-section p,
+    .content-section li,
+    .assistant-bubble-text{
+        max-width:none !important;
+        width:100%;
+    }
+
+    .hero-kicker,
+    .content-section p,
+    .assistant-bubble-text{
+        font-size:0.98rem;
+        line-height:1.5;
+    }
+
+    .content-section h2{
+        border-bottom:none !important;
+        padding-bottom:0 !important;
+        margin-bottom:14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* === Homepage badge stack for stars/forks/downloads (2026-04-05m) === */
+.trust-item--badges{
+    gap:6px;
+}
+
+.trust-badge-img{
+    display:block;
+    max-width:100%;
+    height:20px;
+}
+
+
+/* === Snake removed + navbar controls squared harder (2026-04-05n) === */
+html::before,
+html::after,
+body::before,
+body::after,
+#border-snake{
+    display:none !important;
+    content:none !important;
+}
+
+.nav-action-btn,
+#nav-search,
+.burger-menu,
+.nav-menu,
+.nav-menu .nav-link{
+    border-radius:0 !important;
+    border-top-left-radius:0 !important;
+    border-top-right-radius:0 !important;
+    border-bottom-left-radius:0 !important;
+    border-bottom-right-radius:0 !important;
+    -webkit-appearance:none !important;
+    appearance:none !important;
+    clip-path:inset(0) !important;
+}
+
+.nav-action-btn::before,
+.nav-action-btn::after,
+#nav-search::before,
+#nav-search::after,
+.burger-menu::before,
+.burger-menu::after,
+.nav-link::before,
+.nav-link::after{
+    border-radius:0 !important;
+}
+
+
+/* === Remove community verified + square nav + 16:9 hero image (2026-04-05o) === */
+.hero-logo-img{
+    width:min(100%, 220px) !important;
+    aspect-ratio:16 / 9;
+    height:auto !important;
+    object-fit:contain;
+    display:block;
+    margin:0 auto;
+}
+
+.nav-action-btn,
+#nav-search,
+.burger-menu,
+.nav-menu .nav-link{
+    border-radius:0 !important;
+}
+
+
+/* === Explicit audited button corner pass (2026-04-05p) === */
+button,
+a.btn,
+.btn,
+.btn-primary,
+.btn-ghost,
+.nav-action-btn,
+.nav-lang-btn,
+.nav-theme-btn,
+#nav-search,
+.burger-menu,
+.nav-link,
+.hero-cta,
+.feature-cta,
+.contact-cta,
+.contact-page-btn,
+.copy-btn,
+.footer-mini-btn,
+.app-icon,
+.assistant-chip,
+.assistant-open-link,
+.assistant-home,
+.assistant-refresh,
+.assistant-close,
+.assistant-trigger,
+.search-close,
+.close-modal,
+.payment-btn,
+.sponsor-btn,
+.faq-link-btn,
+.language-selection-btn,
+.theme-selection-btn,
+.accept-btn,
+.decline-btn,
+.carousel-nav-btn,
+.prev-btn,
+.next-btn,
+.nm-btn,
+.footer-link-buttons a,
+.featured-store-cta .btn,
+.featured-badge,
+.badge,
+.hero-badge,
+.product-badge,
+.trust-badge-img{
+    border-radius:0 !important;
+    border-top-left-radius:0 !important;
+    border-top-right-radius:0 !important;
+    border-bottom-left-radius:0 !important;
+    border-bottom-right-radius:0 !important;
+    -webkit-appearance:none !important;
+    appearance:none !important;
+}
+
+
+/* === Broad sharp-corner pass from screenshot review (2026-04-05q) === */
+.hero-section,
+.content-section,
+.trust-item,
+.features-grid .feature-card,
+.community-grid .community-card,
+.category,
+.category-header,
+.tool-item,
+.tool-header,
+.tool-description,
+.callout,
+.glance-card,
+.badge,
+.contact-grid .app-icon,
+.footer-mini-btn,
+.footer-link-buttons a,
+.sponsor-btn,
+.main-footer,
+.assistant-panel,
+.assistant-bubble,
+.assistant-chip,
+.assistant-open-link,
+.assistant-inline-code,
+.assistant-rich-section,
+.code-container,
+.modal-content,
+.screen,
+.phone-container,
+.search-modal,
+.search-input,
+.search-close,
+.nav-menu,
+.nav-action-btn,
+#nav-search,
+.burger-menu,
+.nav-menu .nav-link,
+.copy-btn,
+.btn,
+.btn-primary,
+.btn-ghost,
+.hero-cta,
+.feature-cta,
+.contact-cta,
+.contact-page-btn,
+.payment-btn,
+.faq-link-btn,
+.language-selection-btn,
+.theme-selection-btn,
+.accept-btn,
+.decline-btn,
+.carousel-nav-btn,
+.prev-btn,
+.next-btn,
+.nm-btn{
+    border-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.hero-logo-img{
+    width: 240px !important;
+    max-width: min(100%, 240px) !important;
+    height: 135px !important;
+    aspect-ratio: auto !important;
+    object-fit: fill !important;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 640px){
+    .hero-logo-img{
+        width: min(100%, 220px) !important;
+        height: calc(min(100%, 220px) * 9 / 16) !important;
+    }
+}
+
+
+/* === Assistant/FAQ expansion + sage accent + square hero logo (2026-04-05r) === */
+:root{
+    --sage-green: #9caf88;
+    --nm-sage: #9caf88;
+}
+
+.hero-logo-img{
+    width: clamp(96px, 28vw, 180px) !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+}
+
+.hero-section::before{
+    background:
+      radial-gradient(900px 420px at 12% -10%, rgba(156,175,136,0.12), transparent 58%),
+      radial-gradient(820px 340px at 88% 12%, rgba(198,155,255,0.18), transparent 56%),
+      radial-gradient(700px 260px at 50% 120%, rgba(156,175,136,0.10), transparent 60%);
+}
+
+.badge-alt2,
+.assistant-open-link,
+.note-success,
+.copy-success,
+.footer-mini-btn:hover,
+.btn-ghost:hover{
+    border-color: var(--nm-sage) !important;
+    color: var(--nm-sage) !important;
+}
+
+
+/* === Sage Green integrated as secondary palette accent (2026-04-05s) === */
+:root{
+    --nm-sage: #9caf88;
+    --nm-sage-soft: rgba(156, 175, 136, 0.16);
+    --nm-sage-mid: rgba(156, 175, 136, 0.34);
+    --nm-sage-glow: rgba(156, 175, 136, 0.48);
+}
+
+body.light-theme{
+    --nm-sage-soft: rgba(124, 143, 108, 0.10);
+    --nm-sage-mid: rgba(124, 143, 108, 0.22);
+    --nm-sage-glow: rgba(124, 143, 108, 0.32);
+}
+
+.main-nav{
+    background-image: linear-gradient(90deg, rgba(205,147,255,0.10), rgba(156,175,136,0.08), rgba(205,147,255,0.10));
+}
+
+.hero-section,
+.content-section,
+.feature-card,
+.community-card,
+.tool-item,
+.category-header,
+.assistant-panel,
+.search-modal,
+.glance-card,
+.callout{
+    background-image:
+        linear-gradient(180deg, rgba(205,147,255,0.06), rgba(156,175,136,0.04)),
+        linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0));
+}
+
+.hero-section::before,
+.feature-card::before,
+.glance-card::after{
+    box-shadow: 0 0 0 1px transparent;
+}
+
+.feature-icon,
+.glance-card i,
+.tool-expand-icon,
+.toggle-icon,
+.assistant-open-link,
+.badge-alt2,
+.hero-badge i,
+.trust-item i{
+    color: var(--nm-sage) !important;
+}
+
+.assistant-open-link,
+.btn-ghost,
+.footer-mini-btn:hover,
+.copy-success,
+.note-success,
+.badge-alt2{
+    border-color: var(--nm-sage-mid) !important;
+    box-shadow: 0 0 0 1px rgba(156,175,136,0.10) inset;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-action-btn:hover,
+.burger-menu:hover,
+.assistant-chip:hover,
+.assistant-chip.is-active{
+    box-shadow: 0 0 0 1px var(--nm-sage-mid) inset !important;
+}
+
+::selection{
+    background: rgba(156,175,136,0.28);
+    color: var(--nm-text);
+}
+
+
+/* === Stronger Sage Green usage + burger menu touch fix (2026-04-05t) === */
+.main-nav{
+    background-image: linear-gradient(90deg, rgba(156,175,136,0.14), rgba(205,147,255,0.12), rgba(156,175,136,0.14)) !important;
+}
+
+.nav-action-btn,
+.burger-menu,
+.nav-menu .nav-link,
+.feature-card,
+.community-card,
+.trust-item,
+.category-header,
+.tool-item,
+.assistant-panel,
+.content-section,
+.hero-section{
+    box-shadow: 0 0 0 1px rgba(156,175,136,0.12) inset !important;
+}
+
+.hero-section{
+    background-image:
+      radial-gradient(900px 420px at 10% -10%, rgba(156,175,136,0.18), transparent 58%),
+      radial-gradient(820px 340px at 90% 12%, rgba(205,147,255,0.18), transparent 56%),
+      linear-gradient(180deg, rgba(156,175,136,0.08), rgba(205,147,255,0.05)) !important;
+}
+
+.page-header h1,
+.content-section h2,
+.content-section h3,
+.tool-title,
+.feature-title,
+.community-card span,
+.glance-title,
+.assistant-title{
+    text-shadow: 0 0 12px rgba(156,175,136,0.18);
+}
+
+.feature-icon,
+.glance-card i,
+.trust-item i,
+.community-card i,
+.tool-expand-icon,
+.toggle-icon,
+.assistant-open-link,
+.hero-badge i,
+.nav-action-btn:hover,
+.burger-menu:hover{
+    color: var(--nm-sage) !important;
+}
+
+.nav-menu .nav-link,
+.nav-menu .nav-link:visited{
+    color: var(--nm-text) !important;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:active,
+.nav-menu .nav-link:focus,
+.nav-menu .nav-link.active{
+    color: var(--nm-text) !important;
+    background: linear-gradient(90deg, rgba(156,175,136,0.12), rgba(205,147,255,0.10)) !important;
+    border-color: rgba(156,175,136,0.45) !important;
+    box-shadow: 0 0 0 1px rgba(156,175,136,0.18) inset !important;
+}
+
+.nav-link:hover i,
+.nav-link:active i,
+.nav-link:focus i,
+.nav-link.active i{
+    color: var(--nm-text) !important;
+}
+
+.nav-action-btn:hover,
+.burger-menu:hover,
+.nav-action-btn:active,
+.burger-menu:active{
+    background: linear-gradient(180deg, rgba(156,175,136,0.16), rgba(205,147,255,0.12)) !important;
+    border-color: rgba(156,175,136,0.45) !important;
+}
+
+.badge,
+.badge-alt,
+.badge-alt2,
+.footer-mini-btn,
+.btn-ghost,
+.assistant-chip,
+.assistant-open-link{
+    box-shadow: 0 0 0 1px rgba(156,175,136,0.14) inset !important;
+}
+
+::selection{
+    background: rgba(156,175,136,0.34);
+    color: #ffffff;
+}
+
+
+/* === Purple + Sage holographic effect pass (2026-04-05u) === */
+:root{
+    --nm-holo-purple: rgba(205,147,255,0.24);
+    --nm-holo-sage: rgba(156,175,136,0.22);
+    --nm-holo-white: rgba(255,255,255,0.10);
+}
+
+body{
+    background-image:
+      radial-gradient(1200px 520px at 8% -8%, rgba(205,147,255,0.16), transparent 58%),
+      radial-gradient(1100px 460px at 92% 4%, rgba(156,175,136,0.12), transparent 56%),
+      linear-gradient(180deg, rgba(205,147,255,0.02), rgba(156,175,136,0.02));
+}
+
+.main-nav,
+.hero-section,
+.content-section,
+.feature-card,
+.community-card,
+.trust-item,
+.category-header,
+.tool-item,
+.assistant-panel,
+.search-modal,
+.glance-card,
+.callout{
+    position: relative;
+    background-image:
+      linear-gradient(135deg, rgba(205,147,255,0.12), rgba(156,175,136,0.08) 42%, rgba(255,255,255,0.03) 52%, rgba(205,147,255,0.10) 78%, rgba(156,175,136,0.08)),
+      linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.18) inset,
+      0 0 0 1px rgba(156,175,136,0.12),
+      0 14px 36px rgba(0,0,0,0.32) !important;
+}
+
+.main-nav::after,
+.hero-section::after,
+.content-section::after,
+.feature-card::after,
+.community-card::after,
+.trust-item::after,
+.category-header::after,
+.tool-item::after,
+.assistant-panel::after,
+.search-modal::after,
+.glance-card::after,
+.callout::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(115deg, transparent 0%, transparent 28%, rgba(255,255,255,0.12) 40%, transparent 52%, transparent 100%);
+    mix-blend-mode: screen;
+    opacity: 0.55;
+}
+
+.nav-action-btn,
+.burger-menu,
+.nav-menu .nav-link,
+.footer-mini-btn,
+.btn,
+.btn-ghost,
+.assistant-chip,
+.assistant-open-link,
+.copy-btn,
+.sponsor-btn{
+    background-image: linear-gradient(135deg, rgba(205,147,255,0.14), rgba(156,175,136,0.10), rgba(255,255,255,0.03)) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.22) inset,
+      0 0 0 1px rgba(156,175,136,0.10) !important;
+}
+
+.nav-action-btn:hover,
+.burger-menu:hover,
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:active,
+.nav-menu .nav-link.active,
+.footer-mini-btn:hover,
+.btn:hover,
+.assistant-chip:hover,
+.assistant-chip.is-active,
+.assistant-open-link:hover,
+.sponsor-btn:hover{
+    background-image: linear-gradient(135deg, rgba(205,147,255,0.22), rgba(156,175,136,0.16), rgba(255,255,255,0.05)) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.32) inset,
+      0 0 18px rgba(156,175,136,0.12),
+      0 0 28px rgba(205,147,255,0.16) !important;
+}
+
+.feature-icon,
+.glance-card i,
+.community-card i,
+.trust-item i,
+.tool-expand-icon,
+.toggle-icon,
+.hero-badge i,
+.assistant-open-link,
+.feature-cta,
+.nav-action-btn:hover,
+.burger-menu:hover{
+    text-shadow: 0 0 10px rgba(205,147,255,0.25), 0 0 14px rgba(156,175,136,0.18);
+}
+
+.hero-section::before{
+    background:
+      radial-gradient(1000px 440px at 10% -10%, rgba(205,147,255,0.18), transparent 56%),
+      radial-gradient(880px 320px at 88% 10%, rgba(156,175,136,0.16), transparent 54%),
+      linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.06) 48%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .main-nav::after,
+    .hero-section::after,
+    .content-section::after,
+    .feature-card::after,
+    .community-card::after,
+    .trust-item::after,
+    .category-header::after,
+    .tool-item::after,
+    .assistant-panel::after,
+    .search-modal::after,
+    .glance-card::after,
+    .callout::after{
+        opacity: 0.28;
+    }
+}
+
+
+/* === Tighter hero spacing + square logos + stronger holo (2026-04-05v) === */
+@keyframes holoShiftStrong {
+    0% { background-position: -140% 0; }
+    100% { background-position: 220% 0; }
+}
+
+.phone-container{
+    padding-top: calc(var(--nav-h, 70px) + 4px) !important;
+}
+
+.home-screen{
+    padding-top: 4px !important;
+}
+
+.hero-section{
+    margin-top: 0 !important;
+}
+
+.hero-logo-img,
+.nav-title h1 img[data-site-logo="1"]{
+    border-radius: 0 !important;
+}
+
+.main-nav,
+.hero-section,
+.content-section,
+.feature-card,
+.community-card,
+.trust-item,
+.category-header,
+.tool-item,
+.assistant-panel,
+.search-modal,
+.glance-card,
+.callout{
+    background-image:
+      linear-gradient(135deg, rgba(205,147,255,0.20), rgba(156,175,136,0.14) 36%, rgba(255,255,255,0.06) 50%, rgba(205,147,255,0.18) 74%, rgba(156,175,136,0.12)),
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0)) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.26) inset,
+      0 0 0 1px rgba(156,175,136,0.18),
+      0 0 18px rgba(205,147,255,0.10),
+      0 0 28px rgba(156,175,136,0.08),
+      0 18px 42px rgba(0,0,0,0.34) !important;
+}
+
+.main-nav::after,
+.hero-section::after,
+.content-section::after,
+.feature-card::after,
+.community-card::after,
+.trust-item::after,
+.category-header::after,
+.tool-item::after,
+.assistant-panel::after,
+.search-modal::after,
+.glance-card::after,
+.callout::after{
+    background:
+      linear-gradient(112deg, transparent 0%, transparent 24%, rgba(255,255,255,0.22) 40%, rgba(205,147,255,0.14) 48%, rgba(156,175,136,0.14) 54%, transparent 68%, transparent 100%) !important;
+    background-size: 220% 100% !important;
+    opacity: 0.78 !important;
+    animation: holoShiftStrong 7.5s linear infinite;
+}
+
+.nav-action-btn,
+.burger-menu,
+.nav-menu .nav-link,
+.footer-mini-btn,
+.btn,
+.btn-ghost,
+.assistant-chip,
+.assistant-open-link,
+.copy-btn,
+.sponsor-btn{
+    background-image: linear-gradient(135deg, rgba(205,147,255,0.20), rgba(156,175,136,0.14), rgba(255,255,255,0.05)) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.28) inset,
+      0 0 0 1px rgba(156,175,136,0.14),
+      0 0 16px rgba(205,147,255,0.08) !important;
+}
+
+.hero-title,
+.page-header h1,
+.content-section h2,
+.content-section h3,
+.tool-title,
+.feature-title,
+.community-card span,
+.glance-title,
+.assistant-title{
+    text-shadow: 0 0 18px rgba(205,147,255,0.18), 0 0 10px rgba(156,175,136,0.16) !important;
+}
+
+
+/* === Stronger holo background + scroll glass + menu text fix + tighter hero gap (2026-04-05x) === */
+:root{
+    --scroll-shift: 0px;
+}
+
+html,
+body{
+    background-color: #261d31 !important;
+}
+
+body{
+    background-image:
+      radial-gradient(1400px 720px at 6% -8%, rgba(205,147,255,0.28), transparent 56%),
+      radial-gradient(1200px 640px at 92% 8%, rgba(156,175,136,0.24), transparent 54%),
+      linear-gradient(135deg, rgba(66,49,83,0.98) 0%, rgba(48,36,63,0.98) 34%, rgba(38,56,44,0.94) 64%, rgba(58,40,74,0.98) 100%) !important;
+    background-attachment: fixed, fixed, fixed;
+    background-position:
+      center calc(var(--scroll-shift) * -0.10),
+      center calc(var(--scroll-shift) * 0.08),
+      center calc(var(--scroll-shift) * 0.04);
+}
+
+.screen,
+.phone-container,
+.home-screen,
+.page-content,
+.assistant-page-content{
+    background: transparent !important;
+}
+
+.main-nav,
+.hero-section,
+.content-section,
+.feature-card,
+.community-card,
+.trust-item,
+.category-header,
+.tool-item,
+.assistant-panel,
+.search-modal,
+.glance-card,
+.callout{
+    background-image:
+      linear-gradient(135deg, rgba(205,147,255,0.24), rgba(156,175,136,0.18) 34%, rgba(255,255,255,0.09) 48%, rgba(205,147,255,0.20) 72%, rgba(156,175,136,0.16)),
+      linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0)) !important;
+}
+
+.main-nav::after,
+.hero-section::after,
+.content-section::after,
+.feature-card::after,
+.community-card::after,
+.trust-item::after,
+.category-header::after,
+.tool-item::after,
+.assistant-panel::after,
+.search-modal::after,
+.glance-card::after,
+.callout::after{
+    background:
+      linear-gradient(112deg, transparent 0%, transparent 24%, rgba(255,255,255,0.26) 40%, rgba(205,147,255,0.18) 48%, rgba(156,175,136,0.18) 54%, transparent 68%, transparent 100%) !important;
+    background-size: 220% 100% !important;
+    background-position: calc(-140% + (var(--scroll-shift) * 0.32)) 0 !important;
+    opacity: 0.82 !important;
+}
+
+.burger-menu,
+.burger-menu .burger-label,
+.burger-menu:hover,
+.burger-menu:hover .burger-label,
+.burger-menu:focus,
+.burger-menu:focus .burger-label,
+.burger-menu:active,
+.burger-menu:active .burger-label,
+.burger-menu.active,
+.burger-menu.active .burger-label{
+    color: var(--nm-text) !important;
+    -webkit-text-fill-color: var(--nm-text) !important;
+}
+
+.burger-menu{
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.burger-menu:active,
+.burger-menu:hover,
+.burger-menu:focus,
+.burger-menu.active{
+    background: linear-gradient(135deg, rgba(205,147,255,0.24), rgba(156,175,136,0.16), rgba(255,255,255,0.06)) !important;
+    border-color: rgba(205,147,255,0.40) !important;
+}
+
+@media (max-width: 640px){
+    .phone-container{
+        padding-top: calc(var(--nav-h, 70px) - 22px) !important;
+    }
+    .home-screen{
+        padding-top: 0 !important;
+    }
+    .hero-section{
+        margin-top: 0 !important;
+    }
+}
+
+
+/* === Performance pass: remove glass/sheen + theme-based icon colors (2026-04-05y) === */
+body.dark-theme i,
+body.dark-theme .feature-icon,
+body.dark-theme .tool-expand-icon,
+body.dark-theme .toggle-icon,
+body.dark-theme .community-card i,
+body.dark-theme .glance-card i,
+body.dark-theme .trust-item i,
+body.dark-theme .hero-badge i,
+body.dark-theme .nav-action-btn i{
+    color: #ffffff !important;
+}
+
+body.light-theme i,
+body.light-theme .feature-icon,
+body.light-theme .tool-expand-icon,
+body.light-theme .toggle-icon,
+body.light-theme .community-card i,
+body.light-theme .glance-card i,
+body.light-theme .trust-item i,
+body.light-theme .hero-badge i,
+body.light-theme .nav-action-btn i{
+    color: var(--nm-accent) !important;
+}
+
+.main-nav::after,
+.hero-section::after,
+.content-section::after,
+.feature-card::after,
+.community-card::after,
+.trust-item::after,
+.category-header::after,
+.tool-item::after,
+.assistant-panel::after,
+.search-modal::after,
+.glance-card::after,
+.callout::after{
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+}
+
+.main-nav,
+.nav-menu,
+.content-section,
+.feature-card,
+.tool-card,
+.tool-item,
+.category-header,
+.modal-content,
+.code-container,
+.contact-grid .app-icon,
+.community-card,
+.nav-action-btn,
+.assistant-panel,
+.search-modal,
+.glance-card,
+.callout{
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+body{
+    background-attachment: scroll, scroll, scroll !important;
+}
+
+
+/* === Clean light theme: remove dark overlay wall (2026-04-05z) === */
+body.light-theme,
+body.light-theme html{
+    background-color: #ffffff !important;
+    background-image:
+      radial-gradient(1000px 520px at 8% -8%, rgba(205,147,255,0.08), transparent 58%),
+      radial-gradient(900px 460px at 92% 8%, rgba(156,175,136,0.07), transparent 56%),
+      linear-gradient(180deg, rgba(255,255,255,1), rgba(250,247,253,1)) !important;
+}
+
+body.light-theme .main-nav,
+body.light-theme .hero-section,
+body.light-theme .content-section,
+body.light-theme .feature-card,
+body.light-theme .community-card,
+body.light-theme .trust-item,
+body.light-theme .category-header,
+body.light-theme .tool-item,
+body.light-theme .assistant-panel,
+body.light-theme .search-modal,
+body.light-theme .glance-card,
+body.light-theme .callout,
+body.light-theme .nav-action-btn,
+body.light-theme .burger-menu,
+body.light-theme .nav-menu .nav-link,
+body.light-theme .footer-mini-btn,
+body.light-theme .btn,
+body.light-theme .btn-ghost,
+body.light-theme .assistant-chip,
+body.light-theme .assistant-open-link,
+body.light-theme .copy-btn,
+body.light-theme .sponsor-btn{
+    background-image: none !important;
+    background-color: rgba(255,255,255,0.96) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.20) inset,
+      0 0 0 1px rgba(156,175,136,0.08) !important;
+}
+
+body.light-theme .main-nav::before,
+body.light-theme .main-nav::after,
+body.light-theme .hero-section::before,
+body.light-theme .hero-section::after,
+body.light-theme .content-section::after,
+body.light-theme .feature-card::before,
+body.light-theme .feature-card::after,
+body.light-theme .community-card::after,
+body.light-theme .trust-item::after,
+body.light-theme .category-header::after,
+body.light-theme .tool-item::after,
+body.light-theme .assistant-panel::after,
+body.light-theme .search-modal::after,
+body.light-theme .glance-card::after,
+body.light-theme .callout::after{
+    display:none !important;
+    content:none !important;
+}
+
+
+/* === Light theme holographic background parity (2026-04-05aa) === */
+body.light-theme{
+    background-color: #ffffff !important;
+    background-image:
+      radial-gradient(1400px 720px at 6% -8%, rgba(205,147,255,0.18), transparent 56%),
+      radial-gradient(1200px 640px at 92% 8%, rgba(156,175,136,0.16), transparent 54%),
+      linear-gradient(135deg, rgba(252,249,255,0.98) 0%, rgba(247,241,252,0.98) 34%, rgba(244,248,244,0.96) 64%, rgba(250,244,255,0.98) 100%) !important;
+}
+
+body.light-theme .main-nav,
+body.light-theme .hero-section,
+body.light-theme .content-section,
+body.light-theme .feature-card,
+body.light-theme .community-card,
+body.light-theme .trust-item,
+body.light-theme .category-header,
+body.light-theme .tool-item,
+body.light-theme .assistant-panel,
+body.light-theme .search-modal,
+body.light-theme .glance-card,
+body.light-theme .callout,
+body.light-theme .nav-action-btn,
+body.light-theme .burger-menu,
+body.light-theme .nav-menu .nav-link,
+body.light-theme .footer-mini-btn,
+body.light-theme .btn,
+body.light-theme .btn-ghost,
+body.light-theme .assistant-chip,
+body.light-theme .assistant-open-link,
+body.light-theme .copy-btn,
+body.light-theme .sponsor-btn{
+    background-image:
+      linear-gradient(135deg, rgba(205,147,255,0.12), rgba(156,175,136,0.10) 34%, rgba(255,255,255,0.55) 50%, rgba(205,147,255,0.10) 72%, rgba(156,175,136,0.10)),
+      linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.58)) !important;
+    background-color: rgba(255,255,255,0.94) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.18) inset,
+      0 0 0 1px rgba(156,175,136,0.10),
+      0 8px 22px rgba(205,147,255,0.05) !important;
+}
+
+body.light-theme .main-nav::after,
+body.light-theme .hero-section::after,
+body.light-theme .content-section::after,
+body.light-theme .feature-card::after,
+body.light-theme .community-card::after,
+body.light-theme .trust-item::after,
+body.light-theme .category-header::after,
+body.light-theme .tool-item::after,
+body.light-theme .assistant-panel::after,
+body.light-theme .search-modal::after,
+body.light-theme .glance-card::after,
+body.light-theme .callout::after{
+    display:block !important;
+    content:"" !important;
+    opacity:0.58 !important;
+    background:
+      linear-gradient(112deg, transparent 0%, transparent 24%, rgba(255,255,255,0.70) 40%, rgba(205,147,255,0.18) 48%, rgba(156,175,136,0.18) 54%, transparent 68%, transparent 100%) !important;
+    background-size: 220% 100% !important;
+}
+
+
+/* === Stronger visible holographic background for white theme (2026-04-05ab) === */
+body.light-theme{
+    background-color: #f8f4fb !important;
+    background-image:
+      radial-gradient(1200px 720px at 4% -8%, rgba(205,147,255,0.30), transparent 52%),
+      radial-gradient(1100px 660px at 96% 10%, rgba(156,175,136,0.22), transparent 50%),
+      radial-gradient(900px 540px at 50% 36%, rgba(205,147,255,0.14), transparent 58%),
+      linear-gradient(135deg, rgba(250,242,255,0.98) 0%, rgba(242,236,250,0.98) 34%, rgba(237,245,238,0.96) 64%, rgba(247,239,252,0.98) 100%) !important;
+    background-attachment: fixed, fixed, fixed, fixed;
+}
+
+body.light-theme .screen,
+body.light-theme .phone-container,
+body.light-theme .home-screen,
+body.light-theme .page-content,
+body.light-theme .assistant-page-content{
+    background: transparent !important;
+}
+
+body.light-theme .main-nav,
+body.light-theme .hero-section,
+body.light-theme .content-section,
+body.light-theme .feature-card,
+body.light-theme .community-card,
+body.light-theme .trust-item,
+body.light-theme .category-header,
+body.light-theme .tool-item,
+body.light-theme .assistant-panel,
+body.light-theme .search-modal,
+body.light-theme .glance-card,
+body.light-theme .callout,
+body.light-theme .nav-action-btn,
+body.light-theme .burger-menu,
+body.light-theme .nav-menu .nav-link,
+body.light-theme .footer-mini-btn,
+body.light-theme .btn,
+body.light-theme .btn-ghost,
+body.light-theme .assistant-chip,
+body.light-theme .assistant-open-link,
+body.light-theme .copy-btn,
+body.light-theme .sponsor-btn{
+    background-image:
+      linear-gradient(135deg, rgba(205,147,255,0.18), rgba(156,175,136,0.14) 34%, rgba(255,255,255,0.72) 50%, rgba(205,147,255,0.16) 72%, rgba(156,175,136,0.12)),
+      linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.66)) !important;
+    background-color: rgba(255,255,255,0.88) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.20) inset,
+      0 0 0 1px rgba(156,175,136,0.12),
+      0 12px 28px rgba(205,147,255,0.08) !important;
+}
+
+
+/* === Stronger white-theme holographic visibility + text cleanup (2026-04-05ac) === */
+body.light-theme{
+    background-color: #f6f0fa !important;
+    background-image:
+      radial-gradient(1400px 820px at 2% -8%, rgba(205,147,255,0.42), transparent 50%),
+      radial-gradient(1250px 760px at 98% 10%, rgba(156,175,136,0.30), transparent 50%),
+      radial-gradient(980px 620px at 52% 36%, rgba(205,147,255,0.24), transparent 56%),
+      linear-gradient(135deg, rgba(248,238,255,0.99) 0%, rgba(240,232,250,0.99) 34%, rgba(232,243,233,0.97) 64%, rgba(244,236,252,0.99) 100%) !important;
+}
+
+body.light-theme .main-nav,
+body.light-theme .hero-section,
+body.light-theme .content-section,
+body.light-theme .feature-card,
+body.light-theme .community-card,
+body.light-theme .trust-item,
+body.light-theme .category-header,
+body.light-theme .tool-item,
+body.light-theme .assistant-panel,
+body.light-theme .search-modal,
+body.light-theme .glance-card,
+body.light-theme .callout,
+body.light-theme .nav-action-btn,
+body.light-theme .burger-menu,
+body.light-theme .nav-menu .nav-link,
+body.light-theme .footer-mini-btn,
+body.light-theme .btn,
+body.light-theme .btn-ghost,
+body.light-theme .assistant-chip,
+body.light-theme .assistant-open-link,
+body.light-theme .copy-btn,
+body.light-theme .sponsor-btn{
+    background-image:
+      linear-gradient(135deg, rgba(205,147,255,0.24), rgba(156,175,136,0.18) 34%, rgba(255,255,255,0.82) 50%, rgba(205,147,255,0.22) 72%, rgba(156,175,136,0.16)),
+      linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.72)) !important;
+    background-color: rgba(255,255,255,0.84) !important;
+    box-shadow:
+      0 0 0 1px rgba(205,147,255,0.24) inset,
+      0 0 0 1px rgba(156,175,136,0.14),
+      0 14px 34px rgba(205,147,255,0.10),
+      0 10px 24px rgba(156,175,136,0.06) !important;
+}
+
+body.light-theme,
+body.light-theme p,
+body.light-theme li,
+body.light-theme span,
+body.light-theme strong,
+body.light-theme label,
+body.light-theme code,
+body.light-theme .nav-link,
+body.light-theme .burger-label,
+body.light-theme .nav-action-label,
+body.light-theme .page-header p,
+body.light-theme .feature-description,
+body.light-theme .assistant-bubble-text,
+body.light-theme .assistant-message-label,
+body.light-theme .tool-description,
+body.light-theme .content-section p,
+body.light-theme .content-section li{
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+}
+
+body.light-theme .page-header h1,
+body.light-theme .hero-title,
+body.light-theme .hero-subtitle,
+body.light-theme .feature-title,
+body.light-theme .tool-title,
+body.light-theme .content-section h2,
+body.light-theme .content-section h3,
+body.light-theme .assistant-title{
+    color: #101010 !important;
+    -webkit-text-fill-color: #101010 !important;
+}
+
+
+/* === Light-theme text hard fix (2026-04-05ad) === */
+body.light-theme {
+    --nm-text: #111111;
+    --nm-text-muted: #1b1b1b;
+    --nm-text-accent: #080808;
+}
+
+body.light-theme,
+body.light-theme p,
+body.light-theme li,
+body.light-theme span,
+body.light-theme strong,
+body.light-theme label,
+body.light-theme code,
+body.light-theme small,
+body.light-theme .page-header p,
+body.light-theme .feature-description,
+body.light-theme .assistant-bubble-text,
+body.light-theme .assistant-message-label,
+body.light-theme .tool-description,
+body.light-theme .tool-description *,
+body.light-theme .tool-save-location,
+body.light-theme .tool-save-location *,
+body.light-theme .content-section p,
+body.light-theme .content-section li,
+body.light-theme .content-section li *,
+body.light-theme .category-intro,
+body.light-theme .category-intro *,
+body.light-theme .support-section p,
+body.light-theme .support-section li,
+body.light-theme .support-section li *,
+body.light-theme .sponsor-faq,
+body.light-theme .sponsor-faq *,
+body.light-theme .accordion-body,
+body.light-theme .accordion-body *,
+body.light-theme .accordion-content,
+body.light-theme .accordion-content *,
+body.light-theme .faq-answer,
+body.light-theme .faq-answer *,
+body.light-theme [style*="rgba(255,255,255"],
+body.light-theme [style*="rgba(255, 255, 255"],
+body.light-theme [style*="color: white"],
+body.light-theme [style*="color:white"],
+body.light-theme [style*="color:#fff"],
+body.light-theme [style*="color: #fff"],
+body.light-theme [style*="color:#ffffff"],
+body.light-theme [style*="color: #ffffff"] {
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+}
+
+body.light-theme .page-header h1,
+body.light-theme .hero-title,
+body.light-theme .hero-subtitle,
+body.light-theme .feature-title,
+body.light-theme .tool-title,
+body.light-theme .category-header h2,
+body.light-theme .category-header h3,
+body.light-theme .content-section h2,
+body.light-theme .content-section h3,
+body.light-theme .content-section h4,
+body.light-theme .content-section h5,
+body.light-theme .assistant-title,
+body.light-theme .tool-header h4,
+body.light-theme .faq-question,
+body.light-theme .sponsor-faq h3 {
+    color: #090909 !important;
+    -webkit-text-fill-color: #090909 !important;
+}
+
+body.light-theme .tool-item:hover .tool-description p,
+body.light-theme .tool-item:hover .tool-description *,
+body.light-theme .tool-item:active .tool-description p,
+body.light-theme .tool-item:active .tool-description *,
+body.light-theme .category:hover .tool-description p,
+body.light-theme .category:hover .tool-description * {
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+}
+
+body.light-theme .sponsor-btn,
+body.light-theme .sponsor-btn *,
+body.light-theme .faq-link-btn,
+body.light-theme .faq-link-btn *,
+body.light-theme .nav-link,
+body.light-theme .nav-link *,
+body.light-theme .burger-menu,
+body.light-theme .burger-menu *,
+body.light-theme .nav-action-btn,
+body.light-theme .nav-action-btn * {
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+}
+
+body.light-theme .sponsor-btn i,
+body.light-theme .faq-link-btn i,
+body.light-theme .nav-action-btn i,
+body.light-theme .burger-menu i,
+body.light-theme .toggle-icon,
+body.light-theme .tool-expand-icon {
+    color: var(--nm-accent) !important;
+    -webkit-text-fill-color: var(--nm-accent) !important;
+}
+
+body.light-theme .sponsor-btn:active,
+body.light-theme .sponsor-btn:hover,
+body.light-theme .faq-link-btn:active,
+body.light-theme .faq-link-btn:hover,
+body.light-theme .burger-menu:active,
+body.light-theme .burger-menu:hover,
+body.light-theme .nav-action-btn:active,
+body.light-theme .nav-action-btn:hover,
+body.light-theme .nav-link:active,
+body.light-theme .nav-link:hover {
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+}
+
+body.light-theme a:not(.btn):not(.sponsor-btn):not(.faq-link-btn):not(.assistant-open-link):not(.assistant-chip) {
+    color: #5f2b87 !important;
+    -webkit-text-fill-color: #5f2b87 !important;
+}
+
+body.light-theme .hero-section,
+body.light-theme .content-section,
+body.light-theme .tool-description,
+body.light-theme .tool-save-location,
+body.light-theme .sponsor-faq,
+body.light-theme .category-intro {
+    opacity: 1 !important;
+}
+
+
+/* === Slightly tighter title spacing below fixed nav (2026-04-05ae) === */
+.phone-container{
+    padding-top: calc(var(--nav-h, 70px) - 28px) !important;
+}
+
+.home-screen{
+    padding-top: 0 !important;
+}
+
+.page-content,
+.assistant-page-content{
+    padding-top: calc(var(--nav-h, 70px) + 6px) !important;
+}
+
+.page-header{
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+}
+
+.hero-section{
+    margin-top: 0 !important;
+}
+
+@media (max-width: 640px){
+    .phone-container{
+        padding-top: calc(var(--nav-h, 70px) - 30px) !important;
+    }
+    .page-content,
+    .assistant-page-content{
+        padding-top: calc(var(--nav-h, 70px) + 2px) !important;
+    }
+}
+
+
+/* === Hard-fixed top navbar (2026-04-06a) === */
+html, body {
+    overflow-x: hidden !important;
+}
+
+.main-nav {
+    position: fixed !important;
+    inset: 0 0 auto 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    will-change: transform;
+}
+
+.nav-menu {
+    position: fixed !important;
+    top: var(--nav-h, 70px) !important;
+}
+
+.screen,
+.home-screen,
+.page-content,
+.assistant-page-content {
+    position: relative;
+    z-index: 1;
 }

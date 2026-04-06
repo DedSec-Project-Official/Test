@@ -152,7 +152,7 @@
 <span class="burger-line"></span>
 <span class="burger-line"></span>
 <span class="burger-line"></span>
-<span class="burger-label" data-en="Menu" data-gr="Μενού">Menu</span>
+<span class="burger-label" data-en="MENU" data-gr="MENU">MENU</span>
 </button>
 <div class="nav-menu" id="nav-menu">
 <a class="nav-link active" data-en="Home" data-gr="Αρχική" href="/">Home</a>
@@ -161,16 +161,17 @@
 <a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθετε για τα Εργαλεία" href="Pages/learn-about-the-tools.html">Learn About The Tools</a>
 <a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="Pages/butsystem-exclusive.html">ButSystem.py (Exclusive)</a>
 <a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="Pages/faq.html">Frequently Asked Questions</a>
+<a class="nav-link" data-en="Assistant" data-gr="Βοηθός" href="Pages/assistant.html">Assistant</a>
 <a class="nav-link" data-en="Collaborations" data-gr="Συνεργασίες" href="Pages/collaborations.html">Collaborations</a>
 <a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="Pages/contact-credits.html">Contact &amp; Credits</a>
 <a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="Pages/privacy-policy.html">Privacy Policy</a>
 </div>
 <div class="nav-actions">
-<button class="nav-action-btn" id="nav-theme-switcher">
-<span class="nav-action-label" data-en="Change Theme" data-gr="Αλλαγή Θέματος">Change Theme</span>
+<button aria-label="Toggle theme" class="nav-action-btn nav-theme-btn" id="nav-theme-switcher" type="button">
+<span aria-hidden="true" class="nav-action-label nav-theme-label" data-light="☀" data-dark="☾">☀</span>
 </button>
-<button class="nav-action-btn" id="nav-lang-switcher">
-<span class="nav-action-label" data-en="Αλλαγή Γλώσσας" data-gr="Change Language">Αλλαγή Γλώσσας</span>
+<button aria-label="Change language" class="nav-action-btn nav-lang-btn" id="nav-lang-switcher" type="button">
+<span class="nav-action-label nav-lang-label" data-en="ΕΛ" data-gr="EN">ΕΛ</span>
 </button>
 </div>
 </div>
@@ -183,14 +184,15 @@
 <div class="hero-logo"><img alt="DedSec Project logo" class="hero-logo-img" data-site-logo="1" decoding="async" height="96" loading="eager" src="Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg" width="96"/></div>
 <h2 class="hero-subtitle" data-en="Start in minutes — even if you’re not a programmer." data-gr="Ξεκινήστε σε λίγα λεπτά — ακόμη κι αν δεν είστε προγραμματιστής.">Start in minutes — even if you’re not a programmer.</h2>
 <div aria-label="Project proof" class="trust-indicators">
-<div class="trust-item">
-<img alt="GitHub Stars" decoding="async" loading="lazy" src="https://img.shields.io/github/stars/dedsec1121fk/DedSec.svg?style=social" style="height: 20px;"/>
+<div class="trust-item trust-item--badges">
+<img alt="GitHub Stars" class="trust-badge-img" decoding="async" loading="lazy" src="https://img.shields.io/github/stars/dedsec1121fk/DedSec.svg?style=social"/>
 <span data-en="GitHub Stars" data-gr="Αστέρια GitHub">GitHub Stars</span>
 </div>
-<div class="trust-item">
-<i class="fas fa-check-circle"></i>
-<span data-en="Community Verified" data-gr="Επαληθευμένο από την Κοινότητα">Community Verified</span>
+<div class="trust-item trust-item--badges">
+<img alt="GitHub Forks" class="trust-badge-img" decoding="async" loading="lazy" src="https://img.shields.io/github/forks/dedsec1121fk/DedSec.svg?style=social"/>
+<span data-en="GitHub Forks" data-gr="GitHub Forks">GitHub Forks</span>
 </div>
+
 </div>
 <p class="hero-kicker" data-en="DedSec Project is a free Termux toolkit that bundles OSINT, link/file inspection, device &amp; network diagnostics, and handy automations in one easy menu. Explore what information about you is public, verify URLs/files before opening them, and run permission‑based checks on devices and networks you own. Optional phishing/social‑engineering simulation modules are included for awareness training in controlled, consent‑based environments only. Every tool explains what it does, where it saves results, and how to use it step‑by‑step." data-gr="Το DedSec Project είναι μια δωρεάν εργαλειοθήκη για Termux που συνδυάζει OSINT, έλεγχο συνδέσμων/αρχείων, διαγνωστικά συσκευής &amp; δικτύου και χρήσιμους αυτοματισμούς σε ένα εύχρηστο μενού. Δείτε ποιες πληροφορίες για εσάς είναι δημόσιες, επαληθεύστε URL/αρχεία πριν τα ανοίξετε και κάντε ελέγχους με άδεια σε συσκευές και δίκτυα που σας ανήκουν. Περιλαμβάνονται προαιρετικές ενότητες προσομοίωσης phishing/social‑engineering για εκπαίδευση ευαισθητοποίησης μόνο, σε ελεγχόμενο περιβάλλον με ρητή συναίνεση. Κάθε εργαλείο εξηγεί τι κάνει, πού αποθηκεύει αποτελέσματα και πώς να το χρησιμοποιήσετε βήμα‑βήμα.">DedSec Project is a free Termux toolkit that bundles OSINT, link/file inspection, device &amp; network diagnostics, and handy automations in one easy menu. Explore what information about you is public, verify URLs/files before opening them, and run permission‑based checks on devices and networks you own. Optional phishing/social‑engineering simulation modules are included for awareness training in controlled, consent‑based environments only. Every tool explains what it does, where it saves results, and how to use it step‑by‑step.</p>
 <div aria-label="Quick highlights" class="hero-glance">
