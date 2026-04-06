@@ -5798,67 +5798,25 @@ body.light-theme .category-intro {
 }
 
 
-/* === Slightly tighter title spacing below fixed nav (2026-04-05ae) === */
-.phone-container{
-    padding-top: calc(var(--nav-h, 70px) - 28px) !important;
-}
-
-.home-screen{
-    padding-top: 0 !important;
-}
-
-.page-content,
-.assistant-page-content{
-    padding-top: calc(var(--nav-h, 70px) + 6px) !important;
-}
-
-.page-header{
-    margin-top: 0 !important;
-    margin-bottom: 16px !important;
-}
-
-.hero-section{
-    margin-top: 0 !important;
-}
-
-@media (max-width: 640px){
-    .phone-container{
-        padding-top: calc(var(--nav-h, 70px) - 30px) !important;
-    }
-    .page-content,
-    .assistant-page-content{
-        padding-top: calc(var(--nav-h, 70px) + 2px) !important;
-    }
-}
-
-
-/* === Hard-fixed top navbar (2026-04-06a) === */
-html, body {
-    overflow-x: hidden !important;
+/* === Lock top navbar fixed / non-scrollable touch area (2026-04-05ae) === */
+.main-nav,
+.main-nav .nav-container,
+.main-nav .nav-title,
+.main-nav .nav-actions,
+.main-nav .nav-action-btn,
+.main-nav .burger-menu,
+.main-nav .nav-link {
+    touch-action: manipulation !important;
+    overscroll-behavior: none !important;
+    -webkit-overflow-scrolling: auto !important;
 }
 
 .main-nav {
     position: fixed !important;
-    inset: 0 0 auto 0 !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    width: 100% !important;
-    z-index: 9999 !important;
-    transform: translate3d(0, 0, 0) !important;
-    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
     will-change: transform;
-}
-
-.nav-menu {
-    position: fixed !important;
-    top: var(--nav-h, 70px) !important;
-}
-
-.screen,
-.home-screen,
-.page-content,
-.assistant-page-content {
-    position: relative;
-    z-index: 1;
 }
