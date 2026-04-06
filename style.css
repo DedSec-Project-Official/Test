@@ -5820,3 +5820,23 @@ body.light-theme .category-intro {
     backface-visibility: hidden;
     will-change: transform;
 }
+
+/* === Restore small gap under fixed navbar on home hero (2026-04-05af) === */
+@media (max-width: 640px){
+    .home-screen{
+        padding-top: 8px !important;
+    }
+    .hero-section{
+        margin-top: 8px !important;
+    }
+}
+
+/* === Medium gap under fixed navbar on home hero (about half old oversized spacing) (2026-04-05ag) === */
+@media (max-width: 640px){
+    .home-screen{
+        padding-top: 14px !important;
+    }
+    .hero-section{
+        margin-top: 14px !important;
+    }
+}
