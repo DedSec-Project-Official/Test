@@ -261,10 +261,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function initializeToolCategories(selector) {
-        const container = document.querySelector(selector);
-        if (!container) return;
-        container.querySelectorAll('.category-header').forEach(h => h.addEventListener('click', () => h.parentElement.classList.toggle('active')));
-        container.querySelectorAll('.tool-header').forEach(h => h.addEventListener('click', (e) => { e.stopPropagation(); h.parentElement.classList.toggle('active'); }));
+        const attachToggle = (header, handler) => {
+            if (!header || header.dataset.toggleInit === '1') return;
+            header.dataset.toggleInit = '1';
+            header.addEventListener('click', handler);
+        };
+
+        // Some sections (like Sponsors-Only on Learn About The Tools) may live
+        // outside the original container. Bind page-wide and dedupe listeners so
+        // every category/tool dropdown works reliably.
+        document.querySelectorAll('.category-header').forEach((header) => {
+            attachToggle(header, () => {
+                header.parentElement?.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.tool-header').forEach((header) => {
+            attachToggle(header, (e) => {
+                e.stopPropagation();
+                header.parentElement?.classList.toggle('active');
+            });
+        });
     }
 
     function initializeCarousels() {
