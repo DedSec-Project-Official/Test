@@ -5857,3 +5857,20 @@ body.light-theme .category-intro {
         margin-top: 0 !important;
     }
 }
+
+
+/* === Sitewide centered titles update (2026-04-19) === */
+.hero-title,
+.page-header h1,
+.page-header p,
+.content-section h2,
+.content-section h3,
+.feature-title,
+.tool-title,
+.community-card span,
+.glance-title,
+.assistant-title,
+.assistant-rich-section-title,
+.category-header {
+    text-align: center;
+}
