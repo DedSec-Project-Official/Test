@@ -9,7 +9,7 @@
   <title>ButSystem.py (Exclusive) - DedSec Project</title>
   <meta content="#07060d" name="theme-color"/>
   <meta content="dark light" name="color-scheme"/>
-  <meta content="ButSystem.py (Exclusive): a local-first, privacy‑focused helper web app for chats, groups, file vault, and opt‑in live location sharing — built for responsible use." name="description"/>
+  <meta content="ButSystem.py (Exclusive): a local-first workspace for live chats, groups, file vault, profiles, encrypted Profiler entries, stories, reports, Face Detector, and opt-in live location sharing." name="description"/>
 
   <link href="/favicon.ico" rel="icon" sizes="any"/>
   <link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -25,7 +25,7 @@
   <link href="../style.css" rel="stylesheet"/>
 
   <meta content="ButSystem.py (Exclusive) - DedSec Project" property="og:title"/>
-  <meta content="A local-first, privacy‑focused helper web app for chats, groups, file vault, and opt‑in live location sharing — built for responsible use." property="og:description"/>
+  <meta content="A local-first workspace for live chats, groups, file vault, profiles, encrypted Profiler entries, stories, reports, Face Detector, and opt-in live location sharing." property="og:description"/>
   <meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
   <meta content="1200" property="og:image:width"/>
   <meta content="630" property="og:image:height"/>
@@ -36,7 +36,7 @@
   <meta content="DedSec Project" property="og:site_name"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="ButSystem.py (Exclusive) - DedSec Project" name="twitter:title"/>
-  <meta content="A local-first, privacy‑focused helper web app for chats, groups, file vault, and opt‑in live location sharing — built for responsible use." name="twitter:description"/>
+  <meta content="A local-first workspace for live chats, groups, file vault, profiles, encrypted Profiler entries, stories, reports, Face Detector, and opt-in live location sharing." name="twitter:description"/>
   <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
   <meta content="DedSec Project" name="author"/>
   <meta content="strict-origin-when-cross-origin" name="referrer"/>
@@ -85,6 +85,21 @@
     .acc-item summary{cursor:pointer; list-style:none; font-weight:800; display:flex; align-items:center;}
     .acc-item summary::-webkit-details-marker{display:none;}
     .acc-body{margin-top:10px;}
+
+
+/* Compact ButSystem feature summary cards */
+.but-feature-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;align-items:stretch;}
+.but-feature-summary .feature-card{padding:14px 16px !important;min-height:0 !important;height:auto !important;aspect-ratio:auto !important;border-radius:10px !important;display:flex;flex-direction:column;justify-content:flex-start;}
+.but-feature-summary .feature-card-compact-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.but-feature-summary .feature-card i{font-size:1.45rem;margin:0;line-height:1;flex:0 0 auto;}
+.but-feature-summary .feature-card h3{margin:0;font-size:1.08rem;line-height:1.2;}
+.but-feature-summary .feature-card p{margin:0;font-size:.96rem;line-height:1.45;}
+@media (max-width:640px){
+  .but-feature-summary{grid-template-columns:1fr;}
+  .but-feature-summary .feature-card{padding:12px 14px !important;}
+  .but-feature-summary .feature-card h3{font-size:1.02rem;}
+  .but-feature-summary .feature-card p{font-size:.92rem;}
+}
 
 /* ButSystem page: bottom action buttons MUST match theme */
 .butsys-actions{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
@@ -458,54 +473,59 @@ en="Our Vision" data-gr="Το Όραμά μας" href="our-vision.html">Our Visi
   </div>
 
   <div class="content-section">
-    <h2 data-en="Hypothetical ‘vengeance’ scenarios (Batman-style, non-violent)" data-gr="Υποθετικά σενάρια «εκδίκησης» (Batman-style, μη βίαια)">Hypothetical ‘vengeance’ scenarios (Batman-style, non-violent)</h2>
+    <h2 data-en="Core ButSystem feature areas" data-gr="Βασικές περιοχές λειτουργιών του ButSystem">Core ButSystem feature areas</h2>
 
     <div class="callout">
       <p
-        data-en="This is NOT about harm. It’s the ‘Batman detective code’: restraint, investigation, and protecting people — staying lawful and ethical."
-        data-gr="ΔΕΝ αφορά βλάβη. Είναι ο ‘Batman detective κώδικας’: αυτοσυγκράτηση, έρευνα και προστασία ανθρώπων — μέσα σε νόμιμα και ηθικά πλαίσια."
+        data-en="ButSystem.py brings chats, groups, files, profiles, security controls, admin tools, and local-first workflow features together in one self-hosted interface."
+        data-gr="Το ButSystem.py συγκεντρώνει chats, groups, αρχεία, προφίλ, ελέγχους ασφάλειας, admin tools και local-first workflow features σε ένα self-hosted interface."
       >
-        This is NOT about harm. It’s the ‘Batman detective code’: restraint, investigation, and protecting people — staying lawful and ethical.
+        ButSystem.py brings chats, groups, files, profiles, security controls, admin tools, and local-first workflow features together in one self-hosted interface.
       </p>
     </div>
 
-    <div class="features-grid">
+    <div class="features-grid but-feature-summary">
       <div class="feature-card">
-        <i class="fas fa-user-secret"></i>
-        <h3 data-en="Detective Mode" data-gr="Detective Mode">Detective Mode</h3>
+        <div class="feature-card-compact-head">
+          <i class="fas fa-comments"></i>
+          <h3 data-en="Chats, Groups & Stories" data-gr="Συνομιλίες, Ομάδες & Stories">Chats, Groups & Stories</h3>
+        </div>
         <p
-          data-en="When emotions spike, use the system to write a timeline, store evidence you already legally have, and keep notes organized — no impulsive actions."
-          data-gr="Όταν ανεβαίνει το συναίσθημα, χρησιμοποίησε το σύστημα για timeline, αποθήκευση αποδείξεων που ήδη έχεις νόμιμα, και οργανωμένες σημειώσεις — χωρίς παρόρμηση."
+          data-en="Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, the discussion room, stories, and call flows where browser and device support allow it."
+          data-gr="Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, discussion room, stories και call flows όπου το browser και η συσκευή το υποστηρίζουν."
         >
-          When emotions spike, use the system to write a timeline, store evidence you already legally have, and keep notes organized — no impulsive actions.
+          Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, the discussion room, stories, and call flows where browser and device support allow it.
         </p>
       </div>
 
       <div class="feature-card">
-        <i class="fas fa-shield-halved"></i>
-        <h3 data-en="Protect First" data-gr="Πρώτα προστασία">Protect First</h3>
+        <div class="feature-card-compact-head">
+          <i class="fas fa-shield-halved"></i>
+          <h3 data-en="Security, Access & Control" data-gr="Ασφάλεια, Πρόσβαση & Έλεγχος">Security, Access & Control</h3>
+        </div>
         <p
-          data-en="Lock down accounts, rotate passwords, limit who can upload/invite, and keep your circle safe."
-          data-gr="Κλείδωσε λογαριασμούς, άλλαξε κωδικούς, περιόρισε uploads/invites, και κράτα ασφαλή τον κύκλο σου."
+          data-en="User approval, device access requests, remembered-device login, optional security-question 2FA, chat PIN locks, online status, reports, admin pages, and appearance or account settings."
+          data-gr="Έγκριση χρηστών, device access requests, remembered-device login, προαιρετικό 2FA με security questions, chat PIN locks, online status, reports, admin pages και ρυθμίσεις εμφάνισης ή λογαριασμού."
         >
-          Lock down accounts, rotate passwords, limit who can upload/invite, and keep your circle safe.
+          User approval, device access requests, remembered-device login, optional security-question 2FA, chat PIN locks, online status, reports, admin pages, and appearance or account settings.
         </p>
       </div>
 
       <div class="feature-card">
-        <i class="fas fa-scale-balanced"></i>
-        <h3 data-en="Justice, not vengeance" data-gr="Δικαιοσύνη, όχι εκδίκηση">Justice, not vengeance</h3>
+        <div class="feature-card-compact-head">
+          <i class="fas fa-folder-open"></i>
+          <h3 data-en="Profiles, Vault & Tools" data-gr="Προφίλ, Vault & Εργαλεία">Profiles, Vault & Tools</h3>
+        </div>
         <p
-          data-en="If something serious happened, choose lawful steps (support, reporting, mediation). Use the system only to organize information and communicate responsibly."
-          data-gr="Αν έγινε κάτι σοβαρό, διάλεξε νόμιμα βήματα (υποστήριξη, αναφορά, διαμεσολάβηση). Χρησιμοποίησε το σύστημα μόνο για οργάνωση και υπεύθυνη επικοινωνία."
+          data-en="Profile editing, private file vault, opt-in live location sharing, encrypted Profiler entries with local search, export and combine tools, bounty management where enabled, and the built-in Face Detector."
+          data-gr="Επεξεργασία προφίλ, private file vault, προαιρετικό live location sharing, κρυπτογραφημένες εγγραφές Profiler με local search, export και combine tools, bounty management όπου είναι ενεργό, και το ενσωματωμένο Face Detector."
         >
-          If something serious happened, choose lawful steps (support, reporting, mediation). Use the system only to organize information and communicate responsibly.
+          Profile editing, private file vault, opt-in live location sharing, encrypted Profiler entries with local search, export and combine tools, bounty management where enabled, and the built-in Face Detector.
         </p>
       </div>
     </div>
 
-    <p
-      
+</div>
 <div class="content-section">
   <h3 data-en="Batman-style checklist (still hypothetical, still lawful)" data-gr="Batman-style checklist (υποθετικό, νόμιμο)">
     Batman-style checklist (still hypothetical, still lawful)
