@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "updated": "2026-04-05",
+  "version": 7,
+  "updated": "2026-04-22",
   "ui": {
     "buttonLabel": {
       "en": "Help",
@@ -2695,8 +2695,8 @@
             "gr": "Πώς εγκαθιστώ και χρησιμοποιώ το Settings.py στο Termux;"
           },
           "a": {
-            "en": "What it does: The central control hub for the DedSec ecosystem. It manages project updates, dependency installation, and complete uninstallation with backup restoration. Users can customize their experience by changing the terminal prompt, switching system languages (English/Greek), and selecting from three distinct menu navigation styles (List, Grid, or Number). It also displays detailed hardware and system information. Built for Termux with clear prompts and organized outputs. Install/run in Termux: use official Termux, then run pkg update && pkg upgrade -y, pkg install python -y, and termux-setup-storage if the script uses shared storage. Place Settings.py in your folder, enter that folder with cd, then run python \"Settings.py\". If the script asks to install dependencies, allow it or install the missing package and run again. Output or save location: Language Config: ~/Language.json | Backups: ~/Termux.zip",
-            "gr": "Τι κάνει: Ο κεντρικός κόμβος ελέγχου για το οικοσύστημα DedSec. Διαχειρίζεται ενημερώσεις έργου, εγκατάσταση εξαρτήσεων και πλήρη απεγκατάσταση με επαναφορά αντιγράφων ασφαλείας. Οι χρήστες μπορούν να προσαρμόσουν την εμπειρία τους αλλάζοντας την προτροπή τερματικού, αλλάζοντας γλώσσες συστήματος (Αγγλικά/Ελληνικά) και επιλέγοντας από τρία διαφορετικά στυλ πλοήγησης μενού (Λίστα, Πλέγμα ή Αριθμός). Εμφανίζει επίσης λεπτομερείς πληροφορίες υλικού και συστήματος. Φτιαγμένο για Termux με καθαρές επιλογές και οργανωμένα αποτελέσματα. Εγκατάσταση/εκτέλεση στο Termux: χρησιμοποίησε το επίσημο Termux και μετά τρέξε pkg update && pkg upgrade -y, pkg install python -y και termux-setup-storage αν το script χρησιμοποιεί κοινόχρηστη αποθήκευση. Βάλε το Settings.py στον φάκελό σου, μπες σε αυτόν με cd και μετά τρέξε python \"Settings.py\". Αν το script ζητήσει να εγκαταστήσει εξαρτήσεις, αποδέξου το ή εγκατέστησε το πακέτο που λείπει και ξανατρέξε το. Τοποθεσία εξόδου ή αποθήκευσης: Διαμόρφωση Γλώσσας: ~/Language.json | Αντίγραφα Ασφαλείας: ~/Termux.zip"
+            "en": "What it does: The central control hub for the DedSec ecosystem. It manages project updates, dependency installation, and complete uninstallation with backup restoration. Users can customize their experience by changing the terminal prompt, switching system languages (English/Greek), and selecting from three distinct menu navigation styles (List, Grid, or Number). It also displays detailed hardware and system information. Built for Termux with clear prompts and organized outputs. Install/run in Termux: use official Termux, then run pkg update && pkg upgrade -y, pkg install python -y, and termux-setup-storage if the script uses shared storage. Place Settings.py in your folder, enter that folder with cd, then run python \"Settings.py\". If the script asks to install dependencies, allow it or install the missing package and run again. Project update note: you can also update DedSec Project from inside Settings.py by opening Project Settings and choosing the update option there. Output or save location: Language Config: ~/Language.json | Backups: ~/Termux.zip",
+            "gr": "Τι κάνει: Ο κεντρικός κόμβος ελέγχου για το οικοσύστημα DedSec. Διαχειρίζεται ενημερώσεις έργου, εγκατάσταση εξαρτήσεων και πλήρη απεγκατάσταση με επαναφορά αντιγράφων ασφαλείας. Οι χρήστες μπορούν να προσαρμόσουν την εμπειρία τους αλλάζοντας την προτροπή τερματικού, αλλάζοντας γλώσσες συστήματος (Αγγλικά/Ελληνικά) και επιλέγοντας από τρία διαφορετικά στυλ πλοήγησης μενού (Λίστα, Πλέγμα ή Αριθμός). Εμφανίζει επίσης λεπτομερείς πληροφορίες υλικού και συστήματος. Φτιαγμένο για Termux με καθαρές επιλογές και οργανωμένα αποτελέσματα. Εγκατάσταση/εκτέλεση στο Termux: χρησιμοποίησε το επίσημο Termux και μετά τρέξε pkg update && pkg upgrade -y, pkg install python -y και termux-setup-storage αν το script χρησιμοποιεί κοινόχρηστη αποθήκευση. Βάλε το Settings.py στον φάκελό σου, μπες σε αυτόν με cd και μετά τρέξε python \"Settings.py\". Αν το script ζητήσει να εγκαταστήσει εξαρτήσεις, αποδέξου το ή εγκατέστησε το πακέτο που λείπει και ξανατρέξε το. Σημείωση ενημέρωσης project: μπορείς επίσης να ενημερώσεις το DedSec Project μέσα από το Settings.py ανοίγοντας το Project Settings και επιλέγοντας εκεί την επιλογή ενημέρωσης. Τοποθεσία εξόδου ή αποθήκευσης: Διαμόρφωση Γλώσσας: ~/Language.json | Αντίγραφα Ασφαλείας: ~/Termux.zip"
           },
           "link": {
             "en": "Pages/learn-about-the-tools.html",
@@ -2715,7 +2715,10 @@
             "settings",
             "settings.py",
             "termux",
-            "usage"
+            "usage",
+            "project settings",
+            "update project",
+            "project update"
           ]
         }
       ]
@@ -4719,8 +4722,8 @@
             "gr": "Πώς ενημερώνω αργότερα το DedSec Project;"
           },
           "a": {
-            "en": "If you installed from the repository, the safest habit is to back up important local edits first, then refresh the project files intentionally instead of overwriting everything blindly. The exact update flow can depend on how you originally installed or customized the project.",
-            "gr": "Αν το εγκατέστησες από το repository, η πιο ασφαλής συνήθεια είναι να κρατάς πρώτα backup από σημαντικές τοπικές αλλαγές και μετά να ανανεώνεις τα αρχεία του project συνειδητά αντί να τα αντικαθιστάς όλα στα τυφλά. Η ακριβής ροή ενημέρωσης μπορεί να εξαρτάται από το πώς το εγκατέστησες ή το παραμετροποίησες αρχικά."
+            "en": "The easiest built-in way is to open Settings.py, go to Project Settings, and choose the project update option there. You can also update manually if you installed from the repository, but before any update it is still smart to back up important local edits first so you do not overwrite your own changes by accident.",
+            "gr": "Ο πιο εύκολος ενσωματωμένος τρόπος είναι να ανοίξεις το Settings.py, να μπεις στο Project Settings και να επιλέξεις εκεί την επιλογή ενημέρωσης του project. Μπορείς επίσης να κάνεις χειροκίνητη ενημέρωση αν το εγκατέστησες από το repository, αλλά πριν από κάθε update είναι πάλι έξυπνο να κρατάς πρώτα backup από σημαντικές τοπικές αλλαγές ώστε να μην αντικαταστήσεις κατά λάθος δικές σου τροποποιήσεις."
           },
           "link": {
             "en": "Pages/faq.html",
@@ -4730,7 +4733,10 @@
             "update dedsec",
             "refresh project",
             "git pull",
-            "backup edits"
+            "backup edits",
+            "project settings",
+            "settings.py",
+            "update option"
           ]
         },
         {
@@ -5268,6 +5274,16 @@
     {
       "en": "I am new, where should I start?",
       "gr": "Είμαι νέος, από πού να ξεκινήσω;"
+    },
+    {
+      "label": {
+        "en": "How do I update DedSec Project from Project Settings?",
+        "gr": "Πώς ενημερώνω το DedSec Project από το Project Settings;"
+      },
+      "query": {
+        "en": "update dedsec from project settings",
+        "gr": "ενημέρωση dedsec από project settings"
+      }
     }
   ]
 }
