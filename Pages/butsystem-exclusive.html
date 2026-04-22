@@ -86,6 +86,13 @@
     .acc-item summary::-webkit-details-marker{display:none;}
     .acc-body{margin-top:10px;}
 
+    .butsystem-desc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px;}
+    .butsystem-desc-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);padding:16px 18px;border-radius:12px;}
+    .butsystem-desc-card h3{margin:0 0 10px 0;font-size:1.02rem;line-height:1.3;display:flex;align-items:center;gap:10px;}
+    .butsystem-desc-card p{margin:0;}
+    .butsystem-desc-card i{opacity:.92;min-width:16px;text-align:center;}
+    @media (max-width: 820px){.butsystem-desc-grid{grid-template-columns:1fr;}}
+
 
 /* Compact ButSystem feature summary cards */
 .but-feature-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;align-items:stretch;}
@@ -198,222 +205,123 @@ en="Our Vision" data-gr="Το Όραμά μας" href="our-vision.html">Our Visi
 
   <div class="content-section">
     <h2 data-en="All screens & buttons (complete)" data-gr="Όλες οι οθόνες & κουμπιά (πλήρες)">All screens & buttons (complete)</h2>
-    <div class="accordion">
-      
-    <details class="acc-item">
-      <summary><span data-en="Navigation (sidebar / burger menu)" data-gr="Πλοήγηση (sidebar / burger μενού)">Navigation (sidebar / burger menu)</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Home" data-gr="Αρχική">Home</span></li>
-<li><span data-en="Chats" data-gr="Συνομιλίες">Chats</span></li>
-<li><span data-en="Discussion" data-gr="Συζήτηση">Discussion</span></li>
-<li><span data-en="Groups" data-gr="Groups">Groups</span></li>
-          <li><span data-en="Calls" data-gr="Κλήσεις">Calls</span></li>
-<li><span data-en="Stories" data-gr="Ιστορίες">Stories</span></li>
-<li><span data-en="Live Locations" data-gr="Ζωντανές Τοποθεσίες">Live Locations</span></li>
-<li><span data-en="Files" data-gr="Αρχεία">Files</span></li>
-<li><span data-en="My Profile" data-gr="Το προφίλ μου">My Profile</span></li>
-<li><span data-en="Profiler" data-gr="Profiler">Profiler</span></li>
-<li><span data-en="Bounty" data-gr="Bounty">Bounty</span></li>
-<li><span data-en="Reports" data-gr="Αναφορές">Reports</span></li>
-<li><span data-en="Admin" data-gr="Admin">Admin</span></li>
-<li><span data-en="Settings" data-gr="Ρυθμίσεις">Settings</span></li>
-<li><span data-en="Help" data-gr="Βοήθεια">Help</span></li>
-<li><span data-en="Login / Logout" data-gr="Σύνδεση / Αποσύνδεση">Login / Logout</span></li>
-<li><span data-en="Language toggle (Ελληνικά / English)" data-gr="Αλλαγή γλώσσας (Ελληνικά / English)">Language toggle (Ελληνικά / English)</span></li>
-        </ul>
-      </div>
-    </details>
+    <p
+      data-en="Instead of a long button-by-button list, this section explains each ButSystem area the same way the Learn page explains tools: by feature area, what you do there, and what kind of controls you will find when you open it."
+      data-gr="Αντί για μια μεγάλη λίστα κουμπί-προς-κουμπί, αυτή η ενότητα εξηγεί κάθε περιοχή του ButSystem όπως η σελίδα Learn εξηγεί τα εργαλεία: ανά feature area, τι κάνεις εκεί και τι είδους controls θα βρεις όταν την ανοίξεις."
+    >
+      Instead of a long button-by-button list, this section explains each ButSystem area the same way the Learn page explains tools: by feature area, what you do there, and what kind of controls you will find when you open it.
+    </p>
 
-    <details class="acc-item">
-      <summary><span data-en="Auth & Access" data-gr="Σύνδεση & Πρόσβαση">Auth & Access</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Landing / Loading screen" data-gr="Οθόνη εισαγωγής / φόρτωσης">Landing / Loading screen</span></li>
-<li><span data-en="Login" data-gr="Σύνδεση">Login</span></li>
-<li><span data-en="Signup" data-gr="Εγγραφή">Signup</span></li>
-<li><span data-en="Request Access" data-gr="Αίτηση πρόσβασης">Request Access</span></li>
-<li><span data-en="Device Access (approve device / auto-login request)" data-gr="Πρόσβαση συσκευής (έγκριση συσκευής / αίτημα auto-login)">Device Access (approve device / auto-login request)</span></li>
-<li><span data-en="Two-Factor" data-gr="Διπλός έλεγχος (2FA)">Two-Factor</span></li>
-<li><span data-en="Recover / Reset password" data-gr="Ανάκτηση / Επαναφορά κωδικού">Recover / Reset password</span></li>
-        </ul>
+    <div class="butsystem-desc-grid">
+      <div class="butsystem-desc-card">
+        <h3 data-en="Navigation & menu flow" data-gr="Πλοήγηση & ροή μενού"><i class="fas fa-bars"></i><span>Navigation & menu flow</span></h3>
+        <p
+          data-en="The burger menu is the main control hub of ButSystem. From there you move between chats, discussion, groups, calls, stories, live locations, files, profile pages, Profiler, reports, admin pages, settings, help, and login or logout actions, while the language toggle keeps the interface available in both English and Greek."
+          data-gr="Το burger menu είναι ο βασικός κόμβος ελέγχου του ButSystem. Από εκεί μετακινείσαι ανάμεσα σε chats, discussion, groups, calls, stories, live locations, files, σελίδες προφίλ, Profiler, reports, admin pages, settings, help και actions σύνδεσης ή αποσύνδεσης, ενώ το language toggle κρατά το interface διαθέσιμο σε English και Greek."
+        >
+          The burger menu is the main control hub of ButSystem. From there you move between chats, discussion, groups, calls, stories, live locations, files, profile pages, Profiler, reports, admin pages, settings, help, and login or logout actions, while the language toggle keeps the interface available in both English and Greek.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Chats (DM)" data-gr="Συνομιλίες (DM)">Chats (DM)</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Open chat" data-gr="Άνοιγμα chat">Open chat</span></li>
-<li><span data-en="Message box (text)" data-gr="Πεδίο μηνύματος (κείμενο)">Message box (text)</span></li>
-<li><span data-en="Send" data-gr="Αποστολή">Send</span></li>
-<li><span data-en="Edit message" data-gr="Επεξεργασία μηνύματος">Edit message</span></li>
-<li><span data-en="Delete message" data-gr="Διαγραφή μηνύματος">Delete message</span></li>
-<li><span data-en="Attachments: Add attachment / Open media" data-gr="Συνημμένα: Προσθήκη / Άνοιγμα media">Attachments: Add attachment / Open media</span></li>
-<li><span data-en="GIF picker" data-gr="Επιλογή GIF">GIF picker</span></li>
-<li><span data-en="Voice messages (record/play)" data-gr="Φωνητικά μηνύματα (ηχογράφηση/αναπαραγωγή)">Voice messages (record/play)</span></li>
-<li><span data-en="Search" data-gr="Αναζήτηση">Search</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Authentication & access" data-gr="Ταυτοποίηση & πρόσβαση"><i class="fas fa-key"></i><span>Authentication & access</span></h3>
+        <p
+          data-en="ButSystem opens through its landing, loading, login, and signup flow, then adds extra access control where needed. That includes user approval, device access requests, remembered-device login, optional security-question two-factor checks, and password recovery or reset actions so access stays tied to approved users and approved devices."
+          data-gr="Το ButSystem ανοίγει μέσα από landing, loading, login και signup flow και μετά προσθέτει επιπλέον έλεγχο πρόσβασης όπου χρειάζεται. Αυτό περιλαμβάνει user approval, device access requests, remembered-device login, προαιρετικούς ελέγχους δύο παραγόντων με security questions και actions ανάκτησης ή επαναφοράς κωδικού ώστε η πρόσβαση να μένει δεμένη με εγκεκριμένους χρήστες και συσκευές."
+        >
+          ButSystem opens through its landing, loading, login, and signup flow, then adds extra access control where needed. That includes user approval, device access requests, remembered-device login, optional security-question two-factor checks, and password recovery or reset actions so access stays tied to approved users and approved devices.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Discussion" data-gr="Συζήτηση">Discussion</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Create post / entry" data-gr="Δημιουργία δημοσίευσης">Create post / entry</span></li>
-<li><span data-en="Categories dropdown" data-gr="Μενού κατηγοριών">Categories dropdown</span></li>
-<li><span data-en="Search" data-gr="Αναζήτηση">Search</span></li>
-<li><span data-en="Refresh" data-gr="Ανανέωση">Refresh</span></li>
-<li><span data-en="Load more" data-gr="Φόρτωσε περισσότερα">Load more</span></li>
-<li><span data-en="Open entry" data-gr="Άνοιγμα καταχώρησης">Open entry</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Direct messages" data-gr="Άμεσα μηνύματα"><i class="fas fa-comments"></i><span>Direct messages</span></h3>
+        <p
+          data-en="The DM area is built for day-to-day private conversation. You can open a chat, write and send text, edit or delete messages, search conversation content, attach media or files, use GIFs, record or play voice notes, and work with chat protections such as PIN locks and visible online status where those controls are enabled."
+          data-gr="Η περιοχή DM είναι φτιαγμένη για καθημερινή ιδιωτική συνομιλία. Μπορείς να ανοίγεις chat, να γράφεις και να στέλνεις κείμενο, να επεξεργάζεσαι ή να διαγράφεις μηνύματα, να κάνεις αναζήτηση στο περιεχόμενο της συζήτησης, να βάζεις media ή αρχεία, να χρησιμοποιείς GIFs, να ηχογραφείς ή να ακούς voice notes και να δουλεύεις με προστασίες chat όπως PIN locks και ορατό online status όπου αυτά τα controls είναι ενεργά."
+        >
+          The DM area is built for day-to-day private conversation. You can open a chat, write and send text, edit or delete messages, search conversation content, attach media or files, use GIFs, record or play voice notes, and work with chat protections such as PIN locks and visible online status where those controls are enabled.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Groups" data-gr="Groups">Groups</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Create group" data-gr="Δημιουργία group">Create group</span></li>
-<li><span data-en="Members" data-gr="Μέλη">Members</span></li>
-<li><span data-en="Invite / Add" data-gr="Πρόσκληση / Προσθήκη">Invite / Add</span></li>
-<li><span data-en="Kick / Promote / Demote (admin/mod)" data-gr="Kick / Promote / Demote (admin/mod)">Kick / Promote / Demote (admin/mod)</span></li>
-<li><span data-en="Leave group" data-gr="Αποχώρηση">Leave group</span></li>
-<li><span data-en="Group chat: message box + send + attachments" data-gr="Group chat: μήνυμα + αποστολή + συνημμένα">Group chat: message box + send + attachments</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Discussion room" data-gr="Discussion room"><i class="fas fa-comment-dots"></i><span>Discussion room</span></h3>
+        <p
+          data-en="Discussion works more like a shared stream than a one-to-one chat. It is the place for broader entries, category-based posting, search, refresh, loading more content, and opening a specific entry when you want a calmer shared space separate from normal DMs."
+          data-gr="Το Discussion λειτουργεί περισσότερο σαν shared stream παρά σαν one-to-one chat. Είναι το σημείο για πιο γενικές καταχωρήσεις, category-based posting, search, refresh, φόρτωμα περισσότερου περιεχομένου και άνοιγμα συγκεκριμένης καταχώρησης όταν θέλεις έναν πιο ήρεμο κοινό χώρο ξεχωριστό από τα κανονικά DMs."
+        >
+          Discussion works more like a shared stream than a one-to-one chat. It is the place for broader entries, category-based posting, search, refresh, loading more content, and opening a specific entry when you want a calmer shared space separate from normal DMs.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Calls" data-gr="Κλήσεις">Calls</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Start call" data-gr="Έναρξη κλήσης">Start call</span></li>
-<li><span data-en="End call" data-gr="Τερματισμός">End call</span></li>
-<li><span data-en="Mute / unmute (if available)" data-gr="Σίγαση / άρση (αν υπάρχει)">Mute / unmute (if available)</span></li>
-          <li><span data-en="Join call (if invited)" data-gr="Συμμετοχή σε κλήση (αν προσκληθείς)">Join call (if invited)</span></li>
-          <li><span data-en="Incoming call prompt (accept/deny)" data-gr="Ειδοποίηση εισερχόμενης (αποδοχή/απόρριψη)">Incoming call prompt (accept/deny)</span></li>
-          <li><span data-en="Permission prompt (microphone)" data-gr="Αίτημα άδειας (μικρόφωνο)">Permission prompt (microphone)</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Groups" data-gr="Ομάδες"><i class="fas fa-user-group"></i><span>Groups</span></h3>
+        <p
+          data-en="The Groups area lets users build shared spaces with roles and moderation controls. You can create a group, invite or add members, check the member list, manage owner or admin actions such as promote, demote, or remove, leave a group when needed, and continue the conversation through the related group chat with messages and attachments."
+          data-gr="Η περιοχή Groups επιτρέπει στους χρήστες να φτιάχνουν shared spaces με roles και moderation controls. Μπορείς να δημιουργείς group, να προσκαλείς ή να προσθέτεις μέλη, να ελέγχεις τη λίστα μελών, να διαχειρίζεσαι owner ή admin actions όπως promote, demote ή remove, να αποχωρείς από ένα group όταν χρειάζεται και να συνεχίζεις τη συζήτηση μέσα από το σχετικό group chat με μηνύματα και attachments."
+        >
+          The Groups area lets users build shared spaces with roles and moderation controls. You can create a group, invite or add members, check the member list, manage owner or admin actions such as promote, demote, or remove, leave a group when needed, and continue the conversation through the related group chat with messages and attachments.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Stories" data-gr="Ιστορίες">Stories</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Create story" data-gr="Δημιουργία ιστορίας">Create story</span></li>
-<li><span data-en="Story viewer" data-gr="Προβολή ιστορίας">Story viewer</span></li>
-<li><span data-en="Leave stories" data-gr="Έξοδος από ιστορίες">Leave stories</span></li>
-<li><span data-en="Next / Back" data-gr="Επόμενο / Πίσω">Next / Back</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Calls & live communication" data-gr="Κλήσεις & live επικοινωνία"><i class="fas fa-phone"></i><span>Calls & live communication</span></h3>
+        <p
+          data-en="Where browser support and device permissions allow it, ButSystem includes call flows for starting, joining, accepting, denying, muting, and ending a live call. The exact experience depends on microphone permissions and the current browser environment, so the call layer is treated as a live feature area rather than a static page."
+          data-gr="Όπου το browser support και τα δικαιώματα της συσκευής το επιτρέπουν, το ButSystem περιλαμβάνει call flows για start, join, accept, deny, mute και end μιας live κλήσης. Η ακριβής εμπειρία εξαρτάται από τα microphone permissions και το τρέχον browser environment, οπότε το επίπεδο κλήσεων αντιμετωπίζεται ως live feature area και όχι ως απλή στατική σελίδα."
+        >
+          Where browser support and device permissions allow it, ButSystem includes call flows for starting, joining, accepting, denying, muting, and ending a live call. The exact experience depends on microphone permissions and the current browser environment, so the call layer is treated as a live feature area rather than a static page.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Live Locations" data-gr="Ζωντανές Τοποθεσίες">Live Locations</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Start sharing" data-gr="Έναρξη κοινοποίησης">Start sharing</span></li>
-<li><span data-en="Stop sharing" data-gr="Σταμάτημα κοινοποίησης">Stop sharing</span></li>
-<li><span data-en="Refresh" data-gr="Ανανέωση">Refresh</span></li>
-<li><span data-en="Consent / warning prompts" data-gr="Συναίνεση / προειδοποιήσεις">Consent / warning prompts</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Stories & live locations" data-gr="Stories & live τοποθεσίες"><i class="fas fa-location-dot"></i><span>Stories & live locations</span></h3>
+        <p
+          data-en="ButSystem also covers lighter live-sharing tools. Stories give users a quick post-and-view layer with story creation and viewing controls, while Live Locations is reserved for opt-in location sharing with start, stop, refresh, and clear consent or warning prompts before location data is actively shared."
+          data-gr="Το ButSystem καλύπτει και πιο ελαφριά live-sharing εργαλεία. Τα Stories δίνουν στους χρήστες ένα γρήγορο επίπεδο post-and-view με controls δημιουργίας και προβολής ιστοριών, ενώ το Live Locations προορίζεται για προαιρετικό location sharing με start, stop, refresh και καθαρά consent ή warning prompts πριν κοινοποιηθεί ενεργά η τοποθεσία."
+        >
+          ButSystem also covers lighter live-sharing tools. Stories give users a quick post-and-view layer with story creation and viewing controls, while Live Locations is reserved for opt-in location sharing with start, stop, refresh, and clear consent or warning prompts before location data is actively shared.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Files / Vault" data-gr="Αρχεία / Vault">Files / Vault</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Upload" data-gr="Ανέβασμα">Upload</span></li>
-<li><span data-en="Download" data-gr="Λήψη">Download</span></li>
-<li><span data-en="Delete" data-gr="Διαγραφή">Delete</span></li>
-<li><span data-en="New folder" data-gr="Νέος φάκελος">New folder</span></li>
-<li><span data-en="Open" data-gr="Άνοιγμα">Open</span></li>
-<li><span data-en="Up (go to parent folder)" data-gr="Up (πίσω στον γονικό φάκελο)">Up (go to parent folder)</span></li>
-<li><span data-en="Search" data-gr="Αναζήτηση">Search</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Files, vault & saved media" data-gr="Αρχεία, vault & αποθηκευμένα media"><i class="fas fa-folder-open"></i><span>Files, vault & saved media</span></h3>
+        <p
+          data-en="The Files and Vault area is the storage side of ButSystem. It gives you upload, download, delete, open, search, new-folder, and folder-navigation controls so the workspace can hold private files, chat attachments, shared material, and organized user content without turning the interface into a separate file manager app."
+          data-gr="Η περιοχή Files και Vault είναι η αποθηκευτική πλευρά του ButSystem. Σου δίνει upload, download, delete, open, search, new-folder και controls πλοήγησης φακέλων ώστε το workspace να μπορεί να κρατά ιδιωτικά αρχεία, chat attachments, shared material και οργανωμένο περιεχόμενο χρηστών χωρίς να μετατρέπεται το interface σε ξεχωριστό file manager app."
+        >
+          The Files and Vault area is the storage side of ButSystem. It gives you upload, download, delete, open, search, new-folder, and folder-navigation controls so the workspace can hold private files, chat attachments, shared material, and organized user content without turning the interface into a separate file manager app.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Profile" data-gr="Προφίλ">Profile</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="View profile" data-gr="Προβολή προφίλ">View profile</span></li>
-<li><span data-en="Edit profile" data-gr="Επεξεργασία προφίλ">Edit profile</span></li>
-<li><span data-en="Save profile changes" data-gr="Αποθήκευση αλλαγών">Save profile changes</span></li>
-<li><span data-en="Upload / Remove picture" data-gr="Ανέβασμα / Αφαίρεση εικόνας">Upload / Remove picture</span></li>
-<li><span data-en="Delete my account" data-gr="Διαγραφή λογαριασμού">Delete my account</span></li>
-<li><span data-en="Self‑destruct (danger zone)" data-gr="Self‑destruct (ζώνη κινδύνου)">Self‑destruct (danger zone)</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Profile, account & appearance" data-gr="Προφίλ, λογαριασμός & εμφάνιση"><i class="fas fa-user"></i><span>Profile, account & appearance</span></h3>
+        <p
+          data-en="Your own profile area handles identity and account presentation. From there users can view or edit profile data, save changes, upload or remove a profile picture, adjust account settings, control appearance options, and access stronger account actions such as account deletion or the self-destruct danger zone where that workflow is enabled."
+          data-gr="Η δική σου περιοχή προφίλ διαχειρίζεται την ταυτότητα και την παρουσίαση του λογαριασμού. Από εκεί οι χρήστες μπορούν να βλέπουν ή να επεξεργάζονται profile data, να αποθηκεύουν αλλαγές, να ανεβάζουν ή να αφαιρούν profile picture, να ρυθμίζουν account settings, να ελέγχουν επιλογές εμφάνισης και να έχουν πρόσβαση σε ισχυρότερα account actions όπως account deletion ή το self-destruct danger zone όπου αυτό το workflow είναι ενεργό."
+        >
+          Your own profile area handles identity and account presentation. From there users can view or edit profile data, save changes, upload or remove a profile picture, adjust account settings, control appearance options, and access stronger account actions such as account deletion or the self-destruct danger zone where that workflow is enabled.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Profiler" data-gr="Profiler">Profiler</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Create profile" data-gr="Δημιουργία προφίλ">Create profile</span></li>
-<li><span data-en="Edit / View (view only)" data-gr="Επεξεργασία / Προβολή (μόνο προβολή)">Edit / View (view only)</span></li>
-<li><span data-en="Combine profiles" data-gr="Συνένωση προφίλ">Combine profiles</span></li>
-<li><span data-en="Export profiles" data-gr="Εξαγωγή προφίλ">Export profiles</span></li>
-<li><span data-en="Search" data-gr="Αναζήτηση">Search</span></li>
-<li><span data-en="Save (encrypted)" data-gr="Αποθήκευση (κρυπτογραφημένα)">Save (encrypted)</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Profiler, bounty & Face Detector" data-gr="Profiler, bounty & Face Detector"><i class="fas fa-id-card"></i><span>Profiler, bounty & Face Detector</span></h3>
+        <p
+          data-en="The Profiler side is where ButSystem becomes a structured information workspace. It supports encrypted profiler entries, view and edit flows, local search, export and combine tools, bounty management where that module is enabled, and the built-in Face Detector area used for local face-detection workflows and similarity-style comparison support inside the broader ButSystem environment."
+          data-gr="Η πλευρά του Profiler είναι εκεί όπου το ButSystem γίνεται structured information workspace. Υποστηρίζει κρυπτογραφημένες profiler entries, view και edit flows, local search, export και combine tools, bounty management όπου αυτό το module είναι ενεργό και την ενσωματωμένη περιοχή Face Detector που χρησιμοποιείται για local face-detection workflows και similarity-style comparison support μέσα στο ευρύτερο περιβάλλον του ButSystem."
+        >
+          The Profiler side is where ButSystem becomes a structured information workspace. It supports encrypted profiler entries, view and edit flows, local search, export and combine tools, bounty management where that module is enabled, and the built-in Face Detector area used for local face-detection workflows and similarity-style comparison support inside the broader ButSystem environment.
+        </p>
       </div>
-    </details>
 
-    <details class="acc-item">
-      <summary><span data-en="Bounty" data-gr="Bounty">Bounty</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Add bounty / Update bounty" data-gr="Προσθήκη / Ενημέρωση bounty">Add bounty / Update bounty</span></li>
-<li><span data-en="Remove bounty" data-gr="Αφαίρεση bounty">Remove bounty</span></li>
-<li><span data-en="Apply" data-gr="Εφαρμογή">Apply</span></li>
-<li><span data-en="Go / Open" data-gr="Μετάβαση / Άνοιγμα">Go / Open</span></li>
-        </ul>
+      <div class="butsystem-desc-card">
+        <h3 data-en="Reports, admin & security settings" data-gr="Reports, admin & ρυθμίσεις ασφάλειας"><i class="fas fa-shield-halved"></i><span>Reports, admin & security settings</span></h3>
+        <p
+          data-en="The control layer of ButSystem is split across reports, admin pages, and security settings. This is where users create or update reports, where admins approve or deny access and device requests, manage people and user files, and where account holders configure two-factor settings, device-login rules, password-reset paths, privacy options, and other safeguards that keep the workspace organized and controlled."
+          data-gr="Το επίπεδο ελέγχου του ButSystem χωρίζεται σε reports, admin pages και security settings. Εδώ οι χρήστες δημιουργούν ή ενημερώνουν reports, εδώ οι admins εγκρίνουν ή απορρίπτουν access και device requests, διαχειρίζονται άτομα και user files και εδώ οι κάτοχοι λογαριασμού ρυθμίζουν two-factor settings, device-login rules, password-reset paths, επιλογές ιδιωτικότητας και άλλες δικλείδες που κρατούν το workspace οργανωμένο και ελεγχόμενο."
+        >
+          The control layer of ButSystem is split across reports, admin pages, and security settings. This is where users create or update reports, where admins approve or deny access and device requests, manage people and user files, and where account holders configure two-factor settings, device-login rules, password-reset paths, privacy options, and other safeguards that keep the workspace organized and controlled.
+        </p>
       </div>
-    </details>
-
-    <details class="acc-item">
-      <summary><span data-en="Reports" data-gr="Αναφορές">Reports</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Create report" data-gr="Δημιουργία αναφοράς">Create report</span></li>
-<li><span data-en="Delete report" data-gr="Διαγραφή αναφοράς">Delete report</span></li>
-<li><span data-en="Save / Update" data-gr="Αποθήκευση / Ενημέρωση">Save / Update</span></li>
-<li><span data-en="Export (if available)" data-gr="Εξαγωγή (αν υπάρχει)">Export (if available)</span></li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc-item">
-      <summary><span data-en="Admin" data-gr="Admin">Admin</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Approve / Deny (access/device requests)" data-gr="Έγκριση / Απόρριψη (αιτήματα πρόσβασης/συσκευής)">Approve / Deny (access/device requests)</span></li>
-<li><span data-en="Promote / Demote / Kick" data-gr="Promote / Demote / Kick">Promote / Demote / Kick</span></li>
-<li><span data-en="Admin user files view" data-gr="Προβολή αρχείων χρηστών (admin)">Admin user files view</span></li>
-<li><span data-en="Back to Admin" data-gr="Πίσω στο Admin">Back to Admin</span></li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc-item">
-      <summary><span data-en="Settings (Security)" data-gr="Ρυθμίσεις (Ασφάλεια)">Settings (Security)</span></summary>
-      <div class="acc-body">
-        <ul class="nice-list">
-          <li><span data-en="Save changes" data-gr="Αποθήκευση αλλαγών">Save changes</span></li>
-<li><span data-en="Two-factor settings" data-gr="Ρυθμίσεις 2FA">Two-factor settings</span></li>
-<li><span data-en="Device access / auto-login settings" data-gr="Ρυθμίσεις πρόσβασης συσκευής / auto-login">Device access / auto-login settings</span></li>
-<li><span data-en="Reset password flow" data-gr="Ροή επαναφοράς κωδικού">Reset password flow</span></li>
-<li><span data-en="Privacy toggles (where applicable)" data-gr="Επιλογές ιδιωτικότητας (όπου υπάρχουν)">Privacy toggles (where applicable)</span></li>
-        </ul>
-      </div>
-    </details>
     </div>
   </div>
 
