@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
             if (typeof applyThemeAssets === 'function') applyThemeAssets();
             refreshCompactNavButtons();
+            try { window.dispatchEvent(new CustomEvent('dedsec:themechange', { detail: { theme: isLight ? 'light' : 'dark' } })); } catch (_) {}
         });
     }
 
@@ -203,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.__updateAssistantLanguage();
         }
 
+        try { window.dispatchEvent(new CustomEvent('dedsec:languagechange', { detail: { language: lang } })); } catch (_) {}
         refreshCompactNavButtons();
 
         // Keep the navbar compact (so the injected logo doesn't get clipped)
@@ -340,6 +342,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!overlay || !input || !resultsEl || !closeBtn || !openBtn) return;
 
+
+        const SECRET_PAGE_PATH = 'Pages/unused-template.html';
+        const normalizeSearchTerm = (value) => String(value || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[̀-ͯ]/g, '')
+            .replace(/['"`]+/g, '')
+            .replace(/[^a-z0-9Ͱ-Ͽ]+/g, ' ')
+            .trim();
+        const shouldOpenSecretLevel = (value) => {
+            const normalized = normalizeSearchTerm(value);
+            return normalized === 'watch dogs'
+                || normalized === 'dead space 2'
+                || normalized === 'arcade master'
+                || normalized.startsWith('arcade master ');
+        };
         const slugify = (str) => {
             return (str || '')
                 .toLowerCase()
@@ -352,20 +370,22 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         
-        const SEARCH_VERSION = '2026-02-19-v9';
+        const SEARCH_VERSION = '2026-05-05-v10-secret-level';
         const SEARCH_STORAGE_KEY = `dedsec_search_index_${SEARCH_VERSION}`;
         const SEARCH_PAGES_STORAGE_KEY = `dedsec_search_pages_${SEARCH_VERSION}`;
 
         // Pages we always want searchable (static, always exist).
         const BASE_PAGES = [
             "index.html",
+            "Pages/unused-template.html",
             "Pages/our-vision.html",
             "Pages/learn-about-the-tools.html",
             "Pages/guide-for-installation.html",
             "Pages/faq.html",
             "Pages/collaborations.html",
             "Pages/contact-credits.html",
-            "Pages/privacy-policy.html",        ];
+            "Pages/privacy-policy.html",
+        ];
         const loadStoredPagesList = () => {
             try {
                 const raw = localStorage.getItem(SEARCH_PAGES_STORAGE_KEY);
@@ -721,7 +741,24 @@ return file;
 
         input.addEventListener('input', () => renderResults(input.value.trim()));
         input.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') setOverlayVisible(false);
+            if (e.key === 'Escape') {
+                setOverlayVisible(false);
+                return;
+            }
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const query = input.value.trim();
+                if (shouldOpenSecretLevel(query)) {
+                    setOverlayVisible(false);
+                    navigate(resolveUrl(SECRET_PAGE_PATH));
+                    return;
+                }
+                const firstLink = resultsEl.querySelector('a.search-item[href]');
+                if (firstLink) {
+                    setOverlayVisible(false);
+                    navigate(firstLink.getAttribute('href'));
+                }
+            }
         });
 
         // Keyboard shortcuts: Ctrl+K / Cmd+K, or "/" when not typing
