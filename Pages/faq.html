@@ -59,15 +59,15 @@
 <a class="nav-link" data-en="Guide For Installation" data-gr="Οδηγός Εγκατάστασης" href="guide-for-installation.html">Guide For Installation</a>
 <a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθετε για τα Εργαλεία" href="learn-about-the-tools.html">Learn About The Tools</a>
 <a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="butsystem-exclusive.html">ButSystem.py (Exclusive)</a>
-<a class="nav-link active" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="faq.html">Frequently Asked Questions</a>
+<a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="faq.html">Frequently Asked Questions</a>
 <a class="nav-link" data-en="Assistant" data-gr="Βοηθός" href="assistant.html">Assistant</a>
-<a class="nav-link" data-en="Collaborations" data-gr="Συνεργασίες" href="collaborations.html">Collaborations</a>
+<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="store.html">Store</a><a class="nav-link" data-en="Collaborations" data-gr="Συνεργασίες" href="collaborations.html">Collaborations</a>
 <a class="nav-link" data-en="Keep Android Open" data-gr="Κρατήστε το Android Ανοιχτό" href="keep-android-open.html">Keep Android Open</a>
 <a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="privacy-policy.html">Privacy Policy</a>
 <a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="contact-credits.html">Contact &amp; Credits</a></div>
 <div class="nav-actions">
 <button aria-label="Toggle theme" class="nav-action-btn nav-theme-btn" id="nav-theme-switcher" type="button">
-<span aria-hidden="true" class="nav-action-label nav-theme-label" data-light="☀" data-dark="☾">☀</span>
+<span aria-hidden="true" class="nav-action-label nav-theme-label" data-dark="☾" data-light="☀">☀</span>
 </button>
 <button aria-label="Change language" class="nav-action-btn nav-lang-btn" id="nav-lang-switcher" type="button">
 <span class="nav-action-label nav-lang-label" data-en="ΕΛ" data-gr="EN">ΕΛ</span>
@@ -452,13 +452,11 @@
 </div>
 <div class="faq-button-group">
 <strong data-en="Sponsor the Project:" data-gr="Χορηγία (Sponsor):">Sponsor the Project:</strong><br/>
-<span data-en="If you want to contribute financially, you can sponsor us via GitHub Sponsors." data-gr="Αν θέλετε να συνεισφέρετε οικονομικά, μπορείτε να μας κάνετε χορηγία μέσω GitHub Sponsors.">
-                                          If you want to contribute financially, you can sponsor us via GitHub Sponsors.
-                                    </span><br/>
+<span data-en="If you want to contribute financially, you can sponsor us via GitHub Sponsors or open the Store page for paid help and custom work." data-gr="Αν θέλετε να συνεισφέρετε οικονομικά, μπορείτε να μας κάνετε χορηγία μέσω GitHub Sponsors ή να ανοίξετε τη σελίδα Store για paid help και custom work.">If you want to contribute financially, you can sponsor us via GitHub Sponsors or open the Store page for paid help and custom work.</span><br/>
 <button class="nm-btn faq-link-btn" data-en="GitHub Sponsors" data-gr="GitHub Sponsors" onclick="window.open('https://github.com/sponsors/dedsec1121fk', '_blank')">
 <i class="fas fa-heart"></i> <span data-en="GitHub Sponsors" data-gr="GitHub Sponsors">GitHub Sponsors</span>
 </button>
-</div>
+<br/><button class="nm-btn faq-link-btn" data-en="Open Store" data-gr="Άνοιγμα Καταστήματος" onclick="window.location.href='store.html'"><i class="fas fa-store"></i> <span data-en="Open Store" data-gr="Άνοιγμα Καταστήματος">Open Store</span></button></div>
 </div>
 </div>
 </div>
@@ -477,7 +475,6 @@
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Why do I need termux-setup-storage?" data-gr="Γιατί χρειάζομαι το termux-setup-storage;">Why do I need termux-setup-storage?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Because Termux does not automatically get access to your shared storage. Running termux-setup-storage asks Android for the permission and prepares the usual shared-storage links so folders like Downloads become easier to reach." data-gr="Επειδή το Termux δεν αποκτά αυτόματα πρόσβαση στο shared storage σας. Το termux-setup-storage ζητά την άδεια από το Android και ετοιμάζει τα συνηθισμένα links για το shared storage ώστε φάκελοι όπως τα Downloads να είναι πιο εύκολα προσβάσιμοι.">Because Termux does not automatically get access to your shared storage. Running termux-setup-storage asks Android for the permission and prepares the usual shared-storage links so folders like Downloads become easier to reach.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="What useful Termux add-ons should I know?" data-gr="Ποια χρήσιμα πρόσθετα του Termux πρέπει να ξέρω;">What useful Termux add-ons should I know?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Useful add-ons include Termux:API for Android/device integrations, Termux:Styling for colors and fonts, Termux:Widget for home-screen shortcuts, Termux:Boot for startup scripts, and Termux:Float for a floating terminal window." data-gr="Χρήσιμα πρόσθετα περιλαμβάνουν το Termux:API για ενσωματώσεις με το Android/τη συσκευή, το Termux:Styling για χρώματα και γραμματοσειρές, το Termux:Widget για συντομεύσεις στην αρχική οθόνη, το Termux:Boot για scripts εκκίνησης και το Termux:Float για πλωτό παράθυρο τερματικού.">Useful add-ons include Termux:API for Android/device integrations, Termux:Styling for colors and fonts, Termux:Widget for home-screen shortcuts, Termux:Boot for startup scripts, and Termux:Float for a floating terminal window.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Why should I update all Termux packages together?" data-gr="Γιατί πρέπει να ενημερώνω όλα τα πακέτα του Termux μαζί;">Why should I update all Termux packages together?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Termux uses a rolling-release style package environment. Partial upgrades can leave binaries and libraries out of sync, so a full package update is usually safer than fixing one dependency at a time forever." data-gr="Το Termux χρησιμοποιεί περιβάλλον πακέτων τύπου rolling release. Οι μερικές ενημερώσεις μπορούν να αφήσουν binaries και βιβλιοθήκες εκτός συγχρονισμού, γι’ αυτό μια πλήρης ενημέρωση πακέτων είναι συνήθως πιο ασφαλής από το να διορθώνετε μία εξάρτηση τη φορά για πάντα.">Termux uses a rolling-release style package environment. Partial upgrades can leave binaries and libraries out of sync, so a full package update is usually safer than fixing one dependency at a time forever.</p><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-upgrade-all')">Copy</button><code id="code-upgrade-all">pkg update &amp;&amp; pkg upgrade -y</code></div></div></div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="What is the safest first-time setup order in Termux?" data-gr="Ποια είναι η ασφαλέστερη σειρά πρώτης ρύθμισης στο Termux;">What is the safest first-time setup order in Termux?</h4>
@@ -497,7 +494,6 @@ After that, move into the project folder and follow that project’s own install
 </p>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="What is the Downloads folder path in Termux?" data-gr="Ποιο είναι το path του φακέλου Downloads στο Termux;">What is the Downloads folder path in Termux?</h4>
@@ -516,7 +512,6 @@ This is the folder used by many install commands, ZIP extraction steps, and expo
 </p>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="How do I unzip a downloaded project ZIP into a Termux folder?" data-gr="Πώς αποσυμπιέζω ένα κατεβασμένο ZIP project σε φάκελο του Termux;">How do I unzip a downloaded project ZIP into a Termux folder?</h4>
@@ -569,7 +564,6 @@ pkg uninstall python</code></div></div></div>
 exit</code></div></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="How do I check free space or folder size?" data-gr="Πώς ελέγχω ελεύθερο χώρο ή μέγεθος φακέλου;">How do I check free space or folder size?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><div class="code-container"><button class="copy-btn" onclick="copyToClipboard(this, 'code-space-check')">Copy</button><code id="code-space-check">df -h
 du -sh foldername</code></div></div></div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="How do I return to my project folder fast?" data-gr="Πώς επιστρέφω γρήγορα στον φάκελο του project μου;">How do I return to my project folder fast?</h4>
@@ -585,7 +579,6 @@ Use cd to jump back into the folder where your scripts live. After changing fold
 </div>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="How do I check that I am inside the correct folder before running a command?" data-gr="Πώς ελέγχω ότι είμαι μέσα στον σωστό φάκελο πριν τρέξω μια εντολή;">How do I check that I am inside the correct folder before running a command?</h4>
@@ -601,7 +594,6 @@ Two of the safest commands are pwd and ls. pwd shows where you are. ls shows wha
 </div>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="How do I see what a script saved in Downloads?" data-gr="Πώς βλέπω τι αποθήκευσε ένα script στα Downloads;">How do I see what a script saved in Downloads?</h4>
@@ -635,7 +627,6 @@ cd DedSec &amp;&amp; bash Setup.sh</code></div></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Is the project available in Greek too?" data-gr="Υπάρχει το project και στα Ελληνικά;">Is the project available in Greek too?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Yes. The site includes English and Greek content, and the interface can switch language. The FAQ and assistant also support both languages." data-gr="Ναι. Το site περιλαμβάνει περιεχόμενο στα Αγγλικά και στα Ελληνικά και το περιβάλλον μπορεί να αλλάξει γλώσσα. Το FAQ και ο βοηθός υποστηρίζουν επίσης και τις δύο γλώσσες.">Yes. The site includes English and Greek content, and the interface can switch language. The FAQ and assistant also support both languages.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where do I learn what each tool does?" data-gr="Πού μαθαίνω τι κάνει κάθε εργαλείο;">Where do I learn what each tool does?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use the Learn About The Tools page. It groups the project into categories and gives descriptions for each script so you can browse by purpose instead of guessing from filenames." data-gr="Χρησιμοποιήστε τη σελίδα Μάθετε για τα Εργαλεία. Χωρίζει το project σε κατηγορίες και δίνει περιγραφές για κάθε script ώστε να ψάχνετε ανά σκοπό αντί να μαντεύετε από τα filenames.">Use the Learn About The Tools page. It groups the project into categories and gives descriptions for each script so you can browse by purpose instead of guessing from filenames.</p></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where do I report bugs or contact the project?" data-gr="Πού αναφέρω bugs ή πού επικοινωνώ με το project;">Where do I report bugs or contact the project?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Use GitHub Issues for reproducible bugs. Use the Contact &amp; Credits page for broader support, project communication, and contact-style questions." data-gr="Χρησιμοποιήστε τα GitHub Issues για αναπαραγώγιμα bugs. Χρησιμοποιήστε τη σελίδα Επικοινωνία &amp; Συντελεστές για γενικότερη υποστήριξη, επικοινωνία με το project και ερωτήσεις τύπου επικοινωνίας.">Use GitHub Issues for reproducible bugs. Use the Contact &amp; Credits page for broader support, project communication, and contact-style questions.</p></div></div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="What page should a beginner open first on the site?" data-gr="Ποια σελίδα πρέπει να ανοίξει πρώτα ένας αρχάριος στο site;">What page should a beginner open first on the site?</h4>
@@ -647,7 +638,6 @@ A simple beginner path is: Home for the overview, Guide For Installation for set
 </p>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="Where are exclusive or sponsors-only scripts explained?" data-gr="Πού εξηγούνται τα exclusive ή sponsors-only scripts;">Where are exclusive or sponsors-only scripts explained?</h4>
@@ -660,7 +650,6 @@ Use the exclusive pages when you want details about locked, sponsor-tier, or spe
 <p><a href="butsystem-exclusive.html">ButSystem Exclusive</a></p>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="Where do I find contact and credits information quickly?" data-gr="Πού βρίσκω γρήγορα πληροφορίες επικοινωνίας και συντελεστών;">Where do I find contact and credits information quickly?</h4>
@@ -673,7 +662,6 @@ Open the Contact &amp; Credits page for support routes, project communication, a
 <p><a href="contact-credits.html">Contact &amp; Credits</a></p>
 </div>
 </div>
-
 <div class="tool-item">
 <div class="tool-header">
 <h4 class="tool-title" data-en="Where do I learn what each script does before running it?" data-gr="Πού μαθαίνω τι κάνει κάθε script πριν το τρέξω;">Where do I learn what each script does before running it?</h4>
@@ -746,7 +734,6 @@ Use the ⌂ button in the assistant header to return to the welcome screen. Use 
 <span data-en="Still need help? Contact Us" data-gr="Χρειάζεστε ακόμα βοήθεια; Επικοινωνία">Still need help? Contact Us</span>
 </button>
 </div>
-
 <div class="category">
 <div class="category-header">
 <h3 data-en="Termux Daily Usage &amp; File Handling" data-gr="Καθημερινή Χρήση Termux &amp; Διαχείριση Αρχείων">Termux Daily Usage &amp; File Handling</h3>
@@ -775,7 +762,6 @@ find . -maxdepth 2 -type f</code></div></div></div>
 <div class="tool-item"><div class="tool-header"><h4 class="tool-title" data-en="Where should a new user start?" data-gr="Από πού πρέπει να ξεκινήσει ένας νέος χρήστης;">Where should a new user start?</h4><i class="fas fa-chevron-down tool-expand-icon"></i></div><div class="tool-description"><p data-en="Best order: Guide For Installation first, Learn About The Tools second, FAQ third, and then Assistant for quick matches and follow-up help." data-gr="Η καλύτερη σειρά είναι: πρώτα Guide For Installation, μετά Learn About The Tools, τρίτο το FAQ και μετά ο Assistant για γρήγορα matches και επιπλέον βοήθεια.">Best order: Guide For Installation first, Learn About The Tools second, FAQ third, and then Assistant for quick matches and follow-up help.</p></div></div>
 </div>
 </div>
-
 </div>
 <footer class="main-footer">
 <div data-lang-section="en">
@@ -800,7 +786,7 @@ find . -maxdepth 2 -type f</code></div></div></div>
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Backup Repository του DedSec Project</a>
 </div>
 </div>
-<p data-lang-section="en" class="footer-tracker-note">Note: the only trackers used are for Google Search Console analytics about clicks and regions. No cookies or other tracking are used.</p>
+<p class="footer-tracker-note" data-lang-section="en">Note: the only trackers used are for Google Search Console analytics about clicks and regions. No cookies or other tracking are used.</p>
 <p class="hidden-by-default footer-tracker-note" data-lang-section="gr">Σημείωση: τα μόνα trackers που χρησιμοποιούνται είναι για τα στατιστικά του Google Search Console σχετικά με κλικ και περιοχές. Δεν χρησιμοποιούνται cookies ή άλλου είδους παρακολούθηση.</p>
 <p data-lang-section="en">© 2024-2026 DedSec Project. All Rights Reserved.</p>
 <p class="hidden-by-default" data-lang-section="gr">© 2024-2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
