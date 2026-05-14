@@ -2617,35 +2617,6 @@
             "usage",
             "wizard"
           ]
-        },
-        {
-          "q": {
-            "en": "How do I install and use FaveSites.py in Termux?",
-            "gr": "Πώς εγκαθιστώ και χρησιμοποιώ το FaveSites.py στο Termux;"
-          },
-          "a": {
-            "en": "What it does: Local favorites launcher + encrypted credential vault. Runs a private localhost web UI where you can store site links, usernames, passwords, and notes encrypted with a master password. Includes an optional security-questions step and Termux biometrics quick-unlock (Termux:API), plus automatic favicon fetching for each site. Built for Termux with clear prompts and organized outputs. Install/run in Termux: use official Termux, then run pkg update && pkg upgrade -y, pkg install python -y, and termux-setup-storage if the script uses shared storage. Place FaveSites.py in your folder, enter that folder with cd, then run python \"FaveSites.py\". If the script asks to install dependencies, allow it or install the missing package and run again. Output or save location: Local favorites launcher + encrypted credential vault. Runs a private localhost web UI where you can store site links, usernames, passwords, and notes encrypted with a master password. Includes an optional security-questions step and Termux biometrics quick-unlock (Termux:API), plus automatic favicon fetching for each site. Built for Termux with clear prompts and organized outputs.",
-            "gr": "Τι κάνει: Τοπικός launcher αγαπημένων + κρυπτογραφημένο θησαυροφυλάκιο διαπιστευτηρίων. Τρέχει ιδιωτικό web UI σε localhost όπου μπορείς να αποθηκεύεις links, usernames, passwords και σημειώσεις κρυπτογραφημένα με master password. Περιλαμβάνει προαιρετικό βήμα ερωτήσεων ασφαλείας και γρήγορο ξεκλείδωμα με βιομετρικά στο Termux (Termux:API), καθώς και αυτόματη λήψη favicon για κάθε site. Φτιαγμένο για Termux με καθαρές επιλογές και οργανωμένα αποτελέσματα. Εγκατάσταση/εκτέλεση στο Termux: χρησιμοποίησε το επίσημο Termux και μετά τρέξε pkg update && pkg upgrade -y, pkg install python -y και termux-setup-storage αν το script χρησιμοποιεί κοινόχρηστη αποθήκευση. Βάλε το FaveSites.py στον φάκελό σου, μπες σε αυτόν με cd και μετά τρέξε python \"FaveSites.py\". Αν το script ζητήσει να εγκαταστήσει εξαρτήσεις, αποδέξου το ή εγκατέστησε το πακέτο που λείπει και ξανατρέξε το. Τοποθεσία εξόδου ή αποθήκευσης: Τοπικός launcher αγαπημένων + κρυπτογραφημένο θησαυροφυλάκιο διαπιστευτηρίων. Τρέχει ιδιωτικό web UI σε localhost όπου μπορείς να αποθηκεύεις links, usernames, passwords και σημειώσεις κρυπτογραφημένα με master password. Περιλαμβάνει προαιρετικό βήμα ερωτήσεων ασφαλείας και γρήγορο ξεκλείδωμα με βιομετρικά στο Termux (Termux:API), καθώς και αυτόματη λήψη favicon για κάθε site. Φτιαγμένο για Termux με καθαρές επιλογές και οργανωμένα αποτελέσματα."
-          },
-          "link": {
-            "en": "Pages/learn-about-the-tools.html",
-            "gr": "Pages/learn-about-the-tools.html"
-          },
-          "tags": [
-            "FaveSites",
-            "FaveSites py",
-            "FaveSites.py",
-            "favesites",
-            "favesites.py",
-            "install",
-            "other tool scripts",
-            "other tools",
-            "python",
-            "run",
-            "script",
-            "termux",
-            "usage"
-          ]
         }
       ]
     },
@@ -2695,8 +2666,8 @@
             "gr": "Πώς εγκαθιστώ και χρησιμοποιώ το Settings.py στο Termux;"
           },
           "a": {
-            "en": "What it does: The central control hub for the DedSec ecosystem. It manages project updates, dependency installation, and complete uninstallation with backup restoration. Users can customize their experience by changing the terminal prompt, switching system languages (English/Greek), and selecting from three distinct menu navigation styles (List, Grid, or Number). It also displays detailed hardware and system information. Built for Termux with clear prompts and organized outputs. Install/run in Termux: use official Termux, then run pkg update && pkg upgrade -y, pkg install python -y, and termux-setup-storage if the script uses shared storage. Place Settings.py in your folder, enter that folder with cd, then run python \"Settings.py\". If the script asks to install dependencies, allow it or install the missing package and run again. Project update note: you can also update DedSec Project from inside Settings.py by opening Project Settings and choosing the update option there. Output or save location: Language Config: ~/Language.json | Backups: ~/Termux.zip",
-            "gr": "Τι κάνει: Ο κεντρικός κόμβος ελέγχου για το οικοσύστημα DedSec. Διαχειρίζεται ενημερώσεις έργου, εγκατάσταση εξαρτήσεων και πλήρη απεγκατάσταση με επαναφορά αντιγράφων ασφαλείας. Οι χρήστες μπορούν να προσαρμόσουν την εμπειρία τους αλλάζοντας την προτροπή τερματικού, αλλάζοντας γλώσσες συστήματος (Αγγλικά/Ελληνικά) και επιλέγοντας από τρία διαφορετικά στυλ πλοήγησης μενού (Λίστα, Πλέγμα ή Αριθμός). Εμφανίζει επίσης λεπτομερείς πληροφορίες υλικού και συστήματος. Φτιαγμένο για Termux με καθαρές επιλογές και οργανωμένα αποτελέσματα. Εγκατάσταση/εκτέλεση στο Termux: χρησιμοποίησε το επίσημο Termux και μετά τρέξε pkg update && pkg upgrade -y, pkg install python -y και termux-setup-storage αν το script χρησιμοποιεί κοινόχρηστη αποθήκευση. Βάλε το Settings.py στον φάκελό σου, μπες σε αυτόν με cd και μετά τρέξε python \"Settings.py\". Αν το script ζητήσει να εγκαταστήσει εξαρτήσεις, αποδέξου το ή εγκατέστησε το πακέτο που λείπει και ξανατρέξε το. Σημείωση ενημέρωσης project: μπορείς επίσης να ενημερώσεις το DedSec Project μέσα από το Settings.py ανοίγοντας το Project Settings και επιλέγοντας εκεί την επιλογή ενημέρωσης. Τοποθεσία εξόδου ή αποθήκευσης: Διαμόρφωση Γλώσσας: ~/Language.json | Αντίγραφα Ασφαλείας: ~/Termux.zip"
+            "en": "What it does: Settings.py is the central control panel for the DedSec Project. It shows project and device information; updates the project from the main or backup source; refreshes Termux packages and Python modules; creates a DedSec Project backup in Downloads; changes the Termux prompt; connects or disconnects GitHub; shows GitHub stats; syncs the prompt with the GitHub username; scans Termux usage stats; switches between List, Grid, Choose By Number, and DedSec OS menu styles; controls menu auto-start; saves the English or Greek language choice; displays credits; and safely uninstalls the project. DedSec OS adds a browser-based local workspace with a file browser, safe text editor, terminal view, session manager, DedSec apps launcher, Linux package store actions, notifications, fullscreen and split-view controls, sidebar controls, wallpaper support, display name settings, terminal color settings, language controls, prompt controls, password login, optional authenticator-style 2FA, and recovery through three security questions. Install/run in Termux: use official Termux, then run pkg update && pkg upgrade -y, pkg install python -y, and termux-setup-storage if shared storage is needed. Enter the DedSec folder and run python \"Settings.py\" or open it from the project menu. Output or save location: Language config: ~/Language.json | Termux config backup: ~/Termux.zip | Save DedSec Project backup: Downloads",
+            "gr": "Τι κάνει: Το Settings.py είναι το κεντρικό control panel του DedSec Project. Εμφανίζει πληροφορίες project και συσκευής, ενημερώνει το project από την κύρια ή την backup πηγή, ανανεώνει Termux packages και Python modules, δημιουργεί backup του DedSec Project στα Downloads, αλλάζει το Termux prompt, συνδέει ή αποσυνδέει GitHub, εμφανίζει GitHub stats, συγχρονίζει το prompt με το GitHub username, σαρώνει Termux usage stats, αλλάζει ανάμεσα σε List, Grid, Choose By Number και DedSec OS menu styles, ελέγχει το menu auto-start, αποθηκεύει επιλογή γλώσσας English ή Greek, εμφανίζει credits και κάνει ασφαλή απεγκατάσταση του project. Το DedSec OS προσθέτει browser-based local workspace με file browser, safe text editor, terminal view, session manager, DedSec apps launcher, Linux package store actions, notifications, fullscreen και split-view controls, sidebar controls, wallpaper support, display name settings, terminal color settings, language controls, prompt controls, password login, προαιρετικό authenticator-style 2FA και recovery μέσω τριών security questions. Εγκατάσταση/εκτέλεση στο Termux: χρησιμοποίησε το επίσημο Termux και μετά τρέξε pkg update && pkg upgrade -y, pkg install python -y και termux-setup-storage αν χρειάζεται κοινόχρηστη αποθήκευση. Μπες στον φάκελο DedSec και τρέξε python \"Settings.py\" ή άνοιξέ το από το project menu. Τοποθεσία εξόδου ή αποθήκευσης: Ρύθμιση γλώσσας: ~/Language.json | Backup ρυθμίσεων Termux: ~/Termux.zip | Save DedSec Project backup: Downloads"
           },
           "link": {
             "en": "Pages/learn-about-the-tools.html",
