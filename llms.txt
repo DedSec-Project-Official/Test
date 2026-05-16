@@ -6,7 +6,6 @@ Use this when you need an exhaustive list. For search-engine crawling, prefer th
 
 ## Pages
 - [DedSec Project — Free Termux Cybersecurity Toolkit](https://ded-sec.space/) — last modified 2026-02-24
-- [Collaborations - DedSec Project](https://ded-sec.space/Pages/collaborations.html) — last modified 2026-02-24
 - [Contact & Credits - DedSec Project](https://ded-sec.space/Pages/contact-credits.html) — last modified 2026-02-24
 - [DedSec Project - Frequently Asked Questions](https://ded-sec.space/Pages/faq.html) — last modified 2026-02-24
 - [Guide For Installation - DedSec Project](https://ded-sec.space/Pages/guide-for-installation.html) — last modified 2026-02-24

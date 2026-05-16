@@ -286,17 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function initializeCarousels() {
-        document.querySelectorAll('.collaborations-carousel').forEach(c => {
-            const imgs = c.querySelectorAll('.slide-image');
-            let idx = 0;
-            c.querySelector('.prev-btn')?.addEventListener('click', () => { idx = (idx > 0) ? idx - 1 : imgs.length - 1; show(); });
-            c.querySelector('.next-btn')?.addEventListener('click', () => { idx = (idx < imgs.length - 1) ? idx + 1 : 0; show(); });
-            const show = () => imgs.forEach((img, i) => img.classList.toggle('active', i === idx));
-            show();
-        });
-    }
-
     
     // --- SITE SEARCH (IN-PAGE + CROSS-PAGE LINKS) ---
     function initializeSearch() {
@@ -382,7 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "Pages/learn-about-the-tools.html",
             "Pages/guide-for-installation.html",
             "Pages/faq.html",
-            "Pages/collaborations.html",
             "Pages/contact-credits.html",
             "Pages/privacy-policy.html",
         ];
@@ -831,7 +819,6 @@ return file;
                         </div>
                         <div class="assistant-header-actions">
                             <button type="button" class="assistant-home" aria-label="Home">⌂</button>
-                            <button type="button" class="assistant-refresh" aria-label="Refresh">↻</button>
                             <button type="button" class="assistant-close" aria-label="Close">✕</button>
                         </div>
                     </div>
@@ -894,11 +881,73 @@ return file;
         const chatLabel = (role) => role === 'user' ? (currentLanguage === 'gr' ? 'Εσύ' : 'You') : 'Assistant';
         const typingLabel = () => (currentLanguage === 'gr' ? 'Ο Assistant γράφει…' : 'Assistant is typing…');
         const chatWrap = () => shell.querySelector('.assistant-chat');
+        let assistantPageSizeLocked = false;
+        let assistantPageSizeKey = '';
+        const pageViewportHeight = () => Math.round((window.visualViewport && window.visualViewport.height) || window.innerHeight || document.documentElement.clientHeight || 720);
+        const pageViewportWidth = () => Math.round((window.visualViewport && window.visualViewport.width) || window.innerWidth || document.documentElement.clientWidth || 360);
+        const fitAssistantPageBox = (force = false) => {
+            if (!isPageMode) return;
+            const chat = chatWrap();
+            const assistantBody = shell.querySelector('.assistant-body');
+            const currentPanel = shell.querySelector('.assistant-panel');
+            if (!chat || !assistantBody || !currentPanel) return;
+            const viewportH = pageViewportHeight();
+            const viewportW = pageViewportWidth();
+            const orientation = viewportW > viewportH ? 'landscape' : 'portrait';
+            const sizeKey = `${viewportW}x${viewportH}-${orientation}`;
+            if (assistantPageSizeLocked && !force && assistantPageSizeKey === sizeKey) return;
+
+            const bottomGap = viewportW <= 640 ? 10 : 18;
+            const chatTop = chat.getBoundingClientRect().top;
+            const panelTop = currentPanel.getBoundingClientRect().top;
+            const minChat = viewportH <= 620 ? 220 : 260;
+            const maxChat = viewportW <= 640 ? 560 : 680;
+            let chatHeight = Math.floor(viewportH - chatTop - bottomGap);
+            chatHeight = Math.max(minChat, Math.min(chatHeight, maxChat));
+            const panelMaxHeight = Math.max(minChat + 58, Math.floor(viewportH - panelTop - bottomGap));
+
+            currentPanel.style.setProperty('max-height', `${panelMaxHeight}px`, 'important');
+            assistantBody.style.setProperty('min-height', '0', 'important');
+            chat.style.setProperty('height', `${chatHeight}px`, 'important');
+            chat.style.setProperty('min-height', `${chatHeight}px`, 'important');
+            chat.style.setProperty('max-height', `${chatHeight}px`, 'important');
+            chat.scrollTop = 0;
+            assistantPageSizeLocked = true;
+            assistantPageSizeKey = sizeKey;
+        };
+        const scheduleAssistantPageFit = (force = false) => {
+            if (!isPageMode) return;
+            const run = () => fitAssistantPageBox(force);
+            requestAnimationFrame(() => {
+                run();
+                requestAnimationFrame(run);
+            });
+            window.setTimeout(run, 80);
+            window.setTimeout(run, 220);
+        };
+        const unlockAssistantPageSize = () => {
+            if (!isPageMode) return;
+            assistantPageSizeLocked = false;
+            scheduleAssistantPageFit(true);
+        };
         const scrollChatToBottom = () => {
             requestAnimationFrame(() => {
                 const chat = chatWrap();
                 if (chat) chat.scrollTop = chat.scrollHeight;
             });
+        };
+        const scrollChatToTop = () => {
+            const apply = () => {
+                const chat = chatWrap();
+                if (chat) chat.scrollTop = 0;
+            };
+            apply();
+            requestAnimationFrame(() => {
+                apply();
+                requestAnimationFrame(apply);
+            });
+            window.setTimeout(apply, 60);
+            window.setTimeout(apply, 180);
         };
         const scrollMessageIntoView = (message, offset = 8) => {
             const apply = () => {
@@ -1381,13 +1430,18 @@ return file;
             messagesWrap.innerHTML = '';
             createMessage('assistant', t(ui().welcomeBody, currentLanguage === 'gr' ? 'Πάτησε μία λέξη, ένα όνομα script ή μία κατηγορία και θα βρω την πιο σχετική απάντηση από τα δεδομένα του site.' : 'Tap a word, a script name, or a category and I will match it to the closest answer from the site data.'), {
                 heading: t(ui().welcomeTitle, currentLanguage === 'gr' ? 'Πώς μπορώ να βοηθήσω σήμερα;' : 'How can I help today?'),
-                meta: assistantData?.updated ? `${t(ui().updatedPrefix, 'Updated')}: ${assistantData.updated}` : ''
+                meta: assistantData?.updated ? `${t(ui().updatedPrefix, 'Updated')}: ${assistantData.updated}` : '',
+                noAutoScroll: true
             });
             pushSuggestions(
                 t(ui().promptHeading, currentLanguage === 'gr' ? 'Διάλεξε θέμα' : 'Choose a topic'),
                 startSections(),
-                t(ui().promptBody, currentLanguage === 'gr' ? 'Μπορείς να πατήσεις ένα όνομα script, μία λέξη ή μία κατηγορία. Θα απαντήσω ή θα σου δείξω τα πιο σχετικά αποτελέσματα.' : 'You can tap a script name, a keyword, or a category. I will answer directly or show the closest results.')
+                t(ui().promptBody, currentLanguage === 'gr' ? 'Μπορείς να πατήσεις ένα όνομα script, μία λέξη ή μία κατηγορία. Θα απαντήσω ή θα σου δείξω τα πιο σχετικά αποτελέσματα.' : 'You can tap a script name, a keyword, or a category. I will answer directly or show the closest results.'),
+                { noAutoScroll: true }
             );
+            scheduleAssistantPageFit(false);
+            scrollChatToTop();
+            window.setTimeout(scrollChatToTop, 260);
         };
         const renderNoMatch = (promptLabel) => {
             createMessage('assistant', t(ui().noMatchBody, currentLanguage === 'gr' ? 'Δεν βρήκα ακόμη καθαρό ταίριασμα γι’ αυτό το prompt.' : 'I could not find a clean match for that prompt yet.'), {
@@ -1506,7 +1560,7 @@ return file;
             triggerTextEl.textContent = t(ui().buttonLabel, 'Assistant');
             trigger.setAttribute('aria-label', t(ui().buttonLabel, 'Assistant'));
             homeBtn.setAttribute('aria-label', currentLanguage === 'gr' ? 'Αρχή' : 'Home');
-            refreshBtn.setAttribute('aria-label', t(ui().refresh, 'Refresh'));
+            if (refreshBtn) refreshBtn.setAttribute('aria-label', t(ui().refresh, 'Refresh'));
             closeBtn.setAttribute('aria-label', t(ui().close, 'Close'));
         };
         const refreshAssistantData = async (force = false) => {
@@ -1542,6 +1596,7 @@ return file;
                 });
             } finally {
                 isFetchingAssistant = false;
+                scheduleAssistantPageFit(false);
             }
         };
         const resetAssistant = () => {
@@ -1580,7 +1635,7 @@ return file;
             });
         }
         homeBtn.addEventListener('click', () => resetAssistant());
-        refreshBtn.addEventListener('click', () => refreshAssistantData(true));
+        if (refreshBtn) refreshBtn.addEventListener('click', () => refreshAssistantData(true));
 
         window.__updateAssistantLanguage = () => {
             applyUiStrings();
@@ -1602,7 +1657,17 @@ return file;
         });
 
         if (isPageMode) {
+            window.addEventListener('orientationchange', () => window.setTimeout(unlockAssistantPageSize, 180), { passive: true });
+            window.addEventListener('resize', () => {
+                if (!assistantPageSizeLocked) scheduleAssistantPageFit(false);
+            }, { passive: true });
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', () => {
+                    if (!assistantPageSizeLocked) scheduleAssistantPageFit(false);
+                }, { passive: true });
+            }
             setOpen(true);
+            scheduleAssistantPageFit(true);
         }
     }
 
@@ -1691,7 +1756,7 @@ return file;
             '.burger-menu', '.nav-link', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.copy-btn', '.footer-mini-btn',
             '.app-icon', '.assistant-chip', '.assistant-open-link', '.assistant-home', '.assistant-refresh', '.assistant-close',
             '.assistant-trigger', '.search-close', '.close-modal', '.payment-btn', '.sponsor-btn', '.faq-link-btn', '.language-selection-btn',
-            '.theme-selection-btn', '.accept-btn', '.decline-btn', '.carousel-nav-btn', '.prev-btn', '.next-btn', '.nm-btn'
+            '.theme-selection-btn', '.accept-btn', '.decline-btn', '.nm-btn'
         ].join(',');
         document.querySelectorAll(selectors).forEach((el) => {
             el.style.borderRadius = '0px';
@@ -1713,7 +1778,7 @@ return file;
             '.code-container', '.modal-content', '.screen', '.phone-container', '.search-modal', '.search-input', '.search-close',
             '.nav-menu', '.nav-action-btn', '#nav-search', '.burger-menu', '.nav-menu .nav-link', '.copy-btn', '.btn', '.btn-primary',
             '.btn-ghost', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.payment-btn', '.faq-link-btn',
-            '.language-selection-btn', '.theme-selection-btn', '.accept-btn', '.decline-btn', '.carousel-nav-btn', '.prev-btn',
+            '.language-selection-btn', '.theme-selection-btn', '.accept-btn', '.decline-btn',
             '.next-btn', '.nm-btn'
         ].join(',');
         document.querySelectorAll(selectors).forEach((el) => {
@@ -1868,7 +1933,6 @@ return file;
         forceSquareButtonCorners();
         forceSharpCornersEverywhere();
         setTimeout(() => { forceSquareButtonCorners(); forceSharpCornersEverywhere(); }, 80);
-        initializeCarousels();
         initializeToolCategories('.categories-container');
         initializeToolCategories('#faq-container');
         if (document.querySelector('[data-assistant-page]')) initializeAssistant();
