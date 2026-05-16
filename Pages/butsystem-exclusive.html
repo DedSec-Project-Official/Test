@@ -8,7 +8,7 @@
 <title>ButSystem.py (Exclusive) - DedSec Project</title>
 <meta content="#07060d" name="theme-color"/>
 <meta content="dark light" name="color-scheme"/>
-<meta content="ButSystem.py (Exclusive): a local-first workspace for live chats, groups, file vault, profiles, encrypted Profiler entries, stories, reports, Face Detector, and opt-in live location sharing." name="description"/>
+<meta content="ButSystem.py shows the deeper DedSec build style: local-first collaboration, private workspaces, account controls, file vaults, reports, settings, and re-branding potential for business use." name="description"/>
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
@@ -21,7 +21,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="../style.css" rel="stylesheet"/>
 <meta content="ButSystem.py (Exclusive) - DedSec Project" property="og:title"/>
-<meta content="A local-first workspace for live chats, groups, file vault, profiles, encrypted Profiler entries, stories, reports, Face Detector, and opt-in live location sharing." property="og:description"/>
+<meta content="Explore ButSystem.py as a deeper DedSec-style build and a preview of what sponsors, custom work, and re-branding services can deliver." property="og:description"/>
 <meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -32,7 +32,7 @@
 <meta content="DedSec Project" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="ButSystem.py (Exclusive) - DedSec Project" name="twitter:title"/>
-<meta content="A local-first workspace for live chats, groups, file vault, profiles, encrypted Profiler entries, stories, reports, Face Detector, and opt-in live location sharing." name="twitter:description"/>
+<meta content="ButSystem.py is the deeper DedSec showcase: local-first collaboration, file vaults, accounts, reports, and re-branding potential." name="twitter:description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
 <meta content="DedSec Project" name="author"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
@@ -96,41 +96,16 @@
 .but-feature-summary .feature-card h3{margin:0;font-size:1.08rem;line-height:1.2;}
 .but-feature-summary .feature-card p{margin:0;font-size:.96rem;line-height:1.45;}
 @media (max-width:640px){
-  .but-feature-summary{grid-template-columns:1fr;}
-  .but-feature-summary .feature-card{padding:12px 14px !important;}
-  .but-feature-summary .feature-card h3{font-size:1.02rem;}
-  .but-feature-summary .feature-card p{font-size:.92rem;}
+  .but-feature-summary{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  .but-feature-summary .feature-card{padding:9px 7px !important;min-width:0 !important;}
+  .but-feature-summary .feature-card h3{font-size:.68rem !important;line-height:1.12 !important;}
+  .but-feature-summary .feature-card p{font-size:.56rem !important;line-height:1.22 !important;}
 }
 
-/* ButSystem page: bottom action buttons MUST match theme */
-.butsys-actions{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
-.butsys-actions .btn{min-width:240px;}
-/* Dark theme: purple background + black text (both buttons) */
-body.dark-theme .butsys-actions .btn-primary,
-body.dark-theme .butsys-actions .btn-ghost{
-  background: var(--accent, var(--primary, #b96dff)) !important;
-  color:#000 !important;
-  border-color: transparent !important;
-}
-body.dark-theme .butsys-actions .btn-primary *,
-body.dark-theme .butsys-actions .btn-ghost *{
-  color:#000 !important;
-}
 
-/* Light theme: white background + purple text (both buttons) */
-body.light-theme .butsys-actions .btn-primary,
-body.light-theme .butsys-actions .btn-ghost{
-  background:#fff !important;
-  color: var(--accent, var(--primary, #7a2cff)) !important;
-  border: 2px solid var(--accent, var(--primary, #7a2cff)) !important;
-}
-body.light-theme .butsys-actions .btn-primary *,
-body.light-theme .butsys-actions .btn-ghost *{
-  color: var(--accent, var(--primary, #7a2cff)) !important;
-}
   </style>
 </head>
-<body class="dark-theme"><!--MAINTAIN_SITE: Key maintenance: NAV links must match real files; global theme/language logic is in /script.js.-->
+<body class="dark-theme butsystem-page"><!--MAINTAIN_SITE: Key maintenance: NAV links must match real files; global theme/language logic is in /script.js.-->
 <nav class="main-nav">
 <div class="nav-container">
 <div class="nav-title"><h1>DedSec Project</h1></div>
@@ -141,13 +116,13 @@ body.light-theme .butsys-actions .btn-ghost *{
 <span class="burger-label" data-en="MENU" data-gr="MENU">MENU</span>
 </button>
 <div class="nav-menu" id="nav-menu"><a class="nav-link" data-en="Home" data-gr="Αρχική" href="/">Home</a>
-<a class="nav-link" data-="" data-gr="Το Όραμά μας" en="Our Vision" href="our-vision.html">Our Vision</a>
+<a class="nav-link" data-en="Our Vision" data-gr="Το Όραμά μας" href="our-vision.html">Our Vision</a>
 <a class="nav-link" data-en="Guide For Installation" data-gr="Οδηγός Εγκατάστασης" href="guide-for-installation.html">Guide For Installation</a>
 <a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθετε για τα Εργαλεία" href="learn-about-the-tools.html">Learn About The Tools</a>
 <a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="butsystem-exclusive.html">ButSystem.py (Exclusive)</a>
 <a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="faq.html">Frequently Asked Questions</a>
 <a class="nav-link" data-en="Assistant" data-gr="Βοηθός" href="assistant.html">Assistant</a>
-<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="store.html">Store</a><a class="nav-link" data-en="Collaborations" data-gr="Συνεργασίες" href="collaborations.html">Collaborations</a>
+<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="store.html">Store</a>
 <a class="nav-link" data-en="Keep Android Open" data-gr="Κρατήστε το Android Ανοιχτό" href="keep-android-open.html">Keep Android Open</a>
 <a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="privacy-policy.html">Privacy Policy</a>
 <a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="contact-credits.html">Contact &amp; Credits</a></div>
@@ -164,9 +139,7 @@ body.light-theme .butsys-actions .btn-ghost *{
 <div class="page-content">
 <div class="page-header">
 <h1 data-en="ButSystem.py (Exclusive) — Full Button &amp; Function Index" data-gr="ButSystem.py (Αποκλειστικό) — Πλήρης λίστα κουμπιών &amp; λειτουργιών">ButSystem.py (Exclusive) — Full Button &amp; Function Index</h1>
-<p data-en="This is the complete, practical breakdown: every screen, every visible action, and what each button does — based on the ButSystem.py interface structure." data-gr="Αυτό είναι το πλήρες, πρακτικό breakdown: κάθε οθόνη, κάθε εμφανής ενέργεια, και τι κάνει κάθε κουμπί — με βάση τη δομή του ButSystem.py.">
-      This is the complete, practical breakdown: every screen, every visible action, and what each button does — based on the ButSystem.py interface structure.
-    </p>
+<p data-en="ButSystem.py is the deeper showcase: a local-first private workspace that proves what DedSec-style custom work can become when the idea goes beyond a single small script." data-gr="Το ButSystem.py είναι το βαθύτερο showcase: ένα local-first private workspace που δείχνει τι μπορεί να γίνει ένα DedSec-style custom έργο όταν η ιδέα ξεπερνά ένα μικρό script.">ButSystem.py is the deeper showcase: a local-first private workspace that proves what DedSec-style custom work can become when the idea goes beyond a single small script.</p>
 <div class="callout">
 <p data-en="Note: some controls appear only for admins/mods, or only when a feature is enabled. This page includes those too and marks them clearly." data-gr="Σημείωση: κάποια controls εμφανίζονται μόνο σε admin/mod ή μόνο όταν είναι ενεργή μια δυνατότητα. Η σελίδα τα περιλαμβάνει και τα σημειώνει καθαρά.">
         Note: some controls appear only for admins/mods, or only when a feature is enabled. This page includes those too and marks them clearly.
@@ -175,9 +148,43 @@ body.light-theme .butsys-actions .btn-ghost *{
 </div>
 <div class="content-section">
 <h2 data-en="System overview" data-gr="Γενική εικόνα">System overview</h2>
-<p data-en="ButSystem.py runs a local web UI (self-hosted on your device). You navigate using the burger menu and perform actions inside modules (Chats, Groups, Files, Admin, Settings, etc.)." data-gr="Το ButSystem.py τρέχει ένα local web UI (self-hosted στη συσκευή σου). Πλοηγείσαι με το burger μενού και κάνεις ενέργειες μέσα σε modules (Chats, Groups, Files, Admin, Settings κ.λπ.).">
-      ButSystem.py runs a local web UI (self-hosted on your device). You navigate using the burger menu and perform actions inside modules (Chats, Groups, Files, Admin, Settings, etc.).
-    </p>
+<p data-en="ButSystem.py runs a local web UI self-hosted on your device. It is also the clearest example of a bigger DedSec-style workflow that can be explained, supported, customized, or re-branded instead of staying as a simple one-file idea." data-gr="Το ButSystem.py τρέχει local web UI self-hosted στη συσκευή σου. Είναι επίσης το πιο καθαρό παράδειγμα μεγαλύτερου DedSec-style workflow που μπορεί να εξηγηθεί, να υποστηριχθεί, να γίνει customized ή re-branded αντί να μείνει απλή one-file ιδέα.">ButSystem.py runs a local web UI self-hosted on your device. It is also the clearest example of a bigger DedSec-style workflow that can be explained, supported, customized, or re-branded instead of staying as a simple one-file idea.</p>
+</div><div class="content-section">
+<h2 data-en="Core ButSystem feature areas" data-gr="Βασικές περιοχές λειτουργιών του ButSystem">Core ButSystem feature areas</h2>
+<div class="callout">
+<p data-en="ButSystem.py brings chats, groups, files, profiles, security controls, admin tools, and local-first workflow features together in one self-hosted interface." data-gr="Το ButSystem.py συγκεντρώνει chats, groups, αρχεία, προφίλ, ελέγχους ασφάλειας, admin tools και local-first workflow features σε ένα self-hosted interface.">
+        ButSystem.py brings chats, groups, files, profiles, security controls, admin tools, and local-first workflow features together in one self-hosted interface.
+      </p>
+</div>
+<div class="features-grid but-feature-summary">
+<div class="feature-card">
+<div class="feature-card-compact-head">
+<i class="fas fa-comments"></i>
+<h3 data-en="Chats, Groups &amp; Stories" data-gr="Συνομιλίες, Ομάδες &amp; Stories">Chats, Groups &amp; Stories</h3>
+</div>
+<p data-en="Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, the discussion room, stories, and call flows where browser and device support allow it." data-gr="Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, discussion room, stories και call flows όπου το browser και η συσκευή το υποστηρίζουν.">
+          Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, the discussion room, stories, and call flows where browser and device support allow it.
+        </p>
+</div>
+<div class="feature-card">
+<div class="feature-card-compact-head">
+<i class="fas fa-shield-halved"></i>
+<h3 data-en="Security, Access &amp; Control" data-gr="Ασφάλεια, Πρόσβαση &amp; Έλεγχος">Security, Access &amp; Control</h3>
+</div>
+<p data-en="User approval, device access requests, remembered-device login, optional security-question 2FA, chat PIN locks, online status, reports, admin pages, and appearance or account settings." data-gr="Έγκριση χρηστών, device access requests, remembered-device login, προαιρετικό 2FA με security questions, chat PIN locks, online status, reports, admin pages και ρυθμίσεις εμφάνισης ή λογαριασμού.">
+          User approval, device access requests, remembered-device login, optional security-question 2FA, chat PIN locks, online status, reports, admin pages, and appearance or account settings.
+        </p>
+</div>
+<div class="feature-card">
+<div class="feature-card-compact-head">
+<i class="fas fa-folder-open"></i>
+<h3 data-en="Profiles, Vault &amp; Tools" data-gr="Προφίλ, Vault &amp; Εργαλεία">Profiles, Vault &amp; Tools</h3>
+</div>
+<p data-en="Profile editing, private file vault, opt-in live location sharing, encrypted Profiler entries with local search, export and combine tools, bounty management where enabled, and the built-in Face Detector." data-gr="Επεξεργασία προφίλ, private file vault, προαιρετικό live location sharing, κρυπτογραφημένες εγγραφές Profiler με local search, export και combine tools, bounty management όπου είναι ενεργό, και το ενσωματωμένο Face Detector.">
+          Profile editing, private file vault, opt-in live location sharing, encrypted Profiler entries with local search, export and combine tools, bounty management where enabled, and the built-in Face Detector.
+        </p>
+</div>
+</div>
 </div>
 <div class="content-section">
 <h2 data-en="All screens &amp; buttons (complete)" data-gr="Όλες οι οθόνες &amp; κουμπιά (πλήρες)">All screens &amp; buttons (complete)</h2>
@@ -301,139 +308,8 @@ body.light-theme .butsys-actions .btn-ghost *{
       This section exists so the UI documentation matches real pages/components in the script.
     </p>
 </div>
-<div class="content-section">
-<h2 data-en="Core ButSystem feature areas" data-gr="Βασικές περιοχές λειτουργιών του ButSystem">Core ButSystem feature areas</h2>
-<div class="callout">
-<p data-en="ButSystem.py brings chats, groups, files, profiles, security controls, admin tools, and local-first workflow features together in one self-hosted interface." data-gr="Το ButSystem.py συγκεντρώνει chats, groups, αρχεία, προφίλ, ελέγχους ασφάλειας, admin tools και local-first workflow features σε ένα self-hosted interface.">
-        ButSystem.py brings chats, groups, files, profiles, security controls, admin tools, and local-first workflow features together in one self-hosted interface.
-      </p>
-</div>
-<div class="features-grid but-feature-summary">
-<div class="feature-card">
-<div class="feature-card-compact-head">
-<i class="fas fa-comments"></i>
-<h3 data-en="Chats, Groups &amp; Stories" data-gr="Συνομιλίες, Ομάδες &amp; Stories">Chats, Groups &amp; Stories</h3>
-</div>
-<p data-en="Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, the discussion room, stories, and call flows where browser and device support allow it." data-gr="Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, discussion room, stories και call flows όπου το browser και η συσκευή το υποστηρίζουν.">
-          Live direct messages, group chats, saved messages, GIFs, voice notes, file sharing, the discussion room, stories, and call flows where browser and device support allow it.
-        </p>
-</div>
-<div class="feature-card">
-<div class="feature-card-compact-head">
-<i class="fas fa-shield-halved"></i>
-<h3 data-en="Security, Access &amp; Control" data-gr="Ασφάλεια, Πρόσβαση &amp; Έλεγχος">Security, Access &amp; Control</h3>
-</div>
-<p data-en="User approval, device access requests, remembered-device login, optional security-question 2FA, chat PIN locks, online status, reports, admin pages, and appearance or account settings." data-gr="Έγκριση χρηστών, device access requests, remembered-device login, προαιρετικό 2FA με security questions, chat PIN locks, online status, reports, admin pages και ρυθμίσεις εμφάνισης ή λογαριασμού.">
-          User approval, device access requests, remembered-device login, optional security-question 2FA, chat PIN locks, online status, reports, admin pages, and appearance or account settings.
-        </p>
-</div>
-<div class="feature-card">
-<div class="feature-card-compact-head">
-<i class="fas fa-folder-open"></i>
-<h3 data-en="Profiles, Vault &amp; Tools" data-gr="Προφίλ, Vault &amp; Εργαλεία">Profiles, Vault &amp; Tools</h3>
-</div>
-<p data-en="Profile editing, private file vault, opt-in live location sharing, encrypted Profiler entries with local search, export and combine tools, bounty management where enabled, and the built-in Face Detector." data-gr="Επεξεργασία προφίλ, private file vault, προαιρετικό live location sharing, κρυπτογραφημένες εγγραφές Profiler με local search, export και combine tools, bounty management όπου είναι ενεργό, και το ενσωματωμένο Face Detector.">
-          Profile editing, private file vault, opt-in live location sharing, encrypted Profiler entries with local search, export and combine tools, bounty management where enabled, and the built-in Face Detector.
-        </p>
-</div>
-</div>
-</div>
-<div class="content-section">
-<h3 data-en="Batman-style checklist (still hypothetical, still lawful)" data-gr="Batman-style checklist (υποθετικό, νόμιμο)">
-    Batman-style checklist (still hypothetical, still lawful)
-  </h3>
-<div class="callout">
-<p data-en="When you feel the ‘I want revenge’ impulse, switch to a rule-based mindset. In Gotham terms: calm down, observe, document, protect." data-gr="Όταν νιώθεις την παρόρμηση «θέλω εκδίκηση», γύρνα σε mindset με κανόνες. Σε όρους Gotham: ηρέμησε, παρατήρησε, κατέγραψε, προστάτεψε.">
-      When you feel the ‘I want revenge’ impulse, switch to a rule-based mindset. In Gotham terms: calm down, observe, document, protect.
-    </p>
-</div>
-<ol class="nice-list">
-<li><span data-en="Pause (10 minutes minimum). No messages, no calls, no posts." data-gr="Παύση (τουλάχιστον 10 λεπτά). Όχι μηνύματα, όχι κλήσεις, όχι posts.">Pause (10 minutes minimum). No messages, no calls, no posts.</span></li>
-<li><span data-en="Write a timeline: what happened, when, and what you *know* vs what you *assume*." data-gr="Γράψε timeline: τι έγινε, πότε, και τι *ξέρεις* vs τι *υποθέτεις*.">Write a timeline: what happened, when, and what you *know* vs what you *assume*.</span></li>
-<li><span data-en="Collect only lawful evidence you already have (screenshots, receipts, your own logs)." data-gr="Συγκέντρωσε μόνο νόμιμες αποδείξεις που ήδη έχεις (screenshots, αποδείξεις, δικά σου logs).">Collect only lawful evidence you already have (screenshots, receipts, your own logs).</span></li>
-<li><span data-en="Protect your accounts: change passwords, revoke access, review sessions, limit invites/uploads." data-gr="Προστάτεψε λογαριασμούς: άλλαξε κωδικούς, αφαίρεσε πρόσβαση, έλεγξε sessions, περιόρισε invites/uploads.">Protect your accounts: change passwords, revoke access, review sessions, limit invites/uploads.</span></li>
-<li><span data-en="Use ButSystem to coordinate calmly (DM/Group), not to escalate." data-gr="Χρησιμοποίησε ButSystem για ήρεμο συντονισμό (DM/Group), όχι για κλιμάκωση.">Use ButSystem to coordinate calmly (DM/Group), not to escalate.</span></li>
-<li><span data-en="Choose a lawful outcome: support, mediation, reporting, or professional help." data-gr="Διάλεξε νόμιμη έκβαση: υποστήριξη, διαμεσολάβηση, αναφορά ή βοήθεια από ειδικούς.">Choose a lawful outcome: support, mediation, reporting, or professional help.</span></li>
-</ol>
-<div class="features-grid">
-<div class="feature-card">
-<i class="fas fa-mask"></i>
-<h3 data-en="Scenario D: ‘Shadow discipline’ (no contact)" data-gr="Σενάριο Δ: ‘Shadow discipline’ (καμία επαφή)">Scenario D: ‘Shadow discipline’ (no contact)</h3>
-<p data-en="You block impulsive moves: no late-night calls, no angry texts. You use the system to write drafts privately, then wait. If it’s still valid tomorrow, you send a calm version — or you don’t send it at all." data-gr="Μπλοκάρεις παρορμητικές κινήσεις: όχι νυχτερινές κλήσεις, όχι θυμωμένα μηνύματα. Χρησιμοποιείς το σύστημα για drafts ιδιωτικά και μετά περιμένεις. Αν ισχύει και αύριο, στέλνεις μια ήρεμη εκδοχή — ή δεν το στέλνεις καθόλου.">
-        You block impulsive moves: no late-night calls, no angry texts. You use the system to write drafts privately, then wait. If it’s still valid tomorrow, you send a calm version — or you don’t send it at all.
-      </p>
-</div>
-<div class="feature-card">
-<i class="fas fa-people-group"></i>
-<h3 data-en="Scenario E: ‘Alfred protocol’ (trusted support)" data-gr="Σενάριο Ε: ‘Alfred protocol’ (έμπιστη υποστήριξη)">Scenario E: ‘Alfred protocol’ (trusted support)</h3>
-<p data-en="You loop in one trusted person. They help you check your thinking, keep you grounded, and prevent you from doing something you’ll regret." data-gr="Βάζεις μέσα ένα έμπιστο άτομο. Σε βοηθά να ελέγξεις τη σκέψη σου, να μείνεις ήρεμος/η και να αποφύγεις κάτι που θα μετανιώσεις.">
-        You loop in one trusted person. They help you check your thinking, keep you grounded, and prevent you from doing something you’ll regret.
-      </p>
-</div>
-<div class="feature-card">
-<i class="fas fa-lightbulb"></i>
-<h3 data-en="Scenario F: ‘Detective report’ (closure)" data-gr="Σενάριο ΣΤ: ‘Detective report’ (κλείσιμο)">Scenario F: ‘Detective report’ (closure)</h3>
-<p data-en="You write a final report: facts, impact, what you learned, and what boundary you set. Then you move on. That’s the point: closure, not obsession." data-gr="Γράφεις τελικό report: facts, επίδραση, τι έμαθες και τι όριο βάζεις. Μετά προχωράς. Αυτό είναι το νόημα: κλείσιμο, όχι εμμονή.">
-        You write a final report: facts, impact, what you learned, and what boundary you set. Then you move on. That’s the point: closure, not obsession.
-      </p>
-</div>
-</div>
-</div>
-<div class="content-section">
-<h3 data-en="Fight corruption (responsibly)" data-gr="Πολέμησε τη διαφθορά (υπεύθυνα)">Fight corruption (responsibly)</h3>
-<p data-en="DedSec’s mindset also applies to corruption: not vigilantism, but responsible action. Use tools to organize information, protect yourself, and push for accountability through lawful channels." data-gr="Το mindset του DedSec ισχύει και για τη διαφθορά: όχι αυτοδικία, αλλά υπεύθυνη δράση. Χρησιμοποίησε εργαλεία για οργάνωση πληροφορίας, προστασία και λογοδοσία μέσα από νόμιμες διαδικασίες.">
-    DedSec’s mindset also applies to corruption: not vigilantism, but responsible action. Use tools to organize information, protect yourself, and push for accountability through lawful channels.
-  </p>
-<div class="features-grid">
-<div class="feature-card">
-<i class="fas fa-folder-open"></i>
-<h3 data-en="Document &amp; organize" data-gr="Τεκμηρίωσε &amp; οργάνωσε">Document &amp; organize</h3>
-<p data-en="Keep a clear timeline, store lawful documents, and separate facts from assumptions. Clean structure beats chaos." data-gr="Κράτα καθαρό timeline, αποθήκευσε νόμιμα έγγραφα και ξεχώρισε facts από υποθέσεις. Η δομή νικάει το χάος.">
-        Keep a clear timeline, store lawful documents, and separate facts from assumptions. Clean structure beats chaos.
-      </p>
-</div>
-<div class="feature-card">
-<i class="fas fa-user-shield"></i>
-<h3 data-en="Protect yourself" data-gr="Προστάτεψε τον εαυτό σου">Protect yourself</h3>
-<p data-en="Use strong passwords, limit who has access, and avoid risky confrontation. If you’re whistleblowing, consider professional legal advice." data-gr="Χρησιμοποίησε δυνατούς κωδικούς, περιόρισε την πρόσβαση και απέφυγε ριψοκίνδυνη αντιπαράθεση. Αν κάνεις καταγγελία, σκέψου νομική συμβουλή.">
-        Use strong passwords, limit who has access, and avoid risky confrontation. If you’re whistleblowing, consider professional legal advice.
-      </p>
-</div>
-<div class="feature-card">
-<i class="fas fa-scale-balanced"></i>
-<h3 data-en="Accountability through law" data-gr="Λογοδοσία μέσω νόμου">Accountability through law</h3>
-<p data-en="Choose lawful reporting: internal compliance, auditors, ombudsman, regulators, or trusted journalists — depending on the case." data-gr="Διάλεξε νόμιμη αναφορά: εσωτερικό compliance, ελεγκτές, συνήγορο/ombudsman, αρχές ή έμπιστους δημοσιογράφους — ανάλογα με την περίπτωση.">
-        Choose lawful reporting: internal compliance, auditors, ombudsman, regulators, or trusted journalists — depending on the case.
-      </p>
-</div>
-</div>
-<div class="callout">
-<p data-en="Rule: if an action could harm an innocent person or break the law, don’t do it. The mission is accountability and protection." data-gr="Κανόνας: αν μια πράξη μπορεί να βλάψει αθώο ή να παραβιάσει τον νόμο, μην την κάνεις. Η αποστολή είναι λογοδοσία και προστασία.">
-      Rule: if an action could harm an innocent person or break the law, don’t do it. The mission is accountability and protection.
-    </p>
-</div>
-</div>
-<div class="content-section">
-<div class="callout">
-<p data-en="The strongest move is self-control. If you feel you might do something harmful, step away and ask for help." data-gr="Η πιο δυνατή κίνηση είναι η αυτοσυγκράτηση. Αν νιώθεις ότι μπορεί να κάνεις κάτι επιβλαβές, απομακρύνσου και ζήτησε βοήθεια.">
-        The strongest move is self-control. If you feel you might do something harmful, step away and ask for help.
-        </p>
-</div>
-</div>
-</div>
-<div class="content-section">
-<div class="text-center butsys-actions">
-<a class="btn btn-primary" href="learn-about-the-tools.html">
-<i class="fas fa-screwdriver-wrench"></i>
-<span data-en="Back to tools" data-gr="Πίσω στα εργαλεία">Back to tools</span>
-</a>
-<a class="btn btn-ghost" href="our-vision.html" style="margin-left: 10px;">
-<i class="fas fa-eye"></i>
-<span data-en="Read our vision" data-gr="Διάβασε το όραμά μας">Read our vision</span>
-</a>
-</div>
-</div>
 
+</div>
 <footer class="main-footer">
 <div data-lang-section="en">
 <div class="footer-link-buttons">

@@ -7,7 +7,7 @@
 <title>Store - DedSec Project</title>
 <meta content="#07060d" name="theme-color"/>
 <meta content="dark light" name="color-scheme"/>
-<meta content="Sponsor tiers, setup help, repair help, chat support, ButSystem re-branding, custom scripts, and website offers from DedSec Project." name="description"/>
+<meta content="DedSec Project Store: support the project, get sponsors-only access, book setup help, repair help, Direct Chat Support, custom scripts, ButSystem re-branding, and portfolio website services." name="description"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -16,7 +16,7 @@
 <link href="/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/site.webmanifest" rel="manifest"/>
 <meta content="Store - DedSec Project" property="og:title"/>
-<meta content="Sponsor tiers, setup help, repair help, chat support, ButSystem re-branding, custom scripts, and website offers from DedSec Project." property="og:description"/>
+<meta content="DedSec Project Store: support the project, get sponsors-only access, book setup help, repair help, Direct Chat Support, custom scripts, ButSystem re-branding, and portfolio website services." property="og:description"/>
 <meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -188,14 +188,102 @@
   .store-page .payment-btn{padding:0.44rem .76rem !important; font-size:.78rem !important;}
   .store-page .product-badge{top:8px !important; right:8px !important; font-size:.62rem !important;}
 }
+
+
+/* Product/service cards sizing: 10% narrower and ~20% shorter */
+.store-page .store-featured-section .features-grid,
+.store-page .product-list-section .service-grid,
+.store-page .product-list-section .custom-grid,
+.store-page .product-list-section .features-grid{
+  justify-items:center !important;
+}
+.store-page .store-featured-section .store-card,
+.store-page .product-list-section .store-card,
+.store-page .service-grid .store-card,
+.store-page .custom-grid .store-card{
+  width:90% !important;
+  max-width:90% !important;
+  padding:13px 13px !important;
+  gap:6px !important;
+}
+.store-page .store-card .feature-icon-wrapper{
+  width:45px !important;
+  height:45px !important;
+  margin-bottom:0 !important;
+}
+.store-page .store-card-svg{width:20px !important; height:20px !important;}
+.store-page .store-card .feature-title,
+.store-page .store-card h3.feature-title{
+  font-size:clamp(1rem, 2vw, 1.28rem) !important;
+  line-height:1.02 !important;
+}
+.store-page .store-card .feature-description{
+  font-size:.84rem !important;
+  line-height:1.22 !important;
+}
+.store-page .store-card .store-action-row{
+  gap:6px !important;
+  margin-top:0 !important;
+}
+.store-page .product-price{
+  font-size:.86rem !important;
+  padding:.38rem .55rem !important;
+}
+.store-page .payment-btn{
+  min-height:30px !important;
+  padding:.38rem .68rem !important;
+  font-size:.76rem !important;
+}
+.store-page .product-badge{
+  top:8px !important;
+  right:calc(5% + 8px) !important;
+  font-size:.6rem !important;
+  padding:3px 7px !important;
+}
+@media (max-width: 700px){
+  .store-page .store-featured-section .store-card,
+  .store-page .product-list-section .store-card,
+  .store-page .service-grid .store-card,
+  .store-page .custom-grid .store-card{
+    width:90% !important;
+    max-width:90% !important;
+    padding:11px 11px !important;
+    gap:5px !important;
+  }
+  .store-page .store-card .feature-icon-wrapper{width:42px !important; height:42px !important;}
+  .store-page .store-card-svg{width:18px !important; height:18px !important;}
+  .store-page .store-card .feature-title{font-size:.9rem !important; line-height:1.02 !important;}
+  .store-page .store-card .feature-description{font-size:.78rem !important; line-height:1.18 !important;}
+  .store-page .payment-btn{min-height:28px !important; padding:.34rem .56rem !important; font-size:.7rem !important;}
+  .store-page .product-price{font-size:.78rem !important; padding:.32rem .48rem !important;}
+}
+@media (max-width: 430px){
+  .store-page .store-featured-section .store-card,
+  .store-page .product-list-section .store-card,
+  .store-page .service-grid .store-card,
+  .store-page .custom-grid .store-card{
+    width:90% !important;
+    max-width:90% !important;
+    padding:10px 10px !important;
+    gap:5px !important;
+  }
+  .store-page .store-card .feature-icon-wrapper{width:38px !important; height:38px !important;}
+  .store-page .store-card .feature-title{font-size:.86rem !important;}
+  .store-page .store-card .feature-description{font-size:.74rem !important; line-height:1.16 !important;}
+  .store-page .store-card .store-action-row{gap:5px !important;}
+  .store-page .payment-btn{min-height:26px !important; padding:.3rem .5rem !important; font-size:.68rem !important;}
+  .store-page .product-price{font-size:.74rem !important; padding:.28rem .44rem !important;}
+  .store-page .product-badge{font-size:.55rem !important; padding:3px 6px !important;}
+}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ded-sec.space/#organization", "name": "DedSec Project", "url": "https://ded-sec.space/", "logo": "https://ded-sec.space/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg", "sameAs": ["https://github.com/dedsec1121fk", "https://t.me/dedsecproject", "https://www.instagram.com/dedsec_project_official"]}, {"@type": "WebSite", "@id": "https://ded-sec.space/#website", "url": "https://ded-sec.space/", "name": "DedSec Project", "publisher": {"@id": "https://ded-sec.space/#organization"}}, {"@type": "WebPage", "@id": "https://ded-sec.space/Pages/store.html#webpage", "url": "https://ded-sec.space/Pages/store.html", "name": "Store - DedSec Project", "isPartOf": {"@id": "https://ded-sec.space/#website"}, "about": {"@id": "https://ded-sec.space/#organization"}}]}</script><meta content="https://ded-sec.space/Pages/store.html" property="og:url"/><link href="https://ded-sec.space/Pages/store.html" rel="canonical"/>
-<meta content="Store - DedSec Project" name="twitter:title"/><meta content="Sponsor tiers, setup help, repair help, chat support, ButSystem re-branding, custom scripts, and website offers from DedSec Project." name="twitter:description"/><meta content="DedSec Project" name="author"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="DedSec Project" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="el_GR" property="og:locale:alternate"/><meta content="DedSec Project — cybersecurity and Termux learning resources" name="twitter:image:alt"/><meta content="https://ded-sec.space/Pages/store.html" name="twitter:url"/><script id="ld-webpage" type="application/ld+json">{
+<meta content="Store - DedSec Project" name="twitter:title"/><meta content="DedSec Project Store: support the project, get sponsors-only access, book setup help, repair help, Direct Chat Support, custom scripts, ButSystem re-branding, and portfolio website services." name="twitter:description"/><meta content="DedSec Project" name="author"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="DedSec Project" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="el_GR" property="og:locale:alternate"/><meta content="DedSec Project — cybersecurity and Termux learning resources" name="twitter:image:alt"/><meta content="https://ded-sec.space/Pages/store.html" name="twitter:url"/><script id="ld-webpage" type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Store - DedSec Project",
   "url": "https://ded-sec.space/Pages/store.html",
-  "description": "Sponsor tiers, setup help, repair help, chat support, ButSystem re-branding, custom scripts, and website offers from DedSec Project.",
+  "description": "Sponsor tiers, setup help, repair help, Direct Chat Support with the creator, ButSystem re-branding, custom scripts, and website offers from DedSec Project.",
   "inLanguage": [
     "en",
     "el"
@@ -218,7 +306,7 @@
 <a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="butsystem-exclusive.html">ButSystem.py (Exclusive)</a>
 <a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="faq.html">Frequently Asked Questions</a>
 <a class="nav-link" data-en="Assistant" data-gr="Βοηθός" href="assistant.html">Assistant</a>
-<a class="nav-link active" data-en="Store" data-gr="Κατάστημα" href="store.html">Store</a><a class="nav-link" data-en="Collaborations" data-gr="Συνεργασίες" href="collaborations.html">Collaborations</a>
+<a class="nav-link active" data-en="Store" data-gr="Κατάστημα" href="store.html">Store</a>
 <a class="nav-link" data-en="Keep Android Open" data-gr="Κρατήστε το Android Ανοιχτό" href="keep-android-open.html">Keep Android Open</a>
 <a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="privacy-policy.html">Privacy Policy</a>
 <a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="contact-credits.html">Contact &amp; Credits</a></div>
@@ -235,50 +323,49 @@
 <div class="page-content">
 <div class="page-header">
 <h1 data-en="Store" data-gr="Κατάστημα">Store</h1>
-<p data-en="Support DedSec Project through sponsor tiers, practical help services, and business-ready offers built around the project’s real workflow, style, and experience." data-gr="Υποστηρίξτε το DedSec Project μέσω sponsor tiers, πρακτικών υπηρεσιών βοήθειας και business-ready προσφορών βασισμένων στο πραγματικό workflow, το στυλ και την εμπειρία του project.">Support DedSec Project through sponsor tiers, practical help services, and business-ready offers built around the project’s real workflow, style, and experience.</p>
-
+<p data-en="Use this page when you want to support the project, get sponsors-only access, book setup or repair help, schedule Direct Chat Support with the creator, or order custom DedSec-style work." data-gr="Χρησιμοποίησε αυτή τη σελίδα όταν θέλεις να στηρίξεις το project, να πάρεις sponsors-only access, να κλείσεις setup ή repair help, Direct Chat Support με τον creator ή custom DedSec-style δουλειά.">Use this page when you want to support the project, get sponsors-only access, book setup or repair help, schedule Direct Chat Support with the creator, or order custom DedSec-style work.</p>
 </div>
 <div class="content-section store-trust how-it-works">
-<h2 data-en="How this page works" data-gr="Πώς λειτουργεί αυτή η σελίδα">How this page works</h2>
-<p class="store-section-kicker" data-en="Use GitHub Sponsors for the monthly tiers below. For one-time services and custom work, use the payment buttons below and contact DedSec Project after purchase." data-gr="Χρησιμοποίησε το GitHub Sponsors για τα μηνιαία tiers παρακάτω. Για one-time υπηρεσίες και custom δουλειά, χρησιμοποίησε τα payment buttons πιο κάτω και επικοινώνησε με το DedSec Project μετά την αγορά.">Use GitHub Sponsors for the monthly tiers below. For one-time services and custom work, use the payment buttons below and contact DedSec Project after purchase.</p>
+<h2 data-en="Choose the path that matches your need" data-gr="Διάλεξε το path που ταιριάζει στην ανάγκη σου">Choose the path that matches your need</h2>
+<p class="store-section-kicker" data-en="Use the public pages to understand the project. Use GitHub Sponsors for recurring support and sponsors-only access. Use the store buttons when you want a specific service delivered." data-gr="Χρησιμοποίησε τις public σελίδες για να καταλάβεις το project. Χρησιμοποίησε GitHub Sponsors για recurring support και sponsors-only access. Χρησιμοποίησε τα store buttons όταν θέλεις συγκεκριμένη υπηρεσία.">Use the public pages to understand the project. Use GitHub Sponsors for recurring support and sponsors-only access. Use the store buttons when you want a specific service delivered.</p>
 <div class="hero-steps">
 <div class="step-card">
 <span aria-hidden="true" class="step-icon-badge"><svg class="store-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M4 7h16"></path><path d="M7 12h10"></path><path d="M9 17h6"></path><rect height="16" rx="2" width="18" x="3" y="4"></rect></svg></span>
 <div class="step-title" data-en="1. Choose an offer" data-gr="1. Διάλεξε προσφορά">1. Choose an offer</div>
-<div class="step-text" data-en="Pick the tier or service that matches what you need right now: support, setup help, repair help, chat help, or custom work." data-gr="Διάλεξε το tier ή την υπηρεσία που ταιριάζει σε αυτό που χρειάζεσαι τώρα: υποστήριξη, setup help, repair help, chat help ή custom δουλειά.">Pick the tier or service that matches what you need right now: support, setup help, repair help, chat help, or custom work.</div>
+<div class="step-text" data-en="Pick sponsorship, setup help, repair help, Direct Chat Support, or custom work." data-gr="Διάλεξε sponsorship, setup help, repair help, Direct Chat Support ή custom δουλειά.">Pick sponsorship, setup help, repair help, Direct Chat Support, or custom work.</div>
 </div>
 <div class="step-card">
 <span aria-hidden="true" class="step-icon-badge"><svg class="store-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 10h18"></path><path d="M7 15h3"></path></svg></span>
-<div class="step-title" data-en="2. Complete payment" data-gr="2. Ολοκλήρωσε την πληρωμή">2. Complete payment</div>
-<div class="step-text" data-en="Use GitHub Sponsors for monthly support or use the payment buttons below for one-time offers and custom work." data-gr="Χρησιμοποίησε το GitHub Sponsors για μηνιαία υποστήριξη ή τα payment buttons πιο κάτω για one-time προσφορές και custom δουλειά.">Use GitHub Sponsors for monthly support or use the payment buttons below for one-time offers and custom work.</div>
+<div class="step-title" data-en="2. Checkout" data-gr="2. Checkout">2. Checkout</div>
+<div class="step-text" data-en="Use GitHub Sponsors or the offer buttons below." data-gr="Χρησιμοποίησε GitHub Sponsors ή τα offer buttons πιο κάτω.">Use GitHub Sponsors or the offer buttons below.</div>
 </div>
 <div class="step-card">
 <span aria-hidden="true" class="step-icon-badge"><svg class="store-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M22 2L11 13"></path><path d="M22 2L15 22l-4-9-9-4 20-7z"></path></svg></span>
 <div class="step-title" data-en="3. Contact DedSec Project" data-gr="3. Επικοινώνησε με το DedSec Project">3. Contact DedSec Project</div>
-<div class="step-text" data-en="After purchase, contact DedSec Project through Instagram, Telegram, or WhatsApp with your receipt, GitHub username if needed, and the exact offer you bought." data-gr="Μετά την αγορά, επικοινώνησε με το DedSec Project μέσω Instagram, Telegram ή WhatsApp με την απόδειξή σου, το GitHub username σου αν χρειάζεται και την ακριβή προσφορά που αγόρασες.">After purchase, contact DedSec Project through Instagram, Telegram, or WhatsApp with your receipt, GitHub username if needed, and the exact offer you bought.</div>
+<div class="step-text" data-en="Send your receipt, GitHub username if needed, and the offer you bought." data-gr="Στείλε την απόδειξη, το GitHub username αν χρειάζεται και την προσφορά που αγόρασες.">Send your receipt, GitHub username if needed, and the offer you bought.</div>
 </div>
 </div>
 </div>
 <div class="content-section store-featured-section">
 <h2 data-en="GitHub Sponsors" data-gr="GitHub Sponsors">GitHub Sponsors</h2>
-<p class="store-section-kicker" data-en="Recurring support tiers for people who want to help DedSec Project grow while unlocking supporter perks." data-gr="Recurring support tiers για άτομα που θέλουν να βοηθήσουν το DedSec Project να μεγαλώσει ενώ ξεκλειδώνουν supporter perks.">Recurring support tiers for people who want to help DedSec Project grow while unlocking supporter perks.</p>
+<p class="store-section-kicker" data-en="Recurring support tiers for people who want to help DedSec Project grow while receiving supporter perks." data-gr="Recurring support tiers για άτομα που θέλουν να βοηθήσουν το DedSec Project να μεγαλώσει ενώ λαμβάνουν supporter perks.">Recurring support tiers for people who want to help DedSec Project grow while receiving supporter perks.</p>
 <div class="features-grid sponsors-grid">
 <div class="feature-card featured-product-card store-card">
 <span class="product-badge" data-en="Starter" data-gr="Starter">Starter</span>
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M12 21s-6.5-4.35-8.5-8.03C1.82 9.6 3.2 6 6.74 6c2.06 0 3.22 1.13 4.01 2.33C11.54 7.13 12.7 6 14.76 6 18.3 6 19.68 9.6 20.5 12.97 18.5 16.65 12 21 12 21z"></path></svg></div>
 <h3 class="feature-title" data-en="Supporter" data-gr="Supporter">Supporter</h3>
-<p class="feature-description" data-en="Monthly support with repository access and your Discord role." data-gr="Μηνιαία υποστήριξη που ξεκλειδώνει πρόσβαση στο repository και τον Discord ρόλο σου. Είναι ο πιο εύκολος τρόπος να στηρίζεις το DedSec κάθε μήνα και να παίρνεις τα βασικά supporter perks χωρίς περιττή σκέψη.">Monthly support with repository access and your Discord role.</p>
+<p class="feature-description" data-en="Support the public toolkit every month, receive sponsors-only repository access, and get your supporter role so the project can recognize you properly." data-gr="Στήριξε το public toolkit κάθε μήνα, λάβε sponsors-only repository access και πάρε supporter role ώστε το project να σε αναγνωρίζει σωστά.">Support the public toolkit every month, receive sponsors-only repository access, and get your supporter role so the project can recognize you properly.</p>
 <div class="store-action-row">
 <div class="product-price">3€ / month</div>
 <a class="payment-btn" data-en="Open GitHub Sponsors" data-gr="Άνοιγμα GitHub Sponsors" href="https://github.com/sponsors/dedsec1121fk" rel="noopener noreferrer" target="_blank">Open GitHub Sponsors</a>
 </div>
-<p class="store-meta-note" data-en="After paying, send your GitHub username so access can be confirmed fast." data-gr="Μετά την πληρωμή, επικοινώνησε με το DedSec Project και στείλε το GitHub username σου ώστε η πρόσβαση να επιβεβαιωθεί γρήγορα.">After paying, send your GitHub username so access can be confirmed fast.</p>
+<p class="store-meta-note" data-en="After checkout, send your GitHub username so access can be confirmed fast." data-gr="Μετά το checkout, επικοινώνησε με το DedSec Project και στείλε το GitHub username σου ώστε η πρόσβαση να επιβεβαιωθεί γρήγορα.">After checkout, send your GitHub username so access can be confirmed fast.</p>
 </div>
 <div class="feature-card featured-product-card store-card">
-<span class="product-badge featured-badge badge" data-en="Best Value" data-gr="Best Value">Best Value</span>
+
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M12 3l2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.18l-5.56 2.92 1.06-6.19L3 9.53l6.22-.9L12 3z"></path></svg></div>
 <h3 class="feature-title" data-en="Pro Supporter" data-gr="Pro Supporter">Pro Supporter</h3>
-<p class="feature-description" data-en="Same private access as the starter tier plus faster help priority." data-gr="Η ίδια ιδιωτική πρόσβαση με το starter tier, μαζί με ταχύτερη προτεραιότητα βοήθειας όταν χρειάζεσαι πραγματική υποστήριξη. Ταιριάζει σε supporters που θέλουν τα project perks και μια πιο άμεση γραμμή βοήθειας.">Same private access as the starter tier plus faster help priority.</p>
+<p class="feature-description" data-en="The best monthly path if you want to help the project survive and also get faster priority help when support time is limited." data-gr="Το καλύτερο μηνιαίο path αν θέλεις να βοηθήσεις το project να επιβιώσει και επίσης να έχεις πιο γρήγορη priority help όταν ο χρόνος support είναι περιορισμένος.">The best monthly path if you want to help the project survive and also get faster priority help when support time is limited.</p>
 <div class="store-action-row">
 <div class="product-price">9€ / month</div>
 <a class="payment-btn" data-en="Open GitHub Sponsors" data-gr="Άνοιγμα GitHub Sponsors" href="https://github.com/sponsors/dedsec1121fk" rel="noopener noreferrer" target="_blank">Open GitHub Sponsors</a>
@@ -288,17 +375,15 @@
 </div>
 </div>
 </div>
-
-
 <div class="content-section product-list-section">
 <h2 data-en="One-Time Services" data-gr="One-Time Υπηρεσίες">One-Time Services</h2>
-<p class="store-section-kicker" data-en="Fast paid help for setup, fixes, and support." data-gr="Γρήγορη paid βοήθεια για setup, fixes και support.">Fast paid help for setup, fixes, and support.</p>
+<p class="store-section-kicker" data-en="Practical services for people who want direct help, not endless trial and error. These offers reserve creator time, guidance, and delivery for a specific problem or build." data-gr="Πρακτικές υπηρεσίες για άτομα που θέλουν άμεση βοήθεια, όχι ατελείωτο trial and error. Αυτές οι προσφορές κρατούν χρόνο creator, καθοδήγηση και παράδοση για συγκεκριμένο πρόβλημα ή build.">Practical services for people who want direct help, not endless trial and error. These offers reserve creator time, guidance, and delivery for a specific problem or build.</p>
 <div class="features-grid service-grid">
 <div class="feature-card store-card">
 <span class="product-badge" data-en="Fast Start" data-gr="Fast Start">Fast Start</span>
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M5 12a7 7 0 1014 0"></path><path d="M12 2v5"></path><path d="M8 7l4-5 4 5"></path><path d="M12 12l4 4"></path></svg></div>
 <h3 class="feature-title" data-en="Setup Help" data-gr="Setup Help">Setup Help</h3>
-<p class="feature-description" data-en="Guided help to install DedSec and get the first run working cleanly." data-gr="Μια καθοδηγούμενη υπηρεσία setup για νέους χρήστες που θέλουν το DedSec σωστά εγκατεστημένο, καθαρά ρυθμισμένο και έτοιμο για το πρώτο κανονικό run χωρίς να χαθούν ώρες σε μια δύσκολη πρώτη προσπάθεια.">Guided help to install DedSec and get the first run working cleanly.</p>
+<p class="feature-description" data-en="For people who want DedSec installed and ready without losing hours on first-run problems, Termux permissions, storage paths, or confusing package errors." data-gr="Για άτομα που θέλουν το DedSec εγκατεστημένο και έτοιμο χωρίς να χάσουν ώρες σε first-run προβλήματα, Termux permissions, storage paths ή μπερδεμένα package errors.">For people who want DedSec installed and ready without losing hours on first-run problems, Termux permissions, storage paths, or confusing package errors.</p>
 <div class="store-action-row">
 <div class="product-price">20€</div>
 <a class="payment-btn" data-en="Pay Setup Help" data-gr="Pay Setup Help" href="https://buy.stripe.com/8x2cN6b3Kbus6X40kS8Zq0n" rel="noopener noreferrer" target="_blank">Pay Setup Help</a>
@@ -309,7 +394,7 @@
 <span class="product-badge" data-en="Repair" data-gr="Repair">Repair</span>
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M14.7 6.3a4 4 0 01-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.4 2.4-3-3 2.4-2.4z"></path></svg></div>
 <h3 class="feature-title" data-en="Repair Help" data-gr="Repair Help">Repair Help</h3>
-<p class="feature-description" data-en="Focused troubleshooting for broken installs, failed updates, storage or path issues, and permission errors." data-gr="Μια rescue υπηρεσία για όταν το DedSec ή το Termux ήδη κάνει νερά και θέλεις focused troubleshooting για broken installs, αποτυχημένα updates, storage problems, path issues ή περίεργα permission errors.">Focused troubleshooting for broken installs, failed updates, storage or path issues, and permission errors.</p>
+<p class="feature-description" data-en="For broken installs, failed updates, missing modules, storage/path problems, menu issues, or anything that needs focused troubleshooting instead of random commands." data-gr="Για broken installs, failed updates, missing modules, storage/path problems, menu issues ή οτιδήποτε χρειάζεται focused troubleshooting αντί για τυχαίες εντολές.">For broken installs, failed updates, missing modules, storage/path problems, menu issues, or anything that needs focused troubleshooting instead of random commands.</p>
 <div class="store-action-row">
 <div class="product-price">40€</div>
 <a class="payment-btn" data-en="Pay Repair Help" data-gr="Pay Repair Help" href="https://buy.stripe.com/7sYcN67RydCAftAd7E8Zq0o" rel="noopener noreferrer" target="_blank">Pay Repair Help</a>
@@ -318,40 +403,37 @@
 </div>
 <div class="feature-card store-card">
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"></path></svg></div>
-<h3 class="feature-title" data-en="Chat Help/15m" data-gr="Chat Support/15λ">Chat Help/15m</h3>
-<p class="feature-description" data-en="Quick one-to-one help for one issue or one short setup question." data-gr="Γρήγορη one-to-one βοήθεια για ένα μόνο θέμα, μια σύντομη ερώτηση setup ή μια γρήγορη απάντηση όταν χρειάζεσαι μόνο ένα focused σπρώξιμο προς τη σωστή κατεύθυνση.">Quick one-to-one help for one issue or one short setup question.</p>
+<h3 class="feature-title" data-en="Direct Chat Support / 15m" data-gr="Direct Chat Support / 15λ">Direct Chat Support / 15m</h3>
+<p class="feature-description" data-en="A short direct support session for one specific blocker: one error screenshot, one command, one setting, or one small setup question." data-gr="Μια σύντομη άμεση συνεδρία support για ένα συγκεκριμένο κόλλημα: ένα error screenshot, μία εντολή, μία ρύθμιση ή μία μικρή setup ερώτηση.">A short direct support session for one specific blocker: one error screenshot, one command, one setting, or one small setup question.</p>
 <div class="store-action-row">
 <div class="product-price">5€</div>
 <a class="payment-btn" data-en="Pay 15m" data-gr="Pay 15m" href="https://buy.stripe.com/bJedRa5JqdCAftA6Jg8Zq0p" rel="noopener noreferrer" target="_blank">Pay 15m</a>
 </div>
-<p class="store-meta-note" data-en="Best for quick questions." data-gr="Ιδανικό για γρήγορες ερωτήσεις και ένα συγκεκριμένο θέμα.">Best for quick questions.</p>
+<p class="store-meta-note" data-en="Best when you already know the exact problem and need the next correct step." data-gr="Ιδανικό όταν ξέρεις ήδη το ακριβές πρόβλημα και χρειάζεσαι το επόμενο σωστό βήμα.">Best when you already know the exact problem and need the next correct step.</p>
 </div>
 <div class="feature-card store-card">
-<span class="product-badge featured-badge badge" data-en="Popular" data-gr="Popular">Popular</span>
+
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M8 10h8"></path><path d="M8 14h5"></path><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"></path><path d="M16 5l3 3"></path></svg></div>
-<h3 class="feature-title" data-en="Chat Help/30m" data-gr="Chat Support/30λ">Chat Help/30m</h3>
-<p class="feature-description" data-en="A balanced support session with enough time to explain the problem and leave with a clear next step." data-gr="Μια ισορροπημένη support συνεδρία με αρκετό χρόνο για να εξηγήσεις το πρόβλημα, να πάρεις καθοδήγηση και να φύγεις με πιο καθαρό next-step plan χωρίς να πληρώσεις για πλήρες repair service.">A balanced support session with enough time to explain the problem and leave with a clear next step.</p>
+<h3 class="feature-title" data-en="Direct Chat Support / 30m" data-gr="Direct Chat Support / 30λ">Direct Chat Support / 30m</h3>
+<p class="feature-description" data-en="The balanced option for explaining the issue, checking screenshots or logs, getting commands, and leaving with a clear step-by-step plan." data-gr="Η ισορροπημένη επιλογή για να εξηγήσεις το θέμα, να ελεγχθούν screenshots ή logs, να πάρεις εντολές και να φύγεις με καθαρό step-by-step πλάνο.">The balanced option for explaining the issue, checking screenshots or logs, getting commands, and leaving with a clear step-by-step plan.</p>
 <div class="store-action-row">
 <div class="product-price">10€</div>
 <a class="payment-btn" data-en="Pay 30m" data-gr="Pay 30m" href="https://buy.stripe.com/eVq8wQgo47ecbdkd7E8Zq0q" rel="noopener noreferrer" target="_blank">Pay 30m</a>
 </div>
-<p class="store-meta-note" data-en="Best all-around support choice." data-gr="Η καλύτερη γενική επιλογή για setup questions και mid-size support.">Best all-around support choice.</p>
+<p class="store-meta-note" data-en="Best all-around support choice for setup questions, update errors, and medium-size blockers." data-gr="Η καλύτερη γενική επιλογή για setup questions, update errors και μεσαία κολλήματα.">Best all-around support choice for setup questions, update errors, and medium-size blockers.</p>
 </div>
 <div class="feature-card store-card">
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
-<h3 class="feature-title" data-en="Chat Help/1h" data-gr="Chat Support/1ώρα">Chat Help/1h</h3>
-<p class="feature-description" data-en="Longer one-to-one support for harder issues and deeper troubleshooting." data-gr="Μια μεγαλύτερη one-to-one support συνεδρία για πιο δύσκολα θέματα, πιο αργή βήμα-βήμα καθοδήγηση και βαθύτερο troubleshooting όταν ένα σύντομο μήνυμα δεν αρκεί.">Longer one-to-one support for harder issues and deeper troubleshooting.</p>
+<h3 class="feature-title" data-en="Direct Chat Support / 1h" data-gr="Direct Chat Support / 1ώρα">Direct Chat Support / 1h</h3>
+<p class="feature-description" data-en="The deeper support option for multi-step problems, first-time setup walkthroughs, broken installs, or calmer explanations while you follow along." data-gr="Η πιο βαθιά επιλογή support για multi-step προβλήματα, first-time setup walkthroughs, broken installs ή πιο ήρεμες εξηγήσεις όσο ακολουθείς τα βήματα.">The deeper support option for multi-step problems, first-time setup walkthroughs, broken installs, or calmer explanations while you follow along.</p>
 <div class="store-action-row">
 <div class="product-price">20€</div>
 <a class="payment-btn" data-en="Pay 1h" data-gr="Pay 1h" href="https://buy.stripe.com/6oU28s0p6dCA5T06Jg8Zq0r" rel="noopener noreferrer" target="_blank">Pay 1h</a>
 </div>
-<p class="store-meta-note" data-en="Best for deeper support." data-gr="Ιδανικό για βαθύτερη υποστήριξη όταν χρειάζεσαι περισσότερη καθοδήγηση.">Best for deeper support.</p>
+<p class="store-meta-note" data-en="Best when you need time to explain, test, and understand instead of rushing." data-gr="Ιδανικό όταν χρειάζεσαι χρόνο για εξήγηση, δοκιμή και κατανόηση αντί για βιασύνη.">Best when you need time to explain, test, and understand instead of rushing.</p>
 </div>
 </div>
 </div>
-<div class="store-note-card"></div>
-
-
 <div class="content-section product-list-section">
 <h2 data-en="Custom Work" data-gr="Custom Work">Custom Work</h2>
 <p class="store-section-kicker" data-en="DedSec-style work built around existing ideas and business use cases." data-gr="DedSec-style δουλειά βασισμένη σε υπάρχουσες ιδέες και business use cases.">DedSec-style work built around existing ideas and business use cases.</p>
@@ -360,7 +442,7 @@
 <span class="product-badge" data-en="Custom" data-gr="Custom">Custom</span>
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M16 18l6-6-4-4-6 6"></path><path d="M8 6l-6 6 4 4 6-6"></path><path d="M14.5 7.5l2 2"></path><path d="M7.5 14.5l2 2"></path></svg></div>
 <h3 class="feature-title" data-en="Custom Scripts" data-gr="Custom Scripts">Custom Scripts</h3>
-<p class="feature-description" data-en="A custom script built around existing DedSec ideas, features, or style with up to two revisions." data-gr="Ένα custom script χτισμένο γύρω από υπάρχουσες ιδέες, features ή το στυλ του DedSec για άτομα που θέλουν κάτι οικείο, focused και πιο γρήγορο από το να ξεκινήσεις ένα μεγάλο project από το μηδέν. Η προσφορά περιλαμβάνει έως δύο revisions και αφορά μόνο ασφαλή projects.">A custom script built around existing DedSec ideas, features, or style with up to two revisions.</p>
+<p class="feature-description" data-en="A DedSec-style custom script based on the spirit of the existing project: practical, guided, low-end friendly, and built around your lawful use case." data-gr="Ένα DedSec-style custom script βασισμένο στο πνεύμα του υπάρχοντος project: πρακτικό, guided, low-end friendly και χτισμένο γύρω από τη νόμιμη χρήση σου.">A DedSec-style custom script based on the spirit of the existing project: practical, guided, low-end friendly, and built around your lawful use case.</p>
 <div class="store-action-row">
 <div class="product-price">100€</div>
 <a class="payment-btn" data-en="Pay Custom Script" data-gr="Pay Custom Script" href="https://buy.stripe.com/8x29AUgo46a83KSebI8Zq0s" rel="noopener noreferrer" target="_blank">Pay Custom Script</a>
@@ -371,7 +453,7 @@
 <span class="product-badge" data-en="Business" data-gr="Business">Business</span>
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="4"></rect><path d="M7 8h10"></path><path d="M7 12h6"></path><path d="M8 20h8"></path></svg></div>
 <h3 class="feature-title" data-en="ButSystem Re-Branding" data-gr="ButSystem Re-Branding">ButSystem Re-Branding</h3>
-<p class="feature-description" data-en="A business-facing re-branding package built from the ButSystem concept." data-gr="Ένα business-facing πακέτο re-branding χτισμένο πάνω στο υπάρχον concept του ButSystem ώστε η εταιρεία σου να αποκτήσει μια πιο branded έκδοση χωρίς να ξεκινήσει από το μηδέν. Είναι έξυπνη επιλογή όταν σου αρέσει η βασική ιδέα αλλά θέλεις να μοιάζει περισσότερο με τη δική σου επιχείρηση.">A business-facing re-branding package built from the ButSystem concept.</p>
+<p class="feature-description" data-en="A business-facing re-branding package for people who like the ButSystem concept and want it adapted into a more branded workspace for their own identity." data-gr="Ένα business-facing re-branding package για όσους τους αρέσει το ButSystem concept και το θέλουν προσαρμοσμένο σε πιο branded workspace για τη δική τους ταυτότητα.">A business-facing re-branding package for people who like the ButSystem concept and want it adapted into a more branded workspace for their own identity.</p>
 <div class="store-action-row">
 <div class="product-price">150€</div>
 <a class="payment-btn" data-en="Pay Re-Branding" data-gr="Pay Re-Branding" href="https://buy.stripe.com/9B64gAgo40POdls0kS8Zq0t" rel="noopener noreferrer" target="_blank">Pay Re-Branding</a>
@@ -382,7 +464,7 @@
 <span class="product-badge" data-en="Website" data-gr="Website">Website</span>
 <div class="feature-icon-wrapper"><svg class="store-svg store-card-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="4"></rect><path d="M3 8h18"></path><path d="M8 20h8"></path><path d="M12 18v2"></path></svg></div>
 <h3 class="feature-title" data-en="Simple Portfolio/CV Site" data-gr="Simple Portfolio/CV Site">Simple Portfolio/CV Site</h3>
-<p class="feature-description" data-en="A clean one-page website for your work, CV, or portfolio with one year of a .com domain included." data-gr="Ένα καθαρό one-page website για τη δουλειά, το CV ή το portfolio σου που σε βοηθά να δείχνεις πιο επαγγελματικός γρήγορα, με έναν χρόνο .com domain included. Είναι ιδανικό για άτομα που θέλουν μια απλή online παρουσία χωρίς να πληρώσουν για μεγαλύτερο multi-page build.">A clean one-page website for your work, CV, or portfolio with one year of a .com domain included.</p>
+<p class="feature-description" data-en="A clean one-page website for your work, CV, or portfolio, made for people who need a professional online presence without a huge agency budget." data-gr="Ένα καθαρό one-page website για τη δουλειά, το CV ή το portfolio σου, για άτομα που χρειάζονται επαγγελματική online παρουσία χωρίς τεράστιο agency budget.">A clean one-page website for your work, CV, or portfolio, made for people who need a professional online presence without a huge agency budget.</p>
 <div class="store-action-row">
 <div class="product-price">200€</div>
 <a class="payment-btn" data-en="Pay Website" data-gr="Pay Website" href="https://buy.stripe.com/dRm5kE4Fm7ec2GO0kS8Zq0u" rel="noopener noreferrer" target="_blank">Pay Website</a>
@@ -390,13 +472,10 @@
 <p class="store-meta-note" data-en="Extra pages or special features use custom pricing." data-gr="Extra pages, special features ή μεγαλύτερα websites χρειάζονται custom pricing.">Extra pages or special features use custom pricing.</p>
 </div>
 </div>
-</div>
-
-
-
+</div><div class="content-section store-note-section store-note-section-moved"><div class="creator-note"><strong data-en="Developer's note" data-gr="Σημείωση δημιουργού">Developer's note</strong><p data-en="DedSec Project stays public because that is the point: useful tools, guides, and fixes should not disappear behind a wall. But the work still takes time: testing on phones, fixing broken updates, writing guides, translations, support sessions, and real life pressure. Sponsors and store customers keep that possible while getting something clear back: access, direct help, or work shaped around their own situation." data-gr="Το DedSec Project μένει public γιατί αυτό είναι το νόημα: χρήσιμα εργαλεία, οδηγοί και fixes να μη χάνονται πίσω από τοίχο πληρωμής. Αλλά η δουλειά θέλει χρόνο: testing σε κινητά, διόρθωση χαλασμένων updates, γράψιμο οδηγών, μεταφράσεις, support sessions και πραγματική πίεση ζωής. Οι sponsors και οι store customers το κρατάνε δυνατό, ενώ παίρνουν κάτι ξεκάθαρο πίσω: πρόσβαση, άμεση βοήθεια ή δουλειά φτιαγμένη γύρω από τη δική τους περίπτωση.">DedSec Project stays public because that is the point: useful tools, guides, and fixes should not disappear behind a wall. But the work still takes time: testing on phones, fixing broken updates, writing guides, translations, support sessions, and real life pressure. Sponsors and store customers keep that possible while getting something clear back: access, direct help, or work shaped around their own situation.</p></div></div>
 <div class="content-section">
 <h2 data-en="After purchase" data-gr="Μετά την αγορά">After purchase</h2>
-<p class="store-section-kicker" data-en="After sponsoring or purchasing, contact DedSec Project through Instagram, Telegram, or WhatsApp and send your receipt plus any details needed for delivery." data-gr="Μετά το sponsorship ή την αγορά, επικοινώνησε με το DedSec Project μέσω Instagram, Telegram ή WhatsApp και στείλε την απόδειξή σου μαζί με όποιες λεπτομέρειες χρειάζονται για την παράδοση.">After sponsoring or purchasing, contact DedSec Project through Instagram, Telegram, or WhatsApp and send your receipt plus any details needed for delivery.</p>
+<p class="store-section-kicker" data-en="After sponsoring or ordering, contact DedSec Project through Instagram, Telegram, or WhatsApp with your receipt, GitHub username if sponsor access is needed, the exact offer name, and a short description of what you need delivered. For Direct Chat Support, send the main error or question before the session starts so the session time is used well." data-gr="Μετά το sponsorship ή την παραγγελία, επικοινώνησε με το DedSec Project μέσω Instagram, Telegram ή WhatsApp με την απόδειξή σου, το GitHub username αν χρειάζεται sponsor access, το ακριβές όνομα της προσφοράς και μια σύντομη περιγραφή του τι χρειάζεσαι. Για Direct Chat Support, στείλε το βασικό error ή την ερώτηση πριν ξεκινήσει η συνεδρία ώστε ο χρόνος συνεδρίας να χρησιμοποιηθεί σωστά.">After sponsoring or ordering, contact DedSec Project through Instagram, Telegram, or WhatsApp with your receipt, GitHub username if sponsor access is needed, the exact offer name, and a short description of what you need delivered. For Direct Chat Support, send the main error or question before the session starts so the session time is used well.</p>
 <div class="contact-grid">
 <a class="app-icon" href="https://www.instagram.com/dedsec_project_official" rel="noopener noreferrer" target="_blank">
 <span aria-hidden="true" class="store-social-icon"><svg class="store-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" fill="currentColor" r=".6" stroke="none"></circle></svg></span>
@@ -411,14 +490,12 @@
 <span data-en="WhatsApp" data-gr="WhatsApp">WhatsApp</span>
 </a>
 </div>
-<p class="contact-cta-note" data-en="Tip: include your GitHub username for sponsor tiers, or include the exact service name and a short summary of what you need for one-time purchases." data-gr="Tip: βάλε το GitHub username σου για τα sponsor tiers ή το ακριβές όνομα της υπηρεσίας και μια σύντομη περιγραφή του τι χρειάζεσαι για one-time αγορές.">Tip: include your GitHub username for sponsor tiers, or include the exact service name and a short summary of what you need for one-time purchases.</p>
-
+<p class="contact-cta-note" data-en="Tip: include your GitHub username for sponsor tiers. For Direct Chat Support, include the session length you bought, your device, the exact error, and what you already tried." data-gr="Tip: βάλε το GitHub username σου για τα sponsor tiers. Για Direct Chat Support, βάλε τη διάρκεια που αγόρασες, τη συσκευή σου, το ακριβές error και τι δοκίμασες ήδη.">Tip: include your GitHub username for sponsor tiers. For Direct Chat Support, include the session length you bought, your device, the exact error, and what you already tried.</p>
 <div class="store-note-card">
 <h3 data-en="No refunds policy" data-gr="Πολιτική μη επιστροφών">No refunds policy</h3>
-<p data-en="All sponsor tiers, one-time services, chat support slots, custom work, and website offers on this page are non-refundable. These offers are digital or manually handled and time, access, and planning may begin right after purchase and contact." data-gr="Όλα τα sponsor tiers, οι one-time υπηρεσίες, τα chat support slots, η custom δουλειά και οι προσφορές website σε αυτή τη σελίδα δεν επιστρέφονται. Αυτές οι προσφορές είναι ψηφιακές ή γίνονται χειροκίνητα και ο χρόνος, η πρόσβαση και ο σχεδιασμός μπορεί να ξεκινήσουν αμέσως μετά την αγορά και την επικοινωνία.">All sponsor tiers, one-time services, chat support slots, custom work, and website offers on this page are non-refundable. These offers are digital or manually handled and time, access, and planning may begin right after purchase and contact.</p>
+<p data-en="All sponsor tiers, one-time services, Direct Chat Support slots, custom work, and website offers on this page are non-refundable. These offers are digital or manually handled, and time, access, review, support, or planning may begin right after purchase and contact." data-gr="Όλα τα sponsor tiers, οι one-time υπηρεσίες, τα Direct Chat Support slots, η custom δουλειά και οι website προσφορές σε αυτή τη σελίδα δεν επιστρέφονται. Αυτές οι προσφορές είναι ψηφιακές ή γίνονται χειροκίνητα και ο χρόνος, η πρόσβαση, ο έλεγχος, το support ή ο σχεδιασμός μπορεί να ξεκινήσουν αμέσως μετά την αγορά και την επικοινωνία.">All sponsor tiers, one-time services, Direct Chat Support slots, custom work, and website offers on this page are non-refundable. These offers are digital or manually handled, and time, access, review, support, or planning may begin right after purchase and contact.</p>
 </div>
 </div>
-
 <footer class="main-footer">
 <div data-lang-section="en">
 <div class="footer-link-buttons">
