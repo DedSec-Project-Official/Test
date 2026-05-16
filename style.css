@@ -7183,41 +7183,6 @@ body.light-theme .tool-item.active .tool-expand-icon{
   }
 }
 
-/* ButSystem: feature summary cards after "Core ButSystem feature areas" always fit two per row. */
-.butsystem-page .but-feature-summary,
-.butsystem-page .features-grid.but-feature-summary{
-  display:grid !important;
-  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-  gap:clamp(10px, 2.4vw, 18px) !important;
-  align-items:stretch !important;
-  justify-items:stretch !important;
-}
-.butsystem-page .but-feature-summary .feature-card{
-  width:100% !important;
-  max-width:none !important;
-  min-width:0 !important;
-  min-height:clamp(150px, 32vw, 210px) !important;
-}
-@media (max-width:420px){
-  .butsystem-page .but-feature-summary,
-  .butsystem-page .features-grid.but-feature-summary{
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-    gap:9px !important;
-  }
-  .butsystem-page .but-feature-summary .feature-card{
-    padding:10px 8px !important;
-    min-height:150px !important;
-  }
-  .butsystem-page .but-feature-summary .feature-card h3{
-    font-size:.76rem !important;
-    line-height:1.18 !important;
-  }
-  .butsystem-page .but-feature-summary .feature-card p{
-    font-size:.62rem !important;
-    line-height:1.22 !important;
-  }
-}
-
 /* FAQ contact button belongs after all FAQ categories. */
 #faq-container > .contact-cta{
   margin-top:clamp(18px, 4vw, 32px) !important;
@@ -7320,66 +7285,6 @@ html body.dark-theme .home-screen .instagram-alert .instagram-alert-btn{
   -webkit-text-fill-color:#ffffff !important;
   text-align:center !important;
   text-decoration:none !important;
-}
-
-/* ButSystem core feature cards: force two per row even on small phones. */
-html body.butsystem-page .page-content .features-grid.but-feature-summary,
-html body.butsystem-page .features-grid.but-feature-summary,
-html body.butsystem-page div.features-grid.but-feature-summary{
-  display:grid !important;
-  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-  grid-auto-flow:row !important;
-  gap:clamp(8px, 2vw, 14px) !important;
-  align-items:stretch !important;
-  justify-items:stretch !important;
-  width:100% !important;
-  max-width:100% !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-}
-html body.butsystem-page .features-grid.but-feature-summary > .feature-card{
-  width:100% !important;
-  max-width:none !important;
-  min-width:0 !important;
-  margin:0 !important;
-  padding:clamp(9px, 2.2vw, 14px) !important;
-  min-height:clamp(132px, 30vw, 195px) !important;
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:flex-start !important;
-  overflow-wrap:anywhere !important;
-  word-break:normal !important;
-}
-html body.butsystem-page .features-grid.but-feature-summary .feature-card-compact-head{
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  gap:6px !important;
-  text-align:center !important;
-  margin-bottom:7px !important;
-}
-html body.butsystem-page .features-grid.but-feature-summary .feature-card-compact-head i{
-  font-size:clamp(1.05rem, 4.5vw, 1.65rem) !important;
-  margin:0 !important;
-}
-html body.butsystem-page .features-grid.but-feature-summary .feature-card h3{
-  font-size:clamp(.68rem, 2.65vw, .98rem) !important;
-  line-height:1.12 !important;
-  margin:0 !important;
-  text-align:center !important;
-}
-html body.butsystem-page .features-grid.but-feature-summary .feature-card p{
-  font-size:clamp(.58rem, 2.25vw, .82rem) !important;
-  line-height:1.24 !important;
-  margin:0 !important;
-  text-align:left !important;
-}
-@media (max-width:380px){
-  html body.butsystem-page .features-grid.but-feature-summary{gap:7px !important;}
-  html body.butsystem-page .features-grid.but-feature-summary > .feature-card{padding:8px 6px !important; min-height:128px !important;}
-  html body.butsystem-page .features-grid.but-feature-summary .feature-card h3{font-size:.62rem !important;}
-  html body.butsystem-page .features-grid.but-feature-summary .feature-card p{font-size:.52rem !important; line-height:1.2 !important;}
 }
 
 /* Kill the sticky pink/purple tap-hover overlay on mobile accordions. */
@@ -7506,87 +7411,182 @@ html body .home-screen .instagram-alert *{
   -webkit-text-fill-color:#ffffff !important;
 }
 
-/* === 2026-05-16 final user edits: ButSystem core placement/cards + store badges === */
-/* Core ButSystem feature areas are now directly after System overview.
-   Cards stack one per row and use horizontal width to avoid tall mobile boxes. */
-.butsystem-page .but-feature-summary,
-.butsystem-page .features-grid.but-feature-summary{
-  display:grid !important;
-  grid-template-columns:1fr !important;
-  gap:clamp(10px, 2.5vw, 16px) !important;
+/* === Final polish: ButSystem cards like Store steps + theme/readability fixes === */
+html body.butsystem-page .page-content .features-grid.but-feature-summary,
+html body.butsystem-page .features-grid.but-feature-summary,
+html body.butsystem-page div.features-grid.but-feature-summary{
+  display:flex !important;
+  flex-direction:column !important;
+  grid-template-columns:none !important;
+  grid-auto-flow:initial !important;
+  gap:clamp(10px, 2.8vw, 16px) !important;
   width:100% !important;
   max-width:min(100%, 980px) !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
+  margin:clamp(12px, 3vw, 20px) auto 0 !important;
+  padding:0 !important;
   align-items:stretch !important;
   justify-items:stretch !important;
 }
-.butsystem-page .but-feature-summary .feature-card{
+html body.butsystem-page .features-grid.but-feature-summary > .feature-card{
   width:100% !important;
   max-width:100% !important;
   min-width:0 !important;
   min-height:0 !important;
   height:auto !important;
+  margin:0 !important;
+  padding:clamp(13px, 3vw, 20px) !important;
   display:grid !important;
-  grid-template-columns:minmax(150px, 0.34fr) minmax(0, 1fr) !important;
+  grid-template-columns:minmax(150px, .32fr) minmax(0, 1fr) !important;
   align-items:center !important;
-  gap:clamp(10px, 3vw, 18px) !important;
-  padding:clamp(12px, 2.8vw, 18px) !important;
+  justify-content:stretch !important;
+  gap:clamp(12px, 3vw, 22px) !important;
   text-align:left !important;
+  overflow:visible !important;
+  box-sizing:border-box !important;
 }
-.butsystem-page .but-feature-summary .feature-card-compact-head{
+html body.butsystem-page .features-grid.but-feature-summary .feature-card-compact-head{
   display:flex !important;
   flex-direction:row !important;
   align-items:center !important;
   justify-content:flex-start !important;
-  gap:10px !important;
+  gap:clamp(8px, 2.2vw, 12px) !important;
   margin:0 !important;
   min-width:0 !important;
+  text-align:left !important;
 }
-.butsystem-page .but-feature-summary .feature-card-compact-head i{
+html body.butsystem-page .features-grid.but-feature-summary .feature-card-compact-head i{
   flex:0 0 auto !important;
-  font-size:clamp(1.05rem, 4vw, 1.5rem) !important;
+  font-size:clamp(1.2rem, 4vw, 1.7rem) !important;
+  line-height:1 !important;
   margin:0 !important;
 }
-.butsystem-page .but-feature-summary .feature-card h3{
+html body.butsystem-page .features-grid.but-feature-summary .feature-card h3{
   margin:0 !important;
-  font-size:clamp(.86rem, 2.6vw, 1.08rem) !important;
-  line-height:1.18 !important;
+  font-size:clamp(.92rem, 2.8vw, 1.16rem) !important;
+  line-height:1.16 !important;
   text-align:left !important;
+  overflow-wrap:anywhere !important;
 }
-.butsystem-page .but-feature-summary .feature-card p{
+html body.butsystem-page .features-grid.but-feature-summary .feature-card p{
   margin:0 !important;
-  font-size:clamp(.78rem, 2.35vw, .96rem) !important;
-  line-height:1.38 !important;
+  max-width:none !important;
+  font-size:clamp(.82rem, 2.45vw, 1rem) !important;
+  line-height:1.35 !important;
   text-align:left !important;
+  overflow-wrap:anywhere !important;
 }
 @media (max-width:430px){
-  .butsystem-page .but-feature-summary,
-  .butsystem-page .features-grid.but-feature-summary{
+  html body.butsystem-page .features-grid.but-feature-summary > .feature-card{
+    grid-template-columns:minmax(118px, .34fr) minmax(0, 1fr) !important;
+    padding:12px 10px !important;
     gap:10px !important;
   }
-  .butsystem-page .but-feature-summary .feature-card{
-    grid-template-columns:minmax(104px, .34fr) minmax(0, 1fr) !important;
-    gap:9px !important;
-    padding:11px 10px !important;
-  }
-  .butsystem-page .but-feature-summary .feature-card-compact-head{
+  html body.butsystem-page .features-grid.but-feature-summary .feature-card-compact-head{
     gap:7px !important;
   }
-  .butsystem-page .but-feature-summary .feature-card-compact-head i{
-    font-size:1rem !important;
+  html body.butsystem-page .features-grid.but-feature-summary .feature-card-compact-head i{
+    font-size:1.05rem !important;
   }
-  .butsystem-page .but-feature-summary .feature-card h3{
-    font-size:.76rem !important;
-    line-height:1.16 !important;
+  html body.butsystem-page .features-grid.but-feature-summary .feature-card h3{
+    font-size:.78rem !important;
+    line-height:1.14 !important;
   }
-  .butsystem-page .but-feature-summary .feature-card p{
-    font-size:.68rem !important;
-    line-height:1.28 !important;
+  html body.butsystem-page .features-grid.but-feature-summary .feature-card p{
+    font-size:.69rem !important;
+    line-height:1.27 !important;
   }
 }
-@media (max-width:340px){
-  .butsystem-page .but-feature-summary .feature-card{
+@media (max-width:330px){
+  html body.butsystem-page .features-grid.but-feature-summary > .feature-card{
     grid-template-columns:1fr !important;
   }
 }
+
+/* Keep Instagram notice as a red notice with white centered text in every theme. */
+html body .instagram-alert,
+html body.dark-theme .instagram-alert,
+html body.light-theme .instagram-alert,
+html body .home-screen .instagram-alert{
+  background:#c40020 !important;
+  background-image:none !important;
+  border:3px solid #ffffff !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .instagram-alert *,
+html body.dark-theme .instagram-alert *,
+html body.light-theme .instagram-alert *,
+html body .home-screen .instagram-alert *{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .instagram-alert-content,
+html body .instagram-alert-button-row{
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+html body .instagram-alert-btn{
+  margin:10px auto 0 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border:2px solid #ffffff !important;
+  background:transparent !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+
+/* Final mobile tap fix: remove the temporary pink pressed state on accordion items. */
+@media (hover:none), (pointer:coarse){
+  html body .category .tool-item,
+  html body .category .tool-item:hover,
+  html body .category .tool-item:active,
+  html body .category .tool-item:focus,
+  html body .category .tool-item:focus-visible,
+  html body .category .tool-item:focus-within,
+  html body .category .tool-item.active,
+  html body .category .tool-item.active:hover,
+  html body .category .tool-item.active:active,
+  html body .category .tool-item.active:focus-within,
+  html body .category-header,
+  html body .category-header:hover,
+  html body .category-header:active,
+  html body .category.active .category-header,
+  html body .category.active .category-header:hover{
+    background:var(--nm-container) !important;
+    background-image:none !important;
+    border-color:var(--nm-border) !important;
+    box-shadow:var(--nm-shadow) !important;
+    transform:none !important;
+  }
+  html body.dark-theme .category .tool-item,
+  html body.dark-theme .category .tool-item:hover,
+  html body.dark-theme .category .tool-item:active,
+  html body.dark-theme .category .tool-item.active,
+  html body.dark-theme .category-header,
+  html body.dark-theme .category-header:hover,
+  html body.dark-theme .category.active .category-header{
+    background:#2d2838 !important;
+    background-image:none !important;
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+  }
+  html body.light-theme .category .tool-item,
+  html body.light-theme .category .tool-item:hover,
+  html body.light-theme .category .tool-item:active,
+  html body.light-theme .category .tool-item.active,
+  html body.light-theme .category-header,
+  html body.light-theme .category-header:hover,
+  html body.light-theme .category.active .category-header{
+    background:#ffffff !important;
+    background-image:none !important;
+    color:#000000 !important;
+    -webkit-text-fill-color:#000000 !important;
+  }
+}
+
