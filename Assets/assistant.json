@@ -109,8 +109,8 @@
             "gr": "Τι είναι το DedSec Project;"
           },
           "a": {
-            "en": "DedSec Project is a Termux-focused toolkit and website that brings together utilities, learning material, collaborations, FAQs, and project information in one place.",
-            "gr": "Το DedSec Project είναι ένα toolkit και website με επίκεντρο το Termux που συγκεντρώνει εργαλεία, εκπαιδευτικό υλικό, σελίδες καταστήματος, συνεργασίες, FAQ και πληροφορίες του project σε ένα μέρος."
+            "en": "DedSec Project is a Termux-focused toolkit and website that brings together utilities, learning material, FAQs, store links, and project information in one place.",
+            "gr": "Το DedSec Project είναι ένα toolkit και website με επίκεντρο το Termux που συγκεντρώνει εργαλεία, εκπαιδευτικό υλικό, FAQ, συνδέσμους καταστήματος και πληροφορίες του project σε ένα μέρος."
           },
           "link": {
             "en": "index.html",
@@ -156,8 +156,8 @@
             "gr": "Πού μπορώ να επικοινωνήσω με το project;"
           },
           "a": {
-            "en": "Use the Contact & Credits page for support, collaboration messages, receipts, or general project communication.",
-            "gr": "Χρησιμοποίησε τη σελίδα Επικοινωνία & Συντελεστές για υποστήριξη, μηνύματα συνεργασίας, αποδείξεις ή γενική επικοινωνία με το project."
+            "en": "Use the Contact & Credits page for support, receipts, or general project communication.",
+            "gr": "Χρησιμοποίησε τη σελίδα Επικοινωνία & Συντελεστές για υποστήριξη, αποδείξεις ή γενική επικοινωνία με το project."
           },
           "link": {
             "en": "Pages/contact-credits.html",
@@ -167,25 +167,6 @@
             "contact",
             "support",
             "credits"
-          ]
-        },
-        {
-          "q": {
-            "en": "What collaborations are shown on the site?",
-            "gr": "Ποιες συνεργασίες εμφανίζονται στο site;"
-          },
-          "a": {
-            "en": "The collaborations page highlights active partner or featured links currently shown on the website, including Legal Documents and Python Gym Clothing.",
-            "gr": "Η σελίδα συνεργασιών προβάλλει ενεργούς συνεργάτες ή επιλεγμένους συνδέσμους που εμφανίζονται αυτή τη στιγμή στο website, όπως Legal Documents και Python Gym Clothing."
-          },
-          "link": {
-            "en": "Pages/collaborations.html",
-            "gr": "Pages/collaborations.html"
-          },
-          "tags": [
-            "collaborations",
-            "partners",
-            "brands"
           ]
         },
         {
@@ -348,8 +329,8 @@
             "gr": "Πώς μπορώ να υποστηρίξω το DedSec Project;"
           },
           "a": {
-            "en": "You can support the project by visiting the Contact & Credits page and the support options shown on the site, including repository support, community visibility, collaborations, and sponsor-style help where available.",
-            "gr": "Μπορείς να υποστηρίξεις το project επισκεπτόμενος τη σελίδα Επικοινωνία & Συντελεστές και τις επιλογές υποστήριξης που εμφανίζονται στο site, όπως υποστήριξη του repository, προβολή από την κοινότητα, συνεργασίες και βοήθεια τύπου sponsor όπου είναι διαθέσιμη."
+            "en": "You can support the project by visiting the Contact & Credits page and the support options shown on the site, including repository support, community visibility, and sponsor-style help where available.",
+            "gr": "Μπορείς να υποστηρίξεις το project επισκεπτόμενος τη σελίδα Επικοινωνία & Συντελεστές και τις επιλογές υποστήριξης που εμφανίζονται στο site, όπως υποστήριξη του repository, προβολή από την κοινότητα και βοήθεια τύπου sponsor όπου είναι διαθέσιμη."
           },
           "link": {
             "en": "Pages/contact-credits.html",
@@ -4562,8 +4543,8 @@
             "gr": "Πώς επαναφέρω τον βοηθό του website στην αρχική οθόνη;"
           },
           "a": {
-            "en": "Use the ⌂ button in the assistant header to return to the start state with the welcome card and topic buttons. The refresh button reloads the live assistant data, and the close button simply hides the panel.",
-            "gr": "Χρησιμοποίησε το κουμπί ⌂ στην κεφαλίδα του βοηθού για να επιστρέψεις στην αρχική κατάσταση με την κάρτα καλωσορίσματος και τα κουμπιά θεμάτων. Το κουμπί ανανέωσης φορτώνει ξανά τα ζωντανά δεδομένα του βοηθού και το κουμπί κλεισίματος απλώς κρύβει το πάνελ."
+            "en": "Use the ⌂ button in the assistant header to return to the start state with the welcome card and topic buttons. On the floating assistant, the close button simply hides the panel.",
+            "gr": "Χρησιμοποίησε το κουμπί ⌂ στην κεφαλίδα του βοηθού για να επιστρέψεις στην αρχική κατάσταση με την κάρτα καλωσορίσματος και τα κουμπιά θεμάτων. Στον αιωρούμενο βοηθό, το κουμπί κλεισίματος απλώς κρύβει το πάνελ."
           },
           "link": {
             "en": "Pages/faq.html",
@@ -4573,7 +4554,7 @@
             "assistant home button",
             "reset assistant",
             "assistant start screen",
-            "assistant refresh"
+            "assistant start"
           ]
         }
       ]
@@ -4611,8 +4592,8 @@
             "gr": "Τι περιλαμβάνει το project;"
           },
           "a": {
-            "en": "The site presents several layers: the main toolkit, installation help, FAQ support, tool descriptions, an exclusive section, store pages, collaborations, contact and credits, and the broader project vision. The toolkit itself is grouped into categories like Developer Base, Games, Network Tools, Other Tools, and more.",
-            "gr": "Το site παρουσιάζει πολλά επίπεδα: το βασικό toolkit, βοήθεια εγκατάστασης, υποστήριξη FAQ, περιγραφές εργαλείων, αποκλειστική ενότητα, σελίδες καταστήματος, συνεργασίες, επαφή και credits και το ευρύτερο όραμα του project. Το ίδιο το toolkit χωρίζεται σε κατηγορίες όπως Developer Base, Games, Network Tools, Other Tools και άλλες."
+            "en": "The site presents several layers: the main toolkit, installation help, FAQ support, tool descriptions, an exclusive section, store pages, contact and credits, and the broader project vision. The toolkit itself is grouped into categories like Developer Base, Games, Network Tools, Other Tools, and more.",
+            "gr": "Το site παρουσιάζει πολλά επίπεδα: το βασικό toolkit, βοήθεια εγκατάστασης, υποστήριξη FAQ, περιγραφές εργαλείων, αποκλειστική ενότητα, σελίδες καταστήματος, επαφή και credits και το ευρύτερο όραμα του project. Το ίδιο το toolkit χωρίζεται σε κατηγορίες όπως Developer Base, Games, Network Tools, Other Tools και άλλες."
           },
           "link": {
             "en": "Pages/learn-about-the-tools.html",
@@ -4771,22 +4752,22 @@
         },
         {
           "q": {
-            "en": "Is the core project free?",
-            "gr": "Είναι δωρεάν το βασικό project;"
+            "en": "How is the project structured?",
+            "gr": "Πώς είναι δομημένο το project;"
           },
           "a": {
-            "en": "The site presents the core DedSec Project as free, while also showing store items and premium-style services separately. That means the main public project and the commercial or support pages are presented as different layers of the same ecosystem.",
-            "gr": "Το site παρουσιάζει το βασικό DedSec Project ως δωρεάν, ενώ δείχνει ξεχωριστά και store items ή υπηρεσίες τύπου premium. Αυτό σημαίνει ότι το βασικό δημόσιο project και οι εμπορικές ή υποστηρικτικές σελίδες παρουσιάζονται ως διαφορετικά επίπεδα του ίδιου οικοσυστήματος."
+            "en": "The site presents DedSec Project as one ecosystem: public tools, sponsors-only extras, store services, and direct support paths. Visitors can understand the project first, then choose the path that matches their needs.",
+            "gr": "Το site παρουσιάζει το DedSec Project σαν ένα οικοσύστημα: public tools, sponsors-only extras, store services και direct support paths. Οι visitors μπορούν πρώτα να καταλάβουν το project και μετά να διαλέξουν το path που ταιριάζει στις ανάγκες τους."
           },
           "link": {
             "en": "index.html",
             "gr": "index.html"
           },
           "tags": [
-            "free project",
+            "public project",
             "store",
-            "premium services",
-            "core project free"
+            "creator services",
+            "public toolkit"
           ]
         },
         {
@@ -4876,8 +4857,8 @@
             "gr": "Πού βρίσκω πληροφορίες επικοινωνίας και συντελεστών;"
           },
           "a": {
-            "en": "Open the Contact & Credits page to find support routes, collaboration points, project communication details, and contributor credits collected in one place.",
-            "gr": "Άνοιξε τη σελίδα Επικοινωνία & Συντελεστές για να βρεις τρόπους υποστήριξης, σημεία συνεργασίας, στοιχεία επικοινωνίας του project και συντελεστές συγκεντρωμένα σε ένα μέρος."
+            "en": "Open the Contact & Credits page to find support routes, project communication details, and contributor credits collected in one place.",
+            "gr": "Άνοιξε τη σελίδα Επικοινωνία & Συντελεστές για να βρεις τρόπους υποστήριξης, στοιχεία επικοινωνίας του project και συντελεστές συγκεντρωμένα σε ένα μέρος."
           },
           "link": {
             "en": "Pages/contact-credits.html",
@@ -5093,7 +5074,7 @@
             "sponsor only",
             "restricted tools",
             "sponsors-only",
-            "paid tools"
+            "supporter tools"
           ]
         },
         {
