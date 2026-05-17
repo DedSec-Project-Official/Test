@@ -6692,6 +6692,108 @@ body.light-theme .tool-personal-note{
 }
 
 
+/* Instagram outage notice above main cards */
+.instagram-alert{
+  width:min(100%, 980px);
+  margin:18px auto 22px;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  border:2px solid rgba(255, 48, 64, .92);
+  background:linear-gradient(135deg, rgba(108, 0, 14, .92), rgba(45, 4, 12, .94));
+  box-shadow:0 0 22px rgba(255, 48, 64, .25), inset 0 0 18px rgba(255,255,255,.04);
+  color:#fff;
+}
+.instagram-alert-icon{
+  flex:0 0 46px;
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.38);
+  background:rgba(0,0,0,.22);
+  font-size:1.45rem;
+}
+.instagram-alert-content{
+  flex:1 1 auto;
+  min-width:0;
+  display:grid;
+  gap:10px;
+}
+.instagram-alert p{
+  margin:0;
+  font-size:clamp(.82rem, 2.5vw, 1rem);
+  line-height:1.45;
+  color:#fff;
+  text-shadow:0 1px 0 rgba(0,0,0,.35);
+}
+.instagram-alert-btn{
+  justify-self:start;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-family:var(--font-display, 'Orbitron', sans-serif);
+  font-weight:700;
+  letter-spacing:.02em;
+  text-decoration:none;
+  box-shadow:0 0 14px rgba(255,255,255,.08);
+}
+.instagram-alert-btn:hover,
+.instagram-alert-btn:focus-visible{
+  background:rgba(255,255,255,.2);
+  transform:translateY(-1px);
+}
+@media (max-width:520px){
+  .instagram-alert{
+    margin:14px auto 16px;
+    padding:12px 10px;
+    gap:10px;
+  }
+  .instagram-alert-icon{
+    flex-basis:36px;
+    width:36px;
+    height:36px;
+    font-size:1.08rem;
+  }
+  .instagram-alert-btn{
+    min-height:34px;
+    padding:7px 10px;
+    font-size:.72rem;
+  }
+}
+
+/* Final fixes: Instagram notice must stay a red box with white text in every theme */
+.home-screen .instagram-alert,
+body.light-theme .home-screen .instagram-alert{
+  border:2px solid #ffffff !important;
+  background:#b00020 !important;
+  color:#ffffff !important;
+  box-shadow:0 0 0 2px rgba(176,0,32,.38), 0 0 24px rgba(176,0,32,.42) !important;
+}
+.home-screen .instagram-alert p,
+body.light-theme .home-screen .instagram-alert p{
+  color:#ffffff !important;
+  text-shadow:0 1px 0 rgba(0,0,0,.45) !important;
+}
+.home-screen .instagram-alert-icon,
+.home-screen .instagram-alert-btn,
+body.light-theme .home-screen .instagram-alert-icon,
+body.light-theme .home-screen .instagram-alert-btn{
+  color:#ffffff !important;
+  border-color:rgba(255,255,255,.72) !important;
+  background:rgba(0,0,0,.18) !important;
+}
+.home-screen .instagram-alert-btn:hover,
+.home-screen .instagram-alert-btn:focus-visible{
+  background:rgba(255,255,255,.18) !important;
+}
+
 /* Final store path cards: 20% taller and slightly wider-looking while staying in one row */
 .store-page .how-it-works{
   padding-left:clamp(6px, 1.4vw, 16px) !important;
@@ -6729,6 +6831,35 @@ body.light-theme .tool-personal-note{
   .store-page .how-it-works .step-text{font-size:.52rem !important;}
 }
 
+
+/* Final requested fixes: Instagram notice without icon, centered content */
+.home-screen .instagram-alert,
+body.light-theme .home-screen .instagram-alert{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  gap:0 !important;
+}
+.home-screen .instagram-alert-content,
+body.light-theme .home-screen .instagram-alert-content{
+  width:100% !important;
+  max-width:860px !important;
+  display:grid !important;
+  place-items:center !important;
+  text-align:center !important;
+  gap:12px !important;
+}
+.home-screen .instagram-alert-btn,
+body.light-theme .home-screen .instagram-alert-btn{
+  justify-self:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.home-screen .instagram-alert-icon,
+body.light-theme .home-screen .instagram-alert-icon{
+  display:none !important;
+}
 
 /* Final requested fixes: Store step cards stacked one per row again */
 .store-page .how-it-works{
@@ -6773,6 +6904,54 @@ body.light-theme .tool-personal-note{
 }
 
 
+/* Final correction: Instagram notice text and contact button centered */
+.home-screen .instagram-alert,
+body.light-theme .home-screen .instagram-alert{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert-content,
+body.light-theme .home-screen .instagram-alert-content{
+  width:100% !important;
+  max-width:880px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  gap:12px !important;
+  margin:0 auto !important;
+}
+.home-screen .instagram-alert-content p,
+body.light-theme .home-screen .instagram-alert-content p{
+  width:100% !important;
+  max-width:780px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert-button-row,
+body.light-theme .home-screen .instagram-alert-button-row{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert-btn,
+body.light-theme .home-screen .instagram-alert-btn{
+  display:inline-flex !important;
+  width:auto !important;
+  max-width:max-content !important;
+  margin:0 auto !important;
+  justify-self:center !important;
+  align-self:center !important;
+  place-self:center !important;
+  text-align:center !important;
+}
+
 /* Final polish: readable text + moved Store note + smaller stacked Store step cards */
 :root{
   --nm-text:#ffffff;
@@ -6791,6 +6970,33 @@ body:not(.light-theme) :where(.page-content p,.page-content li,.feature-descript
 }
 body.light-theme :where(.page-content p,.page-content li,.feature-description,.store-section-kicker,.step-text,.store-meta-note,.contact-cta-note,.creator-note p,.value-card p,.faq-answer,.tool-description,.page-header p,.footer-note){
   color:#000000 !important;
+}
+
+/* Exception: the Instagram notice must stay a red box with white centered text. */
+.home-screen .instagram-alert,
+.home-screen .instagram-alert *,
+body.light-theme .home-screen .instagram-alert,
+body.light-theme .home-screen .instagram-alert *{
+  color:#ffffff !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert-content,
+body.light-theme .home-screen .instagram-alert-content{
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert-button-row,
+body.light-theme .home-screen .instagram-alert-button-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  width:100% !important;
+}
+.home-screen .instagram-alert-btn,
+body.light-theme .home-screen .instagram-alert-btn{
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 
 /* Store developer note moved below product cards. */
@@ -6858,6 +7064,44 @@ body.dark-theme :where(.page-content, .home-screen, .main-footer) :where(p,li,sp
 body.light-theme :where(.page-content, .home-screen, .main-footer) :where(p,li,span,strong,small,label,h1,h2,h3,h4,h5,h6,.tool-title,.feature-title,.feature-description,.tool-description,.tool-description *,.tool-save-location,.tool-save-location *,.category-header h2,.category-header h3,.copy-btn,.note,.note-warning,.store-section-kicker,.step-text,.store-meta-note,.contact-cta-note,.footer-note,.footer-tracker-note){
   color:#000000 !important;
   -webkit-text-fill-color:#000000 !important;
+}
+
+/* Instagram notice is a deliberate red warning box: always white text in both themes. */
+.home-screen .instagram-alert,
+.home-screen .instagram-alert *,
+body.light-theme .home-screen .instagram-alert,
+body.light-theme .home-screen .instagram-alert *{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert,
+body.light-theme .home-screen .instagram-alert{
+  background:#b00020 !important;
+  border-color:#ffffff !important;
+}
+.home-screen .instagram-alert-content,
+body.light-theme .home-screen .instagram-alert-content{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  text-align:center !important;
+}
+.home-screen .instagram-alert-button-row,
+body.light-theme .home-screen .instagram-alert-button-row{
+  display:flex !important;
+  width:100% !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+.home-screen .instagram-alert-btn,
+body.light-theme .home-screen .instagram-alert-btn{
+  margin-left:auto !important;
+  margin-right:auto !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
 }
 
 /* Opened FAQ/tool bullets should not turn into the old pink/purple overlay. */
@@ -6948,6 +7192,101 @@ body.light-theme .tool-item.active .tool-expand-icon{
 }
 
 /* === 2026-05-16 final visual fixes from mobile screenshots === */
+/* Instagram warning: always red box, always white centered text/button in both themes. */
+html body .home-screen .instagram-alert,
+html body.light-theme .home-screen .instagram-alert,
+html body.dark-theme .home-screen .instagram-alert{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:calc(100% - 20px) !important;
+  max-width:880px !important;
+  margin:clamp(16px, 4vw, 26px) auto !important;
+  padding:clamp(16px, 4vw, 24px) !important;
+  background:#b00020 !important;
+  background-image:none !important;
+  border:3px solid #ffffff !important;
+  box-shadow:none !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .home-screen .instagram-alert::before,
+html body .home-screen .instagram-alert::after,
+html body.light-theme .home-screen .instagram-alert::before,
+html body.light-theme .home-screen .instagram-alert::after,
+html body.dark-theme .home-screen .instagram-alert::before,
+html body.dark-theme .home-screen .instagram-alert::after{
+  content:none !important;
+  display:none !important;
+}
+html body .home-screen .instagram-alert .instagram-alert-content,
+html body.light-theme .home-screen .instagram-alert .instagram-alert-content,
+html body.dark-theme .home-screen .instagram-alert .instagram-alert-content{
+  width:100% !important;
+  max-width:780px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+  margin:0 auto !important;
+  text-align:center !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body .home-screen .instagram-alert p,
+html body .home-screen .instagram-alert a,
+html body .home-screen .instagram-alert span,
+html body.light-theme .home-screen .instagram-alert p,
+html body.light-theme .home-screen .instagram-alert a,
+html body.light-theme .home-screen .instagram-alert span,
+html body.dark-theme .home-screen .instagram-alert p,
+html body.dark-theme .home-screen .instagram-alert a,
+html body.dark-theme .home-screen .instagram-alert span{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .home-screen .instagram-alert p,
+html body.light-theme .home-screen .instagram-alert p,
+html body.dark-theme .home-screen .instagram-alert p{
+  margin:0 auto !important;
+  max-width:42rem !important;
+  font-weight:700 !important;
+  line-height:1.45 !important;
+}
+html body .home-screen .instagram-alert .instagram-alert-button-row,
+html body.light-theme .home-screen .instagram-alert .instagram-alert-button-row,
+html body.dark-theme .home-screen .instagram-alert .instagram-alert-button-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  width:100% !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+html body .home-screen .instagram-alert .instagram-alert-btn,
+html body.light-theme .home-screen .instagram-alert .instagram-alert-btn,
+html body.dark-theme .home-screen .instagram-alert .instagram-alert-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:min(220px, 78vw) !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+  padding:10px 18px !important;
+  background:transparent !important;
+  background-image:none !important;
+  border:2px solid #ffffff !important;
+  box-shadow:none !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+  text-decoration:none !important;
+}
+
 /* Kill the sticky pink/purple tap-hover overlay on mobile accordions. */
 html body .category .tool-item,
 html body .category .tool-item:hover,
@@ -7057,6 +7396,21 @@ html body.light-theme .note-warning *{
   -webkit-text-fill-color:#000000 !important;
 }
 
+/* General readability guard, without touching the red Instagram notice. */
+html body.dark-theme :where(.page-content, .home-screen, .main-footer) :where(p,li,span,strong,small,label,h1,h2,h3,h4,h5,h6,.feature-description,.footer-note,.footer-tracker-note):not(.instagram-alert):not(.instagram-alert *){
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.light-theme :where(.page-content, .home-screen, .main-footer) :where(p,li,span,strong,small,label,h1,h2,h3,h4,h5,h6,.feature-description,.footer-note,.footer-tracker-note):not(.instagram-alert):not(.instagram-alert *){
+  color:#000000 !important;
+  -webkit-text-fill-color:#000000 !important;
+}
+html body .home-screen .instagram-alert,
+html body .home-screen .instagram-alert *{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+
 /* === Final polish: ButSystem cards like Store steps + theme/readability fixes === */
 html body.butsystem-page .page-content .features-grid.but-feature-summary,
 html body.butsystem-page .features-grid.but-feature-summary,
@@ -7146,6 +7500,45 @@ html body.butsystem-page .features-grid.but-feature-summary .feature-card p{
   html body.butsystem-page .features-grid.but-feature-summary > .feature-card{
     grid-template-columns:1fr !important;
   }
+}
+
+/* Keep Instagram notice as a red notice with white centered text in every theme. */
+html body .instagram-alert,
+html body.dark-theme .instagram-alert,
+html body.light-theme .instagram-alert,
+html body .home-screen .instagram-alert{
+  background:#c40020 !important;
+  background-image:none !important;
+  border:3px solid #ffffff !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .instagram-alert *,
+html body.dark-theme .instagram-alert *,
+html body.light-theme .instagram-alert *,
+html body .home-screen .instagram-alert *{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .instagram-alert-content,
+html body .instagram-alert-button-row{
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+html body .instagram-alert-btn{
+  margin:10px auto 0 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border:2px solid #ffffff !important;
+  background:transparent !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
 }
 
 /* Final mobile tap fix: remove the temporary pink pressed state on accordion items. */
