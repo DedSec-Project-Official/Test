@@ -7590,3 +7590,116 @@ html body .instagram-alert-btn{
   }
 }
 
+
+
+/* === Home free e-book card: brighter standout download card (2026-05-21) === */
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card{
+    border:1px solid rgba(222, 176, 255, 0.92) !important;
+    background-image:
+      radial-gradient(360px 180px at 18% -18%, rgba(255,255,255,0.24), transparent 58%),
+      radial-gradient(320px 190px at 105% 18%, rgba(205,147,255,0.44), transparent 58%),
+      linear-gradient(135deg, rgba(205,147,255,0.34), rgba(156,175,136,0.18) 42%, rgba(255,255,255,0.10) 54%, rgba(205,147,255,0.28)) !important;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.16) inset,
+      0 0 22px rgba(205,147,255,0.42),
+      0 12px 28px rgba(0,0,0,0.38) !important;
+    isolation:isolate;
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:inherit;
+    background:
+      linear-gradient(112deg, transparent 0%, transparent 25%, rgba(255,255,255,0.72) 42%, rgba(205,147,255,0.42) 50%, transparent 66%, transparent 100%);
+    background-size:240% 100%;
+    animation:ebookCardShine 3.8s var(--ease-in-out-cubic) infinite;
+    opacity:0.82;
+    pointer-events:none;
+    z-index:0;
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.28),
+      inset 0 0 18px rgba(255,255,255,0.08);
+    pointer-events:none;
+    z-index:1;
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card > *{
+    position:relative;
+    z-index:2;
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card:hover{
+    transform:translateY(-7px) scale(1.035) !important;
+    border-color:rgba(255,255,255,0.95) !important;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.22) inset,
+      0 0 34px rgba(205,147,255,0.66),
+      0 18px 36px rgba(0,0,0,0.46) !important;
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-icon-wrapper{
+    border-color:rgba(255,255,255,0.52) !important;
+    background:rgba(255,255,255,0.10) !important;
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-icon,
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-title,
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-cta{
+    color:#ffffff !important;
+    text-shadow:0 0 10px rgba(205,147,255,0.55);
+}
+.home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-description{
+    color:rgba(255,255,255,0.88) !important;
+}
+.ebook-badge{
+    align-self:flex-start;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:18px;
+    padding:2px 6px;
+    margin:0 0 6px 0;
+    border:1px solid rgba(255,255,255,0.38);
+    background:rgba(255,255,255,0.12);
+    color:#ffffff;
+    font-family:var(--font-mono);
+    font-size:clamp(0.46rem, 2.3vw, 0.55rem);
+    font-weight:800;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    line-height:1;
+    box-shadow:0 0 12px rgba(205,147,255,0.28);
+}
+@keyframes ebookCardShine{
+    0%, 18% { background-position:170% 0; opacity:0; }
+    36% { opacity:0.9; }
+    58%, 100% { background-position:-80% 0; opacity:0; }
+}
+body.light-theme .home-screen #highlights.features-grid > .feature-card.ebook-download-card{
+    border-color:rgba(123,31,162,0.72) !important;
+    background-image:
+      radial-gradient(360px 180px at 18% -18%, rgba(255,255,255,0.82), transparent 58%),
+      radial-gradient(320px 190px at 105% 18%, rgba(205,147,255,0.38), transparent 58%),
+      linear-gradient(135deg, rgba(205,147,255,0.34), rgba(156,175,136,0.18) 42%, rgba(255,255,255,0.86) 58%, rgba(205,147,255,0.26)) !important;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.54) inset,
+      0 0 26px rgba(123,31,162,0.28),
+      0 14px 30px rgba(123,31,162,0.16) !important;
+}
+body.light-theme .home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-icon,
+body.light-theme .home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-title,
+body.light-theme .home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-cta{
+    color:#3a164f !important;
+    text-shadow:0 0 10px rgba(255,255,255,0.78);
+}
+body.light-theme .home-screen #highlights.features-grid > .feature-card.ebook-download-card .feature-description,
+body.light-theme .home-screen #highlights.features-grid > .feature-card.ebook-download-card .ebook-badge{
+    color:#3a164f !important;
+}
+body.light-theme .ebook-badge{
+    background:rgba(255,255,255,0.62);
+    border-color:rgba(123,31,162,0.32);
+}

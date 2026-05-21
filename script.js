@@ -188,8 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.toggle('hidden-by-default', !isMatch);
         });
 
-        // Update Dynamic Links (like Stripe)
-        document.querySelectorAll('.payment-btn').forEach(link => {
+        // Update dynamic links that change by language (downloads, Stripe, etc.)
+        document.querySelectorAll('[data-en-link], [data-gr-link], .payment-btn').forEach(link => {
             const newLink = link.getAttribute(`data-${lang}-link`);
             if (newLink) link.href = newLink;
         });
