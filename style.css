@@ -7822,3 +7822,55 @@ body.light-theme .guide-pdf-grid .ebook-download-card .ebook-badge {
     color: #3a164f !important;
     -webkit-text-fill-color: #3a164f !important;
 }
+
+/* Instagram disabled notice: forced red box with white text in both themes. */
+html body .home-screen .instagram-alert,
+html body.dark-theme .home-screen .instagram-alert,
+html body.light-theme .home-screen .instagram-alert{
+  display:block !important;
+  width:min(100%, 980px) !important;
+  margin:18px auto 24px !important;
+  padding:18px 16px !important;
+  background:#c40020 !important;
+  background-image:none !important;
+  border:3px solid #ffffff !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+  box-shadow:0 0 0 2px rgba(196,0,32,.25), 0 12px 30px rgba(0,0,0,.28) !important;
+}
+html body .home-screen .instagram-alert *,
+html body.dark-theme .home-screen .instagram-alert *,
+html body.light-theme .home-screen .instagram-alert *{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  text-align:center !important;
+}
+html body .home-screen .instagram-alert-content,
+html body .home-screen .instagram-alert-button-row{
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+html body .home-screen .instagram-alert p{
+  margin:0 !important;
+  font-weight:800 !important;
+  line-height:1.45 !important;
+}
+html body .home-screen .instagram-alert-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin:12px auto 0 !important;
+  padding:10px 14px !important;
+  border:2px solid #ffffff !important;
+  background:transparent !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  font-weight:900 !important;
+  text-decoration:none !important;
+  box-shadow:none !important;
+}
+
