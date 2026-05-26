@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updated": "2026-04-22",
+  "version": 8,
+  "updated": "2026-05-26",
   "ui": {
     "buttonLabel": {
       "en": "Help",
@@ -5063,16 +5063,22 @@
             "gr": "Πώς ξέρω ποια εργαλεία είναι sponsor-only;"
           },
           "a": {
-            "en": "Look for the Sponsors-Only section on the tools page. That area separates restricted tools from the rest of the public project pages.",
-            "gr": "Κοίτα την ενότητα Sponsors-Only στη σελίδα εργαλείων. Εκεί ξεχωρίζονται τα περιορισμένα εργαλεία από τις υπόλοιπες δημόσιες σελίδες του project."
+            "en": "Open the Learn About The Tools page and look for the Sponsors-Only section. The $3 tier includes the current sponsor scripts already listed there. The $9 tier includes all $3 scripts plus Widget Maker.py and Kraken Trader.py.",
+            "gr": "Άνοιξε τη σελίδα Learn About The Tools και βρες το Sponsors-Only section. Το tier των $3 περιλαμβάνει τα τρέχοντα sponsor scripts που ήδη εμφανίζονται εκεί. Το tier των $9 περιλαμβάνει όλα τα scripts των $3 και επιπλέον τα Widget Maker.py και Kraken Trader.py."
           },
           "link": {
             "en": "Pages/learn-about-the-tools.html",
             "gr": "Pages/learn-about-the-tools.html"
           },
           "tags": [
-            "sponsor only",
+            "$3 sponsor tier",
+            "$9 sponsor tier",
+            "Kraken Trader",
+            "Widget Maker",
+            "pro supporter",
             "restricted tools",
+            "sponsor only",
+            "sponsor tier",
             "sponsors-only",
             "supporter tools"
           ]
@@ -5117,6 +5123,57 @@
             "termux answer",
             "site helper",
             "faq helper"
+          ]
+        },
+        {
+          "q": {
+            "en": "What is Widget Maker.py?",
+            "gr": "Τι είναι το Widget Maker.py;"
+          },
+          "a": {
+            "en": "Widget Maker.py is a $9 Pro Supporter script for Termux that creates Termux:Widget Android home-screen launchers for DedSec Project scripts. It scans Termux home, shared storage, and common phone folders recursively, detects DedSec, sponsor, exclusive, and related Python scripts inside every accessible folder and subfolder, creates managed shortcuts in ~/.shortcuts, validates Python files before launch, and keeps its manifest in ~/.dedsec_widget_maker/manifest.json.",
+            "gr": "Το Widget Maker.py είναι script του $9 Pro Supporter tier για Termux που δημιουργεί Android home-screen launchers μέσω Termux:Widget για scripts του DedSec Project. Σαρώνει αναδρομικά το Termux home, το shared storage και συνηθισμένους φακέλους του κινητού, εντοπίζει DedSec, sponsor, exclusive και σχετικά Python scripts μέσα σε κάθε προσβάσιμο φάκελο και υποφάκελο, δημιουργεί managed shortcuts στο ~/.shortcuts, ελέγχει τα Python αρχεία πριν την εκκίνηση και κρατά manifest στο ~/.dedsec_widget_maker/manifest.json."
+          },
+          "link": {
+            "en": "Pages/learn-about-the-tools.html",
+            "gr": "Pages/learn-about-the-tools.html"
+          },
+          "tags": [
+            "Widget Maker",
+            "Widget Maker.py",
+            "termux widget",
+            "Termux:Widget",
+            "$9 tier",
+            "pro supporter",
+            "sponsor script",
+            "shortcuts",
+            "home screen widgets"
+          ]
+        },
+        {
+          "q": {
+            "en": "What is Kraken Trader.py?",
+            "gr": "Τι είναι το Kraken Trader.py;"
+          },
+          "a": {
+            "en": "Kraken Trader.py is a $9 Pro Supporter Termux script for Kraken API trading research, paper trading, watchlists, market scanning, strategy labs, beginner learning, risk tools, backtests, DCA/grid planning, reports, journals, and diagnostics. It starts in paper mode by default, shows a 10-second disclaimer, stores its files under ~/Kraken Trader/, and is for education and organization only, not financial advice or a profit guarantee.",
+            "gr": "Το Kraken Trader.py είναι script του $9 Pro Supporter tier για Termux, φτιαγμένο για Kraken API trading research, paper trading, watchlists, market scanning, strategy labs, beginner learning, risk tools, backtests, DCA/grid planning, reports, journals και diagnostics. Ξεκινά σε paper mode από προεπιλογή, εμφανίζει disclaimer 10 δευτερολέπτων, αποθηκεύει τα αρχεία του στο ~/Kraken Trader/ και είναι μόνο για εκπαίδευση και οργάνωση, όχι financial advice ή εγγύηση κέρδους."
+          },
+          "link": {
+            "en": "Pages/learn-about-the-tools.html",
+            "gr": "Pages/learn-about-the-tools.html"
+          },
+          "tags": [
+            "Kraken Trader",
+            "Kraken Trader.py",
+            "Kraken API",
+            "$9 tier",
+            "pro supporter",
+            "sponsor script",
+            "paper trading",
+            "crypto",
+            "trading guide",
+            "risk tools"
           ]
         }
       ]
