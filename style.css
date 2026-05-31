@@ -9011,3 +9011,169 @@ html body .assistance-page .assistance-related-card p{
 /* === End Assistance v13 === */
 
 
+
+
+/* === v23: consistent page CTA buttons and FAQ subtitle cleanup === */
+html body .page-content a.starter-path-btn,
+html body .page-content .starter-path-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:min(100%, 210px) !important;
+  max-width:100% !important;
+  min-height:46px !important;
+  padding:11px 16px !important;
+  border:1px solid var(--nm-border) !important;
+  border-radius:0 !important;
+  background:linear-gradient(135deg, rgba(205,147,255,0.14), rgba(156,175,136,0.08), rgba(255,255,255,0.025)) !important;
+  color:var(--nm-text) !important;
+  -webkit-text-fill-color:var(--nm-text) !important;
+  font-family:var(--font-mono, monospace) !important;
+  font-size:0.9rem !important;
+  font-weight:900 !important;
+  line-height:1.15 !important;
+  letter-spacing:.03em !important;
+  text-align:center !important;
+  text-decoration:none !important;
+  box-shadow:0 0 0 1px rgba(205,147,255,0.16) inset !important;
+  box-sizing:border-box !important;
+  -webkit-appearance:none !important;
+  appearance:none !important;
+}
+html body .page-content a.starter-path-btn:hover,
+html body .page-content a.starter-path-btn:focus-visible{
+  border-color:var(--nm-accent) !important;
+  background:linear-gradient(135deg, rgba(205,147,255,0.24), rgba(156,175,136,0.12), rgba(255,255,255,0.04)) !important;
+  box-shadow:0 0 0 1px rgba(205,147,255,0.34) inset, 0 0 18px rgba(205,147,255,0.14) !important;
+  transform:translateY(-1px) !important;
+}
+html body .page-content .starter-path-btn--exclusive{
+  border-color:var(--nm-accent) !important;
+}
+html body .page-content .assistance-path-section{
+  text-align:center !important;
+}
+html body .page-content .assistance-path-section .starter-path-btn{
+  margin:14px auto 0 !important;
+}
+html body .page-content .assistance-quick-actions{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  margin:16px auto 0 !important;
+}
+@media (max-width:560px){
+  html body .page-content .assistance-quick-actions{
+    flex-direction:column !important;
+    align-items:stretch !important;
+  }
+  html body .page-content .assistance-quick-actions .starter-path-btn{
+    width:100% !important;
+  }
+}
+
+
+/* === Uniform burger menu link spacing fix (2026-06-01) === */
+.nav-menu{
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
+    align-items:stretch !important;
+    gap:12px !important;
+}
+
+.nav-menu .nav-link{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:100% !important;
+    min-height:44px !important;
+    margin:0 !important;
+    line-height:1.25 !important;
+    box-sizing:border-box !important;
+}
+
+.nav-menu .nav-link + .nav-link{
+    margin-top:0 !important;
+}
+
+@media (max-width:520px){
+    .nav-menu{
+        gap:10px !important;
+    }
+
+    .nav-menu .nav-link{
+        min-height:42px !important;
+    }
+}
+
+
+/* === v24: exact equal spacing for burger menu buttons === */
+html body .nav-menu,
+html body .main-nav .nav-menu{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  row-gap: 12px !important;
+  column-gap: 0 !important;
+  padding-top: 14px !important;
+  padding-bottom: calc(14px + var(--safe-area-inset-bottom, 0px)) !important;
+}
+html body .nav-menu > .nav-link,
+html body .main-nav .nav-menu > .nav-link{
+  flex: 0 0 50px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: 1.18 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  transform: none !important;
+}
+html body .nav-menu > .nav-link + .nav-link,
+html body .main-nav .nav-menu > .nav-link + .nav-link{
+  margin-top: 0 !important;
+}
+@media (max-width: 520px){
+  html body .nav-menu,
+  html body .main-nav .nav-menu{
+    row-gap: 12px !important;
+    padding-top: 14px !important;
+  }
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    flex-basis: 50px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+@media (max-width: 380px){
+  html body .nav-menu,
+  html body .main-nav .nav-menu{
+    row-gap: 10px !important;
+    padding-top: 12px !important;
+  }
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    flex-basis: 48px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    font-size: 0.82rem !important;
+  }
+}
+/* === End v24 === */
