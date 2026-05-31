@@ -9273,3 +9273,72 @@ html body .main-nav .nav-menu > .nav-link{
   }
 }
 /* === End v26 === */
+
+/* === v27 Assistance title + theme consistency pass === */
+/* Keep Assistance visually on the same theme system as every other page. */
+html body .assistance-page .page-header,
+html body .assistance-page .content-section,
+html body .assistance-page .assistance-article,
+html body .assistance-page .assistance-related,
+html body .assistance-page .assistance-paid-help,
+html body .assistance-page .assistance-store-cta,
+html body .assistance-page .assistance-deep-section,
+html body .assistance-page .assistance-check-section,
+html body .assistance-page .assistance-next-section,
+html body .assistance-page .assistance-seo-support,
+html body .assistance-page .assistance-card,
+html body .assistance-page .assistance-mini-card,
+html body .assistance-page .assistance-related-card,
+html body .assistance-page .code-container,
+html body .assistance-page .assistance-code {
+  background: var(--nm-container) !important;
+  border-color: var(--nm-border) !important;
+  color: var(--nm-text) !important;
+}
+
+html body .assistance-page .assistance-card,
+html body .assistance-page .assistance-mini-card,
+html body .assistance-page .assistance-related-card {
+  background: var(--nm-menu-solid) !important;
+}
+
+html body .assistance-page h1,
+html body .assistance-page h2,
+html body .assistance-page h3,
+html body .assistance-page summary {
+  color: var(--nm-text-accent) !important;
+}
+
+html body .assistance-page p,
+html body .assistance-page li,
+html body .assistance-page code,
+html body .assistance-page .assistance-card p,
+html body .assistance-page .assistance-mini-card p,
+html body .assistance-page .assistance-related-card p {
+  color: var(--nm-text-muted) !important;
+}
+
+html body.light-theme .assistance-page .page-header,
+html body.light-theme .assistance-page .content-section,
+html body.light-theme .assistance-page .assistance-article,
+html body.light-theme .assistance-page .assistance-related,
+html body.light-theme .assistance-page .assistance-paid-help,
+html body.light-theme .assistance-page .assistance-store-cta,
+html body.light-theme .assistance-page .assistance-deep-section,
+html body.light-theme .assistance-page .assistance-check-section,
+html body.light-theme .assistance-page .assistance-next-section,
+html body.light-theme .assistance-page .assistance-seo-support,
+html body.light-theme .assistance-page .code-container,
+html body.light-theme .assistance-page .assistance-code {
+  background: var(--nm-container) !important;
+  border-color: var(--nm-border) !important;
+  color: var(--nm-text) !important;
+}
+
+html body.light-theme .assistance-page .assistance-card,
+html body.light-theme .assistance-page .assistance-mini-card,
+html body.light-theme .assistance-page .assistance-related-card {
+  background: var(--nm-menu-solid) !important;
+  border-color: var(--nm-border) !important;
+}
+/* === End v27 === */
