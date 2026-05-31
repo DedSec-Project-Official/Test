@@ -9250,3 +9250,26 @@ html body .main-nav .nav-menu > .nav-link + .nav-link{
   }
 }
 /* === End v25 === */
+
+/* === v26: slightly larger burger menu text without changing button size === */
+html body .nav-menu > .nav-link,
+html body .main-nav .nav-menu > .nav-link{
+  font-size: clamp(0.76rem, 1.72vh, 0.98rem) !important;
+  line-height: 1.05 !important;
+}
+
+@media (max-height: 700px){
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    font-size: clamp(0.68rem, 1.62vh, 0.86rem) !important;
+    line-height: 1.03 !important;
+  }
+}
+
+@media (max-width: 380px){
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    font-size: clamp(0.66rem, 1.58vh, 0.86rem) !important;
+  }
+}
+/* === End v26 === */
