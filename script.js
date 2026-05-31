@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!text || !button) return;
 
         const showFeedback = (ok) => {
-            const original = button.textContent;
+            const original = button.getAttribute(`data-${currentLanguage}`) || button.textContent;
             button.textContent = ok
                 ? (currentLanguage === 'gr' ? 'Αντιγράφηκε!' : 'Copied!')
                 : (currentLanguage === 'gr' ? 'Απέτυχε' : 'Failed');
@@ -340,6 +340,63 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/['"`]+/g, '')
             .replace(/[^a-z0-9Ͱ-Ͽ]+/g, ' ')
             .trim();
+        const SEARCH_SYNONYMS = {
+            // Termux misspellings
+            'termix': ['termux'], 'tremux': ['termux'], 'trmux': ['termux'], 'termax': ['termux'], 'termuxx': ['termux'], 'temux': ['termux'],
+            // Python / pip misspellings
+            'pyton': ['python'], 'pyhton': ['python'], 'pytohn': ['python'], 'pthon': ['python'], 'pithon': ['python'],
+            'pip3': ['pip', 'python package'], 'pyp': ['pip'],
+            // GitHub / git misspellings
+            'githab': ['github'], 'gitub': ['github'], 'githubb': ['github'], 'gihub': ['github'], 'git hub': ['github'],
+            'clon': ['clone'], 'clne': ['clone'], 'cloned': ['clone'],
+            // Storage / permission misspellings
+            'permision': ['permission'], 'permisson': ['permission'], 'premission': ['permission'], 'permisions': ['permission'],
+            'denide': ['denied'], 'denyed': ['denied'], 'acess': ['access'], 'acces': ['access'],
+            'storag': ['storage'], 'storge': ['storage'], 'downlod': ['download'], 'dowload': ['download'], 'downloades': ['downloads'],
+            // Common error phrases
+            'module not found': ['modulenotfounderror', 'missing module', 'install python library'],
+            'modulenotfound': ['modulenotfounderror', 'missing module'],
+            'no module named': ['modulenotfounderror', 'missing module'],
+            'command not found': ['package command not found', 'install package'],
+            'permission denied': ['chmod executable storage permission'],
+            'no such file': ['path folder file not found'],
+            'no space': ['storage cache disk cleanup'],
+            'localhost': ['local server flask python http server'],
+            'local host': ['localhost local server'],
+            'port in use': ['port already in use kill process'],
+            'address already in use': ['port already in use kill process'],
+            'ssl': ['certificate curl requests api'],
+            'certificate': ['ssl certificate curl requests api'],
+            'apt': ['pkg repository dpkg package'],
+            'dpkg': ['apt package lock repository'],
+            'widget': ['termux widget shortcuts launcher'],
+            'api': ['termux api notifications battery clipboard'],
+            'crlf': ['line endings windows bad interpreter'],
+            'bad interpreter': ['shebang env python line endings'],
+            'github pages': ['site seo sitemap deploy workflow'],
+            'seo': ['search console sitemap meta title description indexing'],
+            'backup': ['zip restore downloads project backup'],
+            'dedsec install': ['install dedsec project android termux'],
+            'dedsec broken': ['fix dedsec broken install repair']
+        };
+
+        const expandSearchQuery = (normalizedQuery) => {
+            const variants = new Set([normalizedQuery]);
+            const addVariant = (value) => {
+                const normalized = normalizeSearchTerm(value);
+                if (normalized) variants.add(normalized);
+            };
+            Object.entries(SEARCH_SYNONYMS).forEach(([wrong, replacements]) => {
+                const w = normalizeSearchTerm(wrong);
+                if (!w || !normalizedQuery.includes(w)) return;
+                replacements.forEach((replacement) => {
+                    addVariant(normalizedQuery.replace(w, replacement));
+                    addVariant(`${normalizedQuery} ${replacement}`);
+                });
+            });
+            return Array.from(variants);
+        };
+
         const shouldOpenSecretLevel = (value) => {
             const normalized = normalizeSearchTerm(value);
             return normalized === 'watch dogs'
@@ -359,20 +416,99 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         
-        const SEARCH_VERSION = '2026-05-05-v10-secret-level';
+        const SEARCH_VERSION = '2026-05-31-v20-fuzzy-assistance-search';
         const SEARCH_STORAGE_KEY = `dedsec_search_index_${SEARCH_VERSION}`;
         const SEARCH_PAGES_STORAGE_KEY = `dedsec_search_pages_${SEARCH_VERSION}`;
 
         // Pages we always want searchable (static, always exist).
         const BASE_PAGES = [
             "index.html",
-            "Pages/unused-template.html",
-            "Pages/our-vision.html",
-            "Pages/learn-about-the-tools.html",
+            "assistance.html",
             "Pages/guide-for-installation.html",
+            "Pages/learn-about-the-tools.html",
+            "Pages/store.html",
             "Pages/faq.html",
+            "Pages/our-vision.html",
             "Pages/contact-credits.html",
+            "Pages/butsystem-exclusive.html",
+            "Pages/keep-android-open.html",
             "Pages/privacy-policy.html",
+            "Assistance/fix-dedsec-broken-install.html",
+            "Assistance/fix-github-ssh-authentication-termux.html",
+            "Assistance/fix-localhost-server-not-opening-android.html",
+            "Assistance/fix-node-npm-errors-termux.html",
+            "Assistance/fix-pip-errors-termux.html",
+            "Assistance/fix-python-module-not-found-termux.html",
+            "Assistance/fix-python-syntax-errors-termux.html",
+            "Assistance/fix-termux-dpkg-apt-lock.html",
+            "Assistance/fix-termux-git-push-email-identity.html",
+            "Assistance/fix-termux-no-space-left.html",
+            "Assistance/fix-termux-no-such-file-or-directory.html",
+            "Assistance/fix-termux-permission-denied-executable.html",
+            "Assistance/fix-termux-port-already-in-use.html",
+            "Assistance/fix-termux-repository-errors.html",
+            "Assistance/fix-termux-ssl-certificate-curl-errors.html",
+            "Assistance/fix-termux-storage-permission.html",
+            "Assistance/fix-termux-widget-scripts.html",
+            "Assistance/github-clone-termux.html",
+            "Assistance/install-dedsec-project-android.html",
+            "Assistance/keep-termux-running-background.html",
+            "Assistance/termux-android-webview-browser-tips.html",
+            "Assistance/termux-backup-restore-workflow.html",
+            "Assistance/termux-beginner-guide-android.html",
+            "Assistance/termux-build-dedsec-style-tool.html",
+            "Assistance/termux-check-broken-links-locally.html",
+            "Assistance/termux-clean-cache-safely.html",
+            "Assistance/termux-cloudflared-local-link-help.html",
+            "Assistance/termux-command-cheat-sheet.html",
+            "Assistance/termux-command-history-and-aliases.html",
+            "Assistance/termux-common-exit-codes.html",
+            "Assistance/termux-cool-script-ideas.html",
+            "Assistance/termux-create-python-menu-script.html",
+            "Assistance/termux-debug-log-files.html",
+            "Assistance/termux-download-with-curl-wget.html",
+            "Assistance/termux-edit-files-with-nano.html",
+            "Assistance/termux-fix-bash-bad-interpreter.html",
+            "Assistance/termux-fix-crontab-alternatives.html",
+            "Assistance/termux-fix-git-auth-token-github.html",
+            "Assistance/termux-fix-git-large-file-push.html",
+            "Assistance/termux-fix-line-endings-windows-crlf.html",
+            "Assistance/termux-fix-pyinstaller-on-android-alternatives.html",
+            "Assistance/termux-fix-python-encoding-unicode-errors.html",
+            "Assistance/termux-fix-requests-ssl-and-api-errors.html",
+            "Assistance/termux-fix-shebang-env-python.html",
+            "Assistance/termux-fix-termux-api-not-working.html",
+            "Assistance/termux-flask-app-not-loading.html",
+            "Assistance/termux-git-branch-basics.html",
+            "Assistance/termux-git-pull-conflicts.html",
+            "Assistance/termux-github-pages-update-workflow.html",
+            "Assistance/termux-html-css-js-editing-from-phone.html",
+            "Assistance/termux-install-common-python-libraries.html",
+            "Assistance/termux-install-source-and-first-setup.html",
+            "Assistance/termux-json-file-errors.html",
+            "Assistance/termux-learn-python-by-building-tools.html",
+            "Assistance/termux-learning-roadmap.html",
+            "Assistance/termux-local-website-python-server.html",
+            "Assistance/termux-low-end-phone-performance-tips.html",
+            "Assistance/termux-manage-large-projects-on-phone.html",
+            "Assistance/termux-no-root-limitations.html",
+            "Assistance/termux-offline-documentation-folder.html",
+            "Assistance/termux-package-command-not-found.html",
+            "Assistance/termux-phone-coding-workflow.html",
+            "Assistance/termux-project-folder-structure.html",
+            "Assistance/termux-python-error-debugging-roadmap.html",
+            "Assistance/termux-python-virtual-environment.html",
+            "Assistance/termux-run-python-script-correctly.html",
+            "Assistance/termux-safe-automation-ideas.html",
+            "Assistance/termux-safe-copy-paste.html",
+            "Assistance/termux-safe-update-routine.html",
+            "Assistance/termux-secure-api-keys-env-file.html",
+            "Assistance/termux-site-seo-checklist-from-phone.html",
+            "Assistance/termux-troubleshooting-checklist.html",
+            "Assistance/termux-websocket-socketio-errors.html",
+            "Assistance/termux-write-better-readme.html",
+            "Assistance/unzip-files-termux-android.html",
+            "Assistance/update-dedsec-project.html"
         ];
         const loadStoredPagesList = () => {
             try {
@@ -406,21 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const repo = parts.length ? parts[0] : `${owner}.github.io`;
             return { owner, repo };
         };
-
-        const loadSiteConfig = async () => {
-            // site-config.json is at the site root
-            try {
-                const url = new URL('site-config.json', SITE_BASE).href;
-                const res = await fetch(url, { cache: 'no-store' });
-                if (!res.ok) throw new Error('config fetch failed');
-                const cfg = await res.json();
-                return cfg || {};
-            } catch (_) {
-                return {};
-            }
-        };
-
-        const fetchRepoBlogFiles = async ({ owner, repo, branch, blogDir }) => {
+const fetchRepoBlogFiles = async ({ owner, repo, branch, blogDir }) => {
             const base = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${encodeURIComponent(blogDir)}`;
             const withRef = branch ? `${base}?ref=${encodeURIComponent(branch)}` : base;
 
@@ -509,24 +631,54 @@ const ensureDeterministicIds = (doc) => {
             const file = (parts.pop() || 'index.html');
             // Works on root domains AND project pages like /repo/Pages/... because we don't assume depth.
             if (parts.includes('Pages')) return `Pages/${file}`;
+            if (parts.includes('Assistance')) return `Assistance/${file}`;
 return file;
+        };
+
+        const extractSearchText = (root) => {
+            if (!root) return '';
+            return Array.from(root.querySelectorAll('h1,h2,h3,h4,p,li,summary,code,pre,.feature-title,.tool-title,.category-header,.assistance-card-title,.assistance-card-desc,.copy-code'))
+                .map((el) => [el.getAttribute('data-en'), el.getAttribute('data-gr'), el.textContent].filter(Boolean).join(' '))
+                .join(' ');
         };
 
         const buildPageItems = (doc, pagePath) => {
             ensureDeterministicIds(doc);
 
             const pageTitle = (doc.querySelector('title')?.textContent || '').trim();
+            const metaDesc = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || '').trim();
+            const h1 = doc.querySelector('main h1, h1');
+            const h1Text = (h1?.getAttribute('data-en') || h1?.textContent || '').trim();
             const label =
                 pageTitle ||
+                h1Text ||
                 pagePath
                     .replace(/^Pages\//, '')
+                    .replace(/^Assistance\//, '')
                     .replace(/\.html$/i, '')
                     .replace(/-/g, ' ')
                     .replace(/\b\w/g, (m) => m.toUpperCase());
 
             const scope = doc.querySelector('main') || doc.body;
-            const candidates = scope ? scope.querySelectorAll('h1, h2, h3, h4, .feature-title, .tool-title, .category-header') : [];
             const items = [];
+            const pageText = extractSearchText(scope);
+            const pathWords = pagePath.replace(/[\/_.-]+/g, ' ');
+            const titleEn = (h1?.getAttribute('data-en') || h1Text || label).trim();
+            const titleGr = (h1?.getAttribute('data-gr') || titleEn).trim();
+
+            // One strong page-level item helps misspelled searches find the exact guide instead of only section anchors.
+            items.push({
+                title_en: titleEn,
+                title_gr: titleGr,
+                title: titleEn,
+                meta: metaDesc || label,
+                url: pagePath,
+                keywords: normalizeSearchTerm([pageTitle, metaDesc, h1Text, pageText, pathWords].filter(Boolean).join(' ')),
+                pagePath,
+                isPageResult: true
+            });
+
+            const candidates = scope ? scope.querySelectorAll('h1, h2, h3, h4, .feature-title, .tool-title, .category-header, .assistance-card-title') : [];
 
             candidates.forEach((el) => {
                 const en = (el.getAttribute('data-en') || '').trim();
@@ -536,18 +688,22 @@ return file;
                 const display = (currentLanguage === 'gr' ? (gr || en || fallback) : (en || gr || fallback)).trim();
                 if (!display || display.length < 3) return;
 
-                const keywords = [fallback, en, gr].filter(Boolean).join(' ').toLowerCase();
+                const container = el.closest('article, section, .content-section, .feature-card, .assistance-card, .tool-card, .guide-card, .problem-card') || el.parentElement || scope;
+                const sectionText = extractSearchText(container);
+                const keywords = normalizeSearchTerm([fallback, en, gr, sectionText, metaDesc, pathWords].filter(Boolean).join(' '));
                 const hash = el.id ? `#${el.id}` : '';
 
                 items.push({
                     title_en: (en || fallback).trim(),
                     title_gr: (gr || en || fallback).trim(),
                     title: (en || gr || fallback).trim(),
-                    meta: label,
+                    meta: metaDesc || label,
                     url: `${pagePath}${hash}`,
-                    keywords
+                    keywords,
+                    pagePath,
+                    isPageResult: false
                 });
-});
+            });
 
             return items;
         };
@@ -669,8 +825,86 @@ return file;
 
         const pageNameForNav = () => (window.location.pathname.split('/').pop() || 'index.html');
 
+        const editDistance = (a, b) => {
+            a = String(a || ''); b = String(b || '');
+            if (!a) return b.length;
+            if (!b) return a.length;
+            if (Math.abs(a.length - b.length) > 3) return Math.max(a.length, b.length);
+            const prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+            const curr = new Array(b.length + 1);
+            for (let i = 1; i <= a.length; i++) {
+                curr[0] = i;
+                for (let j = 1; j <= b.length; j++) {
+                    const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+                    curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+                }
+                for (let j = 0; j <= b.length; j++) prev[j] = curr[j];
+            }
+            return prev[b.length];
+        };
+
+        const tokenMatchScore = (queryToken, words) => {
+            if (!queryToken) return 0;
+            let best = 0;
+            const first = queryToken[0];
+            for (const w of words) {
+                if (!w) continue;
+                if (w === queryToken) return 16;
+                if (w.startsWith(queryToken)) best = Math.max(best, 12);
+                else if (queryToken.length >= 4 && w.includes(queryToken)) best = Math.max(best, 9);
+                else if (queryToken.length >= 4 && w[0] === first) {
+                    const d = editDistance(queryToken, w);
+                    if (d === 1) best = Math.max(best, 8);
+                    else if (d === 2 && queryToken.length >= 6) best = Math.max(best, 5);
+                }
+            }
+            return best;
+        };
+
+        const scoreSearchItem = (it, normalizedQuery) => {
+            if (!normalizedQuery) return 0;
+            const titleText = normalizeSearchTerm(currentLanguage === 'gr' ? (it.title_gr || it.title || '') : (it.title_en || it.title || ''));
+            const metaText = normalizeSearchTerm(it.meta || '');
+            const urlText = normalizeSearchTerm((it.url || '').replace(/[\/_ .-]+/g, ' '));
+            const rawKeywords = normalizeSearchTerm(it.keywords || '');
+            const corpus = normalizeSearchTerm([titleText, metaText, rawKeywords, urlText].join(' '));
+            const words = corpus.split(/\s+/).filter(Boolean);
+            const titleWords = titleText.split(/\s+/).filter(Boolean);
+            const queryVariants = expandSearchQuery(normalizedQuery);
+            let bestScore = 0;
+
+            queryVariants.forEach((q, variantIndex) => {
+                const queryTokens = q.split(/\s+/).filter(Boolean);
+                let score = variantIndex === 0 ? 0 : -4; // slight penalty for typo-expanded variants
+
+                if (titleText === q) score += 140;
+                if (titleText.includes(q)) score += 86;
+                if (urlText.includes(q)) score += 48;
+                if (metaText.includes(q)) score += 34;
+                if (rawKeywords.includes(q)) score += 32;
+                if (corpus.includes(q)) score += 24;
+                if (it.isPageResult) score += 14;
+
+                for (const token of queryTokens) {
+                    score += tokenMatchScore(token, titleWords) * 4;
+                    score += tokenMatchScore(token, words);
+                }
+
+                // Assistance guides should win over generic site sections when the query is a fix/problem/help query.
+                const isAssistance = String(it.url || '').includes('Assistance/');
+                const isHelpQuery = /(termux|python|pip|github|git|storage|permission|error|fix|install|clone|server|localhost|api|widget|command|module|package|backup|seo|sitemap)/.test(q);
+                if (isAssistance && isHelpQuery) score += 24;
+                if (!it.isPageResult) score -= 8; // page results first, then sections
+
+                bestScore = Math.max(bestScore, score);
+            });
+
+            return bestScore;
+        };
+
+
         const renderResults = async (query) => {
-            const q = (query || '').toLowerCase();
+            const q = normalizeSearchTerm(query || '');
             resultsEl.setAttribute('aria-busy', 'true');
             const index = await buildIndexAsync();
             resultsEl.removeAttribute('aria-busy');
@@ -686,7 +920,9 @@ return file;
             }
 
             const hits = index
-                .filter(it => it.keywords.includes(q) || ((currentLanguage === 'gr' ? (it.title_gr || it.title || '') : (it.title_en || it.title || '')).toLowerCase().includes(q)))
+                .map(it => ({ ...it, _score: scoreSearchItem(it, q) }))
+                .filter(it => it._score > 0)
+                .sort((a, b) => b._score - a._score)
                 .slice(0, 20);
 
             if (!hits.length) {
@@ -718,9 +954,6 @@ return file;
             });
         };
 
-        const escapeHtml = (s) => (s || '').replace(/[&<>"']/g, (c) => ({
-            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-        }[c]));
 
         // Open / close events
         openBtn.addEventListener('click', () => setOverlayVisible(true));
@@ -796,880 +1029,8 @@ return file;
         } catch (_) {}
     }
 
-    // --- STATIC JSON ASSISTANT (GitHub Pages safe, no backend) ---
-
-
-    function initializeAssistant() {
-        if (document.querySelector('.assistant-shell')) return;
-
-        const assistantPath = assetUrl('Assets/assistant.json');
-        const recentTopicsKey = 'dedsec_assistant_recent_topics_v2';
-        const pageMount = document.querySelector('[data-assistant-page]');
-        const isPageMode = !!pageMount;
-        const shell = document.createElement('section');
-        shell.className = `assistant-shell${isPageMode ? ' assistant-shell--page' : ''}`;
-        shell.setAttribute('aria-label', 'Assistant');
-        shell.innerHTML = `
-            <div class="assistant-panel" aria-hidden="true" id="dedsec-assistant-panel">
-                <div class="assistant-header">
-                    <div class="assistant-header-top">
-                        <div class="assistant-title-wrap">
-                            <h2 class="assistant-title"></h2>
-                            <p class="assistant-subtitle"></p>
-                        </div>
-                        <div class="assistant-header-actions">
-                            <button type="button" class="assistant-home" aria-label="Home">⌂</button>
-                            <button type="button" class="assistant-close" aria-label="Close">✕</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="assistant-body">
-                    <div class="assistant-chat" role="log" aria-live="polite" aria-relevant="additions text">
-                        <div class="assistant-messages"></div>
-                    </div>
-                </div>
-            </div>
-            <button type="button" class="assistant-trigger" aria-expanded="false" aria-controls="dedsec-assistant-panel">
-                <span class="assistant-trigger-icon">✦</span>
-                <span class="assistant-trigger-text"></span>
-            </button>
-        `;
-        (pageMount || document.body).appendChild(shell);
-
-        const panel = shell.querySelector('.assistant-panel');
-        const trigger = shell.querySelector('.assistant-trigger');
-        const homeBtn = shell.querySelector('.assistant-home');
-        const refreshBtn = shell.querySelector('.assistant-refresh');
-        const closeBtn = shell.querySelector('.assistant-close');
-        const messagesWrap = shell.querySelector('.assistant-messages');
-        const titleEl = shell.querySelector('.assistant-title');
-        const subtitleEl = shell.querySelector('.assistant-subtitle');
-        const triggerTextEl = shell.querySelector('.assistant-trigger-text');
-
-        let assistantData = null;
-        let assistantIndex = [];
-        let typingTimer = null;
-        let hasLoadedAssistant = false;
-        let isFetchingAssistant = false;
-        let lastPromptTapSignature = '';
-        let lastPromptTapAt = 0;
-
-        const getLang = () => (currentLanguage === 'gr' ? 'gr' : 'en');
-        const t = (value, fallback = '') => {
-            if (value && typeof value === 'object') return value[getLang()] || value.en || value.gr || fallback;
-            return value || fallback;
-        };
-        const normalizeText = (value) => (value || '')
-            .toString()
-            .toLowerCase()
-            .normalize('NFKD')
-            .replace(/[̀-ͯ]/g, '')
-            .replace(/\s+/g, ' ')
-            .trim();
-        const tokenize = (value) => normalizeText(value)
-            .replace(/[^\p{L}\p{N}.+-]+/gu, ' ')
-            .split(' ')
-            .map((token) => token.trim())
-            .filter(Boolean);
-        const escapeHtml = (value) => (value || '')
-            .toString()
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
-        const ui = () => assistantData?.ui || {};
-        const chatLabel = (role) => role === 'user' ? (currentLanguage === 'gr' ? 'Εσύ' : 'You') : 'Assistant';
-        const typingLabel = () => (currentLanguage === 'gr' ? 'Ο Assistant γράφει…' : 'Assistant is typing…');
-        const chatWrap = () => shell.querySelector('.assistant-chat');
-        let assistantPageSizeLocked = false;
-        let assistantPageSizeKey = '';
-        const pageViewportHeight = () => Math.round((window.visualViewport && window.visualViewport.height) || window.innerHeight || document.documentElement.clientHeight || 720);
-        const pageViewportWidth = () => Math.round((window.visualViewport && window.visualViewport.width) || window.innerWidth || document.documentElement.clientWidth || 360);
-        const fitAssistantPageBox = (force = false) => {
-            if (!isPageMode) return;
-            const chat = chatWrap();
-            const assistantBody = shell.querySelector('.assistant-body');
-            const currentPanel = shell.querySelector('.assistant-panel');
-            if (!chat || !assistantBody || !currentPanel) return;
-            const viewportH = pageViewportHeight();
-            const viewportW = pageViewportWidth();
-            const orientation = viewportW > viewportH ? 'landscape' : 'portrait';
-            const sizeKey = `${viewportW}x${viewportH}-${orientation}`;
-            if (assistantPageSizeLocked && !force && assistantPageSizeKey === sizeKey) return;
-
-            const bottomGap = viewportW <= 640 ? 10 : 18;
-            const chatTop = chat.getBoundingClientRect().top;
-            const panelTop = currentPanel.getBoundingClientRect().top;
-            const minChat = viewportH <= 620 ? 220 : 260;
-            const maxChat = viewportW <= 640 ? 560 : 680;
-            let chatHeight = Math.floor(viewportH - chatTop - bottomGap);
-            chatHeight = Math.max(minChat, Math.min(chatHeight, maxChat));
-            const panelMaxHeight = Math.max(minChat + 58, Math.floor(viewportH - panelTop - bottomGap));
-
-            currentPanel.style.setProperty('max-height', `${panelMaxHeight}px`, 'important');
-            assistantBody.style.setProperty('min-height', '0', 'important');
-            chat.style.setProperty('height', `${chatHeight}px`, 'important');
-            chat.style.setProperty('min-height', `${chatHeight}px`, 'important');
-            chat.style.setProperty('max-height', `${chatHeight}px`, 'important');
-            chat.scrollTop = 0;
-            assistantPageSizeLocked = true;
-            assistantPageSizeKey = sizeKey;
-        };
-        const scheduleAssistantPageFit = (force = false) => {
-            if (!isPageMode) return;
-            const run = () => fitAssistantPageBox(force);
-            requestAnimationFrame(() => {
-                run();
-                requestAnimationFrame(run);
-            });
-            window.setTimeout(run, 80);
-            window.setTimeout(run, 220);
-        };
-        const unlockAssistantPageSize = () => {
-            if (!isPageMode) return;
-            assistantPageSizeLocked = false;
-            scheduleAssistantPageFit(true);
-        };
-        const scrollChatToBottom = () => {
-            requestAnimationFrame(() => {
-                const chat = chatWrap();
-                if (chat) chat.scrollTop = chat.scrollHeight;
-            });
-        };
-        const scrollChatToTop = () => {
-            const apply = () => {
-                const chat = chatWrap();
-                if (chat) chat.scrollTop = 0;
-            };
-            apply();
-            requestAnimationFrame(() => {
-                apply();
-                requestAnimationFrame(apply);
-            });
-            window.setTimeout(apply, 60);
-            window.setTimeout(apply, 180);
-        };
-        const scrollMessageIntoView = (message, offset = 8) => {
-            const apply = () => {
-                const chat = chatWrap();
-                if (!chat || !message) return;
-                const targetTop = Math.max(0, (message.offsetTop || 0) - offset);
-                chat.scrollTop = targetTop;
-            };
-            apply();
-            requestAnimationFrame(() => {
-                apply();
-                requestAnimationFrame(apply);
-            });
-            window.setTimeout(apply, 60);
-            window.setTimeout(apply, 180);
-        };
-        const clearTyping = () => {
-            if (typingTimer) {
-                clearTimeout(typingTimer);
-                typingTimer = null;
-            }
-            messagesWrap.querySelectorAll('.assistant-message.is-typing').forEach((node) => node.remove());
-        };
-        const itemKey = (item) => normalizeText(t(item?.q, ''));
-        const fileNameFromLink = (linkValue) => {
-            const raw = (linkValue || '').toString().split('/').pop() || '';
-            return raw.replace(/\.html?$/i, '').trim();
-        };
-        const safeLocalStorageGet = (key, fallback) => {
-            try {
-                const raw = localStorage.getItem(key);
-                return raw ? JSON.parse(raw) : fallback;
-            } catch (_) {
-                return fallback;
-            }
-        };
-        const safeLocalStorageSet = (key, value) => {
-            try {
-                localStorage.setItem(key, JSON.stringify(value));
-            } catch (_) {}
-        };
-        const getRecentTopics = () => {
-            const items = safeLocalStorageGet(recentTopicsKey, []);
-            return Array.isArray(items) ? items : [];
-        };
-        const saveRecentTopic = (entry) => {
-            if (!entry || !entry.label || !entry.query) return;
-            const current = getRecentTopics();
-            const key = normalizeText(`${entry.label} ${entry.query} ${entry.itemKey || ''}`);
-            const next = [entry, ...current.filter((item) => normalizeText(`${item.label} ${item.query} ${item.itemKey || ''}`) !== key)].slice(0, 8);
-            safeLocalStorageSet(recentTopicsKey, next);
-        };
-        const removeSuggestionMessages = () => {
-            messagesWrap.querySelectorAll('.assistant-message--suggestions').forEach((node) => node.remove());
-        };
-        const prettyItemLabel = (item) => {
-            const fileTag = (item?.tags || []).find((tag) => /\.py$/i.test((tag || '').trim()));
-            if (fileTag) return (fileTag || '').trim();
-            const question = t(item?.q, '').trim();
-            const patterns = [
-                /^How do I install and use (.+?) in Termux\?$/i,
-                /^What is (.+?)\?$/i,
-                /^How do I (.+?)\?$/i,
-                /^What are (.+?)\?$/i,
-                /^Πώς να εγκαταστήσω και να χρησιμοποιήσω το (.+?) στο Termux;?$/i,
-                /^Τι είναι το (.+?)\?$/i,
-                /^Πώς (.+?)\?$/i,
-                /^Ποιες είναι (.+?)\?$/i
-            ];
-            for (const pattern of patterns) {
-                const match = question.match(pattern);
-                if (match && match[1]) return match[1].trim();
-            }
-            return question;
-        };
-        const computeBigrams = (value) => {
-            const normalized = ` ${normalizeText(value)} `;
-            const grams = [];
-            for (let i = 0; i < normalized.length - 1; i += 1) grams.push(normalized.slice(i, i + 2));
-            return grams;
-        };
-        const diceCoefficient = (a, b) => {
-            const aGrams = computeBigrams(a);
-            const bGrams = computeBigrams(b);
-            if (!aGrams.length || !bGrams.length) return 0;
-            const counts = new Map();
-            aGrams.forEach((gram) => counts.set(gram, (counts.get(gram) || 0) + 1));
-            let matches = 0;
-            bGrams.forEach((gram) => {
-                const count = counts.get(gram) || 0;
-                if (count > 0) {
-                    counts.set(gram, count - 1);
-                    matches += 1;
-                }
-            });
-            return (2 * matches) / (aGrams.length + bGrams.length);
-        };
-        const expandQueryAliases = (query) => {
-            const norm = normalizeText(query);
-            const variants = new Set([norm]);
-            const replacements = [
-                [/\bsetup\b/g, 'install'],
-                [/\binstallation\b/g, 'install'],
-                [/\bguide\b/g, 'help'],
-                [/\bcommands\b/g, 'command'],
-                [/\btools\b/g, 'tool'],
-                [/\bpages\b/g, 'page'],
-                [/\bdownloads\b/g, 'download'],
-                [/\bfiles\b/g, 'file'],
-                [/\bστοιχεια\b/g, 'στοιχεία'],
-                [/\bεντολες\b/g, 'εντολές'],
-                [/\bεγκατασταση\b/g, 'εγκατάσταση'],
-                [/\bβοηθεια\b/g, 'βοήθεια'],
-                [/\bαρχεια\b/g, 'αρχεία']
-            ];
-            replacements.forEach(([pattern, replacement]) => {
-                variants.add(norm.replace(pattern, replacement));
-            });
-            tokenize(norm).forEach((token) => variants.add(token));
-            return Array.from(variants).filter(Boolean);
-        };
-        const commandRegex = /(?:\b(?:pkg|apt|python|python3|pip|pip3|git|cd|ls|pwd|mkdir|rm|cp|mv|cat|nano|unzip|zip|chmod|termux-setup-storage|curl|wget|find|clear)\b[^\n<]*)/gi;
-        const highlightCommands = (text) => {
-            const raw = (text || '').toString();
-            let html = '';
-            let lastIndex = 0;
-            raw.replace(commandRegex, (match, offset) => {
-                html += escapeHtml(raw.slice(lastIndex, offset));
-                html += `<code class="assistant-inline-code">${escapeHtml(match.trim())}</code>`;
-                lastIndex = offset + match.length;
-                return match;
-            });
-            html += escapeHtml(raw.slice(lastIndex));
-            return html;
-        };
-        const linkifyUrls = (html) => (html || '').replace(/(^|[\s>(])((https?:\/\/|www\.)[^\s<]+)/gi, (full, prefix, rawUrl) => {
-            const cleanUrl = (rawUrl || '').replace(/[),.;!?]+$/g, '');
-            const trailing = (rawUrl || '').slice(cleanUrl.length);
-            const href = cleanUrl.startsWith('www.') ? `https://${cleanUrl}` : cleanUrl;
-            return `${prefix}<a class="assistant-inline-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(cleanUrl)}</a>${escapeHtml(trailing)}`;
-        });
-        const formatRichText = (text) => linkifyUrls(highlightCommands(text || ''));
-        const splitAnswerIntoSections = (text) => {
-            const raw = (text || '').toString().trim();
-            if (!raw) return [];
-            const labels = [
-                'What it does:', 'Install/run in Termux:', 'Output or save location:', 'Warning:', 'Note:', 'Quick fix:', 'Main idea:',
-                'Τι κάνει:', 'Εγκατάσταση/εκτέλεση στο Termux:', 'Τοποθεσία εξόδου ή αποθήκευσης:', 'Προειδοποίηση:', 'Σημείωση:', 'Γρήγορη λύση:', 'Κύρια ιδέα:'
-            ];
-            let marked = raw;
-            labels.forEach((label) => {
-                const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                marked = marked.replace(new RegExp(escaped, 'g'), `\n@@SECTION@@${label}`);
-            });
-            const parts = marked.split('@@SECTION@@').map((part) => part.trim()).filter(Boolean);
-            return parts.map((part, index) => {
-                const label = labels.find((candidate) => part.startsWith(candidate));
-                if (!label) {
-                    return {
-                        title: index === 0 ? (currentLanguage === 'gr' ? 'Απάντηση' : 'Answer') : '',
-                        body: part
-                    };
-                }
-                return {
-                    title: label.replace(/:$/, ''),
-                    body: part.slice(label.length).trim()
-                };
-            });
-        };
-        const formatAnswerHtml = (text) => {
-            const sections = splitAnswerIntoSections(text);
-            if (!sections.length) return `<p class="assistant-bubble-text">${formatRichText(text || '')}</p>`;
-            return sections.map((section) => {
-                const bodyHtml = (section.body || '')
-                    .split(/\n{2,}/)
-                    .map((paragraph) => `<p class="assistant-bubble-text">${formatRichText(paragraph)}</p>`)
-                    .join('');
-                return `
-                    <section class="assistant-rich-section">
-                        ${section.title ? `<h4 class="assistant-rich-section-title">${escapeHtml(section.title)}</h4>` : ''}
-                        <div class="assistant-rich-section-body">${bodyHtml}</div>
-                    </section>
-                `;
-            }).join('');
-        };
-        const categoryBadge = (item) => item?._categoryLabel ? (currentLanguage === 'gr' ? `Κατηγορία: ${item._categoryLabel}` : `Category: ${item._categoryLabel}`) : '';
-        const createMessage = (role, text, options = {}) => {
-            const message = document.createElement('article');
-            message.className = `assistant-message assistant-message--${role}`;
-            if (options.extraClass) message.classList.add(options.extraClass);
-            if (options.typing) message.classList.add('is-typing');
-
-            const label = document.createElement('div');
-            label.className = 'assistant-message-label';
-            label.textContent = options.label || chatLabel(role);
-            message.appendChild(label);
-
-            const bubble = document.createElement('div');
-            bubble.className = 'assistant-bubble';
-
-            if (options.heading) {
-                const heading = document.createElement('h3');
-                heading.className = 'assistant-bubble-heading';
-                heading.textContent = options.heading;
-                bubble.appendChild(heading);
-            }
-
-            if (options.typing) {
-                const typing = document.createElement('div');
-                typing.className = 'assistant-typing';
-                typing.setAttribute('aria-label', typingLabel());
-                typing.innerHTML = '<span></span><span></span><span></span>';
-                bubble.appendChild(typing);
-            } else if (options.html) {
-                const rich = document.createElement('div');
-                rich.className = 'assistant-bubble-rich';
-                rich.innerHTML = options.html;
-                bubble.appendChild(rich);
-            } else {
-                const body = document.createElement('p');
-                body.className = 'assistant-bubble-text';
-                body.textContent = text || '';
-                bubble.appendChild(body);
-            }
-
-            if (options.meta) {
-                const meta = document.createElement('div');
-                meta.className = 'assistant-bubble-meta';
-                meta.textContent = options.meta;
-                bubble.appendChild(meta);
-            }
-
-            if (options.linkHref) {
-                const href = (options.linkHref || '').trim();
-                if (href) {
-                    const link = document.createElement('a');
-                    link.className = 'assistant-open-link';
-                    link.href = href;
-                    if (/^https?:\/\//i.test(href)) {
-                        link.target = '_blank';
-                        link.rel = 'noopener noreferrer';
-                    }
-                    link.textContent = options.linkText || t(ui().openPage, 'Open page');
-                    bubble.appendChild(link);
-                }
-            }
-
-            message.appendChild(bubble);
-            messagesWrap.appendChild(message);
-            if (!options.noAutoScroll) scrollChatToBottom();
-            return message;
-        };
-        const renderPromptSections = (sections = []) => {
-            const validSections = sections.filter((section) => Array.isArray(section.prompts) && section.prompts.length);
-            if (!validSections.length) {
-                return `<div class="assistant-empty">${escapeHtml(t(ui().empty, 'No quick prompts are available right now.'))}</div>`;
-            }
-            return validSections.map((section) => `
-                <section class="assistant-suggestion-section">
-                    ${section.title ? `<h4 class="assistant-suggestion-title">${escapeHtml(section.title)}</h4>` : ''}
-                    <div class="assistant-chip-grid">
-                        ${section.prompts.map((prompt) => `
-                            <button
-                                type="button"
-                                class="assistant-chip"
-                                data-query="${escapeHtml(prompt.query || '')}"
-                                data-label="${escapeHtml(prompt.label || prompt.query || '')}"
-                                data-item-key="${escapeHtml(prompt.itemKey || '')}"
-                            >${escapeHtml(prompt.label || prompt.query || '')}</button>
-                        `).join('')}
-                    </div>
-                </section>
-            `).join('');
-        };
-        const bindPromptClicks = () => {
-            shell.querySelectorAll('.assistant-chip').forEach((btn) => {
-                if (btn.dataset.assistantBound === '1') return;
-                btn.dataset.assistantBound = '1';
-                btn.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    const itemKeyValue = btn.dataset.itemKey || '';
-                    const promptLabel = btn.dataset.label || btn.textContent || '';
-                    const promptQuery = btn.dataset.query || promptLabel;
-                    const tapSignature = normalizeText(`${promptLabel} ${promptQuery} ${itemKeyValue}`);
-                    const now = Date.now();
-                    if (tapSignature && tapSignature === lastPromptTapSignature && (now - lastPromptTapAt) < 650) {
-                        return;
-                    }
-                    lastPromptTapSignature = tapSignature;
-                    lastPromptTapAt = now;
-                    if (itemKeyValue) {
-                        const item = assistantIndex.find((entry) => entry._key === itemKeyValue);
-                        if (item) {
-                            respondWithAnswer(item, promptLabel);
-                            return;
-                        }
-                    }
-                    handleUserQuery(promptQuery, promptLabel);
-                });
-            });
-        };
-        const pushSuggestions = (heading, sections, bodyText = '', options = {}) => {
-            removeSuggestionMessages();
-            createMessage('assistant', '', {
-                heading,
-                html: `${bodyText ? `<p class="assistant-bubble-text">${escapeHtml(bodyText)}</p>` : ''}${renderPromptSections(sections)}`,
-                extraClass: 'assistant-message--suggestions',
-                noAutoScroll: !!options.noAutoScroll
-            });
-            bindPromptClicks();
-        };
-        const dedupePrompts = (prompts) => {
-            const seen = new Set();
-            return prompts.filter((entry) => {
-                const key = normalizeText(`${entry.label} ${entry.query} ${entry.itemKey || ''}`);
-                if (!key || seen.has(key)) return false;
-                seen.add(key);
-                return true;
-            });
-        };
-        const starterPrompts = () => {
-            const configured = Array.isArray(assistantData?.starterPrompts) ? assistantData.starterPrompts : [];
-            if (configured.length) {
-                return dedupePrompts(configured.map((entry) => ({
-                    label: t(entry.label, entry.query || ''),
-                    query: entry.query || t(entry.label, '')
-                }))).slice(0, 8);
-            }
-            return dedupePrompts(assistantIndex.slice(0, 8).map((item) => ({
-                label: prettyItemLabel(item),
-                query: item._question,
-                itemKey: item._key
-            })));
-        };
-        const categoryPrompts = () => dedupePrompts((assistantData?.categories || []).map((category) => ({
-            label: t(category.label, ''),
-            query: t(category.label, '')
-        }))).slice(0, 10);
-        const recentPrompts = () => dedupePrompts(getRecentTopics()).slice(0, 5);
-        const buildIndex = () => {
-            assistantIndex = [];
-            for (const category of assistantData?.categories || []) {
-                const categoryLabel = t(category.label, '');
-                const categoryNorm = normalizeText(categoryLabel);
-                for (const item of category.items || []) {
-                    const question = t(item.q, '');
-                    const answer = t(item.a, '');
-                    const pretty = prettyItemLabel(item);
-                    const link = t(item.link, '');
-                    const fileName = fileNameFromLink(link);
-                    const tags = (item.tags || []).map((tag) => normalizeText(tag));
-                    const aliasNorms = dedupePrompts([
-                        { label: pretty, query: pretty },
-                        { label: fileName, query: fileName },
-                        { label: fileName.replace(/\.py$/i, ''), query: fileName.replace(/\.py$/i, '') },
-                        ...(item.tags || []).map((tag) => ({ label: tag, query: tag }))
-                    ]).map((entry) => normalizeText(entry.query || entry.label));
-                    assistantIndex.push({
-                        ...item,
-                        _categoryLabel: categoryLabel,
-                        _categoryNorm: categoryNorm,
-                        _question: question,
-                        _questionNorm: normalizeText(question),
-                        _answerNorm: normalizeText(answer),
-                        _prettyNorm: normalizeText(pretty),
-                        _tagsNorm: tags,
-                        _aliasesNorm: aliasNorms,
-                        _linkNorm: normalizeText(link),
-                        _fileNameNorm: normalizeText(fileName),
-                        _tokens: new Set(tokenize([question, answer, pretty, categoryLabel, link, fileName, ...(item.tags || [])].join(' '))),
-                        _key: itemKey(item)
-                    });
-                }
-            }
-        };
-        const scoreItemForQuery = (query, item) => {
-            const queryNorm = normalizeText(query);
-            const queryTokens = tokenize(queryNorm);
-            const queryVariants = expandQueryAliases(queryNorm);
-            if (!queryNorm) return 0;
-
-            let score = 0;
-            const genericSingles = new Set(['termux', 'install', 'python', 'script', 'commands', 'tools', 'pages', 'project', 'guide', 'help']);
-            const hasGenericSingleToken = queryTokens.length === 1 && genericSingles.has(queryTokens[0]);
-
-            queryVariants.forEach((variant) => {
-                if (item._questionNorm === variant) score += 180;
-                if (item._key === variant) score += 185;
-                if (item._prettyNorm === variant) score += 178;
-                if (item._fileNameNorm === variant) score += 176;
-                if (item._aliasesNorm.includes(variant)) score += 132;
-                if (item._tagsNorm.includes(variant)) score += 126;
-                if (item._categoryNorm === variant) score += 98;
-
-                if (item._questionNorm.includes(variant) && item._questionNorm !== variant) score += 58;
-                if (item._prettyNorm.includes(variant) && item._prettyNorm !== variant) score += 74;
-                if (item._fileNameNorm.includes(variant) && item._fileNameNorm !== variant) score += 68;
-                if (item._categoryNorm.includes(variant) && item._categoryNorm !== variant) score += 28;
-                if (item._answerNorm.includes(variant)) score += 16;
-                item._aliasesNorm.forEach((alias) => {
-                    if (alias && (alias.includes(variant) || variant.includes(alias))) score += 30;
-                });
-                item._tagsNorm.forEach((tag) => {
-                    if (tag && (tag.includes(variant) || variant.includes(tag))) score += 24;
-                });
-            });
-
-            queryTokens.forEach((token) => {
-                if (item._tokens.has(token)) score += 12;
-                if (item._questionNorm.includes(token)) score += 8;
-                if (item._prettyNorm.includes(token)) score += 14;
-                if (item._fileNameNorm.includes(token)) score += 16;
-                if (item._tagsNorm.some((tag) => tag.includes(token))) score += 10;
-            });
-
-            const similarity = Math.max(
-                diceCoefficient(queryNorm, item._questionNorm),
-                diceCoefficient(queryNorm, item._prettyNorm),
-                diceCoefficient(queryNorm, item._fileNameNorm)
-            );
-            score += Math.round(similarity * 80);
-
-            if (queryTokens.length > 1 && queryTokens.every((token) => item._tokens.has(token) || item._questionNorm.includes(token) || item._prettyNorm.includes(token) || item._tagsNorm.some((tag) => tag.includes(token)))) {
-                score += 34;
-            }
-            if (hasGenericSingleToken) score -= 16;
-            return score;
-        };
-        const searchMatches = (query, limit = 8) => {
-            const scored = assistantIndex
-                .map((item) => ({ item, score: scoreItemForQuery(query, item) }))
-                .filter((entry) => entry.score > 0)
-                .sort((a, b) => b.score - a.score || a.item._question.localeCompare(b.item._question));
-            return scored.slice(0, limit);
-        };
-        const categoryMatchesForQuery = (query) => {
-            const queryNorm = normalizeText(query);
-            if (!queryNorm) return [];
-            const exact = (assistantData?.categories || []).find((category) => normalizeText(t(category.label, '')) === queryNorm);
-            if (exact) return exact.items || [];
-            const loose = (assistantData?.categories || []).find((category) => {
-                const categoryNorm = normalizeText(t(category.label, ''));
-                return categoryNorm && (categoryNorm.includes(queryNorm) || queryNorm.includes(categoryNorm) || diceCoefficient(queryNorm, categoryNorm) >= 0.72);
-            });
-            return loose ? (loose.items || []) : [];
-        };
-        const relatedPromptsForItem = (item) => {
-            const siblings = assistantIndex
-                .filter((entry) => entry._categoryNorm === item._categoryNorm && entry._key !== item._key)
-                .slice(0, 4)
-                .map((entry) => ({
-                    label: prettyItemLabel(entry),
-                    query: entry._question,
-                    itemKey: entry._key
-                }));
-            return dedupePrompts([...siblings, ...starterPrompts(), ...recentPrompts()]).slice(0, 8);
-        };
-        const startSections = () => {
-            const sections = [];
-            const recent = recentPrompts();
-            if (recent.length) {
-                sections.push({
-                    title: currentLanguage === 'gr' ? 'Πρόσφατα θέματα' : 'Recent topics',
-                    prompts: recent
-                });
-            }
-            sections.push({
-                title: currentLanguage === 'gr' ? 'Δημοφιλείς βοήθειες' : 'Popular help',
-                prompts: starterPrompts()
-            });
-            sections.push({
-                title: currentLanguage === 'gr' ? 'Κατηγορίες' : 'Categories',
-                prompts: categoryPrompts()
-            });
-            return sections;
-        };
-        const renderStartState = () => {
-            clearTyping();
-            messagesWrap.innerHTML = '';
-            createMessage('assistant', t(ui().welcomeBody, currentLanguage === 'gr' ? 'Πάτησε μία λέξη, ένα όνομα script ή μία κατηγορία και θα βρω την πιο σχετική απάντηση από τα δεδομένα του site.' : 'Tap a word, a script name, or a category and I will match it to the closest answer from the site data.'), {
-                heading: t(ui().welcomeTitle, currentLanguage === 'gr' ? 'Πώς μπορώ να βοηθήσω σήμερα;' : 'How can I help today?'),
-                meta: assistantData?.updated ? `${t(ui().updatedPrefix, 'Updated')}: ${assistantData.updated}` : '',
-                noAutoScroll: true
-            });
-            pushSuggestions(
-                t(ui().promptHeading, currentLanguage === 'gr' ? 'Διάλεξε θέμα' : 'Choose a topic'),
-                startSections(),
-                t(ui().promptBody, currentLanguage === 'gr' ? 'Μπορείς να πατήσεις ένα όνομα script, μία λέξη ή μία κατηγορία. Θα απαντήσω ή θα σου δείξω τα πιο σχετικά αποτελέσματα.' : 'You can tap a script name, a keyword, or a category. I will answer directly or show the closest results.'),
-                { noAutoScroll: true }
-            );
-            scheduleAssistantPageFit(false);
-            scrollChatToTop();
-            window.setTimeout(scrollChatToTop, 260);
-        };
-        const renderNoMatch = (promptLabel) => {
-            createMessage('assistant', t(ui().noMatchBody, currentLanguage === 'gr' ? 'Δεν βρήκα ακόμη καθαρό ταίριασμα γι’ αυτό το prompt.' : 'I could not find a clean match for that prompt yet.'), {
-                heading: t(ui().noMatchTitle, currentLanguage === 'gr' ? 'Δεν βρήκα ακριβή απάντηση' : 'I could not find an exact answer')
-            });
-            pushSuggestions(
-                t(ui().promptHeading, currentLanguage === 'gr' ? 'Δοκίμασε κάτι σχετικό' : 'Try something related'),
-                startSections(),
-                promptLabel ? (currentLanguage === 'gr' ? `Το "${promptLabel}" δεν έδωσε σαφές αποτέλεσμα.` : `“${promptLabel}” did not give a clear result.`) : ''
-            );
-        };
-        const showMatchChoices = (queryLabel, matches) => {
-            const prompts = matches.map(({ item }) => ({
-                label: prettyItemLabel(item),
-                query: item._question,
-                itemKey: item._key
-            }));
-            createMessage('assistant', t(ui().disambiguationBody, currentLanguage === 'gr' ? 'Βρήκα αρκετά σχετικά αποτελέσματα. Διάλεξε αυτό που ταιριάζει καλύτερα.' : 'I found several related results. Pick the one that fits best.'), {
-                heading: t(ui().disambiguationTitle, currentLanguage === 'gr' ? 'Βρήκα σχετικά θέματα' : 'I found related topics')
-            });
-            pushSuggestions(
-                currentLanguage === 'gr' ? 'Διάλεξε αποτέλεσμα' : 'Choose a result',
-                [{
-                    title: queryLabel ? (currentLanguage === 'gr' ? `Αποτελέσματα για: ${queryLabel}` : `Results for: ${queryLabel}`) : '',
-                    prompts
-                }],
-                currentLanguage === 'gr' ? 'Πάτησε το πιο σωστό αποτέλεσμα.' : 'Tap the best matching result.'
-            );
-        };
-        const respondWithAnswer = (item, promptLabel = '', options = {}) => {
-            if (!item) return;
-            removeSuggestionMessages();
-            const userLabel = promptLabel || prettyItemLabel(item);
-            if (!options.suppressUserMessage) {
-                createMessage('user', userLabel);
-            }
-            saveRecentTopic({ label: userLabel, query: item._question, itemKey: item._key });
-            clearTyping();
-            const typingMessage = createMessage('assistant', '', { typing: true });
-            const delay = Math.min(1400, Math.max(420, t(item.a, '').length * 5));
-            typingTimer = window.setTimeout(() => {
-                typingMessage.remove();
-                typingTimer = null;
-                const answerMessage = createMessage('assistant', '', {
-                    heading: t(item.q, ''),
-                    html: formatAnswerHtml(t(item.a, '')),
-                    meta: [assistantData?.updated ? `${t(ui().updatedPrefix, 'Updated')}: ${assistantData.updated}` : '', categoryBadge(item)].filter(Boolean).join(' • '),
-                    linkHref: t(item.link, ''),
-                    linkText: t(ui().openPage, 'Open page'),
-                    noAutoScroll: true
-                });
-                const related = relatedPromptsForItem(item);
-                if (related.length) {
-                    pushSuggestions(
-                        currentLanguage === 'gr' ? 'Χρειάζεσαι βοήθεια με κάτι άλλο;' : 'Do you need help with anything else?',
-                        [{
-                            title: currentLanguage === 'gr' ? 'Σχετικά θέματα' : 'Related topics',
-                            prompts: related
-                        }],
-                        currentLanguage === 'gr' ? 'Πάτησε κάτι σχετικό ή γύρνα στην αρχή με το κουμπί ⌂.' : 'Tap something related or go back to start with the ⌂ button.',
-                        { noAutoScroll: true }
-                    );
-                } else {
-                    createMessage('assistant', currentLanguage === 'gr' ? 'Χρειάζεσαι βοήθεια με κάτι άλλο; Πάτησε το ⌂ για νέα αρχή.' : 'Do you need help with anything else? Tap ⌂ to start a new topic.', {
-                        heading: currentLanguage === 'gr' ? 'Χρειάζεσαι βοήθεια με κάτι άλλο;' : 'Do you need help with anything else?',
-                        noAutoScroll: true
-                    });
-                }
-                scrollMessageIntoView(answerMessage, 6);
-            }, delay);
-        };
-        const handleUserQuery = (query, promptLabel = '') => {
-            if (!assistantData) return;
-            const cleanQuery = (query || '').trim();
-            if (!cleanQuery) return;
-            removeSuggestionMessages();
-            createMessage('user', promptLabel || cleanQuery);
-            saveRecentTopic({ label: promptLabel || cleanQuery, query: cleanQuery });
-            clearTyping();
-            const typingMessage = createMessage('assistant', '', { typing: true });
-            const delay = Math.min(1100, Math.max(380, cleanQuery.length * 20));
-            typingTimer = window.setTimeout(() => {
-                typingMessage.remove();
-                typingTimer = null;
-
-                const categoryItems = categoryMatchesForQuery(cleanQuery);
-                if (categoryItems.length >= 2) {
-                    const scoredCategoryItems = categoryItems
-                        .map((item) => assistantIndex.find((entry) => entry._key === itemKey(item)))
-                        .filter(Boolean)
-                        .map((item) => ({ item, score: 100 }));
-                    showMatchChoices(promptLabel || cleanQuery, scoredCategoryItems.slice(0, 8));
-                    return;
-                }
-
-                const matches = searchMatches(cleanQuery, 8);
-                if (!matches.length || matches[0].score < 26) {
-                    renderNoMatch(promptLabel || cleanQuery);
-                    return;
-                }
-
-                const top = matches[0];
-                const second = matches[1];
-                const directAnswer = top.score >= 122 || (top.score >= 88 && (!second || (top.score - second.score) >= 20));
-                if (directAnswer) {
-                    respondWithAnswer(top.item, promptLabel || cleanQuery, { suppressUserMessage: true });
-                    return;
-                }
-
-                showMatchChoices(promptLabel || cleanQuery, matches.slice(0, 6));
-            }, delay);
-        };
-        const applyUiStrings = () => {
-            titleEl.textContent = t(ui().title, 'DedSec Assistant');
-            subtitleEl.textContent = t(ui().subtitle, currentLanguage === 'gr' ? 'Chat style · έξυπνα matches · καλύτερες απαντήσεις' : 'Chat style · smarter matches · better answers');
-            triggerTextEl.textContent = t(ui().buttonLabel, 'Assistant');
-            trigger.setAttribute('aria-label', t(ui().buttonLabel, 'Assistant'));
-            homeBtn.setAttribute('aria-label', currentLanguage === 'gr' ? 'Αρχή' : 'Home');
-            if (refreshBtn) refreshBtn.setAttribute('aria-label', t(ui().refresh, 'Refresh'));
-            closeBtn.setAttribute('aria-label', t(ui().close, 'Close'));
-        };
-        const refreshAssistantData = async (force = false) => {
-            if (isFetchingAssistant) return;
-            if (hasLoadedAssistant && !force && assistantData) {
-                applyUiStrings();
-                if (!messagesWrap.children.length) renderStartState();
-                return;
-            }
-            isFetchingAssistant = true;
-            const loadingText = t(ui().loading, currentLanguage === 'gr' ? 'Φόρτωση δεδομένων βοηθού...' : 'Loading assistant data...');
-            messagesWrap.innerHTML = '';
-            createMessage('assistant', loadingText, {
-                heading: t(ui().title, 'DedSec Assistant')
-            });
-            try {
-                const response = await fetch(assistantPath, { cache: force ? 'no-store' : 'default' });
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                assistantData = await response.json();
-                buildIndex();
-                applyUiStrings();
-                hasLoadedAssistant = true;
-                renderStartState();
-            } catch (error) {
-                assistantData = null;
-                assistantIndex = [];
-                hasLoadedAssistant = false;
-                applyUiStrings();
-                clearTyping();
-                messagesWrap.innerHTML = '';
-                createMessage('assistant', t(ui().loadError, 'Assistant data could not be loaded right now.'), {
-                    heading: t(ui().title, 'DedSec Assistant')
-                });
-            } finally {
-                isFetchingAssistant = false;
-                scheduleAssistantPageFit(false);
-            }
-        };
-        const resetAssistant = () => {
-            if (!assistantData) {
-                refreshAssistantData(true);
-                return;
-            }
-            buildIndex();
-            renderStartState();
-        };
-        const setOpen = (open) => {
-            const nextOpen = isPageMode ? true : !!open;
-            shell.classList.toggle('open', nextOpen);
-            panel.setAttribute('aria-hidden', nextOpen ? 'false' : 'true');
-            trigger.setAttribute('aria-expanded', nextOpen ? 'true' : 'false');
-            if (nextOpen) {
-                refreshAssistantData(false).finally(() => {
-                    if (!isPageMode) setTimeout(() => closeBtn.focus({ preventScroll: true }), 40);
-                });
-            } else {
-                clearTyping();
-            }
-        };
-
-        if (!isPageMode) {
-            trigger.addEventListener('click', () => setOpen(!shell.classList.contains('open')));
-            closeBtn.addEventListener('click', () => setOpen(false));
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && shell.classList.contains('open')) setOpen(false);
-            });
-            document.addEventListener('click', (e) => {
-                if (!shell.classList.contains('open')) return;
-                const path = typeof e.composedPath === 'function' ? e.composedPath() : [];
-                if (path.includes(shell) || shell.contains(e.target)) return;
-                setOpen(false);
-            });
-        }
-        homeBtn.addEventListener('click', () => resetAssistant());
-        if (refreshBtn) refreshBtn.addEventListener('click', () => refreshAssistantData(true));
-
-        window.__updateAssistantLanguage = () => {
-            applyUiStrings();
-            if (!assistantData) {
-                messagesWrap.innerHTML = '';
-                createMessage('assistant', currentLanguage === 'gr' ? 'Άνοιξε το παράθυρο για να φορτώσει ο βοηθός.' : 'Open the panel to load the assistant.', {
-                    heading: 'Assistant'
-                });
-                return;
-            }
-            buildIndex();
-            renderStartState();
-        };
-
-        applyUiStrings();
-        messagesWrap.innerHTML = '';
-        createMessage('assistant', currentLanguage === 'gr' ? 'Άνοιξε το παράθυρο για να φορτώσει ο βοηθός.' : 'Open the panel to load the assistant.', {
-            heading: 'Assistant'
-        });
-
-        if (isPageMode) {
-            window.addEventListener('orientationchange', () => window.setTimeout(unlockAssistantPageSize, 180), { passive: true });
-            window.addEventListener('resize', () => {
-                if (!assistantPageSizeLocked) scheduleAssistantPageFit(false);
-            }, { passive: true });
-            if (window.visualViewport) {
-                window.visualViewport.addEventListener('resize', () => {
-                    if (!assistantPageSizeLocked) scheduleAssistantPageFit(false);
-                }, { passive: true });
-            }
-            setOpen(true);
-            scheduleAssistantPageFit(true);
-        }
-    }
+    // --- ASSISTANT REMOVED ---
+    // The old JSON chat assistant was replaced by assistance.html and standalone SEO pages.
 
 
     function initializeBorderSnake() {
@@ -1935,7 +1296,7 @@ return file;
         setTimeout(() => { forceSquareButtonCorners(); forceSharpCornersEverywhere(); }, 80);
         initializeToolCategories('.categories-container');
         initializeToolCategories('#faq-container');
-        if (document.querySelector('[data-assistant-page]')) initializeAssistant();
+        // Old JSON assistant page removed. assistance.html now handles support navigation.
         
         // Language Switcher (Navbar)
         document.getElementById('nav-lang-switcher')?.addEventListener('click', () => {

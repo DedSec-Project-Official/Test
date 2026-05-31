@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Update GitHub Pages from Termux Without Breaking the Site — DedSec Assistance</title>
+<meta content="#07060d" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="Update GitHub Pages from Termux Without Breaking the Site: practical Termux guide with commands, checks, mistakes to avoid, and direct DedSec Project support " name="description"/>
+<meta content="Termux, Android Termux, Update GitHub Pages from Termux Without Breaking the Site, DedSec Project, no root Android, Termux help, Python Termux" name="keywords"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="../style.css?v=48" rel="stylesheet"/>
+<meta content="Update GitHub Pages from Termux Without Breaking the Site — DedSec Assistance" property="og:title"/>
+<meta content="A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html" property="og:url"/>
+<meta content="DedSec Project" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="el_GR" property="og:locale:alternate"/>
+<meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="DedSec Project — Termux learning and assistance resources" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Update GitHub Pages from Termux Without Breaking the Site — DedSec Assistance" name="twitter:title"/>
+<meta content="A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux." name="twitter:description"/>
+<meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" name="twitter:image"/>
+<meta content="https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html" name="twitter:url"/>
+<meta content="DedSec Project" name="author"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.shields.io https://raw.githubusercontent.com; connect-src 'self' https://api.github.com; frame-ancestors 'none';" http-equiv="Content-Security-Policy"/>
+<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<meta content="DENY" http-equiv="X-Frame-Options"/>
+<link href="https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html" rel="canonical"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://ded-sec.space/#organization",
+      "name": "DedSec Project",
+      "url": "https://ded-sec.space/",
+      "logo": "https://ded-sec.space/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg",
+      "sameAs": [
+        "https://github.com/dedsec1121fk/DedSec",
+        "https://github.com/dedsec1121fk",
+        "https://t.me/dedsecproject"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://ded-sec.space/#website",
+      "name": "DedSec Project",
+      "url": "https://ded-sec.space/",
+      "publisher": {
+        "@id": "https://ded-sec.space/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html#webpage",
+      "url": "https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html",
+      "name": "GitHub Pages Update — DedSec Assistance",
+      "description": "Phone-first workflow for editing, checking, committing, and pushing static website files to GitHub Pages from Termux.",
+      "inLanguage": [
+        "en",
+        "el"
+      ],
+      "isPartOf": {
+        "@id": "https://ded-sec.space/#website"
+      },
+      "about": {
+        "@id": "https://ded-sec.space/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ded-sec.space/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Assistance",
+          "item": "https://ded-sec.space/assistance.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "GitHub Pages Update",
+          "item": "https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html#howto",
+      "name": "GitHub Pages Update",
+      "description": "Phone-first workflow for editing, checking, committing, and pushing static website files to GitHub Pages from Termux.",
+      "inLanguage": [
+        "en",
+        "el"
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Read the exact error and identify the layer that failed.",
+          "text": "Read the exact error and identify the layer that failed."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Check the current folder and confirm the expected files exist.",
+          "text": "Check the current folder and confirm the expected files exist."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Run the copyable diagnostic command before changing many things.",
+          "text": "Run the copyable diagnostic command before changing many things."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Apply one fix at a time and avoid random commands from unknown sources.",
+          "text": "Apply one fix at a time and avoid random commands from unknown sources."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Test the original action again and save the working fix for later.",
+          "text": "Test the original action again and save the working fix for later."
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "GitHub Pages Update",
+      "description": "Phone-first workflow for editing, checking, committing, and pushing static website files to GitHub Pages from Termux.",
+      "author": {
+        "@type": "Person",
+        "name": "dedsec1121fk"
+      },
+      "publisher": {
+        "@id": "https://ded-sec.space/#organization"
+      },
+      "mainEntityOfPage": "https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html",
+      "dateModified": "2026-05-31",
+      "proficiencyLevel": "Beginner to Intermediate"
+    }
+  ]
+}</script>
+</head>
+<body class="dark-theme">
+<nav class="main-nav">
+<div class="nav-container">
+<div class="nav-title"><h1>DedSec Project</h1></div>
+<button aria-label="Toggle navigation" class="burger-menu" id="burger-menu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span><span class="burger-label" data-en="MENU" data-gr="MENU">MENU</span></button>
+<div class="nav-menu" id="nav-menu"><a class="nav-link" data-en="Home" data-gr="Αρχική" href="../index.html">Home</a>
+<a class="nav-link" data-en="Our Vision" data-gr="Το Όραμά μας" href="../Pages/our-vision.html">Our Vision</a>
+<a class="nav-link" data-en="Guide For Installation" data-gr="Οδηγός Εγκατάστασης" href="../Pages/guide-for-installation.html">Guide For Installation</a>
+<a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθε για τα Εργαλεία" href="../Pages/learn-about-the-tools.html">Learn About The Tools</a>
+<a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="../Pages/butsystem-exclusive.html">ButSystem.py (Exclusive)</a>
+<a class="nav-link" data-en="Assistance" data-gr="Βοήθεια" href="../assistance.html">Assistance</a>
+<a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="../Pages/faq.html">Frequently Asked Questions</a>
+<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="../Pages/store.html">Store</a>
+<a class="nav-link" data-en="Keep Android Open" data-gr="Κράτησε το Android Ανοιχτό" href="../Pages/keep-android-open.html">Keep Android Open</a>
+<a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="../Pages/privacy-policy.html">Privacy Policy</a>
+<a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="../Pages/contact-credits.html">Contact &amp; Credits</a></div>
+<div class="nav-actions">
+<button aria-label="Toggle theme" class="nav-action-btn nav-theme-btn" id="nav-theme-switcher" type="button"><span aria-hidden="true" class="nav-action-label nav-theme-label" data-dark="☾" data-light="☀">☀</span></button>
+<button aria-label="Change language" class="nav-action-btn nav-lang-btn" id="nav-lang-switcher" type="button"><span class="nav-action-label nav-lang-label" data-en="ΕΛ" data-gr="EN">ΕΛ</span></button>
+</div>
+</div>
+</nav>
+<main class="page-content assistance-page assistance-article-page">
+<div class="page-header assistance-hero">
+<h1 data-en="Update GitHub Pages from Termux Without Breaking the Site" data-gr="Update GitHub Pages από Termux χωρίς να χαλάσει το site">Update GitHub Pages from Termux Without Breaking the Site</h1>
+<p data-en="A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux." data-gr="Καθαρό workflow από κινητό για static site edits, link checks, commits και GitHub Pages updates από Termux.">A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux.</p>
+</div>
+<article class="content-section assistance-article unique-assistance-article"><h2 data-en="What this page is for" data-gr="Σε τι χρησιμεύει αυτή η σελίδα">What this page is for</h2><p data-en="Update GitHub Pages from Termux Without Breaking the Site is for you update a GitHub Pages site from Termux and want to avoid broken deploys. The goal here is not to reinstall everything. The goal is to locate the small broken part and fix it safely." data-gr="Αυτή η σελίδα είναι για το Update GitHub Pages from Termux Without Breaking the Site: you update a GitHub Pages site from Termux and want to avoid broken deploys. Διάβασε πρώτα το σύμπτωμα, τρέξε την αντιγράψιμη εντολή και άλλαξε μόνο το κομμάτι που δείχνει το output.">Update GitHub Pages from Termux Without Breaking the Site is for you update a GitHub Pages site from Termux and want to avoid broken deploys. The goal here is not to reinstall everything. The goal is to locate the small broken part and fix it safely.</p><p data-en="Work on Update GitHub Pages from Termux Without Breaking the Site only after you can point to the exact clue in the terminal or browser output. For this guide, the main clues are update, github, pages, breaking, and the page description is: A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux." data-gr="Δούλεψε το Update GitHub Pages from Termux Without Breaking the Site μόνο αφού μπορείς να δείξεις το ακριβές clue στο terminal ή στον browser. Για αυτόν τον οδηγό τα βασικά clues είναι update, github, pages, breaking, και η περιγραφή της σελίδας είναι: A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux.">Work on Update GitHub Pages from Termux Without Breaking the Site only after you can point to the exact clue in the terminal or browser output. For this guide, the main clues are update, github, pages, breaking, and the page description is: A clean phone workflow for editing a static site, checking links, committing changes, and pushing GitHub Pages updates from Termux.</p><h2 data-en="Signs you are on the right page" data-gr="Σημάδια ότι είσαι στη σωστή σελίδα">Signs you are on the right page</h2><ul class="assistance-check-list"><li data-en="The same problem returns after a normal retry and it matches this topic: you update a GitHub Pages site from Termux and want to avoid broken deploys." data-gr="Το ίδιο πρόβλημα γυρίζει μετά από απλό retry και ταιριάζει με αυτό το θέμα: you update a GitHub Pages site from Termux and want to avoid broken deploys.">The same problem returns after a normal retry and it matches this topic: you update a GitHub Pages site from Termux and want to avoid broken deploys.</li><li data-en="The output mentions update, github, pages, breaking, or the failure happens immediately after a command connected to Update GitHub Pages from Termux Without Breaking the Site." data-gr="Το output αναφέρει update, github, pages, breaking, ή το failure εμφανίζεται αμέσως μετά από εντολή που σχετίζεται με Update GitHub Pages from Termux Without Breaking the Site.">The output mentions update, github, pages, breaking, or the failure happens immediately after a command connected to Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="You can reproduce the Update GitHub Pages from Termux Without Breaking the Site problem with one short test command instead of launching the whole project again." data-gr="Μπορείς να αναπαράγεις το πρόβλημα Update GitHub Pages from Termux Without Breaking the Site με μία μικρή test εντολή αντί να ξεκινάς ξανά όλο το project.">You can reproduce the Update GitHub Pages from Termux Without Breaking the Site problem with one short test command instead of launching the whole project again.</li><li data-en="Test locally, commit cleanly, then push only after links and styles work." data-gr="Πρώτα: Test locally, commit cleanly, then push only after links and styles work.">Test locally, commit cleanly, then push only after links and styles work.</li></ul><h2 data-en="Why it happens in Termux" data-gr="Γιατί συμβαίνει στο Termux">Why it happens in Termux</h2><p data-en="Update GitHub Pages from Termux Without Breaking the Site belongs to the Git and repository state layer. In Termux, that layer can change because Android paths, package state, working folders, cached browser files, or Git settings are not shared the way they are on a desktop Linux system for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Το Update GitHub Pages from Termux Without Breaking the Site ανήκει στο layer: Git and repository state. Στο Termux αυτό το layer μπορεί να αλλάξει επειδή Android paths, package state, working folders, cached browser files ή Git settings δεν λειτουργούν όπως σε desktop Linux.">Update GitHub Pages from Termux Without Breaking the Site belongs to the Git and repository state layer. In Termux, that layer can change because Android paths, package state, working folders, cached browser files, or Git settings are not shared the way they are on a desktop Linux system for Update GitHub Pages from Termux Without Breaking the Site.</p><ul class="assistance-check-list"><li data-en="For Update GitHub Pages from Termux Without Breaking the Site, look for update, github, pages, breaking in the first useful output line. That line decides whether you should fix a path, dependency, permission, port, or repository setting for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Για το Update GitHub Pages from Termux Without Breaking the Site, ψάξε για update, github, pages, breaking στην πρώτη χρήσιμη γραμμή output. Αυτή η γραμμή δείχνει αν πρέπει να διορθώσεις path, dependency, permission, port ή repository setting.">For Update GitHub Pages from Termux Without Breaking the Site, look for update, github, pages, breaking in the first useful output line. That line decides whether you should fix a path, dependency, permission, port, or repository setting for Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="Git has not been told which user.name and user.email to use for commits for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Το Git δεν ξέρει ποιο user.name και user.email να χρησιμοποιήσει για commits.">Git has not been told which user.name and user.email to use for commits for Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="GitHub requires a token or SSH key; the normal account password is not accepted for command-line pushes for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Το GitHub θέλει token ή SSH key· το κανονικό password δεν γίνεται δεκτό για command-line pushes.">GitHub requires a token or SSH key; the normal account password is not accepted for command-line pushes for Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="Local edits and remote edits touched the same files, so pull or push needs a careful merge path for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Local edits και remote edits πείραξαν τα ίδια αρχεία, άρα pull/push χρειάζεται προσεκτικό merge path.">Local edits and remote edits touched the same files, so pull or push needs a careful merge path for Update GitHub Pages from Termux Without Breaking the Site.</li></ul><h2 data-en="Copyable command" data-gr="Αντιγράψιμη εντολή">Copyable command</h2><p data-en="Run this from the folder that belongs to Update GitHub Pages from Termux Without Breaking the Site. Replace placeholder names before pressing Enter." data-gr="Τρέξε αυτό από τον φάκελο που ανήκει στο Update GitHub Pages from Termux Without Breaking the Site. Άλλαξε placeholder names πριν πατήσεις Enter.">Run this from the folder that belongs to Update GitHub Pages from Termux Without Breaking the Site. Replace placeholder names before pressing Enter.</p><div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Copy</button><pre><code>git status
+git add -A
+git commit -m "Update site" || echo "No changes"
+git push
+python -m http.server 8080</code></pre></div><h2 data-en="How to read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">How to read the output</h2><ol class="assistance-steps"><li data-en="git status — Shows what Git thinks changed before you pull, commit, or push for Update GitHub Pages from Termux Without Breaking the Site." data-gr="git status — Δείχνει τι θεωρεί το Git αλλαγμένο πριν κάνεις pull, commit ή push.">git status — Shows what Git thinks changed before you pull, commit, or push for Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="git add -A — Runs a focused check for Update GitHub Pages from Termux Without Breaking the Site; compare its output with the symptom before changing anything else." data-gr="git add -A — Τρέχει στοχευμένο έλεγχο για Update GitHub Pages from Termux Without Breaking the Site· σύγκρινε το output με το σύμπτωμα πριν αλλάξεις κάτι άλλο.">git add -A — Runs a focused check for Update GitHub Pages from Termux Without Breaking the Site; compare its output with the symptom before changing anything else.</li><li data-en='git commit -m "Update site" || echo "No changes" — Runs a focused check for Update GitHub Pages from Termux Without Breaking the Site; compare its output with the symptom before changing anything else.' data-gr='git commit -m "Update site" || echo "No changes" — Τρέχει στοχευμένο έλεγχο για Update GitHub Pages from Termux Without Breaking the Site· σύγκρινε το output με το σύμπτωμα πριν αλλάξεις κάτι άλλο.'>git commit -m "Update site" || echo "No changes" — Runs a focused check for Update GitHub Pages from Termux Without Breaking the Site; compare its output with the symptom before changing anything else.</li><li data-en="git push — Uploads commits; authentication or branch errors belong in the Git-related Assistance pages." data-gr="git push — Ανεβάζει commits· authentication ή branch errors ανήκουν στις Git Assistance σελίδες.">git push — Uploads commits; authentication or branch errors belong in the Git-related Assistance pages.</li><li data-en="python -m http.server 8080 — Runs the Python check or script; keep the full traceback if it fails." data-gr="python -m http.server 8080 — Τρέχει Python έλεγχο ή script· κράτα όλο το traceback αν αποτύχει.">python -m http.server 8080 — Runs the Python check or script; keep the full traceback if it fails.</li></ol><h2 data-en="Fix it in this order" data-gr="Διόρθωσέ το με αυτή τη σειρά">Fix it in this order</h2><ol class="assistance-steps"><li data-en="Copy the exact Update GitHub Pages from Termux Without Breaking the Site message before changing anything. Keep the command, folder, and first useful error line together." data-gr="Αντέγραψε το ακριβές μήνυμα για Update GitHub Pages from Termux Without Breaking the Site πριν αλλάξεις κάτι. Κράτα μαζί την εντολή, τον φάκελο και την πρώτη χρήσιμη γραμμή error.">Copy the exact Update GitHub Pages from Termux Without Breaking the Site message before changing anything. Keep the command, folder, and first useful error line together.</li><li data-en="Run only the diagnostic part of the command block. If it fails early, do not continue to the later lines yet." data-gr="Τρέξε μόνο το diagnostic κομμάτι του command block. Αν αποτύχει νωρίς, μη συνεχίσεις στις επόμενες γραμμές.">Run only the diagnostic part of the command block. If it fails early, do not continue to the later lines yet.</li><li data-en="Fix the layer named by the first useful output line: path, permission, package, Python environment, Git state, or browser URL for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Διόρθωσε το layer που δείχνει το πρώτο χρήσιμο output: path, permission, package, Python environment, Git state ή browser URL.">Fix the layer named by the first useful output line: path, permission, package, Python environment, Git state, or browser URL for Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="Retest with the shortest command that originally failed. Do not restart the whole project until the small test works." data-gr="Ξανατέσταρε με τη μικρότερη εντολή που απέτυχε αρχικά. Μην ξανατρέχεις όλο το project μέχρι να δουλέψει το μικρό test.">Retest with the shortest command that originally failed. Do not restart the whole project until the small test works.</li><li data-en="When it works, write down the final command in your notes or README so the same Update GitHub Pages from Termux Without Breaking the Site problem is easier next time." data-gr="Όταν δουλέψει, γράψε την τελική εντολή σε notes ή README ώστε το ίδιο Update GitHub Pages from Termux Without Breaking the Site πρόβλημα να λύνεται πιο εύκολα την επόμενη φορά.">When it works, write down the final command in your notes or README so the same Update GitHub Pages from Termux Without Breaking the Site problem is easier next time.</li></ol><h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Common mistakes</h2><ul class="assistance-check-list"><li data-en="Jumping from Update GitHub Pages from Termux Without Breaking the Site to a full reinstall even though one smaller check can identify the failing layer." data-gr="Πηγαίνεις από το Update GitHub Pages from Termux Without Breaking the Site σε πλήρη επανεγκατάσταση ενώ ένας μικρότερος έλεγχος μπορεί να δείξει το failing layer.">Jumping from Update GitHub Pages from Termux Without Breaking the Site to a full reinstall even though one smaller check can identify the failing layer.</li><li data-en="Trying to push before checking git status." data-gr="Προσπαθείς push πριν δεις git status.">Trying to push before checking git status.</li><li data-en="Using a GitHub password where a token or SSH key is required." data-gr="Χρησιμοποιείς GitHub password εκεί όπου χρειάζεται token ή SSH key.">Using a GitHub password where a token or SSH key is required.</li><li data-en="Deleting the repository to escape a conflict before making a backup zip for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Σβήνεις το repository για να αποφύγεις conflict πριν φτιάξεις backup zip.">Deleting the repository to escape a conflict before making a backup zip for Update GitHub Pages from Termux Without Breaking the Site.</li></ul><h2 data-en="Before you leave the page" data-gr="Πριν φύγεις από τη σελίδα">Before you leave the page</h2><ul class="assistance-check-list"><li data-en="The original Update GitHub Pages from Termux Without Breaking the Site output should be gone, shorter, or replaced by a different and more specific error." data-gr="Το αρχικό output για Update GitHub Pages from Termux Without Breaking the Site πρέπει να έχει φύγει, να έχει μικρύνει ή να έχει αντικατασταθεί από διαφορετικό και πιο συγκεκριμένο error.">The original Update GitHub Pages from Termux Without Breaking the Site output should be gone, shorter, or replaced by a different and more specific error.</li><li data-en="You should know which folder you were in and which command changed the result for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Πρέπει να ξέρεις σε ποιον φάκελο ήσουν και ποια εντολή άλλαξε το αποτέλεσμα για Update GitHub Pages from Termux Without Breaking the Site.">You should know which folder you were in and which command changed the result for Update GitHub Pages from Termux Without Breaking the Site.</li><li data-en="You should have a backup before deleting files, overwriting repositories, or changing working scripts for Update GitHub Pages from Termux Without Breaking the Site." data-gr="Πρέπει να έχεις backup πριν σβήσεις αρχεία, αντικαταστήσεις repositories ή πειράξεις working scripts για Update GitHub Pages from Termux Without Breaking the Site.">You should have a backup before deleting files, overwriting repositories, or changing working scripts for Update GitHub Pages from Termux Without Breaking the Site.</li></ul><section class="assistance-store-cta content-section"><h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε με τον οδηγό;">Guide did not solve it?</h2><p data-en="If Git still blocks you, use the Store and send git status, the exact push/pull/clone command, and the first authentication or merge error shown for Update GitHub Pages from Termux Without Breaking the Site. Mention that the page you tried was: Update GitHub Pages from Termux Without Breaking the Site." data-gr="Αν το Git ακόμα σε μπλοκάρει, χρησιμοποίησε το Store και στείλε git status, την ακριβή push/pull/clone εντολή και το πρώτο authentication ή merge error. Ανέφερε ότι η σελίδα που δοκίμασες ήταν: Update GitHub Pages from Termux Without Breaking the Site.">If Git still blocks you, use the Store and send git status, the exact push/pull/clone command, and the first authentication or merge error shown for Update GitHub Pages from Termux Without Breaking the Site. Mention that the page you tried was: Update GitHub Pages from Termux Without Breaking the Site.</p><a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιγμα Store / Βοήθεια" href="../Pages/store.html">Open Store / Get Help</a></section><h2 data-en="Related Assistance pages" data-gr="Σχετικές σελίδες Assistance">Related Assistance pages</h2><div class="assistance-related-grid"><a class="starter-path-btn" data-en="Install DedSec Project" data-gr="Εγκατάσταση DedSec Project" href="install-dedsec-project-android.html">Install DedSec Project</a><a class="starter-path-btn" data-en="Git Identity Error" data-gr="Git identity error" href="fix-termux-git-push-email-identity.html">Git Identity Error</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Troubleshooting checklist" href="termux-troubleshooting-checklist.html">Troubleshooting Checklist</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός για αρχάριους" href="termux-beginner-guide-android.html">Beginner Guide</a></div></article>
+<footer class="main-footer">
+<div data-lang-section="en">
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.space" rel="noopener noreferrer" target="_blank">Main Website</a>
+<a class="footer-mini-btn" href="https://github.com/dedsec1121fk/DedSec" rel="noopener noreferrer" target="_blank">Main DedSec Project Repository</a>
+<a class="footer-mini-btn" href="../Pages/store.html">Store</a>
+<a class="footer-mini-btn" href="../Pages/contact-credits.html">Contact</a>
+</div>
+<p class="footer-links-note">If something happens to our main links, use the backups below.</p>
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.online" rel="noopener noreferrer" target="_blank">Backup Website</a>
+<a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Backup DedSec Project Repository</a>
+</div>
+</div>
+<div class="hidden-by-default" data-lang-section="gr">
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.space" rel="noopener noreferrer" target="_blank">Κύριο Website</a>
+<a class="footer-mini-btn" href="https://github.com/dedsec1121fk/DedSec" rel="noopener noreferrer" target="_blank">Κύριο Repository του DedSec Project</a>
+<a class="footer-mini-btn" href="../Pages/store.html">Κατάστημα</a>
+<a class="footer-mini-btn" href="../Pages/contact-credits.html">Επικοινωνία</a>
+</div>
+<p class="footer-links-note">Αν συμβεί κάτι στους κύριους συνδέσμους μας, χρησιμοποίησε τα backup πιο κάτω.</p>
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.online" rel="noopener noreferrer" target="_blank">Backup Website</a>
+<a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Backup Repository του DedSec Project</a>
+</div>
+</div>
+<p class="footer-tracker-note" data-lang-section="en">Note: the only trackers used are for Google Search Console analytics about clicks and regions. No cookies or other tracking are used.</p>
+<p class="hidden-by-default footer-tracker-note" data-lang-section="gr">Σημείωση: τα μόνα trackers που χρησιμοποιούνται είναι για τα στατιστικά του Google Search Console σχετικά με κλικ και περιοχές. Δεν χρησιμοποιούνται cookies ή άλλου είδους παρακολούθηση.</p>
+<p data-lang-section="en">© 2024-2026 DedSec Project. All Rights Reserved.</p>
+<p class="hidden-by-default" data-lang-section="gr">© 2024-2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
+<p>Made by dedsec1121fk.</p>
+</footer>
+</main>
+<script defer="" src="../script.js?v=48"></script>
+</body>
+</html>

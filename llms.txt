@@ -1,15 +1,89 @@
-# DedSec Project — Full Index (ded-sec.space)
+# DedSec Project
+Official static site for the DedSec Project. The Assistance section contains curated Termux, Android no-root, GitHub, Python, local-server, and safe-script guides.
 
-> Auto-generated list of public pages. Generated on 2026-03-01.
+## Important pages
+- https://ded-sec.space/
+- https://ded-sec.space/assistance.html
+- https://ded-sec.space/Pages/guide-for-installation.html
+- https://ded-sec.space/Pages/learn-about-the-tools.html
+- https://ded-sec.space/Pages/store.html
 
-Use this when you need an exhaustive list. For search-engine crawling, prefer the XML sitemap at /sitemap.xml.
+## Assistance guides
+- https://ded-sec.space/Assistance/fix-dedsec-broken-install.html — Fix Broken DedSec Install — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-github-ssh-authentication-termux.html — GitHub SSH/Auth — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-localhost-server-not-opening-android.html — Fix Localhost Server Not Opening on Android — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-node-npm-errors-termux.html — Node/npm Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-pip-errors-termux.html — Fix pip Errors in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-python-module-not-found-termux.html — Fix ModuleNotFoundError in Termux Python — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-python-syntax-errors-termux.html — Python Syntax Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-dpkg-apt-lock.html — Fix apt/dpkg Lock — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-git-push-email-identity.html — Git Identity Error — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-no-space-left.html — No Space Left — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-no-such-file-or-directory.html — Fix No Such File, Wrong Folder, and Space-in-Name Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-permission-denied-executable.html — Fix Permission Denied, chmod, and Executable Scripts in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-port-already-in-use.html — Fix Port Already in Use in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-repository-errors.html — Fix Termux Repository, Mirror, GPG, and apt Update Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-ssl-certificate-curl-errors.html — SSL / curl Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-storage-permission.html — Fix Termux Storage and Downloads Access — DedSec Assistance
+- https://ded-sec.space/Assistance/fix-termux-widget-scripts.html — Termux:Widget Help — DedSec Assistance
+- https://ded-sec.space/Assistance/github-clone-termux.html — GitHub Clone Help — DedSec Assistance
+- https://ded-sec.space/Assistance/install-dedsec-project-android.html — Install DedSec Project — DedSec Assistance
+- https://ded-sec.space/Assistance/keep-termux-running-background.html — Keep Termux Running Without Android Killing It — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-android-webview-browser-tips.html — Browser Tips — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-backup-restore-workflow.html — Backup and Restore Termux Projects Safely — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-beginner-guide-android.html — Beginner Guide — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-build-dedsec-style-tool.html — DedSec-Style Tool — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-check-broken-links-locally.html — Check Broken Links and SEO Basics Locally from Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-clean-cache-safely.html — Clean Cache — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-cloudflared-local-link-help.html — Share Local Termux Links Safely with Cloudflared or QR Codes — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-command-cheat-sheet.html — Command Cheat Sheet — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-command-history-and-aliases.html — History & Aliases — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-common-exit-codes.html — Exit Codes — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-cool-script-ideas.html — Useful No-Root Termux Script Ideas — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-create-python-menu-script.html — Create a Reliable Python Menu Script in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-debug-log-files.html — Debug Logs — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-download-with-curl-wget.html — curl/wget Downloads — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-edit-files-with-nano.html — Edit with nano — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-bash-bad-interpreter.html — bad interpreter — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-crontab-alternatives.html — Cron Alternatives — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-git-auth-token-github.html — GitHub Token Auth — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-git-large-file-push.html — Large File Push — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-line-endings-windows-crlf.html — Fix CRLF Lines — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-pyinstaller-on-android-alternatives.html — PyInstaller Alternatives — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-python-encoding-unicode-errors.html — Python Unicode Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-requests-ssl-and-api-errors.html — requests / API Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-shebang-env-python.html — Python Shebang — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-fix-termux-api-not-working.html — Fix Termux:API, Notifications, Clipboard, and Battery Commands — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-flask-app-not-loading.html — Fix Flask App Not Loading in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-git-branch-basics.html — Git Branches — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-git-pull-conflicts.html — Git Pull Conflicts — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-github-pages-update-workflow.html — Update GitHub Pages from Termux Without Breaking the Site — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-html-css-js-editing-from-phone.html — Edit Web Files — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-install-common-python-libraries.html — Install Common Python Libraries in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-install-source-and-first-setup.html — First Termux Setup — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-json-file-errors.html — JSON Errors — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-learn-python-by-building-tools.html — Learn Python by Building — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-learning-roadmap.html — Learning Roadmap — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-local-website-python-server.html — Create a Local Website or Dashboard in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-low-end-phone-performance-tips.html — Performance Tips — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-manage-large-projects-on-phone.html — Large Projects on Phone — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-no-root-limitations.html — No Root Limits — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-offline-documentation-folder.html — Offline Docs — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-package-command-not-found.html — Fix Command Not Found and Cannot Locate Package in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-phone-coding-workflow.html — Phone Coding Workflow — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-project-folder-structure.html — Project Folder Structure — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-python-error-debugging-roadmap.html — Python Debug Roadmap — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-python-virtual-environment.html — Use Python Virtual Environments in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-run-python-script-correctly.html — Run Python Scripts — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-safe-automation-ideas.html — Safe Automation — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-safe-copy-paste.html — Safe Copy/Paste — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-safe-update-routine.html — Safe Update Routine — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-secure-api-keys-env-file.html — API Keys Safely — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-site-seo-checklist-from-phone.html — SEO Checklist — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-troubleshooting-checklist.html — Troubleshooting Checklist — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-websocket-socketio-errors.html — Fix WebSocket and Socket.IO Errors in Termux — DedSec Assistance
+- https://ded-sec.space/Assistance/termux-write-better-readme.html — Better README — DedSec Assistance
+- https://ded-sec.space/Assistance/unzip-files-termux-android.html — Unzip Files in Termux Without Broken Paths — DedSec Assistance
+- https://ded-sec.space/Assistance/update-dedsec-project.html — Update DedSec Project — DedSec Assistance
 
-## Pages
-- [DedSec Project — Free Termux Cybersecurity Toolkit](https://ded-sec.space/) — last modified 2026-02-24
-- [Contact & Credits - DedSec Project](https://ded-sec.space/Pages/contact-credits.html) — last modified 2026-02-24
-- [DedSec Project - Frequently Asked Questions](https://ded-sec.space/Pages/faq.html) — last modified 2026-02-24
-- [Guide For Installation - DedSec Project](https://ded-sec.space/Pages/guide-for-installation.html) — last modified 2026-02-24
-- [Learn About The Tools - DedSec Project](https://ded-sec.space/Pages/learn-about-the-tools.html) — last modified 2026-03-01
-- [ButSystem.py (Exclusive) - DedSec Project](https://ded-sec.space/Pages/butsystem-exclusive.html) — last modified 2026-03-01
-- [Our Vision - DedSec Project](https://ded-sec.space/Pages/our-vision.html) — last modified 2026-02-24
-- [Privacy Policy - DedSec Project](https://ded-sec.space/Pages/privacy-policy.html) — last modified 2026-02-24
+DedSec Assistance quality note: the Assistance section is consolidated into focused Termux guides with unique commands, troubleshooting steps, Store help routes, and internal links back to the main DedSec Project pages.
