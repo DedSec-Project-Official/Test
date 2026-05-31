@@ -9342,3 +9342,95 @@ html body.light-theme .assistance-page .assistance-related-card {
   border-color: var(--nm-border) !important;
 }
 /* === End v27 === */
+
+
+/* === v28: Assistance uses the same page colors as FAQ / Learn About The Tools === */
+/* Assistance titles/subtitles must behave like normal page headers, not boxed cards. */
+html body .assistance-page > .page-header,
+html body .assistance-page .page-header {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 auto 30px !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  color: inherit !important;
+}
+
+html body .assistance-page .page-header h1 {
+  color: var(--nm-text-accent) !important;
+  font-family: var(--font-secondary) !important;
+  text-align: center !important;
+  margin: 0 0 10px !important;
+  text-shadow: none !important;
+}
+
+html body .assistance-page .page-header p {
+  color: var(--nm-text) !important;
+  text-align: center !important;
+  max-width: 650px !important;
+  margin: 0 auto !important;
+}
+
+/* Reuse the normal content-section / feature-card color system from the working pages. */
+html body .assistance-page .content-section,
+html body .assistance-page .assistance-article,
+html body .assistance-page .assistance-related,
+html body .assistance-page .assistance-paid-help,
+html body .assistance-page .assistance-store-cta,
+html body .assistance-page .assistance-deep-section,
+html body .assistance-page .assistance-check-section,
+html body .assistance-page .assistance-next-section,
+html body .assistance-page .assistance-seo-support {
+  background: var(--nm-container) !important;
+  border: 1px solid var(--nm-border) !important;
+  box-shadow: none !important;
+  color: var(--nm-text) !important;
+}
+
+html body .assistance-page .assistance-card,
+html body .assistance-page .assistance-mini-card,
+html body .assistance-page .assistance-related-card,
+html body.light-theme .assistance-page .assistance-card,
+html body.light-theme .assistance-page .assistance-mini-card,
+html body.light-theme .assistance-page .assistance-related-card {
+  background: var(--nm-container) !important;
+  border: 1px solid var(--nm-border) !important;
+  box-shadow: none !important;
+  color: var(--nm-text) !important;
+}
+
+html body .assistance-page .content-section:hover,
+html body .assistance-page .assistance-card:hover,
+html body .assistance-page .assistance-mini-card:hover,
+html body .assistance-page .assistance-related-card:hover,
+html body .assistance-page .assistance-card:focus-visible,
+html body .assistance-page .assistance-mini-card:focus-visible,
+html body .assistance-page .assistance-related-card:focus-visible {
+  border-color: var(--nm-accent) !important;
+  box-shadow: none !important;
+}
+
+html body .assistance-page .assistance-card h3,
+html body .assistance-page .assistance-mini-card h3,
+html body .assistance-page .assistance-related-card h3,
+html body .assistance-page .content-section h2,
+html body .assistance-page .content-section h3,
+html body .assistance-page .assistance-article h2,
+html body .assistance-page .assistance-article h3 {
+  color: var(--nm-text-accent) !important;
+}
+
+html body .assistance-page p,
+html body .assistance-page li,
+html body .assistance-page .assistance-card p,
+html body .assistance-page .assistance-mini-card p,
+html body .assistance-page .assistance-related-card p {
+  color: var(--nm-text) !important;
+}
+
+html body .assistance-page :is(code, pre code, .code-container code, .assistance-code code) {
+  color: var(--nm-text) !important;
+}
+/* === End v28 === */
