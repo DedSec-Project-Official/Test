@@ -87,3 +87,6 @@ Official static site for the DedSec Project. The Assistance section contains cur
 - https://ded-sec.space/Assistance/update-dedsec-project.html — Update DedSec Project — DedSec Assistance
 
 DedSec Assistance quality note: the Assistance section is consolidated into focused Termux guides with unique commands, troubleshooting steps, Store help routes, and internal links back to the main DedSec Project pages.
+
+
+Quality note: v31 keeps public sitemap entries focused on indexable pages only; 404 and the hidden easter-egg page are excluded from sitemap.

@@ -1,0 +1,22 @@
+{
+  "version": "v31",
+  "html_files": 89,
+  "assistance_pages": 76,
+  "json_ld_errors": 0,
+  "broken_internal_links": 0,
+  "assistance_missing_copy_buttons": 0,
+  "assistance_missing_store_cta": 0,
+  "sitemap_valid": true,
+  "sitemap_urls": 87,
+  "sitemap_excludes_404_and_hidden_unused_template": true,
+  "all_assistance_pages_in_search": true,
+  "search_version": "2026-06-01-v31-site-quality-search",
+  "core_repeated_long_sentences": 0,
+  "high_similarity_core_pairs_gt_0_72": 0,
+  "style_ref": {
+    "style.css?v=57": 89
+  },
+  "script_ref": {
+    "script.js?v=57": 96
+  }
+}

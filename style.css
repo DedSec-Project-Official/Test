@@ -9434,3 +9434,226 @@ html body .assistance-page :is(code, pre code, .code-container code, .assistance
   color: var(--nm-text) !important;
 }
 /* === End v28 === */
+
+/* === v29: unified two-theme colors across backgrounds, cards and buttons === */
+/* The site should keep one clear dark/light color system: dark transparent purple/black surfaces, light white surfaces, lavender borders/accent. */
+html body {
+  background-color: var(--nm-abyss-blue) !important;
+  color: var(--nm-text) !important;
+}
+
+html body .main-nav {
+  background: var(--nm-nav-solid) !important;
+  border-bottom-color: var(--nm-border) !important;
+}
+
+html body .page-content {
+  color: var(--nm-text) !important;
+}
+
+/* Normal page titles: text only, never boxed. */
+html body .page-header,
+html body .assistance-page .page-header,
+html body .store-page .page-header {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .page-header h1,
+html body .page-header p {
+  color: var(--nm-text-accent) !important;
+}
+
+html body .page-header p {
+  color: var(--nm-text) !important;
+}
+
+/* Shared surfaces: FAQ, Learn Tools, Assistance, Store, Privacy, cards and article blocks. */
+html body .content-section,
+html body .feature-card,
+html body .tool-card,
+html body .community-card,
+html body .stat-card,
+html body .store-page .feature-card,
+html body .assistance-page .content-section,
+html body .assistance-page .assistance-article,
+html body .assistance-page .assistance-related,
+html body .assistance-page .assistance-paid-help,
+html body .assistance-page .assistance-store-cta,
+html body .assistance-page .assistance-deep-section,
+html body .assistance-page .assistance-check-section,
+html body .assistance-page .assistance-next-section,
+html body .assistance-page .assistance-seo-support,
+html body .assistance-page .assistance-card,
+html body .assistance-page .assistance-mini-card,
+html body .assistance-page .assistance-related-card,
+html body details,
+html body .faq-item,
+html body .faq-category,
+html body .code-container,
+html body .assistance-code {
+  background: var(--nm-container) !important;
+  background-image: none !important;
+  border-color: var(--nm-border) !important;
+  color: var(--nm-text) !important;
+  box-shadow: none !important;
+}
+
+html body .content-section:hover,
+html body .feature-card:hover,
+html body .tool-card:hover,
+html body .community-card:hover,
+html body .store-page .feature-card:hover,
+html body .assistance-page .assistance-card:hover,
+html body .assistance-page .assistance-mini-card:hover,
+html body .assistance-page .assistance-related-card:hover,
+html body .faq-item:hover,
+html body .faq-category:hover {
+  border-color: var(--nm-accent) !important;
+  box-shadow: none !important;
+}
+
+/* Shared text colors. */
+html body .content-section h2,
+html body .content-section h3,
+html body .feature-card h3,
+html body .tool-card h4,
+html body .assistance-page h1,
+html body .assistance-page h2,
+html body .assistance-page h3,
+html body .assistance-page summary,
+html body .faq-item summary,
+html body details summary {
+  color: var(--nm-text-accent) !important;
+}
+
+html body .content-section p,
+html body .content-section li,
+html body .feature-card p,
+html body .tool-card p,
+html body .assistance-page p,
+html body .assistance-page li,
+html body .assistance-page code,
+html body .faq-item p,
+html body details p {
+  color: var(--nm-text) !important;
+}
+
+/* Shared button system: same background/border colors in dark and light mode. */
+html body :is(.btn,.btn-primary,.starter-path-btn,.faq-link-btn,.footer-mini-btn,.copy-btn,.contact-page-btn,.contact-cta,.hero-cta,.feature-cta),
+html body a:is(.btn,.btn-primary,.starter-path-btn,.faq-link-btn,.footer-mini-btn,.contact-page-btn,.contact-cta,.hero-cta,.feature-cta),
+html body button:is(.btn,.btn-primary,.starter-path-btn,.faq-link-btn,.footer-mini-btn,.copy-btn,.contact-page-btn,.contact-cta,.hero-cta,.feature-cta) {
+  background: var(--nm-container) !important;
+  background-image: none !important;
+  border: 1px solid var(--nm-border) !important;
+  color: var(--nm-text) !important;
+  box-shadow: none !important;
+}
+
+html body :is(.btn,.btn-primary,.starter-path-btn,.faq-link-btn,.footer-mini-btn,.copy-btn,.contact-page-btn,.contact-cta,.hero-cta,.feature-cta):hover,
+html body a:is(.btn,.btn-primary,.starter-path-btn,.faq-link-btn,.footer-mini-btn,.contact-page-btn,.contact-cta,.hero-cta,.feature-cta):hover,
+html body button:is(.btn,.btn-primary,.starter-path-btn,.faq-link-btn,.footer-mini-btn,.copy-btn,.contact-page-btn,.contact-cta,.hero-cta,.feature-cta):hover {
+  background: var(--nm-accent) !important;
+  border-color: var(--nm-accent) !important;
+  color: var(--nm-text-on-accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Top navbar buttons use the same two-theme palette without changing the original layout. */
+html body .nav-action-btn,
+html body .hamburger-btn,
+html body .menu-toggle,
+html body .language-toggle,
+html body .theme-toggle {
+  background: var(--nm-container) !important;
+  border-color: var(--nm-border) !important;
+  color: var(--nm-text) !important;
+  box-shadow: none !important;
+}
+
+html body .nav-action-btn:hover,
+html body .hamburger-btn:hover,
+html body .menu-toggle:hover,
+html body .language-toggle:hover,
+html body .theme-toggle:hover {
+  border-color: var(--nm-accent) !important;
+  color: var(--nm-accent) !important;
+}
+
+/* Burger menu buttons: same palette and equal spacing from earlier passes. */
+html body .nav-menu,
+html body .main-nav .nav-menu {
+  background: var(--nm-menu-solid) !important;
+  border-left-color: var(--nm-border) !important;
+}
+
+html body .nav-menu > .nav-link,
+html body .main-nav .nav-menu > .nav-link {
+  background: var(--nm-container) !important;
+  border: 1px solid var(--nm-border) !important;
+  color: var(--nm-text) !important;
+  box-shadow: none !important;
+}
+
+html body .nav-menu > .nav-link:hover,
+html body .main-nav .nav-menu > .nav-link:hover {
+  background: var(--nm-accent) !important;
+  color: var(--nm-text-on-accent) !important;
+  border-color: var(--nm-accent) !important;
+}
+
+/* Assistance stays consistent with the FAQ/Learn pages: no title box, same card colors. */
+html body .assistance-page .page-header {
+  padding: 0 !important;
+  margin: 0 auto 30px !important;
+  max-width: 900px !important;
+}
+
+html body .assistance-page .page-header h1,
+html body .assistance-page .page-header p {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .assistance-page .assistance-intro,
+html body .assistance-page .assistance-category-section,
+html body .assistance-page .assistance-path-section {
+  background: var(--nm-container) !important;
+  border: 1px solid var(--nm-border) !important;
+}
+
+/* === End v29 === */
+
+/* === v30: bigger readable burger menu text without increasing button size === */
+html body .nav-menu > .nav-link,
+html body .main-nav .nav-menu > .nav-link{
+  font-size: clamp(0.92rem, 2.05vh, 1.14rem) !important;
+  line-height: 1.07 !important;
+}
+
+@media (max-height: 700px){
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    font-size: clamp(0.82rem, 1.92vh, 1rem) !important;
+    line-height: 1.04 !important;
+  }
+}
+
+@media (max-height: 620px){
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    font-size: clamp(0.76rem, 1.78vh, 0.92rem) !important;
+    line-height: 1.02 !important;
+  }
+}
+
+@media (max-width: 380px){
+  html body .nav-menu > .nav-link,
+  html body .main-nav .nav-menu > .nav-link{
+    font-size: clamp(0.78rem, 1.86vh, 0.98rem) !important;
+  }
+}
+/* === End v30 === */

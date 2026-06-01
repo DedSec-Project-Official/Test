@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         
-        const SEARCH_VERSION = '2026-05-31-v20-fuzzy-assistance-search';
+        const SEARCH_VERSION = '2026-06-01-v31-site-quality-search';
         const SEARCH_STORAGE_KEY = `dedsec_search_index_${SEARCH_VERSION}`;
         const SEARCH_PAGES_STORAGE_KEY = `dedsec_search_pages_${SEARCH_VERSION}`;
 
