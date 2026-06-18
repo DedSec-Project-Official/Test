@@ -9657,3 +9657,113 @@ html body .main-nav .nav-menu > .nav-link{
   }
 }
 /* === End v30 === */
+
+/* ================================================================
+   PC ACCESSIBLE MENU FIX (safe desktop-only layout)
+   - Keeps the existing mobile navigation untouched.
+   - On PC/tablet width, the menu opens as a wide centered grid instead
+     of a narrow phone side drawer.
+   - The hamburger remains available, but the opened menu is easier to
+     scan and click with a mouse.
+   ================================================================ */
+@media (min-width: 900px) {
+  html body .main-nav .nav-container {
+    max-width: 1400px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  html body .main-nav .nav-title {
+    flex: 0 1 auto !important;
+    min-width: 190px !important;
+  }
+
+  html body .main-nav .nav-title h1 {
+    white-space: normal !important;
+    font-size: clamp(0.92rem, 1.15vw, 1.15rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  html body .main-nav .burger-menu {
+    border: 1px solid var(--nm-border) !important;
+    background: var(--nm-container) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 8px 12px !important;
+    min-width: 74px !important;
+  }
+
+  html body .main-nav .burger-label {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  html body .main-nav .nav-menu {
+    position: fixed !important;
+    top: calc(var(--nav-h, 70px) + 14px) !important;
+    left: 50% !important;
+    right: auto !important;
+    inset-inline-end: auto !important;
+    width: min(960px, calc(100vw - 48px)) !important;
+    max-width: 960px !important;
+    height: auto !important;
+    max-height: calc((var(--vh, 1vh) * 100) - var(--nav-h, 70px) - 44px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    padding: 18px !important;
+    border: 1px solid var(--nm-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background: var(--nm-menu-solid) !important;
+    box-shadow: var(--shadow-elev-3) !important;
+    overflow-y: auto !important;
+    transform: translate(-50%, -10px) scale(0.98) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.18s var(--ease-out-cubic), transform 0.18s var(--ease-out-cubic), visibility 0.18s !important;
+  }
+
+  html body .main-nav .nav-menu.active {
+    transform: translate(-50%, 0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  html body .main-nav .nav-menu::before {
+    border-radius: inherit !important;
+  }
+
+  html body .main-nav .nav-menu .nav-link {
+    width: 100% !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 12px !important;
+    border: 1px solid var(--nm-border) !important;
+    border-radius: var(--radius-sm) !important;
+    background: var(--nm-container) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    transform: none !important;
+  }
+
+  html body .main-nav .nav-menu .nav-link:hover,
+  html body .main-nav .nav-menu .nav-link.active,
+  html body .main-nav .nav-menu .nav-link:focus-visible {
+    background: var(--nm-accent) !important;
+    color: var(--nm-text-on-accent) !important;
+    border-color: var(--nm-accent) !important;
+    transform: none !important;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1100px) {
+  html body .main-nav .nav-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(760px, calc(100vw - 36px)) !important;
+  }
+}
