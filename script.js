@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- NAV WORD STACK + MENU OFFSET (keeps navbar compact so logo stays visible) ---
     const applyNavbarWordStack = () => {
-        // Only for the navbar labels (and title). We don't want to affect normal body text.
+        // Mobile keeps compact stacked labels; desktop keeps readable single-line labels.
+        const isDesktop = window.matchMedia('(min-width: 1100px)').matches;
         const targets = document.querySelectorAll(
             '.main-nav .nav-title h1, .main-nav .nav-action-label, .main-nav .burger-label'
         );
 
-        const stackTextNodes = (root) => {
+        const updateTextNodes = (root) => {
             try {
                 const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
                     acceptNode: (node) => (node.nodeValue && node.nodeValue.trim().length ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT)
@@ -23,15 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const nodes = [];
                 while (walker.nextNode()) nodes.push(walker.currentNode);
                 nodes.forEach(node => {
-                    const raw = (node.nodeValue || '').trim();
-                    if (/\s+/.test(raw)) node.nodeValue = raw.split(/\s+/).join('\n');
+                    if (!node.__dedsecOriginalText) node.__dedsecOriginalText = (node.nodeValue || '').replace(/\s+/g, ' ').trim();
+                    const original = node.__dedsecOriginalText;
+                    node.nodeValue = isDesktop ? original : original.split(/\s+/).join('\n');
                 });
             } catch (_) {
                 // Fallback: do nothing
             }
         };
 
-        targets.forEach(stackTextNodes);
+        targets.forEach(updateTextNodes);
     };
 
     const setViewportUnits = () => {
@@ -1313,7 +1315,7 @@ return file;
         window.changeLanguage(localStorage.getItem('language') || 'en');
 
         // Keep viewport + navbar size variables synced (mobile Safari + dynamic nav height)
-        const layoutHandler = () => syncLayoutVars();
+        const layoutHandler = () => { applyNavbarWordStack(); syncLayoutVars(); };
         layoutHandler();
         window.addEventListener('resize', layoutHandler, { passive: true });
         window.addEventListener('orientationchange', layoutHandler, { passive: true });
