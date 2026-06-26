@@ -9767,3 +9767,54 @@ html body .main-nav .nav-menu > .nav-link{
     width: min(760px, calc(100vw - 36px)) !important;
   }
 }
+
+
+/* === Store page CTA and note polish === */
+.store-page .assistance-path-section{
+  text-align:center;
+}
+.store-page .assistance-path-section .starter-path-btn,
+.store-page a.starter-path-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:min(100%, 240px) !important;
+  min-height:50px !important;
+  padding:12px 18px !important;
+  margin:14px auto 0 !important;
+  border:1px solid rgba(205,147,255,0.55) !important;
+  border-radius:18px !important;
+  background:linear-gradient(135deg, rgba(205,147,255,0.26), rgba(156,175,136,0.12), rgba(255,255,255,0.03)) !important;
+  color:var(--nm-text) !important;
+  -webkit-text-fill-color:var(--nm-text) !important;
+  text-decoration:none !important;
+  font-family:var(--font-mono, monospace) !important;
+  font-size:0.92rem !important;
+  font-weight:900 !important;
+  letter-spacing:.03em !important;
+  box-shadow:0 0 0 1px rgba(205,147,255,0.14) inset, 0 12px 26px rgba(0,0,0,0.22) !important;
+}
+.store-page .assistance-path-section .starter-path-btn:hover,
+.store-page .assistance-path-section .starter-path-btn:focus-visible,
+.store-page a.starter-path-btn:hover,
+.store-page a.starter-path-btn:focus-visible{
+  border-color:var(--nm-accent) !important;
+  background:linear-gradient(135deg, rgba(205,147,255,0.36), rgba(156,175,136,0.16), rgba(255,255,255,0.06)) !important;
+  box-shadow:0 0 0 1px rgba(205,147,255,0.34) inset, 0 14px 34px rgba(0,0,0,0.26) !important;
+  transform:translateY(-1px) !important;
+}
+.store-page .contact-cta-note{
+  display:block;
+  margin-top:14px;
+  padding:12px 16px;
+  border:1px solid rgba(205,147,255,0.30);
+  border-radius:16px;
+  background:rgba(14,14,24,0.40);
+  color:var(--nm-text-muted);
+  text-align:center;
+  line-height:1.45;
+}
+.store-page .content-section.assistance-path-section{
+  padding-top: 8px;
+}
