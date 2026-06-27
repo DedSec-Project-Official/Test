@@ -1102,6 +1102,253 @@ return file;
         rafId = requestAnimationFrame(animate);
     }
 
+    function initializeWaveBackground() {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const existing = document.getElementById('dedsec-wave-bg');
+        if (existing) existing.remove();
+
+        const bg = document.createElement('div');
+        bg.id = 'dedsec-wave-bg';
+        bg.setAttribute('aria-hidden', 'true');
+        bg.innerHTML = '<canvas id="dedsec-wave-canvas"></canvas>';
+        document.body.prepend(bg);
+
+        const canvas = bg.querySelector('#dedsec-wave-canvas');
+        const ctx = canvas?.getContext?.('2d');
+        if (!canvas || !ctx) return;
+
+        const state = {
+            w: 0,
+            h: 0,
+            dpr: 1,
+            t0: performance.now(),
+            raf: null,
+        };
+
+        const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+        const colorsForTheme = () => {
+            const light = document.body.classList.contains('light-theme');
+            return light ? {
+                baseA: '#f7f1fc',
+                baseB: '#ffffff',
+                baseC: '#eef3ff',
+                purple: 'rgba(174, 104, 255, 0.72)',
+                purpleSoft: 'rgba(205, 147, 255, 0.32)',
+                green: 'rgba(147, 191, 163, 0.52)',
+                greenSoft: 'rgba(156, 175, 136, 0.26)',
+                white: 'rgba(255, 255, 255, 0.85)',
+            } : {
+                baseA: '#110d18',
+                baseB: '#171022',
+                baseC: '#25183a',
+                purple: 'rgba(190, 110, 255, 0.80)',
+                purpleSoft: 'rgba(205, 147, 255, 0.42)',
+                green: 'rgba(138, 203, 166, 0.54)',
+                greenSoft: 'rgba(156, 175, 136, 0.30)',
+                white: 'rgba(255, 255, 255, 0.72)',
+            };
+        };
+
+        const resize = () => {
+            state.dpr = clamp(window.devicePixelRatio || 1, 1, 1.6);
+            state.w = Math.max(1, window.innerWidth);
+            state.h = Math.max(1, window.innerHeight);
+            canvas.width = Math.floor(state.w * state.dpr);
+            canvas.height = Math.floor(state.h * state.dpr);
+            canvas.style.width = `${state.w}px`;
+            canvas.style.height = `${state.h}px`;
+            ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+        };
+
+        const waveY = (x, baseY, amp, phase, freqA, freqB, drift) => (
+            baseY
+            + Math.sin((x / freqA) + phase) * amp
+            + Math.sin((x / freqB) + (phase * 1.72) + drift) * (amp * 0.42)
+        );
+
+        const drawRibbon = (baseY, amp, width, phase, gradientStops, blur, alpha, drift, blend = 'screen') => {
+            const { w, h } = state;
+            const grad = ctx.createLinearGradient(0, 0, w, 0);
+            gradientStops.forEach(([stop, color]) => grad.addColorStop(stop, color));
+
+            ctx.save();
+            ctx.globalCompositeOperation = blend;
+            ctx.globalAlpha = alpha;
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = width;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.shadowBlur = blur;
+            ctx.shadowColor = gradientStops[1]?.[1] || gradientStops[0]?.[1] || 'rgba(255,255,255,0.4)';
+
+            ctx.beginPath();
+            const step = state.w > 900 ? 18 : 14;
+            for (let x = -40; x <= w + 40; x += step) {
+                const y = waveY(x, baseY, amp, phase, 132, 74, drift);
+                if (x === -40) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.restore();
+        };
+
+        const drawGlow = (x, y, rx, ry, colors, alpha, blur, drift) => {
+            const grad = ctx.createRadialGradient(x, y, 0, x, y, Math.max(rx, ry));
+            colors.forEach(([stop, color]) => grad.addColorStop(stop, color));
+            ctx.save();
+            ctx.globalCompositeOperation = 'screen';
+            ctx.globalAlpha = alpha;
+            ctx.fillStyle = grad;
+            ctx.filter = `blur(${blur}px)`;
+            ctx.beginPath();
+            ctx.ellipse(x, y, rx, ry, drift, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        };
+
+        const render = (ts) => {
+            if (!document.body.contains(bg)) return;
+
+            const t = (ts - state.t0) / 1000;
+            const { w, h } = state;
+            const theme = colorsForTheme();
+
+            ctx.clearRect(0, 0, w, h);
+            ctx.fillStyle = theme.baseA;
+            ctx.fillRect(0, 0, w, h);
+
+            const sky = ctx.createLinearGradient(0, 0, 0, h);
+            sky.addColorStop(0, theme.baseB);
+            sky.addColorStop(0.42, theme.baseC);
+            sky.addColorStop(1, theme.baseA);
+            ctx.fillStyle = sky;
+            ctx.globalAlpha = 0.96;
+            ctx.fillRect(0, 0, w, h);
+            ctx.globalAlpha = 1;
+
+            drawGlow(w * 0.16 + Math.sin(t * 0.18) * 28, h * 0.22 + Math.cos(t * 0.14) * 18, w * 0.30, h * 0.22, [
+                [0, theme.purpleSoft],
+                [0.5, 'rgba(205,147,255,0.08)'],
+                [1, 'rgba(205,147,255,0.0)'],
+            ], 0.95, 18, t * 0.25);
+
+            drawGlow(w * 0.82 + Math.cos(t * 0.16) * 24, h * 0.28 + Math.sin(t * 0.13) * 16, w * 0.28, h * 0.20, [
+                [0, theme.greenSoft],
+                [0.45, 'rgba(156,175,136,0.08)'],
+                [1, 'rgba(156,175,136,0.0)'],
+            ], 0.90, 20, t * 0.18);
+
+            drawGlow(w * 0.52 + Math.sin(t * 0.11) * 16, h * 0.62 + Math.cos(t * 0.10) * 12, w * 0.24, h * 0.18, [
+                [0, 'rgba(255,255,255,0.16)'],
+                [0.4, 'rgba(255,255,255,0.06)'],
+                [1, 'rgba(255,255,255,0.0)'],
+            ], 0.70, 24, t * 0.14);
+
+            const basePhase = t * 0.55;
+            const drift = t * 0.35;
+
+            // Main flowing bands
+            drawRibbon(h * 0.23, 22, 84, basePhase * 1.00, [
+                [0, 'rgba(205,147,255,0.00)'],
+                [0.18, theme.purpleSoft],
+                [0.5, theme.white],
+                [0.78, theme.greenSoft],
+                [1, 'rgba(156,175,136,0.00)'],
+            ], 18, 0.75, drift, 'screen');
+
+            drawRibbon(h * 0.42, 28, 98, basePhase * 0.86 + 1.2, [
+                [0, 'rgba(205,147,255,0.00)'],
+                [0.22, theme.purple],
+                [0.52, theme.white],
+                [0.80, theme.green],
+                [1, 'rgba(156,175,136,0.00)'],
+            ], 22, 0.85, drift + 1.8, 'screen');
+
+            drawRibbon(h * 0.63, 18, 62, basePhase * 1.12 + 2.4, [
+                [0, 'rgba(205,147,255,0.00)'],
+                [0.28, theme.greenSoft],
+                [0.52, theme.white],
+                [0.74, theme.purpleSoft],
+                [1, 'rgba(205,147,255,0.00)'],
+            ], 14, 0.65, drift + 3.1, 'lighter');
+
+            // Sharp highlight bands for PS3/XMB-like movement
+            ctx.save();
+            ctx.globalCompositeOperation = 'screen';
+            ctx.globalAlpha = 0.55;
+            ctx.lineWidth = state.w > 900 ? 12 : 9;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = theme.white;
+            const highlight = ctx.createLinearGradient(0, 0, w, 0);
+            highlight.addColorStop(0, 'rgba(255,255,255,0.0)');
+            highlight.addColorStop(0.26, theme.white);
+            highlight.addColorStop(0.52, theme.purpleSoft);
+            highlight.addColorStop(0.74, theme.greenSoft);
+            highlight.addColorStop(1, 'rgba(255,255,255,0.0)');
+            ctx.strokeStyle = highlight;
+
+            ctx.beginPath();
+            for (let x = -40; x <= w + 40; x += 16) {
+                const y = waveY(x, h * 0.31, 12, basePhase * 1.22 + 0.6, 96, 58, drift);
+                if (x === -40) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            ctx.beginPath();
+            for (let x = -40; x <= w + 40; x += 16) {
+                const y = waveY(x, h * 0.71, 10, basePhase * 0.92 + 2.0, 104, 64, drift + 1.0);
+                if (x === -40) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.restore();
+
+            // Soft scanline shimmer
+            ctx.save();
+            ctx.globalCompositeOperation = 'overlay';
+            ctx.globalAlpha = 0.10;
+            const scan = ctx.createLinearGradient(0, 0, 0, h);
+            scan.addColorStop(0, 'rgba(255,255,255,0.02)');
+            scan.addColorStop(0.5, 'rgba(255,255,255,0.10)');
+            scan.addColorStop(1, 'rgba(255,255,255,0.02)');
+            ctx.fillStyle = scan;
+            ctx.fillRect(0, 0, w, h);
+            ctx.restore();
+
+            if (!reduceMotion) {
+                state.raf = requestAnimationFrame(render);
+            }
+        };
+
+        const start = () => {
+            resize();
+            if (reduceMotion) {
+                render(performance.now());
+                return;
+            }
+            if (state.raf) cancelAnimationFrame(state.raf);
+            state.raf = requestAnimationFrame(render);
+        };
+
+        window.addEventListener('resize', resize, { passive: true });
+        window.addEventListener('orientationchange', resize, { passive: true });
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', resize);
+            window.visualViewport.addEventListener('scroll', resize);
+        }
+
+        // Redraw when theme switches so the canvas matches the current mode instantly.
+        const themeObserver = new MutationObserver(() => {
+            if (reduceMotion) render(performance.now());
+        });
+        themeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+        start();
+    }
+
 
     function forceSquareNavControls() {
         document.querySelectorAll('.nav-action-btn, #nav-search, .burger-menu, .nav-menu .nav-link').forEach((el) => {
@@ -1287,6 +1534,7 @@ return file;
         initializeDeepLinks();
         initializeThemeSwitcher();
         initializeBrandingAndLinks();
+        initializeWaveBackground();
         const oldSnake = document.getElementById('border-snake'); if (oldSnake) oldSnake.remove();
         refreshCompactNavButtons();
         initializeSearch();
