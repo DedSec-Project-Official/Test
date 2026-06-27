@@ -140,6 +140,16 @@ body.light-theme {
     --shadow-elev-1: 0 10px 30px rgba(0,0,0,0.12);
     --shadow-elev-2: 0 18px 50px rgba(0,0,0,0.16);
     --shadow-elev-3: 0 24px 70px rgba(0,0,0,0.20);
+    background-color: #f8f9ff;
+    background-image:
+        radial-gradient(circle at 16% 18%, rgba(123, 31, 162, 0.11) 0%, rgba(123, 31, 162, 0.05) 18%, rgba(123, 31, 162, 0.00) 45%),
+        radial-gradient(circle at 84% 24%, rgba(50, 124, 214, 0.12) 0%, rgba(50, 124, 214, 0.05) 15%, rgba(50, 124, 214, 0.00) 42%),
+        radial-gradient(circle at 52% 84%, rgba(82, 163, 114, 0.08) 0%, rgba(82, 163, 114, 0.04) 18%, rgba(82, 163, 114, 0.00) 48%),
+        linear-gradient(120deg, rgba(255, 255, 255, 1) 0%, rgba(246, 248, 255, 0.98) 34%, rgba(252, 252, 255, 0.96) 68%, rgba(255, 255, 255, 1) 100%);
+    background-size: 240% 240%, 220% 220%, 210% 210%, 100% 100%;
+    background-position: 0% 50%, 100% 15%, 50% 100%, 0% 0%;
+    background-repeat: no-repeat;
+    animation: waveDrift 24s ease-in-out infinite alternate;
 }
 
 /* Anchor offset for fixed top bar */
@@ -160,11 +170,20 @@ html {
 }
 
 body {
-margin: 0;
+    margin: 0;
     padding: 0;
-    background: var(--nm-abyss-blue);
     background-color: var(--nm-abyss-blue);
-font-family: var(--font-primary);
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(205, 147, 255, 0.22) 0%, rgba(205, 147, 255, 0.12) 16%, rgba(205, 147, 255, 0.00) 42%),
+        radial-gradient(circle at 85% 26%, rgba(87, 183, 255, 0.20) 0%, rgba(87, 183, 255, 0.10) 14%, rgba(87, 183, 255, 0.00) 40%),
+        radial-gradient(circle at 50% 82%, rgba(156, 175, 136, 0.16) 0%, rgba(156, 175, 136, 0.08) 18%, rgba(156, 175, 136, 0.00) 46%),
+        linear-gradient(120deg, rgba(4, 6, 14, 1) 0%, rgba(8, 8, 18, 0.98) 35%, rgba(6, 10, 18, 0.96) 62%, rgba(3, 3, 8, 1) 100%);
+    background-size: 240% 240%, 220% 220%, 210% 210%, 100% 100%;
+    background-position: 0% 50%, 100% 15%, 50% 100%, 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: waveDrift 28s ease-in-out infinite alternate;
+    font-family: var(--font-primary);
     color: var(--nm-text);
     transition: background-color 0.3s ease, color 0.3s ease;
     position: relative;
@@ -197,6 +216,24 @@ i, .material-icons, .fa, .fab, .fas, .far {
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+}
+
+@keyframes waveDrift {
+    0% {
+        background-position: 0% 50%, 100% 15%, 50% 100%, 0% 0%;
+    }
+    25% {
+        background-position: 25% 42%, 78% 20%, 55% 88%, 0% 0%;
+    }
+    50% {
+        background-position: 55% 58%, 15% 30%, 48% 72%, 0% 0%;
+    }
+    75% {
+        background-position: 82% 48%, 35% 10%, 40% 90%, 0% 0%;
+    }
+    100% {
+        background-position: 0% 50%, 100% 15%, 50% 100%, 0% 0%;
+    }
 }
 
 @keyframes pulse {
