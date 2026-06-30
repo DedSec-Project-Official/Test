@@ -9818,3 +9818,93 @@ html body .main-nav .nav-menu > .nav-link{
 .store-page .content-section.assistance-path-section{
   padding-top: 8px;
 }
+
+/* === v31: global button integrity pass (2026-06-30) === */
+/* Keeps CTA links visually complete even if a content block is moved outside its old wrapper. */
+html body a:is(
+  .starter-path-btn,
+  .faq-link-btn,
+  .contact-page-btn,
+  .contact-cta,
+  .hero-cta,
+  .feature-cta,
+  .btn
+) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  min-height: 46px !important;
+  max-width: 100% !important;
+  padding: 11px 16px !important;
+  box-sizing: border-box !important;
+  border: 1px solid var(--nm-border) !important;
+  border-radius: 0 !important;
+  background: var(--nm-container) !important;
+  background-image: none !important;
+  color: var(--nm-text) !important;
+  -webkit-text-fill-color: var(--nm-text) !important;
+  font-family: var(--font-mono, "Roboto Mono", monospace) !important;
+  font-size: 0.9rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+html body a:is(
+  .starter-path-btn,
+  .faq-link-btn,
+  .contact-page-btn,
+  .contact-cta,
+  .hero-cta,
+  .feature-cta,
+  .btn
+):is(:hover, :focus-visible) {
+  background: var(--nm-accent) !important;
+  border-color: var(--nm-accent) !important;
+  color: var(--nm-text-on-accent) !important;
+  -webkit-text-fill-color: var(--nm-text-on-accent) !important;
+  text-decoration: none !important;
+  transform: translateY(-2px) !important;
+}
+
+html body a.starter-path-btn--exclusive {
+  border-color: var(--nm-accent) !important;
+}
+
+html body :is(.assistance-quick-actions, .inline-action-buttons) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 16px auto 0 !important;
+}
+
+html body :is(.assistance-quick-actions, .inline-action-buttons) > a:is(.starter-path-btn, .btn) {
+  flex: 1 1 220px !important;
+  width: auto !important;
+  max-width: 360px !important;
+}
+
+@media (max-width: 560px) {
+  html body :is(.assistance-quick-actions, .inline-action-buttons) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  html body :is(.assistance-quick-actions, .inline-action-buttons) > a:is(.starter-path-btn, .btn) {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
