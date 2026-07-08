@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="el">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHHS4XN9');</script>
+<!-- End Google Tag Manager -->
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Ασφαλής καθαρισμός cache στο Termux — DedSec Project</title>
+<meta content="#07060d" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." name="description"/>
+<meta content="Clean Cache, Termux, Android Termux, no root Android, DedSec Project, Termux guide, Termux help" name="keywords"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="../../style.css?v=57" rel="stylesheet"/>
+<meta content="Ασφαλής καθαρισμός cache στο Termux — DedSec Project" property="og:title"/>
+<meta content="Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html" property="og:url"/>
+<meta content="DedSec Project" property="og:site_name"/>
+<meta content="el_GR" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="DedSec Project — πόροι εκμάθησης για κυβερνοασφάλεια και Termux" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ασφαλής καθαρισμός cache στο Termux — DedSec Project" name="twitter:title"/>
+<meta content="Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." name="twitter:description"/>
+<meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" name="twitter:image"/>
+<meta content="https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html" name="twitter:url"/>
+<meta content="DedSec Project" name="author"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.shields.io https://raw.githubusercontent.com; connect-src 'self' https://api.github.com; frame-ancestors 'none';" http-equiv="Content-Security-Policy"/>
+<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<meta content="DENY" http-equiv="X-Frame-Options"/>
+<link href="https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html" rel="canonical"/><link href="https://ded-sec.space/Assistance/termux-clean-cache-safely.html" hreflang="x-default" rel="alternate"/><link href="https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html" hreflang="el" rel="alternate"/><link href="https://ded-sec.space/Assistance/termux-clean-cache-safely.html" hreflang="en" rel="alternate"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://ded-sec.space/#organization",
+      "name": "DedSec Project",
+      "url": "https://ded-sec.space/",
+      "logo": "https://ded-sec.space/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg",
+      "sameAs": [
+        "https://github.com/dedsec1121fk/DedSec",
+        "https://github.com/dedsec1121fk",
+        "https://t.me/dedsecproject"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://ded-sec.space/#website",
+      "name": "DedSec Project",
+      "url": "https://ded-sec.space/",
+      "publisher": {
+        "@id": "https://ded-sec.space/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html#webpage",
+      "url": "https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html",
+      "name": "Ασφαλής καθαρισμός cache στο Termux",
+      "description": "Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.",
+      "inLanguage": "el",
+      "isPartOf": {
+        "@id": "https://ded-sec.space/#website"
+      },
+      "about": {
+        "@id": "https://ded-sec.space/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Αρχική",
+          "item": "https://ded-sec.space/el/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Βοήθεια",
+          "item": "https://ded-sec.space/el/Pages/assistance.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ασφαλής καθαρισμός cache στο Termux",
+          "item": "https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Ασφαλής καθαρισμός cache στο Termux",
+      "description": "Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.",
+      "author": {
+        "@type": "Person",
+        "name": "dedsec1121fk"
+      },
+      "publisher": {
+        "@id": "https://ded-sec.space/#organization"
+      },
+      "mainEntityOfPage": "https://ded-sec.space/el/Assistance/termux-clean-cache-safely.html",
+      "dateModified": "2026-05-31",
+      "proficiencyLevel": "Beginner to Intermediate",
+      "inLanguage": "el"
+    }
+  ]
+}</script>
+</head>
+<body class="dark-theme">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WHHS4XN9" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="main-nav">
+<div class="nav-container">
+<div class="nav-title"><div class="site-title">DedSec Project</div></div>
+<button aria-label="Toggle navigation" class="burger-menu" id="burger-menu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span><span class="burger-label" data-en="MENU" data-gr="ΜΕΝΟΥ">ΜΕΝΟΥ</span></button>
+<div class="nav-menu" id="nav-menu"><a class="nav-link" data-en="Home" data-gr="Αρχική" href="../index.html">Αρχική</a>
+<a class="nav-link" data-en="Our Vision" data-gr="Το Όραμά μας" href="../Pages/our-vision.html">Το Όραμά μας</a>
+<a class="nav-link" data-en="Guide For Installation" data-gr="Οδηγός Εγκατάστασης" href="../Pages/guide-for-installation.html">Οδηγός Εγκατάστασης</a>
+<a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθε για τα Εργαλεία" href="../Pages/learn-about-the-tools.html">Μάθε για τα Εργαλεία</a>
+<a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="../Pages/butsystem-exclusive.html">ButSystem.py (Αποκλειστικό)</a>
+<a class="nav-link" data-en="Assistance" data-gr="Βοήθεια" href="../Pages/assistance.html">Βοήθεια</a>
+<a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="../Pages/faq.html">Συχνές Ερωτήσεις</a>
+<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="../Pages/store.html">Κατάστημα</a>
+<a class="nav-link" data-en="Keep Android Open" data-gr="Κράτησε το Android Ανοιχτό" href="../Pages/keep-android-open.html">Κράτησε το Android Ανοιχτό</a>
+<a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="../Pages/privacy-policy.html">Πολιτική Απορρήτου</a>
+<a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="../Pages/contact-credits.html">Επικοινωνία &amp; Συντελεστές</a></div>
+<div class="nav-actions">
+<button aria-label="Toggle theme" class="nav-action-btn nav-theme-btn" id="nav-theme-switcher" type="button"><span aria-hidden="true" class="nav-action-label nav-theme-label" data-dark="☾" data-light="☀">☀</span></button>
+<button aria-label="Change language" class="nav-action-btn nav-lang-btn" id="nav-lang-switcher" type="button"><span class="nav-action-label nav-lang-label" data-en="ΕΛ" data-gr="EN">EN</span></button>
+</div>
+</div>
+</nav>
+<main class="page-content assistance-page assistance-article-page">
+<div class="page-header">
+<h1 data-en="Clean Cache" data-gr="Ασφαλής καθαρισμός cache στο Termux">Ασφαλής καθαρισμός cache στο Termux</h1>
+<p data-en="Free space without deleting important projects by cleaning package cache, old downloads, and temporary build files carefully." data-gr="Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
+</div>
+<article class="content-section assistance-article unique-assistance-article">
+<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
+<p data-en="Free space without deleting important projects by cleaning package cache, old downloads, and temporary build files carefully." data-gr="Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Ασφαλής καθαρισμός cache στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
+<p data-en="Clean Cache is meant for quick troubleshooting from an Android phone, especially when the terminal output is confusing." data-gr="Το Καθάρισμα cache είναι για γρήγορο troubleshooting από Android κινητό όταν το αποτέλεσμα του τερματικού μπερδεύει.">Το Καθάρισμα cache είναι για γρήγορο troubleshooting από Android κινητό όταν το αποτέλεσμα του τερματικού μπερδεύει.</p>
+<p data-en="For Clean Cache, focus on files, paths, storage and backups and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.</p>
+<h2 data-en="What to check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
+<ul class="assistance-check-list">
+<li data-en="Do not fix Clean Cache by guessing; copy the command and keep the first useful output line." data-gr="Μην κάνεις αλλαγές στην τύχη. Κράτησε την ακριβή εντολή και την πρώτη χρήσιμη γραμμή που εξηγεί το πρόβλημα.">Μην κάνεις αλλαγές στην τύχη. Κράτησε την ακριβή εντολή και την πρώτη χρήσιμη γραμμή που εξηγεί το πρόβλημα.</li>
+<li data-en="For Clean Cache, keywords that usually matter are: Clean, Cache." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.</li>
+<li data-en="If the first command for Clean Cache gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.</li>
+</ul>
+<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
+<p data-en="For Clean Cache, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.</p>
+<div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Αντιγραφή</button><pre><code>df -h
+du -h -d 1 ~ | sort -h
+apt clean
+rm -rf ~/.cache/pip</code></pre></div>
+<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
+<ol class="assistance-steps">
+<li data-en="df -h — shows storage usage so you know whether the device is full for Clean Cache." data-gr="df -h — εμφανίζει τον διαθέσιμο και χρησιμοποιημένο χώρο αποθήκευσης.">df -h — εμφανίζει τον διαθέσιμο και χρησιμοποιημένο χώρο αποθήκευσης.</li><li data-en="du -h -d 1 ~ | sort -h — shows storage usage so you know whether the device is full for Clean Cache." data-gr="du -h -d 1 ~ | sort -h — υπολογίζει πόσο χώρο χρησιμοποιούν οι επιλεγμένοι φάκελοι ή αρχεία.">du -h -d 1 ~ | sort -h — υπολογίζει πόσο χώρο χρησιμοποιούν οι επιλεγμένοι φάκελοι ή αρχεία.</li><li data-en="apt clean — checks the part of the files, paths, storage and backups workflow that usually causes this issue for Clean Cache." data-gr="apt clean — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">apt clean — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.</li><li data-en="rm -rf ~/.cache/pip — checks the part of the files, paths, storage and backups workflow that usually causes this issue for Clean Cache." data-gr="rm -rf ~/.cache/pip — διαγράφει τα επιλεγμένα αρχεία ή φακέλους· έλεγξε προσεκτικά τη διαδρομή πριν το εκτελέσεις.">rm -rf ~/.cache/pip — διαγράφει τα επιλεγμένα αρχεία ή φακέλους· έλεγξε προσεκτικά τη διαδρομή πριν το εκτελέσεις.</li>
+</ol>
+<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
+<ol class="assistance-steps">
+<li data-en="Keep screenshots or copied terminal text for Clean Cache; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li><li data-en="Save the Clean Cache output before editing files." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li><li data-en="Change one thing at a time while testing Clean Cache." data-gr="Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.">Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.</li>
+</ol>
+<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
+<ul class="assistance-check-list">
+<li data-en="Running the Clean Cache command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing Clean Cache." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.</li><li data-en="Closing Termux before copying the output that explains Clean Cache." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.</li>
+</ul>
+<section class="assistance-store-cta content-section">
+<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
+<p data-en="If clean cache the file path still does not make sense, send a screenshot of pwd, ls, and the error through the Store." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.</p>
+<a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Άνοιξε το Κατάστημα / Ζήτησε βοήθεια</a>
+</section>
+<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
+<div class="assistance-related-grid"><a class="starter-path-btn" data-en="Run Python Scripts" data-gr="Σωστή εκτέλεση Python script στο Termux" href="termux-run-python-script-correctly.html">Σωστή εκτέλεση Python script στο Termux</a><a class="starter-path-btn" data-en="Termux Storage and Downloads Access" data-gr="Διόρθωση πρόσβασης στον αποθηκευτικό χώρο του Android" href="fix-termux-storage-permission.html">Διόρθωση πρόσβασης στον αποθηκευτικό χώρο του Android</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Οδηγός Termux για αρχάριους στο Android</a><a class="starter-path-btn" data-en="Update GitHub Pages from Termux Without Breaking the Site" data-gr="Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα" href="termux-github-pages-update-workflow.html">Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα</a></div>
+</article>
+<footer class="main-footer">
+
+<div>
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.space/el/" rel="noopener noreferrer" target="_blank">Κύρια ιστοσελίδα</a>
+<a class="footer-mini-btn" href="https://github.com/dedsec1121fk/DedSec" rel="noopener noreferrer" target="_blank">Κύριο αποθετήριο του DedSec Project</a>
+<a class="footer-mini-btn" href="../Pages/store.html">Κατάστημα</a>
+<a class="footer-mini-btn" href="../Pages/contact-credits.html">Επικοινωνία</a>
+</div>
+<p class="footer-links-note">Αν οι κύριοι σύνδεσμοι δεν λειτουργούν, χρησιμοποίησε τους εφεδρικούς συνδέσμους παρακάτω.</p>
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.online" rel="noopener noreferrer" target="_blank">Εφεδρική ιστοσελίδα</a>
+<a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Εφεδρικό αποθετήριο του DedSec Project</a>
+</div>
+</div>
+
+<p class="footer-tracker-note">Ενημέρωση αναλυτικών στοιχείων: η ιστοσελίδα χρησιμοποιεί Google Tag Manager και ενδέχεται να χρησιμοποιεί Google Analytics για τη μέτρηση επισκέψεων, κλικ, στοιχείων συσκευής και κατά προσέγγιση στατιστικών περιοχής. Το Google Search Console δεν απαιτεί κώδικα παρακολούθησης επισκεπτών. Περισσότερες πληροφορίες θα βρεις στην Πολιτική Απορρήτου.</p>
+
+<p>© 2024–2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
+<p>Δημιουργήθηκε από τον dedsec1121fk.</p>
+</footer>
+</main>
+<script defer="" src="../../script.js?v=57"></script>
+</body>
+</html>

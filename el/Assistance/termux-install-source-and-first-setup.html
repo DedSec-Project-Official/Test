@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="el">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHHS4XN9');</script>
+<!-- End Google Tag Manager -->
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Εγκατάσταση Termux και πρώτη ρύθμιση — DedSec Project</title>
+<meta content="#07060d" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." name="description"/>
+<meta content="First Termux Setup, Termux, Android Termux, no root Android, DedSec Project, Termux guide, Termux help" name="keywords"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="../../style.css?v=57" rel="stylesheet"/>
+<meta content="Εγκατάσταση Termux και πρώτη ρύθμιση — DedSec Project" property="og:title"/>
+<meta content="Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html" property="og:url"/>
+<meta content="DedSec Project" property="og:site_name"/>
+<meta content="el_GR" property="og:locale"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="DedSec Project — πόροι εκμάθησης για κυβερνοασφάλεια και Termux" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Εγκατάσταση Termux και πρώτη ρύθμιση — DedSec Project" name="twitter:title"/>
+<meta content="Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." name="twitter:description"/>
+<meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" name="twitter:image"/>
+<meta content="https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html" name="twitter:url"/>
+<meta content="DedSec Project" name="author"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.shields.io https://raw.githubusercontent.com; connect-src 'self' https://api.github.com; frame-ancestors 'none';" http-equiv="Content-Security-Policy"/>
+<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<meta content="DENY" http-equiv="X-Frame-Options"/>
+<link href="https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html" rel="canonical"/><link href="https://ded-sec.space/Assistance/termux-install-source-and-first-setup.html" hreflang="x-default" rel="alternate"/><link href="https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html" hreflang="el" rel="alternate"/><link href="https://ded-sec.space/Assistance/termux-install-source-and-first-setup.html" hreflang="en" rel="alternate"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://ded-sec.space/#organization",
+      "name": "DedSec Project",
+      "url": "https://ded-sec.space/",
+      "logo": "https://ded-sec.space/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg",
+      "sameAs": [
+        "https://github.com/dedsec1121fk/DedSec",
+        "https://github.com/dedsec1121fk",
+        "https://t.me/dedsecproject"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://ded-sec.space/#website",
+      "name": "DedSec Project",
+      "url": "https://ded-sec.space/",
+      "publisher": {
+        "@id": "https://ded-sec.space/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html#webpage",
+      "url": "https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html",
+      "name": "Εγκατάσταση Termux και πρώτη ρύθμιση",
+      "description": "Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.",
+      "inLanguage": "el",
+      "isPartOf": {
+        "@id": "https://ded-sec.space/#website"
+      },
+      "about": {
+        "@id": "https://ded-sec.space/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Αρχική",
+          "item": "https://ded-sec.space/el/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Βοήθεια",
+          "item": "https://ded-sec.space/el/Pages/assistance.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Εγκατάσταση Termux και πρώτη ρύθμιση",
+          "item": "https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Εγκατάσταση Termux και πρώτη ρύθμιση",
+      "description": "Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.",
+      "author": {
+        "@type": "Person",
+        "name": "dedsec1121fk"
+      },
+      "publisher": {
+        "@id": "https://ded-sec.space/#organization"
+      },
+      "mainEntityOfPage": "https://ded-sec.space/el/Assistance/termux-install-source-and-first-setup.html",
+      "dateModified": "2026-05-31",
+      "proficiencyLevel": "Beginner to Intermediate",
+      "inLanguage": "el"
+    }
+  ]
+}</script>
+</head>
+<body class="dark-theme">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WHHS4XN9" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="main-nav">
+<div class="nav-container">
+<div class="nav-title"><div class="site-title">DedSec Project</div></div>
+<button aria-label="Toggle navigation" class="burger-menu" id="burger-menu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span><span class="burger-label" data-en="MENU" data-gr="ΜΕΝΟΥ">ΜΕΝΟΥ</span></button>
+<div class="nav-menu" id="nav-menu"><a class="nav-link" data-en="Home" data-gr="Αρχική" href="../index.html">Αρχική</a>
+<a class="nav-link" data-en="Our Vision" data-gr="Το Όραμά μας" href="../Pages/our-vision.html">Το Όραμά μας</a>
+<a class="nav-link" data-en="Guide For Installation" data-gr="Οδηγός Εγκατάστασης" href="../Pages/guide-for-installation.html">Οδηγός Εγκατάστασης</a>
+<a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθε για τα Εργαλεία" href="../Pages/learn-about-the-tools.html">Μάθε για τα Εργαλεία</a>
+<a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="../Pages/butsystem-exclusive.html">ButSystem.py (Αποκλειστικό)</a>
+<a class="nav-link" data-en="Assistance" data-gr="Βοήθεια" href="../Pages/assistance.html">Βοήθεια</a>
+<a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="../Pages/faq.html">Συχνές Ερωτήσεις</a>
+<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="../Pages/store.html">Κατάστημα</a>
+<a class="nav-link" data-en="Keep Android Open" data-gr="Κράτησε το Android Ανοιχτό" href="../Pages/keep-android-open.html">Κράτησε το Android Ανοιχτό</a>
+<a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="../Pages/privacy-policy.html">Πολιτική Απορρήτου</a>
+<a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="../Pages/contact-credits.html">Επικοινωνία &amp; Συντελεστές</a></div>
+<div class="nav-actions">
+<button aria-label="Toggle theme" class="nav-action-btn nav-theme-btn" id="nav-theme-switcher" type="button"><span aria-hidden="true" class="nav-action-label nav-theme-label" data-dark="☾" data-light="☀">☀</span></button>
+<button aria-label="Change language" class="nav-action-btn nav-lang-btn" id="nav-lang-switcher" type="button"><span class="nav-action-label nav-lang-label" data-en="ΕΛ" data-gr="EN">EN</span></button>
+</div>
+</div>
+</nav>
+<main class="page-content assistance-page assistance-article-page">
+<div class="page-header">
+<h1 data-en="First Termux Setup" data-gr="Εγκατάσταση Termux και πρώτη ρύθμιση">Εγκατάσταση Termux και πρώτη ρύθμιση</h1>
+<p data-en="Clean first-run setup for Android users: storage permission, package update, core tools, and safe folders before any DedSec Project script." data-gr="Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
+</div>
+<article class="content-section assistance-article unique-assistance-article">
+<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
+<p data-en="Clean first-run setup for Android users: storage permission, package update, core tools, and safe folders before any DedSec Project script." data-gr="Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Εγκατάσταση Termux και πρώτη ρύθμιση», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
+<p data-en="This guide keeps First Termux Setup simple: identify the clue, run one command, then fix the smallest broken part." data-gr="Αυτός ο οδηγός κρατά το Πρώτο setup του Termux απλό: βρίσκεις την ένδειξη, τρέχεις μία εντολή και διορθώνεις μόνο το σπασμένο κομμάτι.">Αυτός ο οδηγός κρατά το Πρώτο setup του Termux απλό: βρίσκεις την ένδειξη, τρέχεις μία εντολή και διορθώνεις μόνο το σπασμένο κομμάτι.</p>
+<p data-en="For First Termux Setup, focus on Termux troubleshooting and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.</p>
+<h2 data-en="What to check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
+<ul class="assistance-check-list">
+<li data-en="Treat First Termux Setup as one small failing layer: path, package, Python, Git, browser, or Android permission." data-gr="Αντιμετώπισε το πρόβλημα ως αποτυχία σε ένα συγκεκριμένο επίπεδο: διαδρομή, πακέτο, Python, Git, browser ή δικαίωμα του Android.">Αντιμετώπισε το πρόβλημα ως αποτυχία σε ένα συγκεκριμένο επίπεδο: διαδρομή, πακέτο, Python, Git, browser ή δικαίωμα του Android.</li>
+<li data-en="For First Termux Setup, keywords that usually matter are: First, Setup." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.</li>
+<li data-en="If the first command for First Termux Setup gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.</li>
+</ul>
+<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
+<p data-en="For First Termux Setup, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.</p>
+<div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Αντιγραφή</button><pre><code>pkg update &amp;&amp; pkg upgrade -y
+termux-setup-storage
+pkg install python git unzip curl wget nano -y
+mkdir -p ~/DedSec ~/Downloads_Backups</code></pre></div>
+<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
+<ol class="assistance-steps">
+<li data-en="pkg update &amp;&amp; pkg upgrade -y — refreshes Termux package lists so later installs use the current repository state for First Termux Setup." data-gr="pkg update &amp;&amp; pkg upgrade -y — ανανεώνει τις λίστες πακέτων, ώστε οι επόμενες εγκαταστάσεις να χρησιμοποιήσουν τα τρέχοντα αποθετήρια.">pkg update &amp;&amp; pkg upgrade -y — ανανεώνει τις λίστες πακέτων, ώστε οι επόμενες εγκαταστάσεις να χρησιμοποιήσουν τα τρέχοντα αποθετήρια.</li><li data-en="termux-setup-storage — asks Android to allow Termux access to shared storage such as Downloads for First Termux Setup." data-gr="termux-setup-storage — ζητά την άδεια πρόσβασης στον κοινόχρηστο αποθηκευτικό χώρο του Android.">termux-setup-storage — ζητά την άδεια πρόσβασης στον κοινόχρηστο αποθηκευτικό χώρο του Android.</li><li data-en="pkg install python git unzip curl wget nano -y — installs the package that the command or script depends on for First Termux Setup." data-gr="pkg install python git unzip curl wget nano -y — εγκαθιστά τα πακέτα και τις εξαρτήσεις που χρειάζονται.">pkg install python git unzip curl wget nano -y — εγκαθιστά τα πακέτα και τις εξαρτήσεις που χρειάζονται.</li><li data-en="mkdir -p ~/DedSec ~/Downloads_Backups — checks the part of the Termux troubleshooting workflow that usually causes this issue for First Termux Setup." data-gr="mkdir -p ~/DedSec ~/Downloads_Backups — δημιουργεί τον απαιτούμενο φάκελο· με την επιλογή `-p` δεν αποτυγχάνει αν ο φάκελος υπάρχει ήδη.">mkdir -p ~/DedSec ~/Downloads_Backups — δημιουργεί τον απαιτούμενο φάκελο· με την επιλογή `-p` δεν αποτυγχάνει αν ο φάκελος υπάρχει ήδη.</li>
+</ol>
+<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
+<ol class="assistance-steps">
+<li data-en="If the First Termux Setup error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.</li><li data-en="Keep screenshots or copied terminal text for First Termux Setup; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li><li data-en="Save the First Termux Setup output before editing files." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li>
+</ol>
+<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
+<ul class="assistance-check-list">
+<li data-en="Running the First Termux Setup command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing First Termux Setup." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.</li><li data-en="Closing Termux before copying the output that explains First Termux Setup." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.</li>
+</ul>
+<section class="assistance-store-cta content-section">
+<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
+<p data-en="If first termux setup the guide still does not solve it, use the Store and send the exact output so the issue can be checked directly." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.</p>
+<a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Άνοιξε το Κατάστημα / Ζήτησε βοήθεια</a>
+</section>
+<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
+<div class="assistance-related-grid"><a class="starter-path-btn" data-en="Permission Denied, chmod, and Executable Scripts" data-gr="Διόρθωση του «Permission denied» σε εκτελέσιμα αρχεία" href="fix-termux-permission-denied-executable.html">Διόρθωση του «Permission denied» σε εκτελέσιμα αρχεία</a><a class="starter-path-btn" data-en="DedSec-Style Tool" data-gr="Δημιουργία εργαλείου σε ύφος DedSec" href="termux-build-dedsec-style-tool.html">Δημιουργία εργαλείου σε ύφος DedSec</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Λίστα ελέγχου για προβλήματα στο Termux</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Οδηγός Termux για αρχάριους στο Android</a></div>
+</article>
+<footer class="main-footer">
+
+<div>
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.space/el/" rel="noopener noreferrer" target="_blank">Κύρια ιστοσελίδα</a>
+<a class="footer-mini-btn" href="https://github.com/dedsec1121fk/DedSec" rel="noopener noreferrer" target="_blank">Κύριο αποθετήριο του DedSec Project</a>
+<a class="footer-mini-btn" href="../Pages/store.html">Κατάστημα</a>
+<a class="footer-mini-btn" href="../Pages/contact-credits.html">Επικοινωνία</a>
+</div>
+<p class="footer-links-note">Αν οι κύριοι σύνδεσμοι δεν λειτουργούν, χρησιμοποίησε τους εφεδρικούς συνδέσμους παρακάτω.</p>
+<div class="footer-link-buttons">
+<a class="footer-mini-btn" href="https://ded-sec.online" rel="noopener noreferrer" target="_blank">Εφεδρική ιστοσελίδα</a>
+<a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Εφεδρικό αποθετήριο του DedSec Project</a>
+</div>
+</div>
+
+<p class="footer-tracker-note">Ενημέρωση αναλυτικών στοιχείων: η ιστοσελίδα χρησιμοποιεί Google Tag Manager και ενδέχεται να χρησιμοποιεί Google Analytics για τη μέτρηση επισκέψεων, κλικ, στοιχείων συσκευής και κατά προσέγγιση στατιστικών περιοχής. Το Google Search Console δεν απαιτεί κώδικα παρακολούθησης επισκεπτών. Περισσότερες πληροφορίες θα βρεις στην Πολιτική Απορρήτου.</p>
+
+<p>© 2024–2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
+<p>Δημιουργήθηκε από τον dedsec1121fk.</p>
+</footer>
+</main>
+<script defer="" src="../../script.js?v=57"></script>
+</body>
+</html>
