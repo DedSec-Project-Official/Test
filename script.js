@@ -6,13 +6,14 @@
    ============================================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     // --- GLOBAL STATE ---
-    let currentLanguage = 'en';
+    const pageLanguage = (/\/el(?:\/|$)/.test(window.location.pathname)) ? 'gr' : 'en';
+    let currentLanguage = pageLanguage;
 
     // --- NAV WORD STACK + MENU OFFSET (keeps navbar compact so logo stays visible) ---
     const applyNavbarWordStack = () => {
         // Only for the navbar labels (and title). We don't want to affect normal body text.
         const targets = document.querySelectorAll(
-            '.main-nav .nav-title h1, .main-nav .nav-action-label, .main-nav .burger-label'
+            '.main-nav .nav-title .site-title, .main-nav .nav-action-label, .main-nav .burger-label'
         );
 
         const stackTextNodes = (root) => {
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             themeLabel.textContent = isLight ? (themeLabel.dataset.dark || '☾') : (themeLabel.dataset.light || '☀');
         }
         if (themeBtn) {
-            themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+            themeBtn.setAttribute('aria-label', currentLanguage === 'gr' ? (isLight ? 'Ενεργοποίηση σκούρου θέματος' : 'Ενεργοποίηση ανοιχτού θέματος') : (isLight ? 'Switch to dark theme' : 'Switch to light theme'));
             themeBtn.title = isLight ? 'Dark' : 'Light';
         }
 
@@ -110,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             langLabel.textContent = currentLanguage === 'en' ? (langLabel.dataset.en || 'ΕΛ') : (langLabel.dataset.gr || 'EN');
         }
         if (langBtn) {
-            langBtn.setAttribute('aria-label', currentLanguage === 'en' ? 'Change language to Greek' : 'Change language to English');
+            langBtn.setAttribute('aria-label', currentLanguage === 'en' ? 'Change language to Greek' : 'Αλλαγή γλώσσας στα Αγγλικά');
             langBtn.title = currentLanguage === 'en' ? 'ΕΛ' : 'EN';
         }
     };
@@ -165,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LANGUAGE MANAGEMENT ---
     window.changeLanguage = (lang) => {
         currentLanguage = lang;
-        document.documentElement.lang = lang;
+        document.documentElement.lang = lang === 'gr' ? 'el' : 'en';
         localStorage.setItem('language', lang);
         
         document.querySelectorAll('[data-en]').forEach(el => {
@@ -1174,8 +1175,8 @@ return file;
     // Small UX + SEO fixes
     function initializeBrandingAndLinks() {
         // Add logo in navbar title (without changing HTML files)
-        document.querySelectorAll('.nav-title h1').forEach(h1 => {
-            if (h1.querySelector('img')) return;
+        document.querySelectorAll('.nav-title .site-title').forEach(siteTitle => {
+            if (siteTitle.querySelector('img')) return;
             const img = document.createElement('img');
             img.alt = 'DedSec Project';
             img.width = 34;
@@ -1187,7 +1188,7 @@ return file;
             img.style.background = 'rgba(255,255,255,0.04)';
             img.setAttribute('data-site-logo','1');
             img.src = getThemeLogo();
-            h1.prepend(img);
+            siteTitle.prepend(img);
         });
 
         // Ensure target=_blank links are safe
@@ -1300,7 +1301,12 @@ return file;
         
         // Language Switcher (Navbar)
         document.getElementById('nav-lang-switcher')?.addEventListener('click', () => {
-            window.changeLanguage(currentLanguage === 'en' ? 'gr' : 'en');
+            const path = window.location.pathname || '/';
+            const targetPath = pageLanguage === 'gr'
+                ? (path.replace(/^\/el(?=\/|$)/, '') || '/')
+                : (`/el${path === '/' ? '/' : path}`);
+            localStorage.setItem('language', pageLanguage === 'gr' ? 'en' : 'gr');
+            window.location.assign(targetPath + window.location.search + window.location.hash);
         });
 
         // Modals
@@ -1310,7 +1316,7 @@ return file;
         });
 
         // Final Setup
-        window.changeLanguage(localStorage.getItem('language') || 'en');
+        window.changeLanguage(pageLanguage);
 
         // Keep viewport + navbar size variables synced (mobile Safari + dynamic nav height)
         const layoutHandler = () => syncLayoutVars();
