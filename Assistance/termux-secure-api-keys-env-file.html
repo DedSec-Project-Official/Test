@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../style.css?v=57" rel="stylesheet"/>
+<link href="../style.css?v=60" rel="stylesheet"/>
 <meta content="API Keys Safely — Assistance" property="og:title"/>
 <meta content="Protect API keys in Termux by using env files, local configs, permissions, Git ignores, and safer secret handling." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -168,40 +168,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p data-en="Keep API keys out of public GitHub commits by using local environment files, chmod, and .gitignore habits." data-gr="Πρακτικός οδηγός για «Ασφαλής αποθήκευση API keys σε αρχείο `.env`», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Keep API keys out of public GitHub commits by using local environment files, chmod, and .gitignore habits.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Quick answer</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Quick Answer</h2>
 <p data-en="Keep API keys out of public GitHub commits by using local environment files, chmod, and .gitignore habits." data-gr="Πρακτικός οδηγός για «Ασφαλής αποθήκευση API keys σε αρχείο `.env`», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Keep API keys out of public GitHub commits by using local environment files, chmod, and .gitignore habits.</p>
 <p data-en="Use this page when the problem matches API Keys Safely, not as a general reinstall guide." data-gr="Χρησιμοποίησε αυτόν τον οδηγό όταν το μήνυμα ή η συμπεριφορά ταιριάζει με την περίπτωση της σελίδας. Αν εμφανιστεί διαφορετικό σφάλμα, ακολούθησε τη νέα ένδειξη.">Use this page when the problem matches API Keys Safely, not as a general reinstall guide.</p>
 <p data-en="For API Keys Safely, focus on files, paths, storage and backups and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">For API Keys Safely, focus on files, paths, storage and backups and use the output to decide the next small fix instead of reinstalling everything.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">What to check</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">What To Check</h2>
 <ul class="assistance-check-list">
 <li data-en="Before changing API Keys Safely, confirm the folder with pwd and compare it with the command you copied." data-gr="Επιβεβαίωσε πρώτα τον τρέχοντα φάκελο με `pwd` και έλεγξε ότι τα αρχεία ή οι διαδρομές της εντολής υπάρχουν πραγματικά.">Before changing API Keys Safely, confirm the folder with pwd and compare it with the command you copied.</li>
 <li data-en="For API Keys Safely, keywords that usually matter are: API, Keys, Safely." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">For API Keys Safely, keywords that usually matter are: API, Keys, Safely.</li>
 <li data-en="If the first command for API Keys Safely gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">If the first command for API Keys Safely gives a different error, follow the new clue instead of forcing this guide.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Copyable command</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Copyable Command</h2>
 <p data-en="For API Keys Safely, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">For API Keys Safely, replace placeholders only when they appear in the command.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Copy</button><pre><code>printf "API_KEY=put_key_here\n" &gt; .env
 chmod 600 .env
 printf ".env\n" &gt;&gt; .gitignore
 git status</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Read the output</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Read The Output</h2>
 <ol class="assistance-steps">
 <li data-en='printf "API_KEY=put_key_here\n" &gt; .env — checks the part of the files, paths, storage and backups workflow that usually causes this issue for API Keys Safely.' data-gr='printf "API_KEY=put_key_here\n" &gt; .env — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.'>printf "API_KEY=put_key_here\n" &gt; .env — checks the part of the files, paths, storage and backups workflow that usually causes this issue for API Keys Safely.</li><li data-en="chmod 600 .env — adds execute permission when Android or Git did not preserve it for API Keys Safely." data-gr="chmod 600 .env — αλλάζει τα δικαιώματα του αρχείου ώστε να μπορεί να εκτελεστεί ή να διαβαστεί.">chmod 600 .env — adds execute permission when Android or Git did not preserve it for API Keys Safely.</li><li data-en='printf ".env\n" &gt;&gt; .gitignore — checks the part of the files, paths, storage and backups workflow that usually causes this issue for API Keys Safely.' data-gr='printf ".env\n" &gt;&gt; .gitignore — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.'>printf ".env\n" &gt;&gt; .gitignore — checks the part of the files, paths, storage and backups workflow that usually causes this issue for API Keys Safely.</li><li data-en="git status — shows the current branch and whether files are staged, changed, or untracked for API Keys Safely." data-gr="git status — εμφανίζει την κατάσταση των αρχείων και του τρέχοντος branch.">git status — shows the current branch and whether files are staged, changed, or untracked for API Keys Safely.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Fix in a safe order</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Fix In A Safe Order</h2>
 <ol class="assistance-steps">
 <li data-en="Change one thing at a time while testing API Keys Safely." data-gr="Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.">Change one thing at a time while testing API Keys Safely.</li><li data-en="If the API Keys Safely error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">If the API Keys Safely error changes, read the new clue instead of repeating the old fix.</li><li data-en="Keep screenshots or copied terminal text for API Keys Safely; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Keep screenshots or copied terminal text for API Keys Safely; they make paid help faster if you need it.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Common mistakes</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Common Mistakes</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the API Keys Safely command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Running the API Keys Safely command from the home folder when the project is somewhere else.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing API Keys Safely." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Following a desktop Linux answer that ignores Android storage paths while fixing API Keys Safely.</li><li data-en="Closing Termux before copying the output that explains API Keys Safely." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Closing Termux before copying the output that explains API Keys Safely.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Guide did not solve it?</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Guide Did Not Solve It?</h2>
 <p data-en="If api keys safely the file path still does not make sense, send a screenshot of pwd, ls, and the error through the Store." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">If api keys safely the file path still does not make sense, send a screenshot of pwd, ls, and the error through the Store.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Open Store / Get Help</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Related Assistance pages</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Related Assistance Pages</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="No Root Limits" data-gr="Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root" href="termux-no-root-limitations.html">No Root Limits</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Troubleshooting Checklist</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Beginner Guide</a><a class="starter-path-btn" data-en="Update GitHub Pages from Termux Without Breaking the Site" data-gr="Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα" href="termux-github-pages-update-workflow.html">Update GitHub Pages from Termux Without Breaking the Site</a></div>
 </article>
 <footer class="main-footer">
@@ -218,11 +218,8 @@ git status</code></pre></div>
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Backup DedSec Project Repository</a>
 </div>
 </div>
-
 <p class="footer-tracker-note">Analytics notice: this site uses Google Tag Manager and may use Google Analytics to measure visits, clicks, device information, and approximate region-level statistics. Google Search Console does not require a visitor-tracking script. See the Privacy Policy for details.</p>
-
 <p>© 2024-2026 DedSec Project. All Rights Reserved.</p>
-
 <p>Made by dedsec1121fk.</p>
 </footer>
 </main>

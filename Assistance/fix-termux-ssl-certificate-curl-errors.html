@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../style.css?v=57" rel="stylesheet"/>
+<link href="../style.css?v=60" rel="stylesheet"/>
 <meta content="SSL / curl Errors — Assistance" property="og:title"/>
 <meta content="Fix SSL, certificate, curl, wget, and download errors in Termux caused by outdated certificates, network issues, or bad URLs." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -168,40 +168,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p data-en="Fix certificate verification errors, outdated ca-certificates, failed downloads, and curl/wget connection problems." data-gr="Πρακτικός οδηγός για «Διόρθωση σφαλμάτων SSL, πιστοποιητικών και curl», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Fix certificate verification errors, outdated ca-certificates, failed downloads, and curl/wget connection problems.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Quick answer</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Quick Answer</h2>
 <p data-en="Fix certificate verification errors, outdated ca-certificates, failed downloads, and curl/wget connection problems." data-gr="Πρακτικός οδηγός για «Διόρθωση σφαλμάτων SSL, πιστοποιητικών και curl», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Fix certificate verification errors, outdated ca-certificates, failed downloads, and curl/wget connection problems.</p>
 <p data-en="Use this page when the problem matches SSL / curl Errors, not as a general reinstall guide." data-gr="Χρησιμοποίησε αυτόν τον οδηγό όταν το μήνυμα ή η συμπεριφορά ταιριάζει με την περίπτωση της σελίδας. Αν εμφανιστεί διαφορετικό σφάλμα, ακολούθησε τη νέα ένδειξη.">Use this page when the problem matches SSL / curl Errors, not as a general reinstall guide.</p>
 <p data-en="For SSL / curl Errors, focus on Termux packages and Android integration and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">For SSL / curl Errors, focus on Termux packages and Android integration and use the output to decide the next small fix instead of reinstalling everything.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">What to check</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">What To Check</h2>
 <ul class="assistance-check-list">
 <li data-en="Before changing SSL / curl Errors, confirm the folder with pwd and compare it with the command you copied." data-gr="Επιβεβαίωσε πρώτα τον τρέχοντα φάκελο με `pwd` και έλεγξε ότι τα αρχεία ή οι διαδρομές της εντολής υπάρχουν πραγματικά.">Before changing SSL / curl Errors, confirm the folder with pwd and compare it with the command you copied.</li>
 <li data-en="For SSL / curl Errors, keywords that usually matter are: SSL, curl, Errors." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">For SSL / curl Errors, keywords that usually matter are: SSL, curl, Errors.</li>
 <li data-en="If the first command for SSL / curl Errors gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">If the first command for SSL / curl Errors gives a different error, follow the new clue instead of forcing this guide.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Copyable command</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Copyable Command</h2>
 <p data-en="For SSL / curl Errors, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">For SSL / curl Errors, replace placeholders only when they appear in the command.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Copy</button><pre><code>pkg update &amp;&amp; pkg upgrade -y
 pkg install ca-certificates curl wget -y
 update-ca-certificates
 curl -I https://github.com</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Read the output</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Read The Output</h2>
 <ol class="assistance-steps">
 <li data-en="pkg update &amp;&amp; pkg upgrade -y — refreshes Termux package lists so later installs use the current repository state for SSL / curl Errors." data-gr="pkg update &amp;&amp; pkg upgrade -y — ανανεώνει τις λίστες πακέτων, ώστε οι επόμενες εγκαταστάσεις να χρησιμοποιήσουν τα τρέχοντα αποθετήρια.">pkg update &amp;&amp; pkg upgrade -y — refreshes Termux package lists so later installs use the current repository state for SSL / curl Errors.</li><li data-en="pkg install ca-certificates curl wget -y — installs the package that the command or script depends on for SSL / curl Errors." data-gr="pkg install ca-certificates curl wget -y — εγκαθιστά τα πακέτα και τις εξαρτήσεις που χρειάζονται.">pkg install ca-certificates curl wget -y — installs the package that the command or script depends on for SSL / curl Errors.</li><li data-en="update-ca-certificates — checks the part of the Termux packages and Android integration workflow that usually causes this issue for SSL / curl Errors." data-gr="update-ca-certificates — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">update-ca-certificates — checks the part of the Termux packages and Android integration workflow that usually causes this issue for SSL / curl Errors.</li><li data-en="curl -I https://github.com — tests downloading or contacting a URL from Termux for SSL / curl Errors." data-gr="curl -I https://github.com — ελέγχει ή κατεβάζει το URL και εμφανίζει τυχόν σφάλματα σύνδεσης.">curl -I https://github.com — tests downloading or contacting a URL from Termux for SSL / curl Errors.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Fix in a safe order</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Fix In A Safe Order</h2>
 <ol class="assistance-steps">
 <li data-en="Change one thing at a time while testing SSL / curl Errors." data-gr="Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.">Change one thing at a time while testing SSL / curl Errors.</li><li data-en="If the SSL / curl Errors error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">If the SSL / curl Errors error changes, read the new clue instead of repeating the old fix.</li><li data-en="Keep screenshots or copied terminal text for SSL / curl Errors; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Keep screenshots or copied terminal text for SSL / curl Errors; they make paid help faster if you need it.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Common mistakes</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Common Mistakes</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the SSL / curl Errors command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Running the SSL / curl Errors command from the home folder when the project is somewhere else.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing SSL / curl Errors." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Following a desktop Linux answer that ignores Android storage paths while fixing SSL / curl Errors.</li><li data-en="Closing Termux before copying the output that explains SSL / curl Errors." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Closing Termux before copying the output that explains SSL / curl Errors.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Guide did not solve it?</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Guide Did Not Solve It?</h2>
 <p data-en="If ssl / curl errors the package or Android integration still fails, use the Store and include your Android version, Termux source, and the error." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">If ssl / curl errors the package or Android integration still fails, use the Store and include your Android version, Termux source, and the error.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Open Store / Get Help</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Related Assistance pages</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Related Assistance Pages</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="Command Not Found and Cannot Locate Package" data-gr="Διόρθωση «command not found» και ελλιπών πακέτων" href="termux-package-command-not-found.html">Command Not Found and Cannot Locate Package</a><a class="starter-path-btn" data-en="Termux Repository, Mirror, GPG, and apt Update Errors" data-gr="Διόρθωση σφαλμάτων αποθετηρίων, mirrors, GPG και apt" href="fix-termux-repository-errors.html">Termux Repository, Mirror, GPG, and apt Update Errors</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Troubleshooting Checklist</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Beginner Guide</a></div>
 </article>
 <footer class="main-footer">
@@ -218,11 +218,8 @@ curl -I https://github.com</code></pre></div>
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Backup DedSec Project Repository</a>
 </div>
 </div>
-
 <p class="footer-tracker-note">Analytics notice: this site uses Google Tag Manager and may use Google Analytics to measure visits, clicks, device information, and approximate region-level statistics. Google Search Console does not require a visitor-tracking script. See the Privacy Policy for details.</p>
-
 <p>© 2024-2026 DedSec Project. All Rights Reserved.</p>
-
 <p>Made by dedsec1121fk.</p>
 </footer>
 </main>

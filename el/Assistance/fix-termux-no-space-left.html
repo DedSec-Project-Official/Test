@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../../style.css?v=57" rel="stylesheet"/>
+<link href="../../style.css?v=60" rel="stylesheet"/>
 <meta content="Διόρθωση του «No space left on device» στο Termux — DedSec Project" property="og:title"/>
 <meta content="Πρακτικός οδηγός για «Διόρθωση του «No space left on device» στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -165,44 +165,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p data-en="Find what fills Termux storage, clean package cache, remove build leftovers, and move outputs safely to Android Downloads." data-gr="Πρακτικός οδηγός για «Διόρθωση του «No space left on device» στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Διόρθωση του «No space left on device» στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
 <p data-en="Find what fills Termux storage, clean package cache, remove build leftovers, and move outputs safely to Android Downloads." data-gr="Πρακτικός οδηγός για «Διόρθωση του «No space left on device» στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Διόρθωση του «No space left on device» στο Termux», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 <p data-en="This page separates the real No Space Left cause from noise in the terminal output." data-gr="Η σελίδα σε βοηθά να ξεχωρίσεις την πραγματική αιτία από τα άσχετα μηνύματα του τερματικού.">Η σελίδα σε βοηθά να ξεχωρίσεις την πραγματική αιτία από τα άσχετα μηνύματα του τερματικού.</p>
 <p data-en="For No Space Left, focus on files, paths, storage and backups and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
 <ul class="assistance-check-list">
 <li data-en="Use the guide for No Space Left only after one short command can reproduce the problem." data-gr="Χρησιμοποίησε αυτόν τον οδηγό αφού επιβεβαιώσεις ότι μια σύντομη εντολή αναπαράγει σταθερά το ίδιο πρόβλημα.">Χρησιμοποίησε αυτόν τον οδηγό αφού επιβεβαιώσεις ότι μια σύντομη εντολή αναπαράγει σταθερά το ίδιο πρόβλημα.</li>
 <li data-en="For No Space Left, keywords that usually matter are: Space, Left." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.</li>
 <li data-en="If the first command for No Space Left gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
 <p data-en="For No Space Left, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Αντιγραφή</button><pre><code>df -h
 du -h -d 1 ~ | sort -h
 apt clean
 mkdir -p /storage/emulated/0/Download/DedSec-Exports</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
 <ol class="assistance-steps">
 <li data-en="df -h — shows storage usage so you know whether the device is full for No Space Left." data-gr="df -h — εμφανίζει τον διαθέσιμο και χρησιμοποιημένο χώρο αποθήκευσης.">df -h — εμφανίζει τον διαθέσιμο και χρησιμοποιημένο χώρο αποθήκευσης.</li><li data-en="du -h -d 1 ~ | sort -h — shows storage usage so you know whether the device is full for No Space Left." data-gr="du -h -d 1 ~ | sort -h — υπολογίζει πόσο χώρο χρησιμοποιούν οι επιλεγμένοι φάκελοι ή αρχεία.">du -h -d 1 ~ | sort -h — υπολογίζει πόσο χώρο χρησιμοποιούν οι επιλεγμένοι φάκελοι ή αρχεία.</li><li data-en="apt clean — checks the part of the files, paths, storage and backups workflow that usually causes this issue for No Space Left." data-gr="apt clean — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">apt clean — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.</li><li data-en="mkdir -p /storage/emulated/0/Download/DedSec-Exports — checks the part of the files, paths, storage and backups workflow that usually causes this issue for No Space Left." data-gr="mkdir -p /storage/emulated/0/Download/DedSec-Exports — δημιουργεί τον απαιτούμενο φάκελο· με την επιλογή `-p` δεν αποτυγχάνει αν ο φάκελος υπάρχει ήδη.">mkdir -p /storage/emulated/0/Download/DedSec-Exports — δημιουργεί τον απαιτούμενο φάκελο· με την επιλογή `-p` δεν αποτυγχάνει αν ο φάκελος υπάρχει ήδη.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
 <ol class="assistance-steps">
 <li data-en="Change one thing at a time while testing No Space Left." data-gr="Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.">Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.</li><li data-en="If the No Space Left error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.</li><li data-en="Keep screenshots or copied terminal text for No Space Left; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the No Space Left command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing No Space Left." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.</li><li data-en="Closing Termux before copying the output that explains No Space Left." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
 <p data-en="If no space left the file path still does not make sense, send a screenshot of pwd, ls, and the error through the Store." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Άνοιξε το Κατάστημα / Ζήτησε βοήθεια</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="Run Python Scripts" data-gr="Σωστή εκτέλεση Python script στο Termux" href="termux-run-python-script-correctly.html">Σωστή εκτέλεση Python script στο Termux</a><a class="starter-path-btn" data-en="Termux Storage and Downloads Access" data-gr="Διόρθωση πρόσβασης στον αποθηκευτικό χώρο του Android" href="fix-termux-storage-permission.html">Διόρθωση πρόσβασης στον αποθηκευτικό χώρο του Android</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Οδηγός Termux για αρχάριους στο Android</a><a class="starter-path-btn" data-en="Update GitHub Pages from Termux Without Breaking the Site" data-gr="Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα" href="termux-github-pages-update-workflow.html">Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα</a></div>
 </article>
 <footer class="main-footer">
-
 <div>
 <div class="footer-link-buttons">
 <a class="footer-mini-btn" href="https://ded-sec.space/el/" rel="noopener noreferrer" target="_blank">Κύρια ιστοσελίδα</a>
@@ -216,9 +215,7 @@ mkdir -p /storage/emulated/0/Download/DedSec-Exports</code></pre></div>
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Εφεδρικό αποθετήριο του DedSec Project</a>
 </div>
 </div>
-
 <p class="footer-tracker-note">Ενημέρωση αναλυτικών στοιχείων: η ιστοσελίδα χρησιμοποιεί Google Tag Manager και ενδέχεται να χρησιμοποιεί Google Analytics για τη μέτρηση επισκέψεων, κλικ, στοιχείων συσκευής και κατά προσέγγιση στατιστικών περιοχής. Το Google Search Console δεν απαιτεί κώδικα παρακολούθησης επισκεπτών. Περισσότερες πληροφορίες θα βρεις στην Πολιτική Απορρήτου.</p>
-
 <p>© 2024–2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
 <p>Δημιουργήθηκε από τον dedsec1121fk.</p>
 </footer>

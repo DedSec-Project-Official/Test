@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../../style.css?v=57" rel="stylesheet"/>
+<link href="../../style.css?v=60" rel="stylesheet"/>
 <meta content="Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root — DedSec Project" property="og:title"/>
 <meta content="Πρακτικός οδηγός για «Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -165,40 +165,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p data-en="Understand realistic no-root limits on Android so you build tools that work reliably instead of fighting the operating system." data-gr="Πρακτικός οδηγός για «Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
 <p data-en="Understand realistic no-root limits on Android so you build tools that work reliably instead of fighting the operating system." data-gr="Πρακτικός οδηγός για «Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Τι μπορεί και τι δεν μπορεί να κάνει το Termux χωρίς root», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 <p data-en="Use this page when the problem matches No Root Limits, not as a general reinstall guide." data-gr="Χρησιμοποίησε αυτόν τον οδηγό όταν το μήνυμα ή η συμπεριφορά ταιριάζει με την περίπτωση της σελίδας. Αν εμφανιστεί διαφορετικό σφάλμα, ακολούθησε τη νέα ένδειξη.">Χρησιμοποίησε αυτόν τον οδηγό όταν το μήνυμα ή η συμπεριφορά ταιριάζει με την περίπτωση της σελίδας. Αν εμφανιστεί διαφορετικό σφάλμα, ακολούθησε τη νέα ένδειξη.</p>
 <p data-en="For No Root Limits, focus on learning, planning and safe building and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
 <ul class="assistance-check-list">
 <li data-en="Before changing No Root Limits, confirm the folder with pwd and compare it with the command you copied." data-gr="Επιβεβαίωσε πρώτα τον τρέχοντα φάκελο με `pwd` και έλεγξε ότι τα αρχεία ή οι διαδρομές της εντολής υπάρχουν πραγματικά.">Επιβεβαίωσε πρώτα τον τρέχοντα φάκελο με `pwd` και έλεγξε ότι τα αρχεία ή οι διαδρομές της εντολής υπάρχουν πραγματικά.</li>
 <li data-en="For No Root Limits, keywords that usually matter are: Root, Limits." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.</li>
 <li data-en="If the first command for No Root Limits gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
 <p data-en="For No Root Limits, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Αντιγραφή</button><pre><code>whoami
 id
 termux-info
 # Build around user-level access, shared storage, and local scripts</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
 <ol class="assistance-steps">
 <li data-en="whoami — checks the part of the learning, planning and safe building workflow that usually causes this issue for No Root Limits." data-gr="whoami — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">whoami — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.</li><li data-en="id — checks the part of the learning, planning and safe building workflow that usually causes this issue for No Root Limits." data-gr="id — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">id — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.</li><li data-en="termux-info — checks the part of the learning, planning and safe building workflow that usually causes this issue for No Root Limits." data-gr="termux-info — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">termux-info — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.</li><li data-en="# Build around user-level access, shared storage, and local scripts — checks the part of the learning, planning and safe building workflow that usually causes this issue for No Root Limits." data-gr="# Build around user-level access, shared storage, and local scripts — είναι σχόλιο ή υπενθύμιση και δεν χρειάζεται να εκτελεστεί ως εντολή."># Build around user-level access, κοινόχρηστο χώρο αποθήκευσης, and local scripts — είναι σχόλιο ή υπενθύμιση και δεν χρειάζεται να εκτελεστεί ως εντολή.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
 <ol class="assistance-steps">
 <li data-en="Change one thing at a time while testing No Root Limits." data-gr="Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.">Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.</li><li data-en="If the No Root Limits error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.</li><li data-en="Keep screenshots or copied terminal text for No Root Limits; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the No Root Limits command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing No Root Limits." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.</li><li data-en="Closing Termux before copying the output that explains No Root Limits." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
 <p data-en="If no root limits you know what you want to build but not how to structure it, the Store can turn the idea into a clearer plan or setup." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη. Έτσι η βοήθεια μπορεί να ξεκινήσει από πραγματικά δεδομένα.">Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη. Έτσι η βοήθεια μπορεί να ξεκινήσει από πραγματικά δεδομένα.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Άνοιξε το Κατάστημα / Ζήτησε βοήθεια</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="API Keys Safely" data-gr="Ασφαλής αποθήκευση API keys σε αρχείο `.env`" href="termux-secure-api-keys-env-file.html">Ασφαλής αποθήκευση API keys σε αρχείο `.env`</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Λίστα ελέγχου για προβλήματα στο Termux</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Οδηγός Termux για αρχάριους στο Android</a><a class="starter-path-btn" data-en="Update GitHub Pages from Termux Without Breaking the Site" data-gr="Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα" href="termux-github-pages-update-workflow.html">Ενημέρωση GitHub Pages από το Termux χωρίς προβλήματα</a></div>
 </article>
 <footer class="main-footer">

@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../../style.css?v=57" rel="stylesheet"/>
+<link href="../../style.css?v=60" rel="stylesheet"/>
 <meta content="Διόρθωση σφαλμάτων requests, SSL και API — DedSec Project" property="og:title"/>
 <meta content="Πρακτικός οδηγός για «Διόρθωση σφαλμάτων requests, SSL και API», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -165,42 +165,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p data-en="Fix Python requests failures, API timeouts, SSL certificate errors, JSON response mistakes, and connection problems in Termux scripts." data-gr="Πρακτικός οδηγός για «Διόρθωση σφαλμάτων requests, SSL και API», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Διόρθωση σφαλμάτων requests, SSL και API», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
 <p data-en="Fix Python requests failures, API timeouts, SSL certificate errors, JSON response mistakes, and connection problems in Termux scripts." data-gr="Πρακτικός οδηγός για «Διόρθωση σφαλμάτων requests, SSL και API», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Διόρθωση σφαλμάτων requests, SSL και API», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 <p data-en="This guide keeps requests / API Errors simple: identify the clue, run one command, then fix the smallest broken part." data-gr="Αυτός ο οδηγός κρατά το requests / API σφάλματα απλό: βρίσκεις την ένδειξη, τρέχεις μία εντολή και διορθώνεις μόνο το σπασμένο κομμάτι.">Αυτός ο οδηγός κρατά το requests / API σφάλματα απλό: βρίσκεις την ένδειξη, τρέχεις μία εντολή και διορθώνεις μόνο το σπασμένο κομμάτι.</p>
 <p data-en="For requests / API Errors, focus on Python runtime and libraries and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
 <ul class="assistance-check-list">
 <li data-en="Treat requests / API Errors as one small failing layer: path, package, Python, Git, browser, or Android permission." data-gr="Αντιμετώπισε το πρόβλημα ως αποτυχία σε ένα συγκεκριμένο επίπεδο: διαδρομή, πακέτο, Python, Git, browser ή δικαίωμα του Android.">Αντιμετώπισε το πρόβλημα ως αποτυχία σε ένα συγκεκριμένο επίπεδο: διαδρομή, πακέτο, Python, Git, browser ή δικαίωμα του Android.</li>
 <li data-en="For requests / API Errors, keywords that usually matter are: requests, API, Errors." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.</li>
 <li data-en="If the first command for requests / API Errors gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
 <p data-en="For requests / API Errors, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Αντιγραφή</button><pre><code>python -m pip install requests
 python -c "import requests; r=requests.get('https://api.github.com', timeout=15); print(r.status_code)"</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
 <ol class="assistance-steps">
 <li data-en="python -m pip install requests — runs pip through the active Python, which helps avoid installing libraries into the wrong environment for requests / API Errors." data-gr="python -m pip install requests — εγκαθιστά τη βιβλιοθήκη στο ενεργό περιβάλλον της Python.">python -m pip install requests — εγκαθιστά τη βιβλιοθήκη στο ενεργό περιβάλλον της Python.</li><li data-en="python -c &quot;import requests; r=requests.get('https://api.github.com', timeout=15); print(r.status_code)&quot; — runs the script directly so the first traceback can be read for requests / API Errors." data-gr="python -c &quot;import requests; r=requests.get('https://api.github.com', timeout=15); print(r.status_code)&quot; — εκτελεί την εντολή απευθείας, ώστε να εμφανιστεί το πρώτο πλήρες μήνυμα σφάλματος.">python -c "import requests; r=requests.get('https://api.github.com', timeout=15); print(r.status_code)" — εκτελεί την εντολή απευθείας, ώστε να εμφανιστεί το πρώτο πλήρες μήνυμα σφάλματος.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
 <ol class="assistance-steps">
 <li data-en="If the requests / API Errors error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.</li><li data-en="Keep screenshots or copied terminal text for requests / API Errors; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li><li data-en="Save the requests / API Errors output before editing files." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the requests / API Errors command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing requests / API Errors." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.</li><li data-en="Closing Termux before copying the output that explains requests / API Errors." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
 <p data-en="If requests / api errors Python still fails after the guide, send the traceback through the Store together with the command you ran." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Άνοιξε το Κατάστημα / Ζήτησε βοήθεια</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="ModuleNotFoundError Python" data-gr="Διόρθωση του ModuleNotFoundError στην Python" href="fix-python-module-not-found-termux.html">Διόρθωση του ModuleNotFoundError στην Python</a><a class="starter-path-btn" data-en="pip Errors" data-gr="Διόρθωση σφαλμάτων pip στο Termux" href="fix-pip-errors-termux.html">Διόρθωση σφαλμάτων pip στο Termux</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Λίστα ελέγχου για προβλήματα στο Termux</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Οδηγός Termux για αρχάριους στο Android</a></div>
 </article>
 <footer class="main-footer">
-
 <div>
 <div class="footer-link-buttons">
 <a class="footer-mini-btn" href="https://ded-sec.space/el/" rel="noopener noreferrer" target="_blank">Κύρια ιστοσελίδα</a>
@@ -214,9 +213,7 @@ python -c "import requests; r=requests.get('https://api.github.com', timeout=15)
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Εφεδρικό αποθετήριο του DedSec Project</a>
 </div>
 </div>
-
 <p class="footer-tracker-note">Ενημέρωση αναλυτικών στοιχείων: η ιστοσελίδα χρησιμοποιεί Google Tag Manager και ενδέχεται να χρησιμοποιεί Google Analytics για τη μέτρηση επισκέψεων, κλικ, στοιχείων συσκευής και κατά προσέγγιση στατιστικών περιοχής. Το Google Search Console δεν απαιτεί κώδικα παρακολούθησης επισκεπτών. Περισσότερες πληροφορίες θα βρεις στην Πολιτική Απορρήτου.</p>
-
 <p>© 2024–2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
 <p>Δημιουργήθηκε από τον dedsec1121fk.</p>
 </footer>

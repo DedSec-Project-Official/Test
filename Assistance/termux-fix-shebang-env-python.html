@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../style.css?v=57" rel="stylesheet"/>
+<link href="../style.css?v=60" rel="stylesheet"/>
 <meta content="Python Shebang — Assistance" property="og:title"/>
 <meta content="Fix Python shebang problems in Termux, including wrong paths, missing env, desktop scripts, and executable launch errors." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -168,41 +168,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p data-en="Fix scripts that fail because of wrong python paths, missing env, desktop shebangs, or direct execution mistakes in Termux." data-gr="Πρακτικός οδηγός για «Διόρθωση shebang και `/usr/bin/env python`», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Fix scripts that fail because of wrong python paths, missing env, desktop shebangs, or direct execution mistakes in Termux.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Quick answer</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Quick Answer</h2>
 <p data-en="Fix scripts that fail because of wrong python paths, missing env, desktop shebangs, or direct execution mistakes in Termux." data-gr="Πρακτικός οδηγός για «Διόρθωση shebang και `/usr/bin/env python`», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Fix scripts that fail because of wrong python paths, missing env, desktop shebangs, or direct execution mistakes in Termux.</p>
 <p data-en="Start here when Python Shebang matches your screen and you need a safe next step." data-gr="Χρησιμοποίησε αυτόν τον οδηγό όταν το μήνυμα ή η συμπεριφορά ταιριάζει με την περίπτωση της σελίδας. Αν εμφανιστεί διαφορετικό σφάλμα, ακολούθησε τη νέα ένδειξη.">Start here when Python Shebang matches your screen and you need a safe next step.</p>
 <p data-en="For Python Shebang, focus on Python runtime and libraries and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">For Python Shebang, focus on Python runtime and libraries and use the output to decide the next small fix instead of reinstalling everything.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">What to check</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">What To Check</h2>
 <ul class="assistance-check-list">
 <li data-en="The clue for Python Shebang is usually before the last line, not inside the final generic failure message." data-gr="Επιβεβαίωσε πρώτα τον τρέχοντα φάκελο με `pwd` και έλεγξε ότι τα αρχεία ή οι διαδρομές της εντολής υπάρχουν πραγματικά.">The clue for Python Shebang is usually before the last line, not inside the final generic failure message.</li>
 <li data-en="For Python Shebang, keywords that usually matter are: Python, Shebang." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">For Python Shebang, keywords that usually matter are: Python, Shebang.</li>
 <li data-en="If the first command for Python Shebang gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">If the first command for Python Shebang gives a different error, follow the new clue instead of forcing this guide.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Copyable command</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Copyable Command</h2>
 <p data-en="For Python Shebang, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">For Python Shebang, replace placeholders only when they appear in the command.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Copy</button><pre><code>which python
 head -n 1 script.py
 sed -i "1s|.*|#!/usr/bin/env python|" script.py
 chmod +x script.py
 ./script.py</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Read the output</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Read The Output</h2>
 <ol class="assistance-steps">
 <li data-en="which python — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang." data-gr="which python — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">which python — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang.</li><li data-en="head -n 1 script.py — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang." data-gr="head -n 1 script.py — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">head -n 1 script.py — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang.</li><li data-en='sed -i "1s|.*|#!/usr/bin/env python|" script.py — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang.' data-gr='sed -i "1s|.*|#!/usr/bin/env python|" script.py — πραγματοποιεί τη συγκεκριμένη αντικατάσταση κειμένου.'>sed -i "1s|.*|#!/usr/bin/env python|" script.py — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang.</li><li data-en="chmod +x script.py — adds execute permission when Android or Git did not preserve it for Python Shebang." data-gr="chmod +x script.py — αλλάζει τα δικαιώματα του αρχείου ώστε να μπορεί να εκτελεστεί ή να διαβαστεί.">chmod +x script.py — adds execute permission when Android or Git did not preserve it for Python Shebang.</li><li data-en="./script.py — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang." data-gr="./script.py — εκτελεί τον συγκεκριμένο έλεγχο· διάβασε ολόκληρο το αποτέλεσμα πριν προχωρήσεις.">./script.py — checks the part of the Python runtime and libraries workflow that usually causes this issue for Python Shebang.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Fix in a safe order</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Fix In A Safe Order</h2>
 <ol class="assistance-steps">
 <li data-en="Save the Python Shebang output before editing files." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Save the Python Shebang output before editing files.</li><li data-en="Change one thing at a time while testing Python Shebang." data-gr="Άλλαζε μόνο ένα πράγμα κάθε φορά και έλεγχε ξανά το αποτέλεσμα πριν συνεχίσεις.">Change one thing at a time while testing Python Shebang.</li><li data-en="If the Python Shebang error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">If the Python Shebang error changes, read the new clue instead of repeating the old fix.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Common mistakes</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Common Mistakes</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the Python Shebang command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Running the Python Shebang command from the home folder when the project is somewhere else.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing Python Shebang." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Following a desktop Linux answer that ignores Android storage paths while fixing Python Shebang.</li><li data-en="Closing Termux before copying the output that explains Python Shebang." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Closing Termux before copying the output that explains Python Shebang.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Guide did not solve it?</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Guide Did Not Solve It?</h2>
 <p data-en="If python shebang Python still fails after the guide, send the traceback through the Store together with the command you ran." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη.">If python shebang Python still fails after the guide, send the traceback through the Store together with the command you ran.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Open Store / Get Help</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Related Assistance pages</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Related Assistance Pages</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="ModuleNotFoundError Python" data-gr="Διόρθωση του ModuleNotFoundError στην Python" href="fix-python-module-not-found-termux.html">ModuleNotFoundError Python</a><a class="starter-path-btn" data-en="pip Errors" data-gr="Διόρθωση σφαλμάτων pip στο Termux" href="fix-pip-errors-termux.html">pip Errors</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Troubleshooting Checklist</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Beginner Guide</a></div>
 </article>
 <footer class="main-footer">
@@ -219,11 +219,8 @@ chmod +x script.py
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Backup DedSec Project Repository</a>
 </div>
 </div>
-
 <p class="footer-tracker-note">Analytics notice: this site uses Google Tag Manager and may use Google Analytics to measure visits, clicks, device information, and approximate region-level statistics. Google Search Console does not require a visitor-tracking script. See the Privacy Policy for details.</p>
-
 <p>© 2024-2026 DedSec Project. All Rights Reserved.</p>
-
 <p>Made by dedsec1121fk.</p>
 </footer>
 </main>

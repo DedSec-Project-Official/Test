@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../../style.css?v=57" rel="stylesheet"/>
+<link href="../../style.css?v=60" rel="stylesheet"/>
 <meta content="Ο τοπικός server δεν ανοίγει στο Android — DedSec Project" property="og:title"/>
 <meta content="Πρακτικός οδηγός για «Ο τοπικός server δεν ανοίγει στο Android», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -161,47 +161,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </nav>
 <main class="page-content assistance-page assistance-article-page">
 <div class="page-header">
-<h1 data-en="Fix Localhost Server Not Opening on Android" data-gr="Ο τοπικός server δεν ανοίγει στο Android">Ο τοπικός server δεν ανοίγει στο Android</h1>
+<h1 data-en="Fix Localhost Server Not Opening On Android" data-gr="Ο τοπικός server δεν ανοίγει στο Android">Ο τοπικός server δεν ανοίγει στο Android</h1>
 <p data-en="Fix local server browser problems in Termux by checking host binding, port, folder, firewall-like Android behavior, and correct URL." data-gr="Πρακτικός οδηγός για «Ο τοπικός server δεν ανοίγει στο Android», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Ο τοπικός server δεν ανοίγει στο Android», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 </div>
 <article class="content-section assistance-article unique-assistance-article">
-<h2 data-en="Quick answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
+<h2 data-en="Quick Answer" data-gr="Γρήγορη λύση">Γρήγορη λύση</h2>
 <p data-en="Fix local server browser problems in Termux by checking host binding, port, folder, firewall-like Android behavior, and correct URL." data-gr="Πρακτικός οδηγός για «Ο τοπικός server δεν ανοίγει στο Android», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.">Πρακτικός οδηγός για «Ο τοπικός server δεν ανοίγει στο Android», με ασφαλή βήματα, εντολές που μπορείς να αντιγράψεις και σαφή εξήγηση των συνηθισμένων προβλημάτων.</p>
 <p data-en="This guide keeps Fix Localhost Server Not Opening on Android simple: identify the clue, run one command, then fix the smallest broken part." data-gr="Αυτός ο οδηγός κρατά τη διόρθωση localhost server που δεν ανοίγει στο Android απλό: βρίσκεις την ένδειξη, τρέχεις μία εντολή και διορθώνεις μόνο το σπασμένο κομμάτι.">Αυτός ο οδηγός κρατά τη διόρθωση localhost server που δεν ανοίγει στο Android απλό: βρίσκεις την ένδειξη, τρέχεις μία εντολή και διορθώνεις μόνο το σπασμένο κομμάτι.</p>
 <p data-en="For Fix Localhost Server Not Opening on Android, focus on local servers, web pages and browser tests and use the output to decide the next small fix instead of reinstalling everything." data-gr="Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.">Εστίασε στην πρώτη σαφή ένδειξη και χρησιμοποίησε το αποτέλεσμα για να επιλέξεις την επόμενη μικρή διόρθωση, αντί να επανεγκαταστήσεις τα πάντα.</p>
-<h2 data-en="What to check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
+<h2 data-en="What To Check" data-gr="Τι να ελέγξεις">Τι να ελέγξεις</h2>
 <ul class="assistance-check-list">
 <li data-en="Treat Fix Localhost Server Not Opening on Android as one small failing layer: path, package, Python, Git, browser, or Android permission." data-gr="Αντιμετώπισε το πρόβλημα ως αποτυχία σε ένα συγκεκριμένο επίπεδο: διαδρομή, πακέτο, Python, Git, browser ή δικαίωμα του Android.">Αντιμετώπισε το πρόβλημα ως αποτυχία σε ένα συγκεκριμένο επίπεδο: διαδρομή, πακέτο, Python, Git, browser ή δικαίωμα του Android.</li>
 <li data-en="For Fix Localhost Server Not Opening on Android, keywords that usually matter are: Localhost, Server, Not, Opening." data-gr="Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.">Διάβασε ολόκληρο το μήνυμα και σημείωσε την πρώτη συγκεκριμένη αναφορά σε αρχείο, πακέτο, module, θύρα, δικαίωμα ή διαδρομή.</li>
 <li data-en="If the first command for Fix Localhost Server Not Opening on Android gives a different error, follow the new clue instead of forcing this guide." data-gr="Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.">Αν η πρώτη εντολή εμφανίσει διαφορετικό σφάλμα, ακολούθησε το νέο μήνυμα αντί να επαναλαμβάνεις μηχανικά τα ίδια βήματα.</li>
 </ul>
-<h2 data-en="Copyable command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
+<h2 data-en="Copyable Command" data-gr="Εντολές για αντιγραφή">Εντολές για αντιγραφή</h2>
 <p data-en="For Fix Localhost Server Not Opening on Android, replace placeholders only when they appear in the command." data-gr="Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.">Αντέγραψε τις εντολές μία-μία. Άλλαξε μόνο τις ενδεικτικές τιμές, όπως `PACKAGE_NAME`, `folder_name` ή `URL`, όταν εμφανίζονται πραγματικά στην εντολή.</p>
 <div class="code-container assistance-code"><button class="copy-btn" data-en="Copy" data-gr="Αντιγραφή" type="button">Αντιγραφή</button><pre><code>pwd
 python -m http.server 8080 --bind 127.0.0.1
 # open http://127.0.0.1:8080 in the same phone browser</code></pre></div>
-<h2 data-en="Read the output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
+<h2 data-en="Read The Output" data-gr="Πώς να διαβάσεις το αποτέλεσμα">Πώς να διαβάσεις το αποτέλεσμα</h2>
 <ol class="assistance-steps">
 <li data-en="pwd — prints the folder you are actually working inside for Fix Localhost Server Not Opening on Android." data-gr="pwd — εμφανίζει τον φάκελο στον οποίο βρίσκεσαι.">pwd — εμφανίζει τον φάκελο στον οποίο βρίσκεσαι.</li><li data-en="python -m http.server 8080 --bind 127.0.0.1 — runs the script directly so the first traceback can be read for Fix Localhost Server Not Opening on Android." data-gr="python -m http.server 8080 --bind 127.0.0.1 — εκτελεί την εντολή απευθείας, ώστε να εμφανιστεί το πρώτο πλήρες μήνυμα σφάλματος.">python -m http.server 8080 --bind 127.0.0.1 — εκτελεί την εντολή απευθείας, ώστε να εμφανιστεί το πρώτο πλήρες μήνυμα σφάλματος.</li><li data-en="# open http://127.0.0.1:8080 in the same phone browser — checks the part of the local servers, web pages and browser tests workflow that usually causes this issue for Fix Localhost Server Not Opening on Android." data-gr="# open http://127.0.0.1:8080 in the same phone browser — είναι σχόλιο ή υπενθύμιση και δεν χρειάζεται να εκτελεστεί ως εντολή."># open http://127.0.0.1:8080 in the same phone browser — είναι σχόλιο ή υπενθύμιση και δεν χρειάζεται να εκτελεστεί ως εντολή.</li>
 </ol>
-<h2 data-en="Fix in a safe order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
+<h2 data-en="Fix In A Safe Order" data-gr="Ασφαλής σειρά ενεργειών">Ασφαλής σειρά ενεργειών</h2>
 <ol class="assistance-steps">
 <li data-en="If the Fix Localhost Server Not Opening on Android error changes, read the new clue instead of repeating the old fix." data-gr="Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.">Αν αλλάξει το μήνυμα σφάλματος, διάβασε τη νέα ένδειξη· συνήθως σημαίνει ότι το προηγούμενο βήμα διορθώθηκε.</li><li data-en="Keep screenshots or copied terminal text for Fix Localhost Server Not Opening on Android; they make paid help faster if you need it." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li><li data-en="Save the Fix Localhost Server Not Opening on Android output before editing files." data-gr="Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.">Κράτησε ένα στιγμιότυπο οθόνης ή αντέγραψε το πλήρες αποτέλεσμα του τερματικού πριν αλλάξεις αρχεία ή ρυθμίσεις.</li>
 </ol>
-<h2 data-en="Common mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
+<h2 data-en="Common Mistakes" data-gr="Συνηθισμένα λάθη">Συνηθισμένα λάθη</h2>
 <ul class="assistance-check-list">
 <li data-en="Running the Fix Localhost Server Not Opening on Android command from the home folder when the project is somewhere else." data-gr="Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.">Εκτέλεση της εντολής από λάθος φάκελο, ενώ το έργο ή το αρχείο βρίσκεται αλλού.</li><li data-en="Following a desktop Linux answer that ignores Android storage paths while fixing Fix Localhost Server Not Opening on Android." data-gr="Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.">Χρήση οδηγιών για Linux σε υπολογιστή που αγνοούν τις διαδρομές και τους περιορισμούς αποθήκευσης του Android.</li><li data-en="Closing Termux before copying the output that explains Fix Localhost Server Not Opening on Android." data-gr="Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.">Κλείσιμο του Termux πριν αποθηκευτεί το πλήρες μήνυμα που εξηγεί το πρόβλημα.</li>
 </ul>
 <section class="assistance-store-cta content-section">
-<h2 data-en="Guide did not solve it?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
+<h2 data-en="Guide Did Not Solve It?" data-gr="Δεν λύθηκε το πρόβλημα;">Δεν λύθηκε το πρόβλημα;</h2>
 <p data-en="If fix localhost server not opening on android the page opens blank or the server does not respond, send the URL, port, and terminal output through the Store." data-gr="Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη. Έτσι η βοήθεια μπορεί να ξεκινήσει από πραγματικά δεδομένα.">Αν το πρόβλημα παραμένει, άνοιξε το Κατάστημα και στείλε την ακριβή εντολή, ολόκληρο το μήνυμα σφάλματος και όσα δοκίμασες ήδη. Έτσι η βοήθεια μπορεί να ξεκινήσει από πραγματικά δεδομένα.</p>
 <a class="starter-path-btn starter-path-btn--exclusive" data-en="Open Store / Get Help" data-gr="Άνοιξε το Κατάστημα / Ζήτησε βοήθεια" href="../Pages/store.html">Άνοιξε το Κατάστημα / Ζήτησε βοήθεια</a>
 </section>
-<h2 data-en="Related Assistance pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
+<h2 data-en="Related Assistance Pages" data-gr="Σχετικοί οδηγοί">Σχετικοί οδηγοί</h2>
 <div class="assistance-related-grid"><a class="starter-path-btn" data-en="JSON Errors" data-gr="Διόρθωση σφαλμάτων σε αρχεία JSON" href="termux-json-file-errors.html">Διόρθωση σφαλμάτων σε αρχεία JSON</a><a class="starter-path-btn" data-en="Port Already in Use" data-gr="Διόρθωση του «Port already in use» στο Termux" href="fix-termux-port-already-in-use.html">Διόρθωση του «Port already in use» στο Termux</a><a class="starter-path-btn" data-en="Troubleshooting Checklist" data-gr="Λίστα ελέγχου για προβλήματα στο Termux" href="termux-troubleshooting-checklist.html">Λίστα ελέγχου για προβλήματα στο Termux</a><a class="starter-path-btn" data-en="Beginner Guide" data-gr="Οδηγός Termux για αρχάριους στο Android" href="termux-beginner-guide-android.html">Οδηγός Termux για αρχάριους στο Android</a></div>
 </article>
 <footer class="main-footer">
-
 <div>
 <div class="footer-link-buttons">
 <a class="footer-mini-btn" href="https://ded-sec.space/el/" rel="noopener noreferrer" target="_blank">Κύρια ιστοσελίδα</a>
@@ -215,9 +214,7 @@ python -m http.server 8080 --bind 127.0.0.1
 <a class="footer-mini-btn" href="https://github.com/sal-scar/DedSec" rel="noopener noreferrer" target="_blank">Εφεδρικό αποθετήριο του DedSec Project</a>
 </div>
 </div>
-
 <p class="footer-tracker-note">Ενημέρωση αναλυτικών στοιχείων: η ιστοσελίδα χρησιμοποιεί Google Tag Manager και ενδέχεται να χρησιμοποιεί Google Analytics για τη μέτρηση επισκέψεων, κλικ, στοιχείων συσκευής και κατά προσέγγιση στατιστικών περιοχής. Το Google Search Console δεν απαιτεί κώδικα παρακολούθησης επισκεπτών. Περισσότερες πληροφορίες θα βρεις στην Πολιτική Απορρήτου.</p>
-
 <p>© 2024–2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
 <p>Δημιουργήθηκε από τον dedsec1121fk.</p>
 </footer>
