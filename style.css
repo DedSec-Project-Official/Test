@@ -10157,3 +10157,79 @@ html body.light-theme .featured-articles-section {
   }
 }
 
+
+
+/* === v33: Menu Border And Mobile Button Alignment Fix (2026-07-12) === */
+
+/*
+ * Desktop menu border integrity:
+ * draw the outline inside each grid item so sub-pixel clipping or overlap
+ * cannot hide the right edge of the middle-column buttons.
+ */
+@media (min-width: 900px) {
+  html body .main-nav .nav-menu > .nav-link {
+    position: relative !important;
+    isolation: isolate !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    clip-path: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html body .main-nav .nav-menu > .nav-link::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border: 1px solid var(--nm-border) !important;
+    border-radius: 0 !important;
+    pointer-events: none !important;
+  }
+
+  html body .main-nav .nav-menu > .nav-link:is(
+    :hover,
+    :focus-visible,
+    .active
+  )::after {
+    border-color: var(--nm-accent) !important;
+  }
+}
+
+/*
+ * Homepage mobile CTA alignment:
+ * use a centered one-column grid and give every button an explicit,
+ * centered width instead of allowing older flex rules to pull it left.
+ */
+@media (max-width: 640px) {
+  html body .home-screen .inline-action-buttons {
+    display: grid !important;
+    grid-template-columns: minmax(0, min(100%, 360px)) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 16px auto 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .home-screen .inline-action-buttons > a:is(
+    .starter-path-btn,
+    .btn
+  ) {
+    display: inline-flex !important;
+    flex: none !important;
+    justify-self: center !important;
+    width: min(100%, 360px) !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}
