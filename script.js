@@ -1277,6 +1277,23 @@ return file;
                 }
             },
             {
+                source: 'Hacks.gr',
+                href: 'https://hacks.gr/%ce%b1%cf%80%cf%8c-%cf%84%ce%bf-%ce%ba%ce%b9%ce%bd%ce%b7%cf%84%cf%8c-%cf%83%cf%84%ce%bf-hacking-lab-%ce%bf-%cf%80%ce%bb%ce%ae%cf%81%ce%b7%cf%82-%ce%bf%ce%b4%ce%b7%ce%b3%cf%8c%cf%82-%ce%b3%ce%b9%ce%b1/',
+                image: 'Assets/Images/featured/hacks-gr-dedsec-project.webp',
+                alt: {
+                    en: 'DedSec Project hacking lab guide article preview from Hacks.gr',
+                    gr: 'Προεπισκόπηση του οδηγού για το DedSec Project και το hacking lab από το Hacks.gr'
+                },
+                title: {
+                    en: 'DedSec Project: The Complete Guide To The Tool That Turns Your Phone Into A Hacking Lab',
+                    gr: 'DedSec Project: Ο Απόλυτος Οδηγός Για Το Εργαλείο Που Μετατρέπει Το Κινητό Σου Σε Hacking Lab'
+                },
+                description: {
+                    en: 'A detailed Greek-language guide to the DedSec Project, Termux, its main tools, Android installation, and responsible cybersecurity use.',
+                    gr: 'Ένας αναλυτικός ελληνικός οδηγός για το DedSec Project, το Termux, τα βασικά εργαλεία, την εγκατάσταση στο Android και την υπεύθυνη χρήση στην κυβερνοασφάλεια.'
+                }
+            },
+            {
                 source: 'AtoAllLinks',
                 href: 'https://www.atoallinks.com/2026/butsystem-py-inside-dedsec-projects-exclusive-self-hosted-social-platform',
                 image: null,
