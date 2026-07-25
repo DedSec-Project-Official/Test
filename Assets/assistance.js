@@ -78,7 +78,7 @@
     const finder = document.querySelector('.assistance-finder');
     const input = document.getElementById('assistance-guide-search');
     const main = document.querySelector('main.assistance-page');
-    if (!finder || !input || !main) return;
+    if (!finder || !main) return;
 
     const clearButton = finder.querySelector('.assistance-clear-btn');
     const filterButtons = [...finder.querySelectorAll('.assistance-filter-btn')];
@@ -120,7 +120,7 @@
     };
 
     const apply = () => {
-      const query = normalize(input.value);
+      const query = normalize(input?.value || '');
       const tokens = query.split(' ').filter(Boolean);
       const searchingOrFiltering = Boolean(query) || activeFilter !== 'all';
       let visibleCount = 0;
@@ -152,9 +152,10 @@
 
       const totalMatches = cards.filter((card) => !card.classList.contains('is-filtered-out')).length;
       if (status) {
+        const filtered = activeFilter !== 'all';
         status.textContent = isGreek()
-          ? `${totalMatches} ${totalMatches === 1 ? 'οδηγός βρέθηκε' : 'οδηγοί βρέθηκαν'}`
-          : `${totalMatches} ${totalMatches === 1 ? 'guide found' : 'guides found'}`;
+          ? `${totalMatches} ${totalMatches === 1 ? 'οδηγός' : 'οδηγοί'} ${filtered ? 'εμφανίζονται' : 'διαθέσιμοι'}`
+          : `${totalMatches} ${totalMatches === 1 ? 'guide' : 'guides'} ${filtered ? 'shown' : 'available'}`;
       }
       if (noResults) noResults.hidden = totalMatches !== 0;
       if (clearButton) clearButton.hidden = !query;
@@ -181,26 +182,20 @@
       });
     });
 
-    input.addEventListener('input', apply);
-    input.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && input.value) {
+    if (input) {
+      input.addEventListener('input', apply);
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && input.value) {
+          input.value = '';
+          apply();
+        }
+      });
+      clearButton?.addEventListener('click', () => {
         input.value = '';
-        apply();
-      }
-    });
-    clearButton?.addEventListener('click', () => {
-      input.value = '';
-      input.focus();
-      apply();
-    });
-    document.addEventListener('keydown', (event) => {
-      const target = event.target;
-      const typing = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target?.isContentEditable;
-      if (event.key === '/' && !typing && !event.ctrlKey && !event.metaKey && !event.altKey) {
-        event.preventDefault();
         input.focus();
-      }
-    });
+        apply();
+      });
+    }
     apply();
   };
 
