@@ -1315,12 +1315,6 @@ return file;
         heading.dataset.gr = 'Προτεινόμενο Άρθρο';
         heading.textContent = currentLanguage === 'gr' ? heading.dataset.gr : heading.dataset.en;
 
-        const intro = document.createElement('p');
-        intro.className = 'featured-articles-intro';
-        intro.dataset.en = 'Read one randomly selected external article about DedSec Project, Termux, or ButSystem.py.';
-        intro.dataset.gr = 'Διάβασε ένα τυχαία επιλεγμένο εξωτερικό άρθρο για το DedSec Project, το Termux ή το ButSystem.py.';
-        intro.textContent = currentLanguage === 'gr' ? intro.dataset.gr : intro.dataset.en;
-
         const grid = document.createElement('div');
         grid.className = 'featured-articles-grid';
 
@@ -1381,7 +1375,7 @@ return file;
         body.append(source, articleTitle, description, cta);
         card.appendChild(body);
         grid.appendChild(card);
-        section.append(heading, intro, grid);
+        section.append(heading, grid);
 
         const footer = document.querySelector('.main-footer');
         if (footer?.parentNode) {
