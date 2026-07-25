@@ -183,6 +183,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        const translatedAttributes = ['aria-label', 'alt', 'title', 'placeholder'];
+        translatedAttributes.forEach((attribute) => {
+            const selector = `[data-en-${attribute}], [data-gr-${attribute}]`;
+            document.querySelectorAll(selector).forEach((el) => {
+                const translated = el.getAttribute(`data-${lang}-${attribute}`)
+                    || el.getAttribute(`data-en-${attribute}`);
+                if (translated !== null) el.setAttribute(attribute, translated);
+            });
+        });
+
         document.querySelectorAll('[data-lang-section]').forEach(el => {
             const isMatch = el.dataset.langSection === lang;
             el.style.display = isMatch ? 'block' : 'none';
@@ -1212,6 +1222,175 @@ return file;
         applyThemeAssets();
     }
 
+    // --- RANDOM FEATURED ARTICLE (shared across every page) ---
+    function initializeFeaturedArticle() {
+        const articles = [
+            {
+                source: 'Time Business News',
+                href: 'https://timebusinessnews.com/inside-the-dedsec-project-when-a-termux-toolkit-crosses-the-line-between-cybersecurity-education-and-exploitation',
+                image: 'Assets/Images/featured/time-business-news-dedsec.jpg',
+                alt: {
+                    en: 'DedSec Project article preview from Time Business News',
+                    gr: 'Προεπισκόπηση άρθρου για το DedSec Project από το Time Business News'
+                },
+                title: {
+                    en: 'Inside The DedSec Project: When A Termux Toolkit Crosses The Line Between Cybersecurity Education And Exploitation',
+                    gr: 'Μέσα Στο DedSec Project: Όταν Μια Εργαλειοθήκη Termux Περνά Τη Γραμμή Μεταξύ Εκπαίδευσης Κυβερνοασφάλειας Και Εκμετάλλευσης'
+                },
+                description: {
+                    en: 'An independent examination of the project’s educational tools, mobile-first approach, and the ethical boundaries of dual-use security software.',
+                    gr: 'Μια ανεξάρτητη εξέταση των εκπαιδευτικών εργαλείων, της προσέγγισης που ξεκινά από το κινητό και των ηθικών ορίων του λογισμικού ασφάλειας διπλής χρήσης.'
+                }
+            },
+            {
+                source: 'TechBullion',
+                href: 'https://techbullion.com/how-termux-is-turning-android-phones-into-portable-cybersecurity-toolkits',
+                image: 'Assets/Images/featured/techbullion-termux-cybersecurity.webp',
+                alt: {
+                    en: 'Android and Termux cybersecurity article preview from TechBullion',
+                    gr: 'Προεπισκόπηση άρθρου κυβερνοασφάλειας για Android και Termux από το TechBullion'
+                },
+                title: {
+                    en: 'How Termux Is Turning Android Phones Into Portable Cybersecurity Toolkits',
+                    gr: 'Πώς Το Termux Μετατρέπει Τα Android Κινητά Σε Φορητές Εργαλειοθήκες Κυβερνοασφάλειας'
+                },
+                description: {
+                    en: 'How Termux and no-root projects such as DedSec Project lower the hardware barrier to cybersecurity education on Android.',
+                    gr: 'Πώς το Termux και έργα χωρίς root, όπως το DedSec Project, μειώνουν το εμπόδιο του ακριβού εξοπλισμού για την εκπαίδευση κυβερνοασφάλειας στο Android.'
+                }
+            },
+            {
+                source: 'GuruHiTech',
+                href: 'https://guruhitech.com/butsystem-py-a-local-first-private-workspace-for-termux-and-android',
+                image: 'Assets/Images/featured/guruhitech-butsystem.webp',
+                alt: {
+                    en: 'ButSystem.py article preview from GuruHiTech',
+                    gr: 'Προεπισκόπηση άρθρου για το ButSystem.py από το GuruHiTech'
+                },
+                title: {
+                    en: 'ButSystem.py: A Local-First Private Workspace For Termux And Android',
+                    gr: 'ButSystem.py: Ένας Ιδιωτικός Χώρος Εργασίας Με Προτεραιότητα Στα Τοπικά Δεδομένα Για Termux Και Android'
+                },
+                description: {
+                    en: 'A review of ButSystem.py as a local-first private workspace that keeps chats, files, and profiles on the user’s own Android device.',
+                    gr: 'Μια παρουσίαση του ButSystem.py ως ιδιωτικού χώρου εργασίας με προτεραιότητα στα τοπικά δεδομένα, ώστε συνομιλίες, αρχεία και προφίλ να παραμένουν στη συσκευή Android του χρήστη.'
+                }
+            },
+            {
+                source: 'AtoAllLinks',
+                href: 'https://www.atoallinks.com/2026/butsystem-py-inside-dedsec-projects-exclusive-self-hosted-social-platform',
+                image: null,
+                alt: {
+                    en: 'Article preview for ButSystem.py on AtoAllLinks',
+                    gr: 'Προεπισκόπηση άρθρου για το ButSystem.py στο AtoAllLinks'
+                },
+                title: {
+                    en: 'ButSystem.py: Inside DedSec Project’s Exclusive Self-Hosted Social Platform',
+                    gr: 'ButSystem.py: Η Αποκλειστική Αυτοφιλοξενούμενη Κοινωνική Πλατφόρμα Του DedSec Project'
+                },
+                description: {
+                    en: 'A closer look at ButSystem.py, DedSec Project’s sponsor-exclusive, self-hosted social platform and private workspace.',
+                    gr: 'Μια πιο κοντινή ματιά στο ButSystem.py, την αποκλειστική για χορηγούς αυτοφιλοξενούμενη κοινωνική πλατφόρμα και ιδιωτικό χώρο εργασίας του DedSec Project.'
+                }
+            }
+        ];
+
+        const selected = articles[Math.floor(Math.random() * articles.length)];
+        if (!selected) return;
+
+        let section = document.getElementById('featured-articles');
+        if (!section) {
+            section = document.createElement('section');
+            section.id = 'featured-articles';
+            section.className = 'content-section featured-articles-section';
+        }
+
+        const titleId = 'featured-article-section-title';
+        section.setAttribute('aria-labelledby', titleId);
+        section.innerHTML = '';
+
+        const heading = document.createElement('h2');
+        heading.id = titleId;
+        heading.dataset.en = 'Featured Article';
+        heading.dataset.gr = 'Προτεινόμενο Άρθρο';
+        heading.textContent = currentLanguage === 'gr' ? heading.dataset.gr : heading.dataset.en;
+
+        const intro = document.createElement('p');
+        intro.className = 'featured-articles-intro';
+        intro.dataset.en = 'Read one randomly selected external article about DedSec Project, Termux, or ButSystem.py.';
+        intro.dataset.gr = 'Διάβασε ένα τυχαία επιλεγμένο εξωτερικό άρθρο για το DedSec Project, το Termux ή το ButSystem.py.';
+        intro.textContent = currentLanguage === 'gr' ? intro.dataset.gr : intro.dataset.en;
+
+        const grid = document.createElement('div');
+        grid.className = 'featured-articles-grid';
+
+        const card = document.createElement('a');
+        card.className = 'featured-article-card';
+        card.href = selected.href;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer external';
+        card.dataset.enAriaLabel = `Read “${selected.title.en}” on ${selected.source}`;
+        card.dataset.grAriaLabel = `Διάβασε το «${selected.title.gr}» στο ${selected.source}`;
+        card.setAttribute('aria-label', currentLanguage === 'gr' ? card.dataset.grAriaLabel : card.dataset.enAriaLabel);
+
+        if (selected.image) {
+            const image = document.createElement('img');
+            image.className = 'featured-article-image';
+            image.src = assetUrl(selected.image);
+            image.width = 800;
+            image.height = 450;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            image.dataset.enAlt = selected.alt.en;
+            image.dataset.grAlt = selected.alt.gr;
+            image.alt = currentLanguage === 'gr' ? selected.alt.gr : selected.alt.en;
+            card.appendChild(image);
+        } else {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'featured-article-placeholder';
+            placeholder.setAttribute('aria-hidden', 'true');
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-newspaper';
+            placeholder.appendChild(icon);
+            card.appendChild(placeholder);
+        }
+
+        const body = document.createElement('div');
+        body.className = 'featured-article-body';
+
+        const source = document.createElement('span');
+        source.className = 'featured-article-source';
+        source.textContent = selected.source;
+
+        const articleTitle = document.createElement('h3');
+        articleTitle.dataset.en = selected.title.en;
+        articleTitle.dataset.gr = selected.title.gr;
+        articleTitle.textContent = currentLanguage === 'gr' ? selected.title.gr : selected.title.en;
+
+        const description = document.createElement('p');
+        description.dataset.en = selected.description.en;
+        description.dataset.gr = selected.description.gr;
+        description.textContent = currentLanguage === 'gr' ? selected.description.gr : selected.description.en;
+
+        const cta = document.createElement('span');
+        cta.className = 'featured-article-cta';
+        cta.dataset.en = 'Read Article';
+        cta.dataset.gr = 'Διάβασε Το Άρθρο';
+        cta.textContent = currentLanguage === 'gr' ? cta.dataset.gr : cta.dataset.en;
+
+        body.append(source, articleTitle, description, cta);
+        card.appendChild(body);
+        grid.appendChild(card);
+        section.append(heading, intro, grid);
+
+        const footer = document.querySelector('.main-footer');
+        if (footer?.parentNode) {
+            footer.parentNode.insertBefore(section, footer);
+        } else {
+            (document.querySelector('main') || document.body)?.appendChild(section);
+        }
+    }
+
     // --- DEEP-LINK ANCHORS (Deterministic IDs) ---
     function initializeDeepLinks() {
         const slugifyLocal = (str) => {
@@ -1285,6 +1464,7 @@ return file;
 // --- MAIN INIT ---
     function init() {
         initializeNavigation();
+        initializeFeaturedArticle();
         initializeDeepLinks();
         initializeThemeSwitcher();
         initializeBrandingAndLinks();
