@@ -1222,7 +1222,65 @@ return file;
         applyThemeAssets();
     }
 
-    // --- RANDOM FEATURED ARTICLE (shared across every page) ---
+    // --- READING TIME (shared across every page and Assistance guide) ---
+    function initializeReadingTime() {
+        if (document.querySelector('.page-reading-time')) return;
+
+        const contentRoot = document.querySelector('main, .page-content, [role="main"]') || document.body;
+        const heading = contentRoot?.querySelector('.page-header h1, h1');
+        if (!contentRoot || !heading) return;
+
+        const readable = contentRoot.cloneNode(true);
+        readable.querySelectorAll([
+            'script',
+            'style',
+            'noscript',
+            'nav',
+            'footer',
+            'button',
+            'pre',
+            'code',
+            '[hidden]',
+            '[aria-hidden="true"]',
+            '.hidden-by-default',
+            '.page-reading-time',
+            '.featured-articles-section',
+            '.modal-overlay',
+            '.copy-btn',
+            '.assistance-report-box',
+            '.assistance-related-guides',
+            '.assistance-support-actions'
+        ].join(',')).forEach((element) => element.remove());
+
+        const text = (readable.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!text) return;
+
+        let words = [];
+        try {
+            words = text.match(/[\p{L}\p{N}][\p{L}\p{M}\p{N}'’\-]*/gu) || [];
+        } catch (_) {
+            words = text.split(/\s+/).filter(Boolean);
+        }
+
+        const wordsPerMinute = pageLanguage === 'gr' ? 180 : 200;
+        const minutes = Math.max(1, Math.ceil(words.length / wordsPerMinute));
+        const englishText = `⏱ ${minutes} min read`;
+        const greekText = `⏱ ${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'} ανάγνωσης`;
+
+        const readingTime = document.createElement('p');
+        readingTime.className = 'page-reading-time';
+        readingTime.dataset.en = englishText;
+        readingTime.dataset.gr = greekText;
+        readingTime.dataset.words = String(words.length);
+        readingTime.setAttribute('role', 'note');
+        readingTime.setAttribute('aria-label', pageLanguage === 'gr'
+            ? `Εκτιμώμενος χρόνος ανάγνωσης: ${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'}`
+            : `Estimated reading time: ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`);
+        readingTime.textContent = pageLanguage === 'gr' ? greekText : englishText;
+        heading.insertAdjacentElement('afterend', readingTime);
+    }
+
+    // --- FEATURED ARTICLES CAROUSEL (shared across every page) ---
     function initializeFeaturedArticle() {
         const articles = [
             {
@@ -1312,8 +1370,12 @@ return file;
             }
         ];
 
-        const selected = articles[Math.floor(Math.random() * articles.length)];
-        if (!selected) return;
+        if (!articles.length) return;
+
+        for (let index = articles.length - 1; index > 0; index -= 1) {
+            const randomIndex = Math.floor(Math.random() * (index + 1));
+            [articles[index], articles[randomIndex]] = [articles[randomIndex], articles[index]];
+        }
 
         let section = document.getElementById('featured-articles');
         if (!section) {
@@ -1328,71 +1390,173 @@ return file;
 
         const heading = document.createElement('h2');
         heading.id = titleId;
-        heading.dataset.en = 'Featured Article';
-        heading.dataset.gr = 'Προτεινόμενο Άρθρο';
+        heading.dataset.en = 'Featured Articles';
+        heading.dataset.gr = 'Προτεινόμενα Άρθρα';
         heading.textContent = currentLanguage === 'gr' ? heading.dataset.gr : heading.dataset.en;
 
-        const grid = document.createElement('div');
-        grid.className = 'featured-articles-grid';
+        const intro = document.createElement('p');
+        intro.className = 'featured-articles-intro';
 
-        const card = document.createElement('a');
-        card.className = 'featured-article-card';
-        card.href = selected.href;
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer external';
-        card.dataset.enAriaLabel = `Read “${selected.title.en}” on ${selected.source}`;
-        card.dataset.grAriaLabel = `Διάβασε το «${selected.title.gr}» στο ${selected.source}`;
-        card.setAttribute('aria-label', currentLanguage === 'gr' ? card.dataset.grAriaLabel : card.dataset.enAriaLabel);
+        const introCount = document.createElement('span');
+        introCount.dataset.en = `DedSec Project is featured in ${articles.length} articles.`;
+        introCount.dataset.gr = `Το DedSec Project παρουσιάζεται σε ${articles.length} άρθρα.`;
+        introCount.textContent = currentLanguage === 'gr' ? introCount.dataset.gr : introCount.dataset.en;
 
-        if (selected.image) {
-            const image = document.createElement('img');
-            image.className = 'featured-article-image';
-            image.src = assetUrl(selected.image);
-            image.width = 800;
-            image.height = 450;
-            image.loading = 'lazy';
-            image.decoding = 'async';
-            image.dataset.enAlt = selected.alt.en;
-            image.dataset.grAlt = selected.alt.gr;
-            image.alt = currentLanguage === 'gr' ? selected.alt.gr : selected.alt.en;
-            card.appendChild(image);
-        } else {
-            const placeholder = document.createElement('div');
-            placeholder.className = 'featured-article-placeholder';
-            placeholder.setAttribute('aria-hidden', 'true');
-            const icon = document.createElement('i');
-            icon.className = 'fas fa-newspaper';
-            placeholder.appendChild(icon);
-            card.appendChild(placeholder);
-        }
+        const introPrompt = document.createElement('span');
+        introPrompt.dataset.en = 'Check them below.';
+        introPrompt.dataset.gr = 'Δείτε τα παρακάτω.';
+        introPrompt.textContent = currentLanguage === 'gr' ? introPrompt.dataset.gr : introPrompt.dataset.en;
 
-        const body = document.createElement('div');
-        body.className = 'featured-article-body';
+        intro.append(introCount, document.createElement('br'), introPrompt);
 
-        const source = document.createElement('span');
-        source.className = 'featured-article-source';
-        source.textContent = selected.source;
+        const carousel = document.createElement('div');
+        carousel.className = 'featured-articles-carousel';
 
-        const articleTitle = document.createElement('h3');
-        articleTitle.dataset.en = selected.title.en;
-        articleTitle.dataset.gr = selected.title.gr;
-        articleTitle.textContent = currentLanguage === 'gr' ? selected.title.gr : selected.title.en;
+        const viewport = document.createElement('div');
+        viewport.className = 'featured-article-viewport';
+        viewport.id = 'featured-article-viewport';
 
-        const description = document.createElement('p');
-        description.dataset.en = selected.description.en;
-        description.dataset.gr = selected.description.gr;
-        description.textContent = currentLanguage === 'gr' ? selected.description.gr : selected.description.en;
+        const createArrow = (direction) => {
+            const isPrevious = direction === 'previous';
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `featured-article-nav featured-article-${isPrevious ? 'previous' : 'next'}`;
+            button.setAttribute('aria-controls', viewport.id);
+            button.dataset.enAriaLabel = isPrevious ? 'Show previous featured article' : 'Show next featured article';
+            button.dataset.grAriaLabel = isPrevious ? 'Εμφάνιση προηγούμενου προτεινόμενου άρθρου' : 'Εμφάνιση επόμενου προτεινόμενου άρθρου';
+            button.dataset.enTitle = isPrevious ? 'Previous article' : 'Next article';
+            button.dataset.grTitle = isPrevious ? 'Προηγούμενο άρθρο' : 'Επόμενο άρθρο';
+            button.setAttribute('aria-label', currentLanguage === 'gr' ? button.dataset.grAriaLabel : button.dataset.enAriaLabel);
+            button.title = currentLanguage === 'gr' ? button.dataset.grTitle : button.dataset.enTitle;
+            button.textContent = isPrevious ? '←' : '→';
+            return button;
+        };
 
-        const cta = document.createElement('span');
-        cta.className = 'featured-article-cta';
-        cta.dataset.en = 'Read Article';
-        cta.dataset.gr = 'Διάβασε Το Άρθρο';
-        cta.textContent = currentLanguage === 'gr' ? cta.dataset.gr : cta.dataset.en;
+        const previousButton = createArrow('previous');
+        const nextButton = createArrow('next');
 
-        body.append(source, articleTitle, description, cta);
-        card.appendChild(body);
-        grid.appendChild(card);
-        section.append(heading, grid);
+        const counter = document.createElement('p');
+        counter.className = 'featured-article-counter';
+        counter.setAttribute('aria-live', 'polite');
+        counter.setAttribute('aria-atomic', 'true');
+
+        carousel.append(previousButton, viewport, nextButton);
+        section.append(heading, intro, carousel, counter);
+
+        let currentIndex = 0;
+        let rotationTimer = null;
+
+        const renderArticle = () => {
+            const selected = articles[currentIndex];
+            if (!selected) return;
+
+            const card = document.createElement('a');
+            card.className = 'featured-article-card';
+            card.href = selected.href;
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer external';
+            card.dataset.enAriaLabel = `Read “${selected.title.en}” on ${selected.source}`;
+            card.dataset.grAriaLabel = `Διάβασε το «${selected.title.gr}» στο ${selected.source}`;
+            card.setAttribute('aria-label', currentLanguage === 'gr' ? card.dataset.grAriaLabel : card.dataset.enAriaLabel);
+
+            if (selected.image) {
+                const image = document.createElement('img');
+                image.className = 'featured-article-image';
+                image.src = assetUrl(selected.image);
+                image.width = 800;
+                image.height = 450;
+                image.loading = 'lazy';
+                image.decoding = 'async';
+                image.dataset.enAlt = selected.alt.en;
+                image.dataset.grAlt = selected.alt.gr;
+                image.alt = currentLanguage === 'gr' ? selected.alt.gr : selected.alt.en;
+                card.appendChild(image);
+            } else {
+                const placeholder = document.createElement('div');
+                placeholder.className = 'featured-article-placeholder';
+                placeholder.setAttribute('aria-hidden', 'true');
+                const icon = document.createElement('i');
+                icon.className = 'fas fa-newspaper';
+                placeholder.appendChild(icon);
+                card.appendChild(placeholder);
+            }
+
+            const body = document.createElement('div');
+            body.className = 'featured-article-body';
+
+            const source = document.createElement('span');
+            source.className = 'featured-article-source';
+            source.textContent = selected.source;
+
+            const articleTitle = document.createElement('h3');
+            articleTitle.dataset.en = selected.title.en;
+            articleTitle.dataset.gr = selected.title.gr;
+            articleTitle.textContent = currentLanguage === 'gr' ? selected.title.gr : selected.title.en;
+
+            const description = document.createElement('p');
+            description.dataset.en = selected.description.en;
+            description.dataset.gr = selected.description.gr;
+            description.textContent = currentLanguage === 'gr' ? selected.description.gr : selected.description.en;
+
+            const cta = document.createElement('span');
+            cta.className = 'featured-article-cta';
+            cta.dataset.en = 'Read Article';
+            cta.dataset.gr = 'Διάβασε Το Άρθρο';
+            cta.textContent = currentLanguage === 'gr' ? cta.dataset.gr : cta.dataset.en;
+
+            body.append(source, articleTitle, description, cta);
+            card.appendChild(body);
+            viewport.replaceChildren(card);
+            viewport.classList.remove('is-entering');
+            void viewport.offsetWidth;
+            viewport.classList.add('is-entering');
+
+            const countText = `${currentIndex + 1} / ${articles.length}`;
+            counter.dataset.en = countText;
+            counter.dataset.gr = countText;
+            counter.textContent = countText;
+        };
+
+        const showArticle = (nextIndex) => {
+            currentIndex = (nextIndex + articles.length) % articles.length;
+            renderArticle();
+        };
+
+        const stopRotation = () => {
+            if (rotationTimer !== null) {
+                window.clearInterval(rotationTimer);
+                rotationTimer = null;
+            }
+        };
+
+        const startRotation = () => {
+            stopRotation();
+            if (document.hidden) return;
+            rotationTimer = window.setInterval(() => showArticle(currentIndex + 1), 5000);
+        };
+
+        const moveManually = (offset) => {
+            showArticle(currentIndex + offset);
+            startRotation();
+        };
+
+        previousButton.addEventListener('click', () => moveManually(-1));
+        nextButton.addEventListener('click', () => moveManually(1));
+        carousel.addEventListener('mouseenter', stopRotation);
+        carousel.addEventListener('mouseleave', startRotation);
+        carousel.addEventListener('focusin', stopRotation);
+        carousel.addEventListener('focusout', () => {
+            window.setTimeout(() => {
+                if (!carousel.contains(document.activeElement)) startRotation();
+            }, 0);
+        });
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) stopRotation();
+            else startRotation();
+        });
+
+        renderArticle();
+        startRotation();
 
         const footer = document.querySelector('.main-footer');
         if (footer?.parentNode) {
@@ -1400,6 +1564,33 @@ return file;
         } else {
             (document.querySelector('main') || document.body)?.appendChild(section);
         }
+    }
+
+    function initializePreferredSourceButton() {
+        const footer = document.querySelector('.main-footer');
+        if (!footer || document.getElementById('google-preferred-source-btn')) return;
+
+        const row = document.createElement('div');
+        row.className = 'footer-link-buttons footer-preferred-source-row';
+
+        const link = document.createElement('a');
+        link.id = 'google-preferred-source-btn';
+        link.className = 'footer-mini-btn footer-preferred-source-btn';
+        link.href = 'https://www.google.com/preferences/source?q=ded-sec.space';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer external';
+        link.dataset.en = 'Set DedSec Project As A Preferred Google Source';
+        link.dataset.gr = 'Όρισε Το DedSec Project Ως Προτιμώμενη Πηγή Στο Google';
+        link.dataset.enAriaLabel = 'Set DedSec Project website as a preferred source in Google';
+        link.dataset.grAriaLabel = 'Όρισε την ιστοσελίδα του DedSec Project ως προτιμώμενη πηγή στο Google';
+        link.textContent = currentLanguage === 'gr' ? link.dataset.gr : link.dataset.en;
+        link.setAttribute('aria-label', currentLanguage === 'gr' ? link.dataset.grAriaLabel : link.dataset.enAriaLabel);
+
+        row.appendChild(link);
+
+        const firstLinkRow = footer.querySelector('.footer-link-buttons');
+        if (firstLinkRow) firstLinkRow.insertAdjacentElement('afterend', row);
+        else footer.prepend(row);
     }
 
     // --- DEEP-LINK ANCHORS (Deterministic IDs) ---
@@ -1475,7 +1666,9 @@ return file;
 // --- MAIN INIT ---
     function init() {
         initializeNavigation();
+        initializeReadingTime();
         initializeFeaturedArticle();
+        initializePreferredSourceButton();
         initializeDeepLinks();
         initializeThemeSwitcher();
         initializeBrandingAndLinks();
