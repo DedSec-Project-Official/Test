@@ -1222,63 +1222,6 @@ return file;
         applyThemeAssets();
     }
 
-    // --- READING TIME (shared across every page and Assistance guide) ---
-    function initializeReadingTime() {
-        if (document.querySelector('.page-reading-time')) return;
-
-        const contentRoot = document.querySelector('main, .page-content, [role="main"]') || document.body;
-        const heading = contentRoot?.querySelector('.page-header h1, h1');
-        if (!contentRoot || !heading) return;
-
-        const readable = contentRoot.cloneNode(true);
-        readable.querySelectorAll([
-            'script',
-            'style',
-            'noscript',
-            'nav',
-            'footer',
-            'button',
-            'pre',
-            'code',
-            '[hidden]',
-            '[aria-hidden="true"]',
-            '.hidden-by-default',
-            '.page-reading-time',
-            '.featured-articles-section',
-            '.modal-overlay',
-            '.copy-btn',
-            '.assistance-report-box',
-            '.assistance-related-guides',
-            '.assistance-support-actions'
-        ].join(',')).forEach((element) => element.remove());
-
-        const text = (readable.textContent || '').replace(/\s+/g, ' ').trim();
-        if (!text) return;
-
-        let words = [];
-        try {
-            words = text.match(/[\p{L}\p{N}][\p{L}\p{M}\p{N}'’\-]*/gu) || [];
-        } catch (_) {
-            words = text.split(/\s+/).filter(Boolean);
-        }
-
-        const wordsPerMinute = pageLanguage === 'gr' ? 180 : 200;
-        const minutes = Math.max(1, Math.ceil(words.length / wordsPerMinute));
-        const englishText = `⏱ ${minutes} min read`;
-        const greekText = `⏱ ${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'} ανάγνωσης`;
-
-        const readingTime = document.createElement('p');
-        readingTime.className = 'page-reading-time';
-        readingTime.dataset.en = englishText;
-        readingTime.dataset.gr = greekText;
-        readingTime.dataset.words = String(words.length);
-        readingTime.setAttribute('role', 'note');
-        readingTime.setAttribute('aria-label', pageLanguage === 'gr'
-            ? `Εκτιμώμενος χρόνος ανάγνωσης: ${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'}`
-            : `Estimated reading time: ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`);
-        readingTime.textContent = pageLanguage === 'gr' ? greekText : englishText;
-        heading.insertAdjacentElement('afterend', readingTime);
-    }
 
     // --- FEATURED ARTICLES CAROUSEL (shared across every page) ---
     function initializeFeaturedArticle() {
@@ -1666,7 +1609,6 @@ return file;
 // --- MAIN INIT ---
     function init() {
         initializeNavigation();
-        initializeReadingTime();
         initializeFeaturedArticle();
         initializePreferredSourceButton();
         initializeDeepLinks();

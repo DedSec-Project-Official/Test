@@ -9318,33 +9318,7 @@ html body.light-theme .featured-articles-section {
   }
 }
 
-/* === v61: Reading Time, Featured Articles Carousel, And Centered Actions === */
-.page-reading-time {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  min-height: 34px !important;
-  margin: 8px auto 22px !important;
-  padding: 7px 12px !important;
-  border: 1px solid rgba(205, 147, 255, 0.42) !important;
-  background: rgba(205, 147, 255, 0.09) !important;
-  color: var(--nm-text-muted) !important;
-  font-family: var(--font-mono) !important;
-  font-size: 0.82rem !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
-  text-align: center !important;
-  box-sizing: border-box !important;
-}
-
-.page-header > .page-reading-time,
-.hero-content > .page-reading-time,
-.page-content > .page-reading-time {
-  display: flex !important;
-}
-
+/* === v64: Featured Articles Carousel And Centered Actions === */
 .featured-articles-carousel {
   display: grid !important;
   grid-template-columns: 52px minmax(0, 780px) 52px !important;
