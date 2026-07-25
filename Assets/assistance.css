@@ -361,13 +361,39 @@ html body .assistance-page .assistance-back-link {
   html body .assistance-page .assistance-search-wrap { grid-template-columns: 1fr; }
   html body .assistance-page .assistance-clear-btn { width: 100%; }
   html body .assistance-page .assistance-grid,
-  html body .assistance-page .assistance-related-grid,
+  html body .assistance-page .assistance-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   html body .assistance-page .assistance-toc ol { grid-template-columns: 1fr; }
-  html body .assistance-page .assistance-card { padding: 0.9rem; }
+  html body .assistance-page .assistance-card {
+    gap: 0.5rem;
+    padding: 0.72rem;
+  }
+  html body .assistance-page .assistance-card h3 {
+    font-size: clamp(0.78rem, 3.25vw, 1rem);
+    line-height: 1.22;
+  }
+  html body .assistance-page .assistance-card p {
+    font-size: clamp(0.7rem, 2.75vw, 0.84rem);
+    line-height: 1.42;
+  }
+  html body .assistance-page :is(.assistance-card-category, .assistance-card-signature) {
+    padding: 0.28rem 0.4rem;
+    font-size: clamp(0.58rem, 2.35vw, 0.7rem);
+  }
   html body .assistance-page .assistance-code pre { padding-inline: 0.82rem; font-size: 0.82rem; }
   html body .assistance-page .assistance-support-actions { flex-direction: column; }
   html body .assistance-page .assistance-support-actions .starter-path-btn { width: 100%; }
 }
+
+@media (max-width: 390px) {
+  html body .assistance-page .assistance-grid,
+  html body .assistance-page .assistance-related-grid {
+    gap: 0.5rem;
+  }
+  html body .assistance-page .assistance-category-section {
+    padding-inline: 0.58rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html body .assistance-page *, .assist-skip-link { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
