@@ -1,0 +1,385 @@
+/* Dedicated Assistance styles. Loaded only by Assistance hubs and guides. */
+.assist-skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100000;
+  max-width: calc(100vw - 1.5rem);
+  padding: 0.7rem 1rem;
+  border: 2px solid currentColor;
+  border-radius: 0.6rem;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 800;
+  transform: translateY(-180%);
+  transition: transform 0.18s ease;
+}
+.assist-skip-link:focus { transform: translateY(0); }
+
+html body .assistance-page {
+  --assist-border: rgba(169, 109, 255, 0.38);
+  --assist-border-strong: rgba(169, 109, 255, 0.72);
+  --assist-panel: rgba(11, 8, 18, 0.76);
+  --assist-panel-soft: rgba(11, 8, 18, 0.48);
+  --assist-accent-soft: rgba(169, 109, 255, 0.13);
+  --assist-success: #60d394;
+  scroll-padding-top: 6rem;
+}
+html body.light-theme .assistance-page {
+  --assist-border: rgba(83, 41, 145, 0.27);
+  --assist-border-strong: rgba(83, 41, 145, 0.62);
+  --assist-panel: rgba(255, 255, 255, 0.92);
+  --assist-panel-soft: rgba(255, 255, 255, 0.7);
+  --assist-accent-soft: rgba(101, 48, 176, 0.09);
+}
+
+html body .assistance-page :is(a, button, input, pre):focus-visible {
+  outline: 3px solid var(--accent-color, #a96dff);
+  outline-offset: 3px;
+}
+html body .assistance-page .page-header,
+html body .assistance-page .content-section,
+html body .assistance-page .assistance-category-section,
+html body .assistance-page .assistance-guide-section,
+html body .assistance-page .assistance-support-panel,
+html body .assistance-page .assistance-toc {
+  border-color: var(--assist-border);
+}
+
+/* Hub finder */
+html body .assistance-page .assistance-intro {
+  display: grid;
+  gap: 0.9rem;
+}
+html body .assistance-page .assistance-finder {
+  margin-top: 0.5rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--assist-border-strong);
+  border-radius: 1.1rem;
+  background: var(--assist-panel);
+  box-shadow: 0 1rem 2.8rem rgba(0, 0, 0, 0.18);
+}
+html body .assistance-page .assistance-search-label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+html body .assistance-page .assistance-search-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+  align-items: stretch;
+}
+html body .assistance-page .assistance-search-input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--assist-border-strong);
+  border-radius: 0.8rem;
+  background: rgba(4, 3, 8, 0.78);
+  color: inherit;
+  font: 600 1rem/1.35 "Inter", sans-serif;
+  caret-color: currentColor;
+}
+html body.light-theme .assistance-page .assistance-search-input {
+  background: rgba(255, 255, 255, 0.96);
+}
+html body .assistance-page .assistance-search-input::placeholder { opacity: 0.67; }
+html body .assistance-page .assistance-clear-btn {
+  min-width: 6.4rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--assist-border-strong);
+  border-radius: 0.8rem;
+  background: var(--assist-accent-soft);
+  color: inherit;
+  font: 800 0.88rem/1 "Inter", sans-serif;
+  cursor: pointer;
+}
+html body .assistance-page .assistance-clear-btn[hidden] { display: none; }
+html body .assistance-page .assistance-search-hint,
+html body .assistance-page .assistance-results-status {
+  margin: 0.65rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.82;
+}
+html body .assistance-page .assistance-results-status { font-weight: 800; }
+html body .assistance-page .assistance-filter-row {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  padding: 0.15rem 0 0.35rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+html body .assistance-page .assistance-filter-btn {
+  flex: 0 0 auto;
+  min-height: 2.55rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--assist-border);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: 800 0.81rem/1.15 "Inter", sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+html body .assistance-page .assistance-filter-btn:is(:hover, :focus-visible),
+html body .assistance-page .assistance-filter-btn.is-active {
+  border-color: var(--assist-border-strong);
+  background: var(--assist-accent-soft);
+}
+
+/* Hub categories and cards */
+html body .assistance-page .assistance-guide-sections {
+  display: grid;
+  gap: 1.1rem;
+}
+html body .assistance-page .assistance-category-section {
+  margin: 0;
+  padding: clamp(1rem, 2.6vw, 1.5rem);
+  border: 1px solid var(--assist-border);
+  border-radius: 1.1rem;
+  background: var(--assist-panel-soft);
+}
+html body .assistance-page .assistance-category-section > h2 { margin-bottom: 0.4rem; }
+html body .assistance-page .assistance-category-description {
+  margin-top: 0;
+  opacity: 0.82;
+}
+html body .assistance-page .assistance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: stretch;
+}
+html body .assistance-page .assistance-card {
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 0.62rem;
+  padding: 1rem;
+  border: 1px solid var(--assist-border);
+  border-radius: 0.9rem;
+  background: var(--assist-panel);
+  color: inherit;
+  text-decoration: none;
+  transform: none;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+html body .assistance-page .assistance-card:is(:hover, :focus-visible) {
+  border-color: var(--assist-border-strong);
+  background: var(--assist-accent-soft);
+  transform: translateY(-2px);
+}
+html body .assistance-page .assistance-card h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+html body .assistance-page .assistance-card p {
+  margin: 0;
+  line-height: 1.58;
+  opacity: 0.9;
+}
+html body .assistance-page .assistance-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+html body .assistance-page :is(.assistance-card-category, .assistance-card-signature) {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.34rem 0.52rem;
+  border: 1px solid var(--assist-border);
+  border-radius: 999px;
+  background: var(--assist-accent-soft);
+  font: 700 0.72rem/1.2 "Inter", sans-serif;
+  overflow-wrap: anywhere;
+}
+html body .assistance-page .assistance-card-signature {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+}
+html body .assistance-page :is(.assistance-card.is-filtered-out, .assistance-card.is-collapsed-card, .assistance-category-section.is-filtered-out) {
+  display: none !important;
+}
+html body .assistance-page .assistance-expand-btn {
+  display: flex;
+  margin: 1rem auto 0;
+}
+html body .assistance-page .assistance-no-results {
+  text-align: center;
+}
+html body .assistance-page .assistance-no-results[hidden] { display: none; }
+
+/* Guide structure */
+html body .assistance-page .assistance-article-v3 {
+  display: grid;
+  gap: 0.95rem;
+}
+html body .assistance-page .assistance-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  font-size: 0.88rem;
+  opacity: 0.84;
+}
+html body .assistance-page .assistance-breadcrumb a,
+html body .assistance-page .assistance-back-link {
+  color: inherit;
+  font-weight: 800;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+}
+html body .assistance-page .assistance-toc,
+html body .assistance-page .assistance-guide-section,
+html body .assistance-page .assistance-support-panel {
+  padding: clamp(1rem, 2.3vw, 1.35rem);
+  border: 1px solid var(--assist-border);
+  border-radius: 0.95rem;
+  background: var(--assist-panel-soft);
+}
+html body .assistance-page :is(.assistance-toc, .assistance-guide-section, .assistance-support-panel) > :first-child { margin-top: 0; }
+html body .assistance-page :is(.assistance-toc, .assistance-guide-section, .assistance-support-panel) > :last-child { margin-bottom: 0; }
+html body .assistance-page .assistance-toc ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1.2rem;
+  margin-bottom: 0;
+  padding-left: 1.4rem;
+}
+html body .assistance-page .assistance-toc a { color: inherit; }
+html body .assistance-page .assistance-review-date {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.85rem;
+  font-size: 0.84rem;
+  opacity: 0.72;
+}
+html body .assistance-page .assistance-signature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+html body .assistance-page .assistance-signature-tag {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.48rem 0.7rem;
+  border: 1px solid var(--assist-border-strong);
+  border-radius: 0.58rem;
+  background: var(--assist-accent-soft);
+  font: 650 0.83rem/1.3 "Roboto Mono", monospace;
+  overflow-wrap: anywhere;
+}
+html body .assistance-page .assistance-warning-note {
+  padding: 0.82rem 0.95rem;
+  border-left: 0.22rem solid var(--accent-color, #a96dff);
+  border-radius: 0.3rem;
+  background: var(--assist-accent-soft);
+}
+html body .assistance-page .assistance-code {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--assist-border);
+  border-radius: 0.78rem;
+}
+html body .assistance-page .assistance-code .copy-btn {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  z-index: 2;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--assist-border-strong);
+  border-radius: 0.55rem;
+  background: rgba(10, 7, 16, 0.94);
+  color: inherit;
+  font: 800 0.78rem/1 "Inter", sans-serif;
+  cursor: pointer;
+}
+html body.light-theme .assistance-page .assistance-code .copy-btn { background: rgba(255, 255, 255, 0.96); }
+html body .assistance-page .assistance-code .copy-btn.copy-success { border-color: var(--assist-success); }
+html body .assistance-page .assistance-code pre {
+  margin: 0;
+  padding: 3.3rem 1rem 1rem;
+  overflow: auto;
+  white-space: pre;
+  tab-size: 4;
+}
+html body .assistance-page .assistance-code code,
+html body .assistance-page .assistance-command-explanations code {
+  overflow-wrap: anywhere;
+}
+html body .assistance-page :is(.assistance-check-list, .assistance-success-list, .assistance-command-explanations, .assistance-steps) {
+  display: grid;
+  gap: 0.62rem;
+  margin-bottom: 0;
+}
+html body .assistance-page :is(.assistance-check-list, .assistance-success-list, .assistance-command-explanations, .assistance-steps) li {
+  line-height: 1.62;
+}
+html body .assistance-page .assistance-support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+html body .assistance-page .assistance-report-btn { cursor: pointer; }
+html body .assistance-page .assistance-report-btn.copy-success { border-color: var(--assist-success) !important; }
+html body .assistance-page .assistance-related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+html body .assistance-page .assistance-back-link {
+  display: inline-flex;
+  margin-top: 1rem;
+}
+
+@media (max-width: 980px) {
+  html body .assistance-page .assistance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  html body .assistance-page { scroll-padding-top: 4.8rem; }
+  html body .assistance-page .assistance-finder,
+  html body .assistance-page .assistance-category-section,
+  html body .assistance-page .assistance-toc,
+  html body .assistance-page .assistance-guide-section,
+  html body .assistance-page .assistance-support-panel {
+    padding: 0.9rem;
+    border-radius: 0.78rem;
+  }
+  html body .assistance-page .assistance-search-wrap { grid-template-columns: 1fr; }
+  html body .assistance-page .assistance-clear-btn { width: 100%; }
+  html body .assistance-page .assistance-grid,
+  html body .assistance-page .assistance-related-grid,
+  html body .assistance-page .assistance-toc ol { grid-template-columns: 1fr; }
+  html body .assistance-page .assistance-card { padding: 0.9rem; }
+  html body .assistance-page .assistance-code pre { padding-inline: 0.82rem; font-size: 0.82rem; }
+  html body .assistance-page .assistance-support-actions { flex-direction: column; }
+  html body .assistance-page .assistance-support-actions .starter-path-btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body .assistance-page *, .assist-skip-link { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+@media print {
+  .assist-skip-link,
+  html body .assistance-page .main-nav,
+  html body .assistance-page .assistance-finder,
+  html body .assistance-page .assistance-intro-actions,
+  html body .assistance-page .assistance-support-actions,
+  html body .assistance-page .assistance-code .copy-btn,
+  html body .assistance-page .main-footer { display: none !important; }
+  html body .assistance-page .assistance-guide-section,
+  html body .assistance-page .assistance-support-panel,
+  html body .assistance-page .assistance-toc { break-inside: avoid; border: 1px solid #999; background: transparent; }
+}
