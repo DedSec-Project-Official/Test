@@ -462,3 +462,50 @@ html body .assistance-page .assistance-filter-row {
     padding: 0.68rem !important;
   }
 }
+
+/* Assistance hub v6: wrap category tags inside the viewport on every screen. */
+html body .assistance-page .assistance-intro,
+html body .assistance-page .assistance-finder,
+html body .assistance-page .assistance-filter-row {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+html body .assistance-page .assistance-filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.55rem;
+  overflow: visible;
+  overscroll-behavior-inline: auto;
+  scrollbar-width: auto;
+}
+
+html body .assistance-page .assistance-filter-btn {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  html body .assistance-page .assistance-filter-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  html body .assistance-page .assistance-filter-btn {
+    min-height: 3rem;
+    padding: 0.55rem 0.45rem;
+    font-size: clamp(0.66rem, 2.8vw, 0.8rem);
+    line-height: 1.25;
+  }
+
+  html body .assistance-page .assistance-intro > p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
