@@ -1295,6 +1295,23 @@ return file;
                 }
             },
             {
+                source: 'iGuRu.gr',
+                href: 'https://iguru.gr/dedsec-project-olokliromeno-forito-ergastirio-linux-kyvernoasfaleias-sto-android/',
+                image: 'Assets/Images/og/og-dark.jpg',
+                alt: {
+                    en: 'DedSec Project portable Linux and cybersecurity lab article preview from iGuRu.gr',
+                    gr: 'Προεπισκόπηση άρθρου για το φορητό εργαστήριο Linux και κυβερνοασφάλειας του DedSec Project από το iGuRu.gr'
+                },
+                title: {
+                    en: 'DedSec Project: A Complete Portable Linux And Cybersecurity Lab On Android',
+                    gr: 'DedSec Project: Ολοκληρωμένο Φορητό Εργαστήριο Linux Και Κυβερνοασφάλειας Στο Android'
+                },
+                description: {
+                    en: 'A detailed presentation of how DedSec Project, Termux, automation tools, and local web interfaces turn Android into a portable learning, development, and defensive security environment.',
+                    gr: 'Μια αναλυτική παρουσίαση του τρόπου με τον οποίο το DedSec Project, το Termux, τα εργαλεία αυτοματοποίησης και τα τοπικά web interfaces μετατρέπουν το Android σε φορητό περιβάλλον μάθησης, ανάπτυξης και αμυντικής ασφάλειας.'
+                }
+            },
+            {
                 source: 'AtoAllLinks',
                 href: 'https://www.atoallinks.com/2026/butsystem-py-inside-dedsec-projects-exclusive-self-hosted-social-platform',
                 image: null,
@@ -1337,21 +1354,6 @@ return file;
         heading.dataset.gr = 'Προτεινόμενα Άρθρα';
         heading.textContent = currentLanguage === 'gr' ? heading.dataset.gr : heading.dataset.en;
 
-        const intro = document.createElement('p');
-        intro.className = 'featured-articles-intro';
-
-        const introCount = document.createElement('span');
-        introCount.dataset.en = `DedSec Project is featured in ${articles.length} articles.`;
-        introCount.dataset.gr = `Το DedSec Project παρουσιάζεται σε ${articles.length} άρθρα.`;
-        introCount.textContent = currentLanguage === 'gr' ? introCount.dataset.gr : introCount.dataset.en;
-
-        const introPrompt = document.createElement('span');
-        introPrompt.dataset.en = 'Check them below.';
-        introPrompt.dataset.gr = 'Δείτε τα παρακάτω.';
-        introPrompt.textContent = currentLanguage === 'gr' ? introPrompt.dataset.gr : introPrompt.dataset.en;
-
-        intro.append(introCount, document.createElement('br'), introPrompt);
-
         const carousel = document.createElement('div');
         carousel.className = 'featured-articles-carousel';
 
@@ -1384,7 +1386,7 @@ return file;
         counter.setAttribute('aria-atomic', 'true');
 
         carousel.append(previousButton, viewport, nextButton);
-        section.append(heading, intro, carousel, counter);
+        section.append(heading, carousel, counter);
 
         let currentIndex = 0;
         let rotationTimer = null;
