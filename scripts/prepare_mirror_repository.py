@@ -32,7 +32,7 @@ def copy_tooling(source: Path, output: Path) -> None:
     source_workflows = source / ".github" / "workflows"
     output_workflows = output / ".github" / "workflows"
     output_workflows.mkdir(parents=True, exist_ok=True)
-    for name in ("static.yml", "DEPLOYMENT.md", "REPOSITORY-SYNC-SETUP.md"):
+    for name in ("static.yml", "DEPLOYMENT.md"):
         candidate = source_workflows / name
         if candidate.exists():
             shutil.copy2(candidate, output_workflows / name)
@@ -69,12 +69,6 @@ def main() -> int:
 
     copy_tooling(source, output)
 
-    # Mirror workflows must never propagate to their own targets.
-    workflows = output / ".github" / "workflows"
-    for name in ("sync-backup.yml", "sync-test.yml"):
-        candidate = workflows / name
-        if candidate.exists():
-            candidate.unlink()
 
     (output / "Other Files").mkdir(parents=True, exist_ok=True)
     (output / "Other Files" / "mirror-origin.json").write_text(

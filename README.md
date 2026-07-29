@@ -28,7 +28,3 @@
   </a>
 </div>
 
-
-## Repository mirrors
-
-See `.github/workflows/REPOSITORY-SYNC-SETUP.md` for the staggered four-day backup and test synchronization workflows.
