@@ -2,11 +2,29 @@
 
 The synchronization workflows run only from `dedsec1121fk/dedsec1121fk.github.io`.
 
-1. Create a fine-grained GitHub personal access token that can access both `sal-scar/ded-sec` and `dedsec1121fk/test`.
-2. Give the token **Contents: Read and write** permission on both target repositories.
-3. In the main repository, open **Settings → Secrets and variables → Actions**.
-4. Add a repository secret named `REPOSITORY_SYNC_TOKEN`.
-5. Run each workflow manually once to verify permissions.
+Two separate fine-grained personal access tokens are required because the target repositories have different owners.
+
+## Test repository token
+
+1. While signed in as `dedsec1121fk`, create a fine-grained personal access token.
+2. Set **Resource owner** to `dedsec1121fk`.
+3. Select only the `test` repository.
+4. Grant **Repository permissions → Contents: Read and write**.
+5. In `dedsec1121fk/dedsec1121fk.github.io`, open **Settings → Secrets and variables → Actions**.
+6. Add a repository secret named `TEST_REPOSITORY_SYNC_TOKEN` containing this token.
+
+## Backup repository token
+
+1. While signed in as the owner of `sal-scar/ded-sec`, create a separate fine-grained personal access token.
+2. Set **Resource owner** to `sal-scar`.
+3. Select only the `ded-sec` repository.
+4. Grant **Repository permissions → Contents: Read and write**.
+5. In `dedsec1121fk/dedsec1121fk.github.io`, open **Settings → Secrets and variables → Actions**.
+6. Add a repository secret named `BACKUP_REPOSITORY_SYNC_TOKEN` containing this token.
+
+Never place either token in a workflow file, commit, issue, message, or public screenshot.
+
+After both secrets exist, run each workflow manually once from the **Actions** tab.
 
 Schedules use Europe/Athens time and intentionally run at different hours:
 

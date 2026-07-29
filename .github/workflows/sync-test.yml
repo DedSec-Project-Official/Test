@@ -39,13 +39,13 @@ jobs:
           print(f"Date: {today}; synchronization due: {due}")
           PY
 
-      - name: Require cross-repository token
+      - name: Require test repository token
         if: steps.due.outputs.run == 'true'
         env:
-          SYNC_TOKEN: ${{ secrets.REPOSITORY_SYNC_TOKEN }}
+          SYNC_TOKEN: ${{ secrets.TEST_REPOSITORY_SYNC_TOKEN }}
         run: |
           if [ -z "$SYNC_TOKEN" ]; then
-            echo "Missing REPOSITORY_SYNC_TOKEN. See .github/workflows/REPOSITORY-SYNC-SETUP.md." >&2
+            echo "Missing TEST_REPOSITORY_SYNC_TOKEN. See .github/workflows/REPOSITORY-SYNC-SETUP.md." >&2
             exit 1
           fi
 
@@ -70,7 +70,7 @@ jobs:
       - name: Synchronize target repository
         if: steps.due.outputs.run == 'true'
         env:
-          SYNC_TOKEN: ${{ secrets.REPOSITORY_SYNC_TOKEN }}
+          SYNC_TOKEN: ${{ secrets.TEST_REPOSITORY_SYNC_TOKEN }}
         run: |
           git clone "https://x-access-token:${SYNC_TOKEN}@github.com/dedsec1121fk/test.git" _target
           rsync -a --delete --exclude='.git/' _mirror_source/ _target/
