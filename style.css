@@ -9695,3 +9695,191 @@ html body .main-footer {
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+/* === Smartphone Academy practical curriculum buttons — repaired v70 === */
+.curriculum-list {
+  display: grid;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.curriculum-module {
+  overflow: hidden;
+  border: 1px solid var(--nm-border);
+  background: linear-gradient(145deg, var(--nm-dark), var(--nm-container));
+  box-shadow: var(--shadow-elev-1);
+}
+
+.curriculum-module > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--nm-border);
+  background: rgba(var(--glow-rgb), 0.10);
+}
+
+.curriculum-module > header > div {
+  min-width: 0;
+}
+
+.curriculum-module h2 {
+  margin: 0 0 7px;
+  color: var(--nm-text-accent);
+}
+
+.curriculum-module p {
+  margin: 0;
+  color: var(--nm-text-muted);
+}
+
+.curriculum-module > header > strong {
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--nm-border);
+  background: var(--nm-accent);
+  color: var(--nm-text-on-accent);
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.curriculum-module ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+}
+
+.curriculum-module li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.curriculum-module li::marker {
+  content: "";
+}
+
+.curriculum-module li > a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  min-height: 58px;
+  padding: 13px 16px;
+  border: 1px solid var(--nm-border);
+  background: linear-gradient(145deg, rgba(var(--glow-rgb), 0.10), var(--nm-dark));
+  color: var(--nm-text) !important;
+  text-decoration: none;
+  font-weight: 750;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  box-shadow: inset 3px 0 0 rgba(var(--glow-rgb), 0.72);
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.curriculum-module li > a::before {
+  content: "›";
+  flex: 0 0 auto;
+  color: var(--nm-accent);
+  font-family: var(--font-secondary);
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.curriculum-module li > a:hover,
+.curriculum-module li > a:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--nm-accent);
+  background: linear-gradient(145deg, rgba(var(--glow-rgb), 0.22), var(--nm-container));
+  box-shadow: inset 5px 0 0 var(--nm-accent), 0 8px 22px rgba(var(--glow-rgb), 0.13);
+  outline: none;
+}
+
+.curriculum-module li > a:active {
+  transform: translateY(0);
+}
+
+.curriculum-module li > span {
+  display: grid;
+  place-items: center;
+  min-width: 60px;
+  min-height: 58px;
+  padding: 10px 9px;
+  border: 1px solid var(--nm-border);
+  background: rgba(var(--glow-rgb), 0.16);
+  color: var(--nm-accent);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .curriculum-list {
+    gap: 16px;
+  }
+
+  .curriculum-module > header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .curriculum-module > header > strong {
+    min-width: 56px;
+    min-height: 40px;
+    padding: 7px 8px;
+    font-size: 0.80rem;
+  }
+
+  .curriculum-module ol {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .curriculum-module li {
+    grid-template-columns: minmax(0, 1fr) 54px;
+    gap: 8px;
+  }
+
+  .curriculum-module li > a {
+    min-height: 62px;
+    padding: 12px;
+    font-size: 0.94rem;
+  }
+
+  .curriculum-module li > a::before {
+    font-size: 1.25rem;
+  }
+
+  .curriculum-module li > span {
+    min-width: 54px;
+    min-height: 62px;
+    padding: 8px 5px;
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curriculum-module li > a {
+    transition: none;
+  }
+}
+
