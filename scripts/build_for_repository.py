@@ -402,7 +402,8 @@ def main() -> int:
     (output / "robots.txt").write_text("\n".join(robots_lines) + "\n", encoding="utf-8")
     generate_sitemap(output, config)
     info = {"repository": repository, **config, "built_on": date.today().isoformat()}
-    (output / "deployment-info.json").write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
+    (output / "Other Files").mkdir(parents=True, exist_ok=True)
+    (output / "Other Files" / "deployment-info.json").write_text(json.dumps(info, indent=2) + "\n", encoding="utf-8")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     print(json.dumps(info, indent=2))
     return 0

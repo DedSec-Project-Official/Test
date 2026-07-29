@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="favicon-512.png" alt="DedSec Project" width="180">
+  <img src="Favicons/favicon-512.png" alt="DedSec Project" width="180">
   <br><br>
 
   <a href="https://ded-sec.space/">

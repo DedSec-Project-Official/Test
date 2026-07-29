@@ -76,7 +76,8 @@ def main() -> int:
         if candidate.exists():
             candidate.unlink()
 
-    (output / "mirror-origin.json").write_text(
+    (output / "Other Files").mkdir(parents=True, exist_ok=True)
+    (output / "Other Files" / "mirror-origin.json").write_text(
         json.dumps(
             {
                 "source": "dedsec1121fk/dedsec1121fk.github.io",
