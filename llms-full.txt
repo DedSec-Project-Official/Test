@@ -93,7 +93,6 @@
 - https://ded-sec.space/Pages/contact-credits.html — Contact & Credits - DedSec Project — Contact the DedSec Project team, find official links, and see the creators, contributors, artists, legal help, and past supporters.
 - https://ded-sec.space/Pages/faq.html — DedSec Project FAQ — Project Questions, Tools, Store & Support — Get clear answers about DedSec Project tools, safety, installation, sponsor tiers, store options, support, downloads, and the fastest way to start.
 - https://ded-sec.space/Pages/guide-for-installation.html — Guide For Installation - DedSec Project — Install DedSec Project on Android with a clear Termux setup guide, storage steps, GitHub clone help, and safe first-run instructions.
-- https://ded-sec.space/Pages/keep-android-open.html — Keep Android Open - DedSec Project — Learn why open Android matters, how platform lockdowns affect users, and why DedSec Project supports freedom on mobile devices.
 - https://ded-sec.space/Pages/learn-about-the-tools.html — Learn About The Tools - DedSec Project — Explore DedSec Project tools for Termux, OSINT awareness, safe testing, automation, privacy, and Android no-root workflows.
 - https://ded-sec.space/Pages/our-vision.html — Our Vision - DedSec Project — Read the DedSec Project vision for digital freedom, privacy, open Android, ethical learning, and tools that empower normal users.
 - https://ded-sec.space/Pages/privacy-policy.html — Privacy Policy - DedSec Project — Read the DedSec Project privacy policy, including what the website uses, what it avoids collecting, and how user privacy is handled.
@@ -180,7 +179,6 @@
 - https://ded-sec.space/el/Pages/contact-credits.html — Επικοινωνία & Συντελεστές — DedSec Project — Επικοινωνήστε με την ομάδα μας και γνωρίστε τα ταλαντούχα άτομα πίσω από το DedSec Project.
 - https://ded-sec.space/el/Pages/faq.html — Συχνές Ερωτήσεις — DedSec Project — Απαντήσεις μόνο για το DedSec Project. Τα τεχνικά Termux errors, ιδέες, tips και script guides μεταφέρθηκαν στη Βοήθεια ώστε κάθε λύση να έχει δική της σελίδα, ενώ το Store καλύπτει support και sponsor tiers.
 - https://ded-sec.space/el/Pages/guide-for-installation.html — Οδηγός Εγκατάστασης — DedSec Project — Βήμα-βήμα οδηγίες για την εγκατάσταση και ρύθμιση του DedSec Project στη συσκευή σας Android.
-- https://ded-sec.space/el/Pages/keep-android-open.html — Κρατήστε το Android Ανοιχτό — DedSec Project — Μια προειδοποίηση για το σχεδιαζόμενο κλείδωμα του Android από τη Google και γιατί έχει σημασία να παραμείνει το Android ανοιχτό.
 - https://ded-sec.space/el/Pages/learn-about-the-tools.html — Μάθετε για τα Εργαλεία — DedSec Project — Αυτή η σελίδα είναι ο χάρτης του project: τι κάνει κάθε εργαλείο, γιατί υπάρχει και ποιο πραγματικό πρόβλημα με έσπρωξε να το φτιάξω. Ξεκίνα από τη λίστα, άνοιξε ό,τι σου τραβάει το μάτι και άσε τα εργαλεία να εξηγήσουν μόνα τους το project.
 - https://ded-sec.space/el/Pages/our-vision.html — Το Όραμά μας — DedSec Project — Το DedSec Project υπάρχει για να αντισταθεί — όχι με άδεια συνθήματα, αλλά με πραγματική κοινότητα: να συναντιόμαστε πρόσωπο με πρόσωπο, να χτίζουμε τοπικά δίκτυα, να μοιραζόμαστε δεξιότητες, να προστατεύουμε ο ένας τον άλλον και να μετατρέπουμε την απομόνωση σε αλληλεγγύη. Δεν θέλουμε «ακόλουθους»·
 - https://ded-sec.space/el/Pages/privacy-policy.html — Πολιτική Απορρήτου — DedSec Project — This Privacy Policy explains, at a high level, how DedSec Project ("we," "our," or "us") handles data in connection with the website and related services. It should be read together with the updated Legal Disclaimer & Statement on this page.
@@ -193,3 +191,10 @@ The project is intended for lawful learning, troubleshooting, automation, and de
 
 ## Greek localized edition
 The complete Greek edition is available under `https://ded-sec.space/el/`. Greek pages use localized titles, descriptions, visible content, structured data, canonical URLs, and reciprocal hreflang annotations. Technical commands, filenames, product names, standards, and code identifiers remain unchanged for accuracy.
+
+
+## Smartphone Academy
+- English: https://ded-sec.space/Pages/Smartphone-Academy.html
+- Greek: https://ded-sec.space/el/Pages/Smartphone-Academy.html
+- Academy: https://ded-sec.space/Smartphone-Academy/Home.html
+- 43 practical labs, 126 estimated hands-on hours, Android with Termux only.

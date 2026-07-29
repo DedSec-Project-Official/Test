@@ -1,0 +1,5 @@
+case,symptom,data,system_app,backup
+A,large cache,cloud-synced notes,false,yes
+B,broken login,local drafts,false,no
+C,unused vendor app,none,true,n/a
+D,rarely used game,local save,false,yes

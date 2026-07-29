@@ -1,0 +1,4 @@
+channel,package,version,signer,hash,updates,changelog
+official,com.example.reader,5.1,CERT-R,AAA111,automatic,complete
+mirror,com.example.reader,5.1,CERT-R,AAA111,manual,copied
+repack,com.example.reader,5.1,CERT-X,BBB222,unknown,none

@@ -1,0 +1,4 @@
+package=com.example.notes.clone
+version=4.2.1
+signer=UNKNOWN-CERT
+source=mirror.invalid

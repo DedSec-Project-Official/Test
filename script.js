@@ -6,7 +6,9 @@
    ============================================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     // --- GLOBAL STATE ---
-    const pageLanguage = (/\/el(?:\/|$)/.test(window.location.pathname)) ? 'gr' : 'en';
+    const academyGreekPath = /\/el\/Smartphone-Academy(?:\/|$)/i.test(window.location.pathname);
+    const academyHomePath = /(?:\/Smartphone-Academy|\/el\/Smartphone-Academy)\/(?:home|index)\.html$/i.test(window.location.pathname);
+    const pageLanguage = (/\/el(?:\/|$)/.test(window.location.pathname) || academyGreekPath) ? 'gr' : 'en';
     let currentLanguage = pageLanguage;
 
     // --- NAV WORD STACK + MENU OFFSET (keeps navbar compact so logo stays visible) ---
@@ -73,6 +75,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const assetUrl = (path) => {
         const clean = (path || '').replace(/^\/+/, '');
         return new URL(clean, SITE_BASE).href;
+    };
+
+    // Path of the repository/site root, e.g. "" on ded-sec.space or "/test" on a test copy.
+    // This keeps language switching inside the same GitHub Pages project instead of
+    // accidentally sending /Pages/... to /el/Pages/... (404).
+    const SITE_BASE_PATH = (() => {
+        try {
+            const pathname = new URL(SITE_BASE).pathname.replace(/\/+$/, '');
+            return pathname === '/' ? '' : pathname;
+        } catch (_) {
+            return '';
+        }
+    })();
+
+    const stripSiteBase = (pathname) => {
+        let relative = pathname || '/';
+        if (SITE_BASE_PATH && (relative === SITE_BASE_PATH || relative.startsWith(`${SITE_BASE_PATH}/`))) {
+            relative = relative.slice(SITE_BASE_PATH.length) || '/';
+        }
+        return relative.startsWith('/') ? relative : `/${relative}`;
+    };
+
+    const addSiteBase = (relativePath) => {
+        const clean = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
+        return `${SITE_BASE_PATH}${clean}` || '/';
+    };
+
+    const getLanguagePath = (pathname, targetLanguage) => {
+        let relative = stripSiteBase(pathname);
+
+        if (targetLanguage === 'gr') {
+            if (/^\/el(?:\/|$)/i.test(relative)) return addSiteBase(relative);
+            if (/^\/Smartphone-Academy\/pages\//i.test(relative)) {
+                relative = relative.replace(/^\/Smartphone-Academy\/pages\//i, '/el/Smartphone-Academy/Pages/');
+            } else if (/^\/Smartphone-Academy\//i.test(relative)) {
+                relative = relative.replace(/^\/Smartphone-Academy\//i, '/el/Smartphone-Academy/');
+            } else if (relative === '/') {
+                relative = '/el/';
+            } else {
+                relative = `/el${relative}`;
+            }
+        } else {
+            if (/^\/el\/Smartphone-Academy\/pages\//i.test(relative)) {
+                relative = relative.replace(/^\/el\/Smartphone-Academy\/pages\//i, '/Smartphone-Academy/Pages/');
+            } else if (/^\/el\/Smartphone-Academy\//i.test(relative)) {
+                relative = relative.replace(/^\/el\/Smartphone-Academy\//i, '/Smartphone-Academy/');
+            } else if (/^\/el(?:\/|$)/i.test(relative)) {
+                relative = relative.replace(/^\/el(?=\/|$)/i, '') || '/';
+            }
+        }
+
+        return addSiteBase(relative);
     };
 
     const LOGO_DARK = assetUrl('Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg');
@@ -427,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         
-        const SEARCH_VERSION = '2026-06-01-v31-site-quality-search';
+        const SEARCH_VERSION = '2026-07-28-v33-smartphone-academy';
         const SEARCH_STORAGE_KEY = `dedsec_search_index_${SEARCH_VERSION}`;
         const SEARCH_PAGES_STORAGE_KEY = `dedsec_search_pages_${SEARCH_VERSION}`;
 
@@ -442,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Pages/our-vision.html",
             "Pages/contact-credits.html",
             "Pages/butsystem-exclusive.html",
-            "Pages/keep-android-open.html",
+            "Pages/Smartphone-Academy.html",
             "Pages/privacy-policy.html",
             "Assistance/fix-dedsec-broken-install.html",
             "Assistance/fix-github-ssh-authentication-termux.html",
@@ -1629,11 +1683,9 @@ return file;
         
         // Language Switcher (Navbar)
         document.getElementById('nav-lang-switcher')?.addEventListener('click', () => {
-            const path = window.location.pathname || '/';
-            const targetPath = pageLanguage === 'gr'
-                ? (path.replace(/^\/el(?=\/|$)/, '') || '/')
-                : (`/el${path === '/' ? '/' : path}`);
-            localStorage.setItem('language', pageLanguage === 'gr' ? 'en' : 'gr');
+            const targetLanguage = currentLanguage === 'gr' ? 'en' : 'gr';
+            const targetPath = getLanguagePath(window.location.pathname || '/', targetLanguage);
+            localStorage.setItem('language', targetLanguage);
             window.location.assign(targetPath + window.location.search + window.location.hash);
         });
 
@@ -1644,7 +1696,7 @@ return file;
         });
 
         // Final Setup
-        window.changeLanguage(pageLanguage);
+        window.changeLanguage(currentLanguage);
 
         // Keep viewport + navbar size variables synced (mobile Safari + dynamic nav height)
         const layoutHandler = () => syncLayoutVars();
@@ -1688,3 +1740,4 @@ return file;
 
     init();
 });
+

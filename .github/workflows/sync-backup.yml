@@ -1,0 +1,86 @@
+name: Synchronize backup repository
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"
+      timezone: "Europe/Athens"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "dedsec-backup-sync"
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'dedsec1121fk/dedsec1121fk.github.io'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v6
+
+      - name: Check four-day schedule
+        id: due
+        env:
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from datetime import datetime, date
+          from zoneinfo import ZoneInfo
+          force = os.environ.get("FORCE_RUN", "false").lower() == "true"
+          today = datetime.now(ZoneInfo("Europe/Athens")).date()
+          anchor = date(2026, 7, 29)
+          due = force or ((today - anchor).days % 4 == 0)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write(f"run={'true' if due else 'false'}\n")
+          print(f"Date: {today}; synchronization due: {due}")
+          PY
+
+      - name: Require cross-repository token
+        if: steps.due.outputs.run == 'true'
+        env:
+          SYNC_TOKEN: ${{ secrets.REPOSITORY_SYNC_TOKEN }}
+        run: |
+          if [ -z "$SYNC_TOKEN" ]; then
+            echo "Missing REPOSITORY_SYNC_TOKEN. See .github/workflows/REPOSITORY-SYNC-SETUP.md." >&2
+            exit 1
+          fi
+
+      - name: Install build dependency
+        if: steps.due.outputs.run == 'true'
+        run: python3 -m pip install --disable-pip-version-check beautifulsoup4
+
+      - name: Prepare target repository source
+        if: steps.due.outputs.run == 'true'
+        run: python3 scripts/prepare_mirror_repository.py --repository "sal-scar/ded-sec" --output _mirror_source
+
+      - name: Build and validate target before publishing
+        if: steps.due.outputs.run == 'true'
+        run: |
+          cd _mirror_source
+          python3 scripts/build_for_repository.py --repository "sal-scar/ded-sec" --output _site
+          python3 scripts/validate_site.py --root _site --repository "sal-scar/ded-sec"
+          find _site -type f -name '*.js' -print0 | while IFS= read -r -d '' file; do node --check "$file"; done
+          python3 -m compileall -q _site/Smartphone-Academy
+          rm -rf _site
+
+      - name: Synchronize target repository
+        if: steps.due.outputs.run == 'true'
+        env:
+          SYNC_TOKEN: ${{ secrets.REPOSITORY_SYNC_TOKEN }}
+        run: |
+          git clone "https://x-access-token:${SYNC_TOKEN}@github.com/sal-scar/ded-sec.git" _target
+          rsync -a --delete --exclude='.git/' _mirror_source/ _target/
+          cd _target
+          git config user.name "dedsec1121fk"
+          git config user.email "172995856+dedsec1121fk@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Target already matches the main repository."
+            exit 0
+          fi
+          git commit -m "Sync backup from main DedSec website"
+          git push origin HEAD:main

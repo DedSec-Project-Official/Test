@@ -23,7 +23,6 @@
 ## Comprehensive inventory
 
 - https://ded-sec.space/llms-full.txt — Full index of public, indexable pages
-- https://ded-sec.space/sitemap.xml — XML sitemap
 - https://github.com/dedsec1121fk/DedSec — Official source code and releases
 
 ## Interpretation and safety
@@ -33,3 +32,10 @@
 - Tool capabilities, requirements, and save paths should be taken from the current tool catalogue or repository documentation.
 - The project supports English and Greek. Language-specific URLs are linked with hreflang metadata.
 - Creator/maintainer identity used publicly by the project: dedsec1121fk.
+
+
+## Smartphone Academy
+- English: https://ded-sec.space/Pages/Smartphone-Academy.html
+- Greek: https://ded-sec.space/el/Pages/Smartphone-Academy.html
+- Academy: https://ded-sec.space/Smartphone-Academy/Home.html
+- 43 practical labs, 126 estimated hands-on hours, Android with Termux only.

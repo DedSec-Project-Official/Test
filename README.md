@@ -27,3 +27,8 @@
     <img src="https://img.shields.io/badge/Backup%20Repository-GitHub-181717?style=for-the-badge&logo=github" alt="Open Backup DedSec Project Repository">
   </a>
 </div>
+
+
+## Repository mirrors
+
+See `.github/workflows/REPOSITORY-SYNC-SETUP.md` for the staggered four-day backup and test synchronization workflows.
