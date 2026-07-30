@@ -30,7 +30,7 @@
 
     const copy = {
         en: {
-            title: 'Cookie choices',
+            title: 'Cookie Choices',
             intro: 'This website uses one necessary cookie to remember your choice. Google Analytics remains completely disabled unless you accept analytics cookies.',
             accept: 'Accept analytics',
             decline: 'Decline analytics',
