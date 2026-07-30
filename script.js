@@ -465,6 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const shouldOpenSecretLevel = (value) => {
             const normalized = normalizeSearchTerm(value);
             return normalized === 'watch dogs'
+                || normalized === 'ubisoft'
                 || normalized === 'dead space 2'
                 || normalized === 'arcade master'
                 || normalized.startsWith('arcade master ');
