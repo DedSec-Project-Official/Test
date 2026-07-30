@@ -36,7 +36,7 @@
             decline: 'Decline analytics',
             details: 'See cookie details',
             hideDetails: 'Hide cookie details',
-            settings: 'Cookie settings',
+            settings: 'Cookie Settings',
             necessaryTitle: 'Necessary cookie — always active',
             necessaryText: 'dedsec_cookie_consent_v1: stores whether you accepted or declined analytics for up to 12 months. It is shared across ded-sec.space and its subdomains so the banner does not reappear on each subdomain.',
             analyticsTitle: 'Google Analytics — optional',
@@ -53,7 +53,7 @@
             decline: 'Απόρριψη αναλυτικών',
             details: 'Προβολή λεπτομερειών cookies',
             hideDetails: 'Απόκρυψη λεπτομερειών',
-            settings: 'Ρυθμίσεις cookies',
+            settings: 'Ρυθμίσεις Cookies',
             necessaryTitle: 'Απαραίτητο cookie — πάντα ενεργό',
             necessaryText: 'dedsec_cookie_consent_v1: αποθηκεύει αν αποδέχτηκες ή απέρριψες τα αναλυτικά στοιχεία για έως 12 μήνες. Κοινοποιείται στο ded-sec.space και στα subdomains του, ώστε το banner να μην εμφανίζεται ξανά σε κάθε subdomain.',
             analyticsTitle: 'Google Analytics — προαιρετικό',
@@ -156,7 +156,7 @@
         style.id = 'dedsec-cookie-styles';
         style.textContent = `
             .dedsec-cookie-banner{position:fixed;z-index:2147483646;left:16px;right:16px;bottom:16px;max-width:920px;margin:auto;padding:20px;border:1px solid rgba(123,97,255,.55);border-radius:18px;background:rgba(8,7,18,.98);color:#f5f3ff;box-shadow:0 18px 70px rgba(0,0,0,.55);font-family:inherit;line-height:1.55;backdrop-filter:blur(14px)}
-            .dedsec-cookie-banner[hidden]{display:none!important}.dedsec-cookie-banner h2{margin:0 0 8px;font-size:1.35rem;color:#fff}.dedsec-cookie-banner p{margin:0;color:#ddd8f7}.dedsec-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.dedsec-cookie-btn{appearance:none;border:1px solid rgba(164,146,255,.7);border-radius:999px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;background:#18142c;color:#fff;min-height:44px}.dedsec-cookie-btn:hover,.dedsec-cookie-btn:focus-visible{transform:translateY(-1px);border-color:#fff;outline:2px solid transparent}.dedsec-cookie-btn--primary{background:linear-gradient(135deg,#5d45df,#8a54f6);border-color:transparent}.dedsec-cookie-btn--decline{background:#11101a}.dedsec-cookie-details{display:grid;gap:12px;margin-top:16px;padding-top:15px;border-top:1px solid rgba(255,255,255,.13)}.dedsec-cookie-details[hidden]{display:none!important}.dedsec-cookie-card{padding:13px;border-radius:12px;background:rgba(255,255,255,.055)}.dedsec-cookie-card strong{display:block;margin-bottom:5px;color:#fff}.dedsec-cookie-card p{font-size:.94rem}.dedsec-cookie-privacy{color:#bdafff;text-decoration:underline;text-underline-offset:3px}.dedsec-cookie-settings{position:fixed;z-index:2147483645;right:14px;bottom:14px;border:1px solid rgba(164,146,255,.6);border-radius:999px;padding:9px 13px;background:rgba(8,7,18,.94);color:#fff;font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.38)}.dedsec-cookie-settings[hidden]{display:none!important}.dedsec-cookie-status{position:fixed;z-index:2147483647;left:50%;bottom:20px;transform:translateX(-50%);padding:10px 14px;border-radius:999px;background:#12101f;color:#fff;box-shadow:0 10px 34px rgba(0,0,0,.45);font:inherit;font-weight:700}.dedsec-cookie-status[hidden]{display:none!important}@media(max-width:620px){.dedsec-cookie-banner{left:8px;right:8px;bottom:8px;padding:16px;max-height:calc(100vh - 16px);overflow:auto}.dedsec-cookie-actions{display:grid}.dedsec-cookie-btn{width:100%}.dedsec-cookie-settings{right:8px;bottom:8px}}
+            .dedsec-cookie-banner[hidden]{display:none!important}.dedsec-cookie-banner h2{margin:0 0 8px;font-size:1.35rem;color:#fff}.dedsec-cookie-banner p{margin:0;color:#ddd8f7}.dedsec-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.dedsec-cookie-btn{appearance:none;border:1px solid rgba(164,146,255,.7);border-radius:999px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;background:#18142c;color:#fff;min-height:44px}.dedsec-cookie-btn:hover,.dedsec-cookie-btn:focus-visible{transform:translateY(-1px);border-color:#fff;outline:2px solid transparent}.dedsec-cookie-btn--primary{background:linear-gradient(135deg,#5d45df,#8a54f6);border-color:transparent}.dedsec-cookie-btn--decline{background:#11101a}.dedsec-cookie-details{display:grid;gap:12px;margin-top:16px;padding-top:15px;border-top:1px solid rgba(255,255,255,.13)}.dedsec-cookie-details[hidden]{display:none!important}.dedsec-cookie-card{padding:13px;border-radius:12px;background:rgba(255,255,255,.055)}.dedsec-cookie-card strong{display:block;margin-bottom:5px;color:#fff}.dedsec-cookie-card p{font-size:.94rem}.dedsec-cookie-privacy{color:#bdafff;text-decoration:underline;text-underline-offset:3px}.dedsec-cookie-settings{position:fixed;z-index:2147483645;right:14px;bottom:14px;border:1px solid rgba(164,146,255,.6);border-radius:999px;padding:9px 13px;background:rgba(8,7,18,.94);color:#fff;font:inherit;font-size:.82rem;font-weight:700;line-height:1.1;text-align:center;white-space:normal;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.38);transform:scale(.9);transform-origin:bottom right}.dedsec-cookie-settings[hidden]{display:none!important}.dedsec-cookie-status{position:fixed;z-index:2147483647;left:50%;bottom:20px;transform:translateX(-50%);padding:10px 14px;border-radius:999px;background:#12101f;color:#fff;box-shadow:0 10px 34px rgba(0,0,0,.45);font:inherit;font-weight:700}.dedsec-cookie-status[hidden]{display:none!important}@media(max-width:620px){.dedsec-cookie-banner{left:8px;right:8px;bottom:8px;padding:16px;max-height:calc(100vh - 16px);overflow:auto}.dedsec-cookie-actions{display:grid}.dedsec-cookie-btn{width:100%}.dedsec-cookie-settings{right:8px;bottom:8px}}
         `;
         document.head.appendChild(style);
     }
@@ -218,7 +218,11 @@
             const privacy = banner.querySelector('[data-cookie-privacy]');
             privacy.textContent = current.privacy;
             privacy.href = privacyUrl();
-            settings.textContent = current.settings;
+            settings.replaceChildren();
+            current.settings.split(/\s+/).forEach(function (word, index) {
+                if (index > 0) settings.appendChild(document.createElement('br'));
+                settings.appendChild(document.createTextNode(word));
+            });
             settings.setAttribute('aria-label', current.settings);
         }
 
