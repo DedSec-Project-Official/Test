@@ -169,32 +169,104 @@ document.addEventListener('DOMContentLoaded', () => {
             langBtn.title = currentLanguage === 'en' ? 'ΕΛ' : 'EN';
         }
     };
+    function reorderNavigationLinks() {
+        document.querySelectorAll('.nav-menu').forEach(menu => {
+            const store = Array.from(menu.querySelectorAll('.nav-link')).find(link => /\/store\.html(?:[?#]|$)/i.test(link.getAttribute('href') || ''));
+            const assistance = Array.from(menu.querySelectorAll('.nav-link')).find(link => /\/assistance\.html(?:[?#]|$)/i.test(link.getAttribute('href') || ''));
+            if (store && assistance && store.nextElementSibling !== assistance) menu.insertBefore(store, assistance);
+        });
+    }
+
+    function normalizeSentencePunctuation(root = document) {
+        const terminal = /[.!?…:;。！？]$/u;
+        const closers = /["'”’»)\]}]+$/;
+        const skipClass = /(?:^|[-_\s])(title|heading|label|tag|badge|eyebrow|price|breadcrumb|nav|button|btn|metric|stat|value|name|source|category|kicker|brand|logo|menu)(?:$|[-_\s])/i;
+        const isTitleLike = (text) => {
+            const words = text.match(/[A-Za-zΑ-ΩΆΈΉΊΌΎΏΪΫα-ωάέήίόύώϊϋΐΰ][A-Za-zΑ-ΩΆΈΉΊΌΎΏΪΫα-ωάέήίόύώϊϋΐΰ'’.-]*/gu) || [];
+            if (!words.length || words.length > 8) return false;
+            const meaningful = words.filter(word => word.length > 1);
+            if (!meaningful.length) return false;
+            const initialCaps = meaningful.filter(word => word[0] === word[0].toUpperCase() && word[0] !== word[0].toLowerCase()).length;
+            const lowerWords = meaningful.filter(word => word === word.toLowerCase()).length;
+            return initialCaps / meaningful.length >= 0.75 && lowerWords <= 1;
+        };
+        const needsPeriod = (text, element) => {
+            const clean = (text || '').replace(/\s+/g, ' ').trim();
+            if (!clean) return false;
+            const core = clean.replace(closers, '').trim();
+            if (!core || terminal.test(core)) return false;
+            const className = typeof element?.className === 'string' ? element.className : '';
+            if (skipClass.test(className)) return false;
+            if (element?.closest('nav, h1, h2, h3, h4, h5, h6, button, summary, pre, code, kbd, samp, script, style, textarea, select')) return false;
+            if (/^(?:https?:\/\/|www\.|mailto:|tel:)\S+$/i.test(clean)) return false;
+            if (/^[\w.-]+\.(?:com|org|net|io|dev|gr|eu|co|uk|de|fr|app|ai)(?:\/\S*)?$/i.test(clean)) return false;
+            if (/^\S+\.(?:html?|css|js|json|py|sh|md|txt|pdf|zip|png|jpe?g|webp|svg|xml|yml|yaml)$/i.test(clean)) return false;
+            if (/^[€$£]?\s*\d+(?:[.,]\d+)?\s*(?:€|\$|£|\/\s*month|\/\s*μήνα)?$/i.test(clean)) return false;
+            const letters = Array.from(clean).filter(char => /\p{L}/u.test(char));
+            if (letters.length && letters.every(char => char === char.toUpperCase())) return false;
+            if (isTitleLike(clean)) return false;
+            if (clean.split(/\s+/).length <= 2 && !/[,—–-]/.test(clean)) return false;
+            return true;
+        };
+        const withPeriod = (text) => {
+            const raw = (text || '').trim();
+            const match = raw.match(/^(.*?)(["'”’»)\]}]+)?$/);
+            return match ? `${match[1].trim()}.${match[2] || ''}` : `${raw}.`;
+        };
+
+        root.querySelectorAll('p, li, dd, figcaption').forEach(element => {
+            ['data-en', 'data-gr'].forEach(attribute => {
+                const value = element.getAttribute(attribute);
+                if (value && needsPeriod(value, element)) element.setAttribute(attribute, withPeriod(value));
+            });
+            const text = element.textContent || '';
+            if (needsPeriod(text, element)) element.appendChild(document.createTextNode('.'));
+        });
+    }
+
     // --- NAVIGATION FUNCTIONALITY ---
     function initializeNavigation() {
+        reorderNavigationLinks();
         const burgerMenu = document.getElementById('burger-menu');
         const navMenu = document.getElementById('nav-menu');
-        
+
+        const setBurgerMenuOpen = (open) => {
+            const isOpen = Boolean(open && burgerMenu && navMenu);
+            burgerMenu?.classList.toggle('active', isOpen);
+            navMenu?.classList.toggle('active', isOpen);
+            document.body.classList.toggle('burger-menu-open', isOpen);
+            burgerMenu?.setAttribute('aria-expanded', String(isOpen));
+            navMenu?.setAttribute('aria-hidden', String(!isOpen));
+            try {
+                document.dispatchEvent(new CustomEvent('dedsec:burger-menu-state', { detail: { open: isOpen } }));
+            } catch (_) {}
+        };
+
+        setBurgerMenuOpen(false);
+
         if (burgerMenu && navMenu) {
             burgerMenu.addEventListener('click', () => {
-                burgerMenu.classList.toggle('active');
-                navMenu.classList.toggle('active');
+                setBurgerMenuOpen(!navMenu.classList.contains('active'));
             });
         }
 
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu?.classList.remove('active');
-                navMenu?.classList.remove('active');
-            });
+            link.addEventListener('click', () => setBurgerMenuOpen(false));
         });
 
         document.addEventListener('click', (e) => {
             if (navMenu?.classList.contains('active')) {
                 const navActions = document.querySelector('.nav-actions');
                 if (!navMenu.contains(e.target) && !burgerMenu?.contains(e.target) && !navActions?.contains(e.target)) {
-                    burgerMenu?.classList.remove('active');
-                    navMenu?.classList.remove('active');
+                    setBurgerMenuOpen(false);
                 }
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navMenu?.classList.contains('active')) {
+                setBurgerMenuOpen(false);
+                burgerMenu?.focus();
             }
         });
     }
@@ -1239,22 +1311,76 @@ return file;
 
     // Small UX + SEO fixes
     function initializeBrandingAndLinks() {
-        // Add logo in navbar title (without changing HTML files)
+        let logoOverlay = document.getElementById('brand-logo-overlay');
+        if (!logoOverlay) {
+            logoOverlay = document.createElement('div');
+            logoOverlay.id = 'brand-logo-overlay';
+            logoOverlay.className = 'brand-logo-overlay';
+            logoOverlay.setAttribute('aria-hidden', 'true');
+            logoOverlay.innerHTML = `
+                <button class="brand-logo-expanded" type="button" aria-label="Close enlarged DedSec Project logo">
+                    <img data-site-logo="1" alt="DedSec Project logo" loading="eager" decoding="async">
+                </button>`;
+            document.body.appendChild(logoOverlay);
+        }
+
+        const overlayButton = logoOverlay.querySelector('.brand-logo-expanded');
+        const closeLogoOverlay = () => {
+            logoOverlay.classList.remove('active');
+            logoOverlay.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('brand-logo-open');
+            document.querySelectorAll('.nav-title img[data-site-logo="1"]').forEach(img => {
+                img.setAttribute('aria-expanded', 'false');
+                img.style.cursor = 'zoom-in';
+            });
+        };
+        const openLogoOverlay = () => {
+            applyThemeAssets();
+            logoOverlay.classList.add('active');
+            logoOverlay.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('brand-logo-open');
+            document.querySelectorAll('.nav-title img[data-site-logo="1"]').forEach(img => {
+                img.setAttribute('aria-expanded', 'true');
+                img.style.cursor = 'zoom-out';
+            });
+            overlayButton?.focus({ preventScroll: true });
+        };
+        const toggleLogoOverlay = () => logoOverlay.classList.contains('active') ? closeLogoOverlay() : openLogoOverlay();
+
+        // Add a theme-aware, tappable logo in the navbar title.
         document.querySelectorAll('.nav-title .site-title').forEach(siteTitle => {
-            if (siteTitle.querySelector('img')) return;
-            const img = document.createElement('img');
-            img.alt = 'DedSec Project';
-            img.width = 34;
-            img.height = 34;
-            img.loading = 'eager';
-            img.decoding = 'async';
-            img.style.borderRadius = '10px';
-            img.style.border = '1px solid var(--nm-border)';
-            img.style.background = 'rgba(255,255,255,0.04)';
-            img.setAttribute('data-site-logo','1');
-            img.src = getThemeLogo();
-            siteTitle.prepend(img);
+            let img = siteTitle.querySelector('img[data-site-logo="1"]');
+            if (!img) {
+                img = document.createElement('img');
+                img.alt = 'DedSec Project logo';
+                img.width = 34;
+                img.height = 34;
+                img.loading = 'eager';
+                img.decoding = 'async';
+                img.style.borderRadius = '0px';
+                img.style.border = '1px solid var(--nm-border)';
+                img.style.background = 'rgba(255,255,255,0.04)';
+                img.setAttribute('data-site-logo','1');
+                siteTitle.prepend(img);
+            }
+            img.tabIndex = 0;
+            img.setAttribute('role', 'button');
+            img.setAttribute('aria-haspopup', 'dialog');
+            img.setAttribute('aria-expanded', 'false');
+            img.setAttribute('aria-label', currentLanguage === 'gr' ? 'Μεγέθυνση λογοτύπου DedSec Project' : 'Enlarge DedSec Project logo');
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', (event) => { event.stopPropagation(); toggleLogoOverlay(); });
+            img.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleLogoOverlay();
+                }
+            });
         });
+
+        overlayButton?.addEventListener('click', closeLogoOverlay);
+        logoOverlay.addEventListener('click', (event) => { if (event.target === logoOverlay) closeLogoOverlay(); });
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && logoOverlay.classList.contains('active')) closeLogoOverlay(); });
 
         // Ensure target=_blank links are safe
         document.querySelectorAll('a[target="_blank"]').forEach(a => {
@@ -1697,7 +1823,9 @@ return file;
         });
 
         // Final Setup
+        normalizeSentencePunctuation();
         window.changeLanguage(currentLanguage);
+        normalizeSentencePunctuation();
 
         // Keep viewport + navbar size variables synced (mobile Safari + dynamic nav height)
         const layoutHandler = () => syncLayoutVars();

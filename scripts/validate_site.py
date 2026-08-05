@@ -13,6 +13,7 @@ CONFIGS = {
     "dedsec1121fk/dedsec1121fk.github.io": {"base": "/", "host": "ded-sec.space", "cname": "ded-sec.space", "indexable": True, "sitemap": True, "llms": True},
     "sal-scar/ded-sec": {"base": "/", "host": "ded-sec.online", "cname": "ded-sec.online", "indexable": True, "sitemap": False, "llms": False},
     "dedsec1121fk/test": {"base": "/test/", "host": "dedsec1121fk.github.io", "cname": None, "indexable": False, "sitemap": False, "llms": False},
+    "DedSec-Project-Official/Test": {"base": "/Test/", "host": "dedsec-project-official.github.io", "cname": None, "indexable": False, "sitemap": False, "llms": False},
 }
 
 

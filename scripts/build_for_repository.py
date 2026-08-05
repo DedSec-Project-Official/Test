@@ -43,6 +43,15 @@ CONFIGS = {
         "sitemap": False,
         "llms": False,
     },
+    "DedSec-Project-Official/Test": {
+        "mode": "test",
+        "site_url": "https://dedsec-project-official.github.io/Test",
+        "base_path": "/Test/",
+        "cname": None,
+        "indexable": False,
+        "sitemap": False,
+        "llms": False,
+    },
 }
 
 TEXT_SUFFIXES = {
@@ -130,7 +139,7 @@ def rewrite_json_urls(value, site_url: str):
     if isinstance(value, list):
         return [rewrite_json_urls(v, site_url) for v in value]
     if isinstance(value, str):
-        for origin in ("https://ded-sec.space", "https://ded-sec.online", "https://dedsec1121fk.github.io/test"):
+        for origin in ("https://ded-sec.space", "https://ded-sec.online", "https://dedsec1121fk.github.io/test", "https://dedsec-project-official.github.io/Test"):
             if value == origin or value.startswith(origin + "/"):
                 suffix = value[len(origin):]
                 if origin.endswith("/test") and suffix.startswith("/test/"):
@@ -143,6 +152,7 @@ KNOWN_SITE_HOSTS = {
     "ded-sec.space", "www.ded-sec.space",
     "ded-sec.online", "www.ded-sec.online",
     "dedsec1121fk.github.io",
+    "dedsec-project-official.github.io",
 }
 
 
@@ -157,6 +167,10 @@ def normalize_local_path(root: Path, page_relative: Path, raw_path: str) -> tupl
     if decoded.startswith("/test/"):
         decoded = decoded[5:]
     elif decoded == "/test":
+        decoded = "/"
+    elif decoded.startswith("/Test/"):
+        decoded = decoded[5:]
+    elif decoded == "/Test":
         decoded = "/"
 
     if decoded.startswith("/"):
@@ -374,9 +388,11 @@ def main() -> int:
         if p.is_file() and p.suffix.lower() in TEXT_SUFFIXES:
             text = p.read_text(encoding="utf-8", errors="replace")
             text = text.replace("/test/", config["base_path"])
+            text = text.replace("/Test/", config["base_path"])
             if p.suffix.lower() != ".html":
                 # Non-HTML indexes and manifests should describe the active deployment.
                 text = text.replace("https://dedsec1121fk.github.io/test", config["site_url"])
+                text = text.replace("https://dedsec-project-official.github.io/Test", config["site_url"])
             p.write_text(text, encoding="utf-8")
 
     for p in sorted(output.rglob("*.html")):

@@ -18,6 +18,7 @@ TARGETS = {
     "dedsec1121fk/dedsec1121fk.github.io": {"cname": "ded-sec.space"},
     "sal-scar/ded-sec": {"cname": "ded-sec.online"},
     "dedsec1121fk/test": {"cname": None},
+    "DedSec-Project-Official/Test": {"cname": None},
 }
 
 

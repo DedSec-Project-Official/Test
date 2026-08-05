@@ -19,8 +19,8 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="/style.css?v=71" rel="stylesheet"/>
+<link href="/Assets/vendor/fontawesome/css/all.min.css?v=1" rel="stylesheet"/>
+<link href="/style.css?v=82" rel="stylesheet"/>
 <meta content="ButSystem.py (Αποκλειστικό) — DedSec Project" property="og:title"/>
 <meta content="Ανακάλυψε το ButSystem.py, έναν αυτοφιλοξενούμενο χώρο Termux με ιδιωτικές συνομιλίες, κρυπτογραφημένες εγγραφές, αρχεία και πρόσβαση Cloudflare ή Tor." property="og:description"/>
 <meta content="https://ded-sec.space/Assets/Images/og/og-dark.jpg" property="og:image"/>
@@ -45,51 +45,51 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://ded-sec.space/#organization",
+      "@id": "https://dedsec-project-official.github.io/#organization",
       "name": "DedSec Project",
-      "url": "https://ded-sec.space/",
-      "logo": "https://ded-sec.space/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg",
+      "url": "https://dedsec-project-official.github.io/",
+      "logo": "https://dedsec-project-official.github.io/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg",
       "sameAs": [
         "https://github.com/dedsec1121fk/DedSec"
       ]
     },
     {
       "@type": "WebSite",
-      "@id": "https://ded-sec.space/#website",
-      "url": "https://ded-sec.space/",
+      "@id": "https://dedsec-project-official.github.io/#website",
+      "url": "https://dedsec-project-official.github.io/",
       "name": "DedSec Project",
       "publisher": {
-        "@id": "https://ded-sec.space/#organization"
+        "@id": "https://dedsec-project-official.github.io/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://ded-sec.space/el/Pages/butsystem-exclusive.html#webpage",
-      "url": "https://ded-sec.space/el/Pages/butsystem-exclusive.html",
+      "@id": "https://dedsec-project-official.github.io/el/Pages/butsystem-exclusive.html#webpage",
+      "url": "https://dedsec-project-official.github.io/el/Pages/butsystem-exclusive.html",
       "name": "ButSystem.py (Αποκλειστικό)",
       "isPartOf": {
-        "@id": "https://ded-sec.space/#website"
+        "@id": "https://dedsec-project-official.github.io/#website"
       },
       "about": {
-        "@id": "https://ded-sec.space/#organization"
+        "@id": "https://dedsec-project-official.github.io/#organization"
       },
       "inLanguage": "el"
     }
   ]
 }</script>
 <style>
-    .callout{border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04); padding:14px 16px; border-radius:14px; margin-top:14px;}
+    .callout{border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04); padding:14px 16px; border-radius: 0px !important; margin-top:14px;}
     .muted{opacity:.86;}
     .nice-list{margin:10px 0 0 0; padding-left:18px;}
     .nice-list li{margin:6px 0;}
     .accordion{margin-top:10px;}
-    .acc-item{border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:10px 12px; margin:10px 0; background:rgba(255,255,255,.03);}
+    .acc-item{border:1px solid rgba(255,255,255,.12); border-radius: 0px !important; padding:10px 12px; margin:10px 0; background:rgba(255,255,255,.03);}
     .acc-item summary{cursor:pointer; list-style:none; font-weight:800; display:flex; align-items:center;}
     .acc-item summary::-webkit-details-marker{display:none;}
     .acc-body{margin-top:10px;}
 
     .butsystem-desc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px;}
-    .butsystem-desc-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);padding:16px 18px;border-radius:12px;}
+    .butsystem-desc-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);padding:16px 18px;border-radius: 0px !important;}
     .butsystem-desc-card h3{margin:0 0 10px 0;font-size:1.02rem;line-height:1.3;display:flex;align-items:center;gap:10px;}
     .butsystem-desc-card p{margin:0;}
     .butsystem-desc-card i{opacity:.92;min-width:16px;text-align:center;}
@@ -98,7 +98,7 @@
 
 /* Compact ButSystem feature summary cards */
 .but-feature-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;align-items:stretch;}
-.but-feature-summary .feature-card{padding:14px 16px !important;min-height:0 !important;height:auto !important;aspect-ratio:auto !important;border-radius:10px !important;display:flex;flex-direction:column;justify-content:flex-start;}
+.but-feature-summary .feature-card{padding:14px 16px !important;min-height:0 !important;height:auto !important;aspect-ratio:auto !important;border-radius: 0px !important;display:flex;flex-direction:column;justify-content:flex-start;}
 .but-feature-summary .feature-card-compact-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
 .but-feature-summary .feature-card i{font-size:1.45rem;margin:0;line-height:1;flex:0 0 auto;}
 .but-feature-summary .feature-card h3{margin:0;font-size:1.08rem;line-height:1.2;}
@@ -114,7 +114,7 @@
   </style>
 <script defer="" src="/Assets/cookie-consent.js?v=1"></script><link href="https://ded-sec.space/el/Pages/butsystem-exclusive.html" rel="canonical"/><link href="https://ded-sec.space/Pages/butsystem-exclusive.html" hreflang="en" rel="alternate"/><link href="https://ded-sec.space/el/Pages/butsystem-exclusive.html" hreflang="el" rel="alternate"/><link href="https://ded-sec.space/Pages/butsystem-exclusive.html" hreflang="x-default" rel="alternate"/></head>
 <body class="dark-theme butsystem-page">
-<!--MAINTAIN_SITE: Key maintenance: NAV links must match real files; global theme/language logic is in /script.js?v=67.-->
+<!--MAINTAIN_SITE: Key maintenance: NAV links must match real files; global theme/language logic is in /script.js?v=69 -->
 <nav class="main-nav">
 <div class="nav-container">
 <div class="nav-title"><div class="site-title">DedSec Project</div></div>
@@ -128,10 +128,10 @@
 <a class="nav-link" data-en="Our Vision" data-gr="Το Όραμά μας" href="/el/Pages/our-vision.html">Το Όραμά μας</a>
 <a class="nav-link" data-en="Guide For Installation" data-gr="Οδηγός Εγκατάστασης" href="/el/Pages/guide-for-installation.html">Οδηγός Εγκατάστασης</a>
 <a class="nav-link" data-en="Learn About The Tools" data-gr="Μάθε για τα Εργαλεία" href="/el/Pages/learn-about-the-tools.html">Μάθε για τα Εργαλεία</a>
-<a class="nav-link" data-en="ButSystem.py (Exclusive)" data-gr="ButSystem.py (Αποκλειστικό)" href="/el/Pages/butsystem-exclusive.html">ButSystem.py (Αποκλειστικό)</a><a class="nav-link" data-en="Smartphone Academy" data-gr="Ακαδημία Smartphone" href="/el/Pages/Smartphone-Academy.html">Ακαδημία Smartphone</a>
+<a class="nav-link" data-en="Smartphone Academy" data-gr="Ακαδημία Smartphone" href="/el/Pages/Smartphone-Academy.html">Ακαδημία Smartphone</a>
+<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="/el/Pages/store.html">Κατάστημα</a>
 <a class="nav-link" data-en="Assistance" data-gr="Βοήθεια" href="/el/Pages/assistance.html">Βοήθεια</a>
 <a class="nav-link" data-en="Frequently Asked Questions" data-gr="Συχνές Ερωτήσεις" href="/el/Pages/faq.html">Συχνές Ερωτήσεις</a>
-<a class="nav-link" data-en="Store" data-gr="Κατάστημα" href="/el/Pages/store.html">Κατάστημα</a>
 <a class="nav-link" data-en="Privacy Policy" data-gr="Πολιτική Απορρήτου" href="/el/Pages/privacy-policy.html">Πολιτική Απορρήτου</a>
 <a class="nav-link" data-en="Contact &amp; Credits" data-gr="Επικοινωνία &amp; Συντελεστές" href="/el/Pages/contact-credits.html">Επικοινωνία &amp; Συντελεστές</a></div>
 <div class="nav-actions">
@@ -317,6 +317,6 @@
 <p>© 2024–2026 DedSec Project. Με επιφύλαξη παντός δικαιώματος.</p>
 <p>Δημιουργήθηκε από τον dedsec1121fk.</p>
 </footer>
-<script defer="" src="/script.js?v=67"></script>
+<script defer="" src="/script.js?v=69"></script>
 </body>
 </html>
