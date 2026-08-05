@@ -76,11 +76,9 @@
 
   const initFinder = () => {
     const finder = document.querySelector('.assistance-finder');
-    const input = document.getElementById('assistance-guide-search');
     const main = document.querySelector('main.assistance-page');
     if (!finder || !main) return;
 
-    const clearButton = finder.querySelector('.assistance-clear-btn');
     const filterButtons = [...finder.querySelectorAll('.assistance-filter-btn')];
     const cards = [...main.querySelectorAll('.assistance-card')];
     const sections = [...main.querySelectorAll('.assistance-category-section')];
@@ -88,30 +86,11 @@
     const noResults = document.getElementById('assistance-no-results');
     let activeFilter = 'all';
 
-    const scoreCard = (card, query, tokens) => {
-      if (!query) return 1;
-      const title = normalize(card.dataset.title);
-      const signatures = normalize(card.dataset.signatures);
-      const search = normalize(card.dataset.search || card.textContent);
-      const allTokensMatch = tokens.every((token) => search.includes(token));
-      if (!allTokensMatch && !search.includes(query)) return 0;
-      let score = 10;
-      if (title === query) score += 240;
-      if (title.includes(query)) score += 150;
-      if (signatures.includes(query)) score += 130;
-      if (search.includes(query)) score += 70;
-      tokens.forEach((token) => {
-        if (title.includes(token)) score += 24;
-        if (signatures.includes(token)) score += 20;
-      });
-      return score;
-    };
-
-    const updateExpandButton = (section, eligibleCards, expanded, searchingOrFiltering) => {
+    const updateExpandButton = (section, eligibleCards, expanded, filtering) => {
       const button = section.querySelector('.assistance-expand-btn');
       if (!button) return;
       const total = eligibleCards.length;
-      button.hidden = searchingOrFiltering || total <= Number(section.dataset.visibleLimit || 6);
+      button.hidden = filtering || total <= Number(section.dataset.visibleLimit || 6);
       button.setAttribute('aria-expanded', String(expanded));
       if (button.hidden) return;
       button.textContent = expanded
@@ -120,45 +99,34 @@
     };
 
     const apply = () => {
-      const query = normalize(input?.value || '');
-      const tokens = query.split(' ').filter(Boolean);
-      const searchingOrFiltering = Boolean(query) || activeFilter !== 'all';
-      let visibleCount = 0;
+      const filtering = activeFilter !== 'all';
 
       cards.forEach((card) => {
         const categoryMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
-        const score = categoryMatch ? scoreCard(card, query, tokens) : 0;
-        card.dataset.assistanceScore = String(score);
-        card.style.order = query ? String(-score) : '';
-        card.classList.toggle('is-filtered-out', score <= 0);
+        card.classList.toggle('is-filtered-out', !categoryMatch);
         card.classList.remove('is-collapsed-card');
+        card.style.order = '';
       });
 
       sections.forEach((section) => {
         const expanded = section.dataset.expanded === 'true';
-        const matching = [...section.querySelectorAll('.assistance-card:not(.is-filtered-out)')]
-          .sort((a, b) => Number(b.dataset.assistanceScore) - Number(a.dataset.assistanceScore));
+        const matching = [...section.querySelectorAll('.assistance-card:not(.is-filtered-out)')];
         const limit = Number(section.dataset.visibleLimit || 6);
-        if (!searchingOrFiltering && !expanded) {
+        if (!filtering && !expanded) {
           matching.slice(limit).forEach((card) => card.classList.add('is-collapsed-card'));
         }
-        matching.forEach((card) => {
-          if (!card.classList.contains('is-collapsed-card')) visibleCount += 1;
-        });
         const sectionVisible = matching.some((card) => !card.classList.contains('is-collapsed-card'));
         section.classList.toggle('is-filtered-out', !sectionVisible);
-        updateExpandButton(section, matching, expanded, searchingOrFiltering);
+        updateExpandButton(section, matching, expanded, filtering);
       });
 
       const totalMatches = cards.filter((card) => !card.classList.contains('is-filtered-out')).length;
       if (status) {
-        const filtered = activeFilter !== 'all';
         status.textContent = isGreek()
-          ? `${totalMatches} ${totalMatches === 1 ? 'οδηγός' : 'οδηγοί'} ${filtered ? 'εμφανίζονται' : 'διαθέσιμοι'}`
-          : `${totalMatches} ${totalMatches === 1 ? 'guide' : 'guides'} ${filtered ? 'shown' : 'available'}`;
+          ? `${totalMatches} ${totalMatches === 1 ? 'οδηγός' : 'οδηγοί'} ${filtering ? 'εμφανίζονται' : 'διαθέσιμοι'}.`
+          : `${totalMatches} ${totalMatches === 1 ? 'guide' : 'guides'} ${filtering ? 'shown' : 'available'}.`;
       }
       if (noResults) noResults.hidden = totalMatches !== 0;
-      if (clearButton) clearButton.hidden = !query;
     };
 
     sections.forEach((section) => {
@@ -182,20 +150,6 @@
       });
     });
 
-    if (input) {
-      input.addEventListener('input', apply);
-      input.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && input.value) {
-          input.value = '';
-          apply();
-        }
-      });
-      clearButton?.addEventListener('click', () => {
-        input.value = '';
-        input.focus();
-        apply();
-      });
-    }
     apply();
   };
 

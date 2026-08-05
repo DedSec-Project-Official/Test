@@ -10853,3 +10853,120 @@ body.burger-menu-open .dedsec-cookie-settings {
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+
+/* === ASSISTANCE + SMARTPHONE ACADEMY REVIEW (2026-08-06) === */
+/* Previous/next lesson controls are compact navigation buttons, not oversized cards. */
+html body.academy-dedsec-page .academy-bottom-navigation {
+  padding: clamp(14px, 2vw, 20px) !important;
+}
+html body.academy-dedsec-page .academy-bottom-navigation .academy-section-heading {
+  align-items: center !important;
+  margin-bottom: 12px !important;
+}
+html body.academy-dedsec-page .academy-bottom-navigation .academy-section-heading .btn {
+  width: auto !important;
+  min-height: 40px !important;
+  padding: 9px 13px !important;
+  font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+}
+html body.academy-dedsec-page .academy-navigation-grid {
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+html body.academy-dedsec-page .academy-navigation-card {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  grid-template-areas: "icon title" "icon description" !important;
+  column-gap: 12px !important;
+  row-gap: 3px !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 13px 15px !important;
+  text-align: left !important;
+}
+html body.academy-dedsec-page .academy-navigation-card .feature-icon-wrapper {
+  grid-area: icon !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  margin: 0 !important;
+  color: inherit !important;
+  background: rgba(var(--glow-rgb), 0.10) !important;
+}
+html body.academy-dedsec-page .academy-navigation-card .feature-icon {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-size: 1rem !important;
+}
+html body.academy-dedsec-page .academy-navigation-card .feature-title {
+  grid-area: title !important;
+  width: 100% !important;
+  margin: 0 !important;
+  font-size: clamp(0.84rem, 1.4vw, 1rem) !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  overflow-wrap: anywhere !important;
+}
+html body.academy-dedsec-page .academy-navigation-card .feature-description {
+  grid-area: description !important;
+  width: 100% !important;
+  margin: 0 !important;
+  color: inherit !important;
+  font-size: clamp(0.74rem, 1.25vw, 0.88rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.38 !important;
+  text-align: left !important;
+  overflow-wrap: anywhere !important;
+}
+html body.academy-dedsec-page :is(.academy-lesson-header h1, .academy-section-heading h2, .academy-module-card h3, .academy-navigation-card h3) {
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+}
+html body.academy-dedsec-page :is(pre, code) {
+  max-width: 100% !important;
+}
+html body.academy-dedsec-page pre {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+@media (max-width: 700px) {
+  html body.academy-dedsec-page .academy-bottom-navigation {
+    padding: 12px !important;
+  }
+  html body.academy-dedsec-page .academy-bottom-navigation .academy-section-heading {
+    gap: 10px !important;
+  }
+  html body.academy-dedsec-page .academy-bottom-navigation .academy-section-heading .btn {
+    width: 100% !important;
+  }
+  html body.academy-dedsec-page .academy-navigation-grid {
+    gap: 8px !important;
+  }
+  html body.academy-dedsec-page .academy-navigation-card {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    column-gap: 10px !important;
+    padding: 10px 11px !important;
+  }
+  html body.academy-dedsec-page .academy-navigation-card .feature-icon-wrapper {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+  html body.academy-dedsec-page .academy-navigation-card .feature-title {
+    font-size: 0.82rem !important;
+  }
+  html body.academy-dedsec-page .academy-navigation-card .feature-description {
+    font-size: 0.72rem !important;
+  }
+  html body.academy-dedsec-page .academy-lesson-header {
+    padding-block: 24px !important;
+  }
+  html body.academy-dedsec-page .academy-lesson-section,
+  html body.academy-dedsec-page .academy-lesson-aside .content-section {
+    padding: 14px !important;
+  }
+}
