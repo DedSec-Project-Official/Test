@@ -1,0 +1,1 @@
+A verified APK is downloaded with Browser and opened through Files. Design the minimum temporary access sequence.

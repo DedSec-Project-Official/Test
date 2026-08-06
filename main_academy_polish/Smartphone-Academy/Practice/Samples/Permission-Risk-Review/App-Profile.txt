@@ -1,0 +1,2 @@
+App: Quick Torch
+Claimed features: flashlight toggle and home-screen widget
