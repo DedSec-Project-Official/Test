@@ -38,8 +38,8 @@ for page in ROOT.rglob('*.html'):
  for link in s.find_all('link',href=True):
   if 'fonts.googleapis.com' in link.get('href','') or 'fonts.gstatic.com' in link.get('href',''):
    issues.append(rel+' still loads unused Google fonts')
- if rel in ('Pages/assistance.html','el/Pages/assistance.html') and not s.find(class_='assistance-filter-row'):
-  issues.append(rel+' missing Assistance guide category filters')
+ if rel in ('Pages/assistance.html','el/Pages/assistance.html') and s.find(id='assistance-guide-search'):
+  issues.append(rel+' contains duplicate Assistance guide search')
  if rel.startswith('Assistance/') or rel.startswith('el/Assistance/'):
   if not any('assistance.css' in x.get('href','') for x in s.find_all('link',href=True)):
    issues.append(rel+' missing Assistance stylesheet')
