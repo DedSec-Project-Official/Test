@@ -11033,3 +11033,20 @@ html body :where(i, .feature-icon, .tool-expand-icon, .toggle-icon, .community-c
 html body :where(.feature-icon-wrapper, .home-store-icon-wrapper, .store-card .feature-icon-wrapper) {
   color: #ffffff !important;
 }
+
+
+/* === Theme-aware icon colors v87 === */
+html body.dark-theme :where(i, .feature-icon, .tool-expand-icon, .toggle-icon, .community-card i, .glance-card i, .trust-item i, .hero-badge i, .nav-action-btn i, .btn i, .footer-mini-btn i, .product-page i, .store-page i, .academy-dedsec-page i, .assistant-page i) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+html body.light-theme :where(i, .feature-icon, .tool-expand-icon, .toggle-icon, .community-card i, .glance-card i, .trust-item i, .hero-badge i, .nav-action-btn i, .btn i, .footer-mini-btn i, .product-page i, .store-page i, .academy-dedsec-page i, .assistant-page i) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+html body.dark-theme :where(.feature-icon-wrapper, .home-store-icon-wrapper, .store-card .feature-icon-wrapper) {
+  color: #ffffff !important;
+}
+html body.light-theme :where(.feature-icon-wrapper, .home-store-icon-wrapper, .store-card .feature-icon-wrapper) {
+  color: #000000 !important;
+}
