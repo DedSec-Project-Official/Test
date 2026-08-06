@@ -11023,3 +11023,13 @@ html body.academy-dedsec-page .academy-three-card-grid .feature-description {
     line-height: 1.22 !important;
   }
 }
+
+
+/* === Global white icon pass v86 === */
+html body :where(i, .feature-icon, .tool-expand-icon, .toggle-icon, .community-card i, .glance-card i, .trust-item i, .hero-badge i, .nav-action-btn i, .btn i, .footer-mini-btn i, .product-page i, .store-page i, .academy-dedsec-page i, .assistant-page i) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+html body :where(.feature-icon-wrapper, .home-store-icon-wrapper, .store-card .feature-icon-wrapper) {
+  color: #ffffff !important;
+}
