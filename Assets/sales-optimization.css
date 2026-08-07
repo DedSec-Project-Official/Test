@@ -2329,3 +2329,190 @@ body.burger-menu-open .dedsec-cookie-settings {
     text-align: center !important;
     box-sizing: border-box !important;
 }
+
+/* === GLOBAL THEME SURFACES + LAVENDER BORDER ACCENTS (2026-08-07c) ===
+   Site-wide rule: cards/boxes/panels use the same solid surface as the page
+   (#000 dark / #fff light). Purple and lavender are reserved for borders,
+   icons, links and other accents instead of tinting the card interior. */
+:root {
+  --ded-card-surface-dark: #000000;
+  --ded-card-surface-light: #ffffff;
+  --ded-accent-purple: #a855f7;
+  --ded-accent-lavender: #c084fc;
+  --ded-border-dark: rgba(192, 132, 252, .72);
+  --ded-border-light: rgba(126, 34, 206, .58);
+}
+
+/* Keep variable-driven containers solid as well. */
+html body.dark-theme {
+  --nm-dark: #000000;
+  --nm-container: #000000;
+}
+html body.light-theme {
+  --nm-dark: #ffffff;
+  --nm-container: #ffffff;
+}
+
+/* Shared boxed-surface set used across Home, Store, ButSystem, Assistance,
+   Academy, product pages, Founder/Vision and supporting pages. */
+html body.dark-theme :is(
+  .content-section,
+  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
+  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre, .cookie-banner, .modal-content, .modal-disclaimer,
+  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
+  .search-modal, .dedsec-cookie-settings,
+  .sales-hero, .sales-proof-strip span, .store-trust-row span,
+  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
+  .home-benefit-item, .home-facts-row, .project-fact-row,
+  .assistance-finder, .assistance-category-section, .assistance-warning-note,
+  .assistance-card-category, .assistance-card-signature, .assistance-signature-tag
+) {
+  background: var(--ded-card-surface-dark) !important;
+  background-color: var(--ded-card-surface-dark) !important;
+  background-image: none !important;
+  border-color: var(--ded-border-dark) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.light-theme :is(
+  .content-section,
+  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
+  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre, .cookie-banner, .modal-content, .modal-disclaimer,
+  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
+  .search-modal, .dedsec-cookie-settings,
+  .sales-hero, .sales-proof-strip span, .store-trust-row span,
+  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
+  .home-benefit-item, .home-facts-row, .project-fact-row,
+  .assistance-finder, .assistance-category-section, .assistance-warning-note,
+  .assistance-card-category, .assistance-card-signature, .assistance-signature-tag
+) {
+  background: var(--ded-card-surface-light) !important;
+  background-color: var(--ded-card-surface-light) !important;
+  background-image: none !important;
+  border-color: var(--ded-border-light) !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* Make the lavender identity visible on the border while the interior stays
+   neutral. A stronger left edge and softer top edge create the accent. */
+html body :is(
+  .content-section,
+  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
+  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, .butsystem-free-banner, .custom-scope-note,
+  .sales-hero, .sales-proof-strip span, .store-trust-row span,
+  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
+  .home-benefit-item, .home-facts-row,
+  .assistance-finder, .assistance-category-section, .assistance-warning-note
+) {
+  border-style: solid !important;
+  border-width: 1px 1px 1px 3px !important;
+  border-left-color: var(--ded-accent-purple) !important;
+  border-top-color: var(--ded-accent-lavender) !important;
+}
+
+/* Text follows the theme. Links and icons are deliberately excluded so the
+   site can retain purple accent affordances. Buttons keep their own colors. */
+html body.dark-theme :is(
+  .content-section,
+  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
+  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre, .butsystem-free-banner, .custom-scope-note,
+  .sales-hero, .sales-proof-strip span, .store-trust-row span,
+  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
+  .home-benefit-item, .home-facts-row, .project-fact-row,
+  .assistance-finder, .assistance-category-section, .assistance-warning-note
+) :where(h1,h2,h3,h4,h5,h6,p,span,strong,em,li,label,small,code,blockquote) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.light-theme :is(
+  .content-section,
+  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
+  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre, .butsystem-free-banner, .custom-scope-note,
+  .sales-hero, .sales-proof-strip span, .store-trust-row span,
+  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
+  .home-benefit-item, .home-facts-row, .project-fact-row,
+  .assistance-finder, .assistance-category-section, .assistance-warning-note
+) :where(h1,h2,h3,h4,h5,h6,p,span,strong,em,li,label,small,code,blockquote) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* Do not let the global surface rule recolor real controls. */
+html body :is(.btn, .sales-btn, .starter-path-btn, button, [role="button"]) {
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* The combined founder page intentionally has no small all-caps labels above its titles. */
+body.founder-page .founder-page-header > .sales-section-label,
+body.founder-page .founder-story-section .sales-section-label { display: none !important; }
+body.founder-page .founder-page-header { padding-top: clamp(24px, 5vw, 48px) !important; }
+body.founder-page .founder-page-header h1 { margin-top: 0 !important; }
+body.founder-page .founder-story-copy > h2 { text-align: center !important; margin-bottom: 20px !important; }
+body.founder-page .founder-story-copy { max-width: 1020px !important; }
+.founder-narrative-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0 22px;
+}
+.founder-story-card,
+.founder-vision-card {
+  padding: clamp(18px, 3vw, 24px) !important;
+  border: 1px solid var(--nm-border);
+  text-align: left !important;
+}
+.founder-story-card h3,
+.founder-vision-card h3 { margin: 0 0 10px !important; }
+.founder-story-card p,
+.founder-vision-card p { margin: 0 0 12px !important; line-height: 1.68 !important; }
+.founder-story-card p:last-child,
+.founder-vision-card p:last-child { margin-bottom: 0 !important; }
+.founder-vision-content { scroll-margin-top: calc(var(--nav-h) + 20px); }
+.founder-vision-content > h2 { text-align: center; margin: 0 0 20px !important; }
+.founder-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.founder-vision-lead-card { grid-column: 1 / -1; }
+.founder-vision-section-card { border: 1px solid var(--nm-border) !important; }
+.legacy-anchor { display: block; position: relative; top: calc(-1 * var(--nav-h)); visibility: hidden; }
+
+/* Long combined title remains readable in the burger menu and on mobile. */
+.nav-menu .nav-link { overflow-wrap: anywhere; }
+body.founder-page .founder-page-header h1 { font-size: clamp(2rem, 7vw, 4.4rem) !important; line-height: 1.04 !important; }
+
+@media (max-width: 820px) {
+  .founder-narrative-grid,
+  .founder-vision-grid { grid-template-columns: 1fr; }
+  .founder-vision-lead-card { grid-column: auto; }
+}
+

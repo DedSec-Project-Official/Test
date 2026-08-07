@@ -9,7 +9,7 @@
 - https://ded-sec.space/Pages/learn-about-the-tools.html — Tool catalogue and descriptions
 - https://ded-sec.space/Pages/assistance.html — Free Termux and Android troubleshooting guides
 - https://ded-sec.space/Pages/faq.html — Project FAQ
-- https://ded-sec.space/Pages/our-vision.html — Project purpose and direction
+- https://ded-sec.space/Pages/about-founder.html — Founder's story and the complete DedSec Project vision
 - https://ded-sec.space/Pages/store.html — Sponsorship and direct services
 - https://ded-sec.space/Pages/privacy-policy.html — Privacy, legal, and acceptable-use information
 
@@ -19,6 +19,7 @@
 - https://ded-sec.space/el/Pages/guide-for-installation.html — Greek installation guide
 - https://ded-sec.space/el/Pages/learn-about-the-tools.html — Greek tool catalogue
 - https://ded-sec.space/el/Pages/assistance.html — Greek assistance hub
+- https://ded-sec.space/el/Pages/about-founder.html — Η ιστορία του ιδρυτή και το πλήρες όραμα του DedSec Project
 
 ## Comprehensive inventory
 

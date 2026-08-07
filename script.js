@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Pages/learn-about-the-tools.html",
             "Pages/store.html",
             "Pages/faq.html",
-            "Pages/our-vision.html",
+            "Pages/about-founder.html",
             "Pages/contact-credits.html",
             "Pages/butsystem-exclusive.html",
             "Pages/Smartphone-Academy.html",

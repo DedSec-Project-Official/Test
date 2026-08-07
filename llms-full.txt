@@ -1,6 +1,6 @@
 # DedSec Project — Full Public Page Inventory
 
-> Generated from the public, indexable HTML in the website source on 2026-07-07.
+> Generated from the public, indexable HTML in the website source on 2026-08-07.
 
 ## Official identity
 
@@ -94,7 +94,7 @@
 - https://ded-sec.space/Pages/faq.html — DedSec Project FAQ — Project Questions, Tools, Store & Support — Get clear answers about DedSec Project tools, safety, installation, sponsor tiers, store options, support, downloads, and the fastest way to start.
 - https://ded-sec.space/Pages/guide-for-installation.html — Guide For Installation - DedSec Project — Install DedSec Project on Android with a clear Termux setup guide, storage steps, GitHub clone help, and safe first-run instructions.
 - https://ded-sec.space/Pages/learn-about-the-tools.html — Learn About The Tools - DedSec Project — Explore DedSec Project tools for Termux, OSINT awareness, safe testing, automation, privacy, and Android no-root workflows.
-- https://ded-sec.space/Pages/our-vision.html — Our Vision - DedSec Project — Read the DedSec Project vision for digital freedom, privacy, open Android, ethical learning, and tools that empower normal users.
+- https://ded-sec.space/Pages/about-founder.html — Founder's Story & Project's Vision — DedSec Project — The founder's story and the DedSec Project vision, from Loukas Floros's early inspiration to practical learning, digital freedom, and human-first technology.
 - https://ded-sec.space/Pages/privacy-policy.html — Privacy Policy - DedSec Project — Read the DedSec Project privacy policy, including what the website uses, what it avoids collecting, and how user privacy is handled.
 - https://ded-sec.space/Pages/store.html — Store - DedSec Project — Support DedSec Project with sponsor tiers and paid help that fund updates, testing, bilingual guides, and direct work for specific problems.
 - https://ded-sec.space/el/ — DedSec Project — DedSec Project — Δεν χρειάζεται να είστε προγραμματιστής — μόνο κάποιος που θέλει έναν πιο καθαρό τρόπο να μάθει Termux, να διορθώνει προβλήματα και να κάνει κάτι να δουλέψει.
@@ -180,7 +180,7 @@
 - https://ded-sec.space/el/Pages/faq.html — Συχνές Ερωτήσεις — DedSec Project — Απαντήσεις μόνο για το DedSec Project. Τα τεχνικά Termux errors, ιδέες, tips και script guides μεταφέρθηκαν στη Βοήθεια ώστε κάθε λύση να έχει δική της σελίδα, ενώ το Store καλύπτει support και sponsor tiers.
 - https://ded-sec.space/el/Pages/guide-for-installation.html — Οδηγός Εγκατάστασης — DedSec Project — Βήμα-βήμα οδηγίες για την εγκατάσταση και ρύθμιση του DedSec Project στη συσκευή σας Android.
 - https://ded-sec.space/el/Pages/learn-about-the-tools.html — Μάθετε για τα Εργαλεία — DedSec Project — Αυτή η σελίδα είναι ο χάρτης του project: τι κάνει κάθε εργαλείο, γιατί υπάρχει και ποιο πραγματικό πρόβλημα με έσπρωξε να το φτιάξω. Ξεκίνα από τη λίστα, άνοιξε ό,τι σου τραβάει το μάτι και άσε τα εργαλεία να εξηγήσουν μόνα τους το project.
-- https://ded-sec.space/el/Pages/our-vision.html — Το Όραμά μας — DedSec Project — Το DedSec Project υπάρχει για να αντισταθεί — όχι με άδεια συνθήματα, αλλά με πραγματική κοινότητα: να συναντιόμαστε πρόσωπο με πρόσωπο, να χτίζουμε τοπικά δίκτυα, να μοιραζόμαστε δεξιότητες, να προστατεύουμε ο ένας τον άλλον και να μετατρέπουμε την απομόνωση σε αλληλεγγύη. Δεν θέλουμε «ακόλουθους»·
+- https://ded-sec.space/el/Pages/about-founder.html — Η Ιστορία του Ιδρυτή & Το Όραμα του Project — DedSec Project — Η ιστορία του Λουκά Φλώρου και το όραμα του DedSec Project για πρακτική μάθηση, ψηφιακή ελευθερία και τεχνολογία με επίκεντρο τον άνθρωπο.
 - https://ded-sec.space/el/Pages/privacy-policy.html — Πολιτική Απορρήτου — DedSec Project — This Privacy Policy explains, at a high level, how DedSec Project ("we," "our," or "us") handles data in connection with the website and related services. It should be read together with the updated Legal Disclaimer & Statement on this page.
 - https://ded-sec.space/el/Pages/store.html — Κατάστημα — DedSec Project — Χρησιμοποίησε αυτή τη σελίδα όταν θέλεις να στηρίξεις το project, να ξεκλειδώσεις sponsor-only access, να κλείσεις setup ή repair help, να προγραμματίσεις Direct Chat Support με τον creator ή να παραγγείλεις custom DedSec-style δουλειά χωρίς χάσιμο χρόνου.
 
