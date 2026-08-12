@@ -11666,3 +11666,982 @@ body.founder-page :is(.btn, .footer-mini-btn, .sales-btn, .starter-path-btn) {
 .founder-compact-actions{margin-top:1.25rem}
 .founder-compact-actions .btn{min-height:52px;padding:.8rem 1.2rem}
 @media (max-width:820px){.founder-vision-grid-compact{grid-template-columns:1fr}.founder-section-intro{text-align:left}.founder-compact-actions .btn{width:100%}}
+
+/* === STRICT BORDER-ONLY SURFACE SYSTEM (2026-08-07i) === */
+/*
+   Global visual rule:
+   - Dark theme boxed surfaces use pure black.
+   - Light theme boxed surfaces use pure white.
+   - Lavender/purple is an accent for borders, icons and intentional controls.
+   - Decorative card/panel overlays must never tint the interior.
+*/
+html body.dark-theme {
+  --ded-page-surface: #000000;
+  --nm-darkest: #000000;
+  --nm-dark: #000000;
+  --nm-container: #000000;
+  background: #000000 !important;
+  background-image: none !important;
+}
+html body.light-theme {
+  --ded-page-surface: #ffffff;
+  --nm-darkest: #ffffff;
+  --nm-dark: #ffffff;
+  --nm-container: #ffffff;
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Navigation is part of the page surface, never a lavender-filled slab. */
+html body.dark-theme :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link) {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html body.light-theme :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html body .main-nav {
+  border-color: var(--ded-border-dark) !important;
+  border-bottom-color: var(--ded-accent-lavender) !important;
+}
+html body.light-theme .main-nav {
+  border-color: var(--ded-border-light) !important;
+  border-bottom-color: var(--ded-accent-purple) !important;
+}
+html body :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link)::before,
+html body :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link)::after {
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* All semantic box/card/panel surfaces. Academy-specific items are explicit
+   because many legacy rules use rgba fills even when they are not named card. */
+html body.dark-theme :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre, .cookie-banner, .modal-content, .modal-disclaimer,
+  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
+  .search-modal, .dedsec-cookie-settings,
+  .academy-main-header, .academy-lesson-header,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap table, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+) {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: none !important;
+}
+html body.light-theme :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre, .cookie-banner, .modal-content, .modal-disclaimer,
+  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
+  .search-modal, .dedsec-cookie-settings,
+  .academy-main-header, .academy-lesson-header,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap table, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* The color identity belongs to the outline, not the card interior. */
+html body :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+) {
+  border-style: solid !important;
+  border-color: var(--ded-border-dark) !important;
+  border-left-color: var(--ded-accent-purple) !important;
+}
+html body.light-theme :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+) {
+  border-color: var(--ded-border-light) !important;
+  border-left-color: var(--ded-accent-purple) !important;
+}
+
+/* Kill legacy gradient/radial layers that were responsible for the purple
+   interiors visible in Academy cards and navigation cards. */
+html body :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .academy-main-header, .academy-lesson-header,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+)::before,
+html body :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .academy-main-header, .academy-lesson-header,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+)::after {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Icon containers also remain neutral; hover changes the outline only. */
+html body.dark-theme :is(.feature-icon-wrapper, .home-store-icon-wrapper) {
+  background: #000000 !important;
+  background-image: none !important;
+}
+html body.light-theme :is(.feature-icon-wrapper, .home-store-icon-wrapper) {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+html body :is(.feature-card:hover .feature-icon-wrapper, .tool-card:hover .feature-icon-wrapper) {
+  background: var(--ded-page-surface) !important;
+  background-image: none !important;
+  border-color: var(--ded-accent-purple) !important;
+}
+
+/* Keep warning/success semantics on the border only. */
+html body .academy-callout.warning,
+html body .warning,
+html body .note-warning { background: var(--ded-page-surface) !important; background-image: none !important; }
+
+/* Theme text remains high contrast after neutralizing every surface. */
+html body.dark-theme :is(.page-content, .home-screen, .main-footer) { color: #ffffff !important; }
+html body.light-theme :is(.page-content, .home-screen, .main-footer) { color: #000000 !important; }
+html body.light-theme :where(h1,h2,h3,h4,h5,h6,p,li,small,label,strong,em) {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* 404 page: compact, deliberate and mobile-safe. */
+body.not-found-page .not-found-shell {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 72px) 0;
+}
+body.not-found-page .not-found-card {
+  min-height: min(560px, 70vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(28px, 6vw, 64px) clamp(18px, 5vw, 52px) !important;
+}
+body.not-found-page .not-found-code {
+  margin: 0 0 8px;
+  color: var(--ded-accent-lavender) !important;
+  -webkit-text-fill-color: var(--ded-accent-lavender) !important;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: clamp(4.2rem, 18vw, 9rem);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+body.not-found-page .not-found-card h1 {
+  margin: 14px 0 12px;
+  font-size: clamp(1.8rem, 6vw, 3.4rem);
+  line-height: 1.05;
+}
+body.not-found-page .not-found-card > p {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  line-height: 1.65;
+}
+body.not-found-page .not-found-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(680px, 100%);
+  gap: 10px;
+  margin-top: 6px;
+}
+body.not-found-page .not-found-actions .btn {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+}
+@media (max-width: 620px) {
+  body.not-found-page .not-found-shell { padding: 20px 0 38px; }
+  body.not-found-page .not-found-card { min-height: auto; padding: 30px 14px !important; }
+  body.not-found-page .not-found-actions { grid-template-columns: 1fr; }
+}
+
+
+/* === ABSOLUTE BORDER-ONLY LOCK (2026-08-07i.1) ===
+   Extra specificity deliberately beats legacy !important Academy/card rules. */
+html body.dark-theme :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"], [class*="-panel"], [class*="_panel"],
+  .homepage-lower-section, .founder-home-section, .store-butsystem-free,
+  .founder-story-section, .founder-vision-intro,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap table, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item,
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre
+):not(#dedsec-border-only-lock) {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html body.light-theme :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"], [class*="-panel"], [class*="_panel"],
+  .homepage-lower-section, .founder-home-section, .store-butsystem-free,
+  .founder-story-section, .founder-vision-intro,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap table, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item,
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .code-container, pre
+):not(#dedsec-border-only-lock) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+html body :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"], [class*="-panel"], [class*="_panel"],
+  .homepage-lower-section, .founder-home-section, .store-butsystem-free,
+  .founder-story-section, .founder-vision-intro,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+):not(#dedsec-border-only-lock)::before,
+html body :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"], [class*="-panel"], [class*="_panel"],
+  .homepage-lower-section, .founder-home-section, .store-butsystem-free,
+  .founder-story-section, .founder-vision-intro,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+):not(#dedsec-border-only-lock)::after {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Academy icon squares had a more-specific legacy rgba fill. */
+html body.dark-theme .academy-dedsec-page :is(.feature-icon-wrapper, .home-store-icon-wrapper):not(#dedsec-border-only-lock),
+html body.dark-theme.academy-dedsec-page :is(.feature-icon-wrapper, .home-store-icon-wrapper):not(#dedsec-border-only-lock) {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html body.light-theme .academy-dedsec-page :is(.feature-icon-wrapper, .home-store-icon-wrapper):not(#dedsec-border-only-lock),
+html body.light-theme.academy-dedsec-page :is(.feature-icon-wrapper, .home-store-icon-wrapper):not(#dedsec-border-only-lock) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Homepage lower informational icon square follows the same rule. */
+html body.dark-theme .homepage-lower-icon:not(#dedsec-border-only-lock) { background:#000000 !important; background-image:none !important; }
+html body.light-theme .homepage-lower-icon:not(#dedsec-border-only-lock) { background:#ffffff !important; background-image:none !important; }
+
+/* Navigation absolute surface lock: prevents legacy hover/gradient rules from
+   reintroducing lavender fills into the fixed header. */
+html body.dark-theme :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link):not(#dedsec-nav-surface-lock) {
+  background:#000000 !important;
+  background-color:#000000 !important;
+  background-image:none !important;
+  box-shadow:none !important;
+}
+html body.light-theme :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link):not(#dedsec-nav-surface-lock) {
+  background:#ffffff !important;
+  background-color:#ffffff !important;
+  background-image:none !important;
+  box-shadow:none !important;
+}
+html body :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link):not(#dedsec-nav-surface-lock)::before,
+html body :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link):not(#dedsec-nav-surface-lock)::after {
+  background:none !important;
+  background-image:none !important;
+  box-shadow:none !important;
+}
+
+
+/* === SALES CONTEXT BRIDGES 20260807j ===
+   Value-led CTAs. Surfaces deliberately obey the site's border-only rule. */
+.tool-use-case,
+.store-product-solve,
+.product-solve-summary,
+.installation-next-card,
+.academy-ebook-bridge {
+  border: 1px solid var(--ded-accent-lavender, #c084fc);
+  border-left: 4px solid var(--ded-accent-purple, #a855f7);
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body.dark-theme :is(.tool-use-case,.store-product-solve,.product-solve-summary,.installation-next-card,.academy-ebook-bridge) {
+  background:#000 !important; color:#fff !important;
+}
+body.light-theme :is(.tool-use-case,.store-product-solve,.product-solve-summary,.installation-next-card,.academy-ebook-bridge) {
+  background:#fff !important; color:#000 !important;
+}
+.tool-use-case { margin: 0 0 14px; padding: 12px 14px; }
+.tool-use-case h5,
+.store-product-solve strong,
+.product-solve-summary strong { display:block; margin:0 0 6px; font-weight:900; letter-spacing:.02em; }
+.tool-use-case p,.store-product-solve p,.product-solve-summary p { margin:0; line-height:1.55; }
+.store-product-solve { margin: 12px 0 14px; padding: 12px 14px; }
+.product-solve-summary { width:min(820px,100%); margin:18px auto 0; padding:14px 16px; text-align:left; }
+.home-buy-nudge { max-width:900px; margin:18px auto 14px; text-align:center; line-height:1.65; }
+.installation-next-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:18px; }
+.installation-next-card { padding:18px; }
+.installation-next-card h3 { margin-top:0; }
+.installation-next-card .starter-path-btn { width:100%; min-height:50px; margin-top:10px; }
+.sponsor-conversion-note { padding:16px 18px 18px; border-top:1px solid var(--ded-accent-lavender,#c084fc); }
+.sponsor-conversion-note .starter-path-btn { margin-top:10px; min-height:50px; }
+.academy-ebook-bridge { margin-top:26px; padding:clamp(18px,4vw,30px) !important; }
+.academy-ebook-bridge h2 { margin-bottom:12px; }
+.academy-ebook-bridge h3 { margin:0 0 10px; }
+.academy-ebook-bridge p { max-width:900px; line-height:1.65; }
+.academy-ebook-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+.academy-ebook-actions .starter-path-btn { flex:1 1 260px; min-height:50px; }
+@media (max-width:700px) {
+  .installation-next-grid { grid-template-columns:1fr; }
+  .academy-ebook-actions { display:grid; grid-template-columns:1fr; }
+  .academy-ebook-actions .starter-path-btn { width:100%; }
+}
+
+
+/* === CONTROLLED FUNNEL + BORDER-ONLY CONTROLS 20260807k === */
+/* Buttons use accent on borders/icons only. No purple/lavender button fills. */
+html body.dark-theme :is(
+  button,
+  a[class*="btn"], a[class*="button"], a[role="button"],
+  input[type="button"], input[type="submit"],
+  .app-icon, .payment-btn, .starter-path-btn, .sales-btn,
+  .product-primary-cta, .product-details-btn, .sponsor-tier-btn
+) {
+  background:#000000 !important;
+  background-color:#000000 !important;
+  background-image:none !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  border-color:var(--ded-accent-purple,#a855f7) !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+  filter:none !important;
+}
+html body.light-theme :is(
+  button,
+  a[class*="btn"], a[class*="button"], a[role="button"],
+  input[type="button"], input[type="submit"],
+  .app-icon, .payment-btn, .starter-path-btn, .sales-btn,
+  .product-primary-cta, .product-details-btn, .sponsor-tier-btn
+) {
+  background:#ffffff !important;
+  background-color:#ffffff !important;
+  background-image:none !important;
+  color:#000000 !important;
+  -webkit-text-fill-color:#000000 !important;
+  border-color:var(--ded-accent-purple,#a855f7) !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+  filter:none !important;
+}
+html body :is(
+  button,
+  a[class*="btn"], a[class*="button"], a[role="button"],
+  input[type="button"], input[type="submit"],
+  .app-icon, .payment-btn, .starter-path-btn, .sales-btn,
+  .product-primary-cta, .product-details-btn, .sponsor-tier-btn
+):is(:hover,:focus,:focus-visible,:active) {
+  background-image:none !important;
+  box-shadow:none !important;
+  border-color:var(--ded-accent-lavender,#c084fc) !important;
+  filter:none !important;
+}
+html body.dark-theme :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon):is(:hover,:focus,:focus-visible,:active) {
+  background:#000000 !important; color:#ffffff !important; -webkit-text-fill-color:#ffffff !important;
+}
+html body.light-theme :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon):is(:hover,:focus,:focus-visible,:active) {
+  background:#ffffff !important; color:#000000 !important; -webkit-text-fill-color:#000000 !important;
+}
+html body :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon)::before,
+html body :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon)::after {
+  background:none !important; background-image:none !important; box-shadow:none !important;
+}
+/* Let icons carry the accent without recoloring the button surface. */
+html body :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon) i {
+  color:var(--ded-accent-lavender,#c084fc) !important;
+  -webkit-text-fill-color:var(--ded-accent-lavender,#c084fc) !important;
+}
+
+.home-decision-section{max-width:1040px;margin:22px auto 30px;padding:clamp(22px,4vw,36px);text-align:center}
+.home-decision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+.home-decision-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding:clamp(20px,4vw,30px);border:1px solid var(--ded-accent-lavender,#c084fc);border-left:4px solid var(--ded-accent-purple,#a855f7);background:var(--nm-container)!important;background-image:none!important;box-shadow:none!important}
+.home-decision-card p{margin:0;line-height:1.62}.home-decision-card h3{margin:4px 0 0}.home-decision-number{font-family:var(--font-mono);font-weight:900;letter-spacing:.08em;color:var(--nm-text-accent)}
+.home-decision-flow{margin-top:auto!important;padding-top:4px}.home-decision-card .sales-btn{width:100%;min-height:54px;margin-top:8px}.home-decision-note{max-width:820px;margin:18px auto 0;line-height:1.6}
+.installation-primary-next{max-width:680px;margin:18px auto}.installation-primary-next .starter-path-btn{width:100%;min-height:54px}
+.installation-store-nudge{max-width:820px;margin:24px auto 12px;padding:18px;border:1px solid var(--ded-accent-lavender,#c084fc);border-left:4px solid var(--ded-accent-purple,#a855f7);background:var(--nm-container)!important;background-image:none!important}.installation-store-nudge h3{margin-top:0}.installation-store-nudge .starter-path-btn{width:100%;min-height:50px;margin-top:8px}.installation-recovery-link{margin-top:18px}
+.academy-entry-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}.academy-entry-actions .starter-path-btn{flex:1 1 260px;min-height:52px}.academy-path-next,.store-path-next{max-width:980px;margin:24px auto;padding:clamp(20px,4vw,32px);text-align:center}.store-path-assistance{margin-top:16px}
+@media(max-width:720px){.home-decision-grid{grid-template-columns:1fr}.academy-entry-actions{display:grid;grid-template-columns:1fr}.academy-entry-actions .starter-path-btn{width:100%}}
+
+/* Button contents follow theme contrast; the border is the only accent color. */
+html body.dark-theme :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon) :is(i,svg,span,strong) {
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.light-theme :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon) :is(i,svg,span,strong) {
+  color:#000000 !important;
+  -webkit-text-fill-color:#000000 !important;
+}
+
+/* === CTA ALIGNMENT + HOME ACADEMY BRIDGE 20260807m === */
+/* Main-content CTAs are visually centered. Header/nav controls are intentionally excluded. */
+html body main :is(a.sales-btn, a.starter-path-btn, a.payment-btn, a.btn, button.btn) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+/* Store purchase actions use one centered vertical decision stack on all widths. */
+html body main .store-product-actions {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) !important;
+  justify-items: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 10px !important;
+}
+html body main .store-product-actions > strong,
+html body main .store-product-actions .sales-btn,
+html body main .store-product-actions .store-preview-link,
+html body main .store-product-actions .store-details-link {
+  grid-column: 1 !important;
+  justify-self: center !important;
+  text-align: center !important;
+}
+html body main .store-product-actions .sales-btn,
+html body main .store-product-actions .store-preview-link {
+  width: min(100%, 430px) !important;
+}
+html body main .store-butsystem-free > .sales-btn,
+html body main .store-custom-offer > .sales-btn,
+html body main .store-sales-faq .sales-btn {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.home-decision-academy {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 14px auto 0 !important;
+}
+.home-decision-academy .sales-btn {
+  width: min(100%, 430px) !important;
+  min-height: 52px !important;
+}
+
+
+/* === GLOBAL CONTENT CTA CENTERING LOCK 20260807n ===
+   Center every user-facing content CTA regardless of legacy page wrapper.
+   Navigation, filters, modal controls and code-copy controls are intentionally excluded. */
+html body :is(
+  a.btn,
+  a.sales-btn,
+  a.starter-path-btn,
+  a.payment-btn,
+  a.sponsor-btn,
+  a.store-preview-link,
+  a.store-details-link,
+  a.product-details-btn,
+  a.product-primary-cta,
+  a.product-back-btn,
+  a.ebook-preview-link,
+  a.contact-page-btn,
+  a.contact-cta,
+  a.faq-link-btn,
+  a.hero-cta,
+  a.feature-cta,
+  button.assistance-report-btn,
+  button.assistance-expand-btn
+) {
+  margin-left:auto !important;
+  margin-right:auto !important;
+  align-self:center !important;
+  justify-self:center !important;
+  text-align:center !important;
+  justify-content:center !important;
+}
+
+/* Center the common action wrappers too, so legacy flex/grid rules cannot pin CTAs to an edge. */
+html body :is(
+  .hero-actions,
+  .sales-hero-actions,
+  .store-action-row,
+  .store-product-actions,
+  .product-secondary-actions,
+  .academy-entry-actions,
+  .academy-ebook-actions,
+  .inline-action-buttons,
+  .assistance-support-actions,
+  .assistance-quick-actions,
+  .home-decision-academy
+) {
+  justify-content:center !important;
+  justify-items:center !important;
+  text-align:center !important;
+}
+
+/* Single prominent CTAs should stay visibly centered instead of inheriting a start alignment. */
+html body :is(
+  .store-butsystem-free,
+  .store-custom-offer,
+  .store-sales-faq,
+  .installation-primary-next,
+  .installation-store-nudge,
+  .sponsor-conversion-note,
+  .product-final-cta
+) > :is(a.btn,a.sales-btn,a.starter-path-btn,a.payment-btn,a.sponsor-btn) {
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+
+/* === ABSOLUTE CONTENT CTA PHYSICAL CENTERING 20260807o ===
+   A CTA must be centered as an element, not merely have centered text.
+   This intentionally excludes header/navigation/filter/copy controls. */
+html body :is(
+  a.sales-btn,
+  a.btn,
+  a.payment-btn,
+  a.sponsor-btn,
+  a.store-preview-link,
+  a.store-details-link,
+  a.product-details-btn,
+  a.product-primary-cta,
+  a.product-back-btn,
+  a.ebook-preview-link,
+  a.contact-page-btn,
+  a.contact-cta,
+  a.faq-link-btn,
+  a.hero-cta,
+  a.feature-cta
+) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Inline-level buttons ignore auto margins in normal flow. Make the main CTA
+   families real flex boxes so their horizontal auto margins actually work. */
+html body a.sales-btn {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+}
+html body :is(a.btn, a.store-preview-link, a.store-details-link, a.product-details-btn,
+  a.product-back-btn, a.ebook-preview-link, a.contact-page-btn, a.contact-cta,
+  a.faq-link-btn, a.hero-cta, a.feature-cta) {
+  display: flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+html body a.payment-btn,
+html body a.product-primary-cta {
+  display: flex !important;
+}
+html body a.sponsor-btn {
+  display: flex !important;
+  width: min(100%, 430px) !important;
+}
+html body a.starter-path-btn {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+/* Explicit fix for Store sections that live outside <main>. */
+html body .store-butsystem-free > a.sales-btn,
+html body .store-custom-offer > a.sales-btn,
+html body .store-sales-faq a.sales-btn {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Labels that are actual short sentences use sentence case and punctuation.
+   Heading/category labels remain uppercase and do not use a trailing period. */
+html body .sales-section-label.sales-sentence-label {
+  text-transform: none !important;
+  letter-spacing: .035em !important;
+}
+
+
+/* Native-button CTA parity for Assistance and legacy content controls. */
+html body :is(button.starter-path-btn, button.assistance-report-btn, button.assistance-expand-btn) {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+/* === SMARTPHONE ACADEMY MOBILE CTA ALIGNMENT 20260807o ===
+   Keep each primary Academy action on its own centered row on phones. */
+@media (max-width: 700px) {
+  html body .academy-hero-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  html body .academy-hero-actions > a.btn {
+    width: min(100%, 520px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  html body .academy-entry-next .academy-entry-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  html body .academy-entry-next .academy-entry-actions > .starter-path-btn {
+    flex: 0 0 auto !important;
+    width: min(100%, 520px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* === ACADEMY SECTION ACTION CENTERING 20260807o ===
+   Section-level Academy actions (Back to Academy, safety rules, etc.) are
+   content buttons, so keep them centered at every viewport width. */
+html body :is(.academy-section-heading, .academy-section-heading--actions) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+html body :is(.academy-section-heading, .academy-section-heading--actions) > :is(a.btn, a.starter-path-btn) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+}
+
+/* === PRODUCT PURCHASE CTA CENTERING 20260807o ===
+   Price, checkout CTA and note form one centered decision stack. */
+html body .product-purchase-box {
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
+html body .product-purchase-box .product-primary-cta {
+  width: min(100%, 520px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+html body .product-purchase-box .product-checkout-note {
+  grid-column: 1 !important;
+}
+
+/* === CONTEXTUAL JOURNEY & CONVERSION FLOW 20260807p === */
+.home-hero-support-line{margin:8px auto 0;max-width:760px;text-align:center;font-family:var(--font-mono);font-weight:800;color:var(--nm-text-accent)}
+.home-github-cta{margin-top:10px!important}.home-github-star-count:empty{display:none}.home-github-star-symbol{font-size:1.05em}
+.github-discovery-block,.post-install-value-block,.assistance-contextual-recommendation,.academy-github-bridge,.academy-sponsor-after-value,.product-preview-before-buy,.product-choice-calculus,.product-companion-section{border:1px solid var(--nm-border);background:var(--nm-container);padding:clamp(16px,3vw,24px);margin:18px auto;text-align:center}
+.github-discovery-block{max-width:820px}.github-discovery-block h4,.product-preview-before-buy h3,.product-choice-calculus h3,.assistance-contextual-recommendation h3{margin:0 0 8px}.github-discovery-block p,.post-install-value-block p,.academy-github-bridge p,.academy-sponsor-after-value p,.product-preview-before-buy p,.product-companion-section p,.assistance-contextual-recommendation p{max-width:760px;margin:0 auto 12px;line-height:1.65}
+.post-install-value-block,.academy-github-bridge,.academy-sponsor-after-value,.product-companion-section{max-width:1000px}.post-install-sponsor-note{margin-top:16px!important;font-size:.92rem}.post-install-sponsor-note a,.assistance-github-followup a{font-weight:800}
+.assistance-contextual-recommendation{max-width:780px;margin:16px auto}.assistance-github-followup{max-width:760px;margin:14px auto 0;text-align:center;line-height:1.6}
+.academy-contextual-bridge{max-width:980px;margin:20px auto}.academy-contextual-bridge .starter-path-btn,.academy-github-bridge .starter-path-btn,.academy-sponsor-after-value .starter-path-btn,.product-companion-section .starter-path-btn{width:min(100%,520px)!important}
+.product-preview-before-buy{width:100%;margin:4px 0 0}.product-preview-before-buy .product-preview-actions{margin:12px 0 0!important;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.product-preview-before-buy .ebook-preview-link{flex:1 1 230px!important;max-width:360px!important}
+.product-choice-calculus{width:100%;margin:0}.product-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left}.product-choice-item{border:1px solid var(--nm-border);padding:14px}.product-choice-item strong{display:block;margin-bottom:7px;color:var(--nm-text-accent)}.product-choice-item p{margin:0;line-height:1.55}
+.product-companion-section{margin-bottom:22px}
+@media(max-width:700px){.product-choice-grid{grid-template-columns:1fr}.product-preview-before-buy .product-preview-actions{flex-direction:column}.product-preview-before-buy .ebook-preview-link{width:100%!important;max-width:none!important;flex:0 0 auto!important}.github-discovery-block,.post-install-value-block,.academy-github-bridge,.academy-sponsor-after-value,.product-preview-before-buy,.product-choice-calculus,.product-companion-section{padding:16px 14px}}
+
+
+/* === FOUNDER TECHNOLOGIES + GITHUB ACTIVITY (2026-08-11) === */
+body.founder-page .founder-skills-section {
+  scroll-margin-top: calc(var(--nav-h) + 20px);
+}
+
+body.founder-page .founder-skills-section > .founder-compact-header {
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+body.founder-page .founder-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+body.founder-page .founder-skill-group {
+  padding: 1.15rem;
+  border: 1px solid var(--founder-border-dark);
+  border-left: 3px solid var(--founder-accent-purple);
+  border-top-color: var(--founder-accent-lavender);
+  border-radius: var(--radius-md);
+  background: transparent;
+}
+
+body.founder-page.light-theme .founder-skill-group {
+  border-color: var(--founder-border-light);
+  border-left-color: var(--founder-accent-purple);
+  border-top-color: var(--founder-accent-lavender);
+}
+
+body.founder-page .founder-skill-group h3 {
+  margin: 0 0 .85rem;
+}
+
+body.founder-page .founder-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+body.founder-page .founder-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: .42rem .72rem;
+  border: 1px solid rgba(192, 132, 252, .66);
+  border-radius: 999px;
+  background: transparent;
+  font-size: .92rem;
+  line-height: 1.2;
+  font-weight: 650;
+}
+
+body.founder-page.light-theme .founder-skill-chip {
+  border-color: rgba(126, 34, 206, .52);
+}
+
+body.founder-page .founder-github-activity {
+  max-width: 1080px;
+  margin: 1.5rem auto 0;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(192, 132, 252, .38);
+}
+
+body.founder-page .founder-github-activity > h3 {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+body.founder-page .founder-github-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+body.founder-page .founder-github-stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: .55rem;
+  border: 1px solid var(--founder-accent-lavender);
+  border-left: 3px solid var(--founder-accent-purple);
+  border-radius: var(--radius-md);
+  background: #261d31;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, .14);
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+body.founder-page .founder-github-stat-card:hover,
+body.founder-page .founder-github-stat-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: #d8b4fe;
+  box-shadow: 0 14px 34px rgba(168, 85, 247, .22);
+}
+
+body.founder-page .founder-github-stat-card img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 10px;
+}
+
+body.founder-page .founder-github-stats-grid > :nth-child(3) {
+  grid-column: 1 / -1;
+  width: min(100%, 540px);
+  justify-self: center;
+}
+
+@media (max-width: 820px) {
+  body.founder-page .founder-skills-grid,
+  body.founder-page .founder-github-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.founder-page .founder-github-stats-grid > :nth-child(3) {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+
+/* Founder GitHub cards split into ordered standalone sections. */
+body.founder-page .founder-github-section {
+  scroll-margin-top: calc(var(--nav-h) + 20px);
+}
+
+body.founder-page .founder-github-section > .founder-compact-header {
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+body.founder-page .founder-github-section .founder-github-activity {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+body.founder-page .founder-github-single-card-grid {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+body.founder-page .founder-github-single-card-grid > .founder-github-stat-card {
+  grid-column: auto;
+  width: 100%;
+  justify-self: stretch;
+}
+
+/* === FOUNDER VISUAL FIX (2026-08-11) === */
+body.founder-page .founder-skill-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center;
+  column-gap: .55rem !important;
+  row-gap: .55rem !important;
+}
+
+body.founder-page .founder-skill-chip {
+  display: inline-flex !important;
+  flex: 0 0 auto;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+body.founder-page .founder-github-stat-card {
+  padding: .5rem;
+}
+
+body.founder-page .founder-github-stat-card img {
+  width: 100%;
+  max-width: 520px;
+  min-height: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 560px) {
+  body.founder-page .founder-skill-group {
+    padding: 1rem .8rem;
+  }
+  body.founder-page .founder-skill-chip {
+    font-size: .86rem;
+    padding: .38rem .62rem;
+  }
+  body.founder-page .founder-github-stat-card {
+    padding: .35rem;
+  }
+}

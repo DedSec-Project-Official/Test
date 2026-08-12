@@ -772,3 +772,188 @@ body.founder-page .founder-page-header h1 { font-size: clamp(2rem, 7vw, 4.4rem) 
   .founder-vision-lead-card { grid-column: auto; }
 }
 
+
+
+/* === GLOBAL CONTENT CTA CENTERING LOCK 20260807n ===
+   Center every user-facing content CTA regardless of legacy page wrapper.
+   Navigation, filters, modal controls and code-copy controls are intentionally excluded. */
+html body :is(
+  a.btn,
+  a.sales-btn,
+  a.starter-path-btn,
+  a.payment-btn,
+  a.sponsor-btn,
+  a.store-preview-link,
+  a.store-details-link,
+  a.product-details-btn,
+  a.product-primary-cta,
+  a.product-back-btn,
+  a.ebook-preview-link,
+  a.contact-page-btn,
+  a.contact-cta,
+  a.faq-link-btn,
+  a.hero-cta,
+  a.feature-cta,
+  button.assistance-report-btn,
+  button.assistance-expand-btn
+) {
+  margin-left:auto !important;
+  margin-right:auto !important;
+  align-self:center !important;
+  justify-self:center !important;
+  text-align:center !important;
+  justify-content:center !important;
+}
+
+/* Center the common action wrappers too, so legacy flex/grid rules cannot pin CTAs to an edge. */
+html body :is(
+  .hero-actions,
+  .sales-hero-actions,
+  .store-action-row,
+  .store-product-actions,
+  .product-secondary-actions,
+  .academy-entry-actions,
+  .academy-ebook-actions,
+  .inline-action-buttons,
+  .assistance-support-actions,
+  .assistance-quick-actions,
+  .home-decision-academy
+) {
+  justify-content:center !important;
+  justify-items:center !important;
+  text-align:center !important;
+}
+
+/* Single prominent CTAs should stay visibly centered instead of inheriting a start alignment. */
+html body :is(
+  .store-butsystem-free,
+  .store-custom-offer,
+  .store-sales-faq,
+  .installation-primary-next,
+  .installation-store-nudge,
+  .sponsor-conversion-note,
+  .product-final-cta
+) > :is(a.btn,a.sales-btn,a.starter-path-btn,a.payment-btn,a.sponsor-btn) {
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+
+/* === ABSOLUTE CONTENT CTA PHYSICAL CENTERING 20260807o ===
+   A CTA must be centered as an element, not merely have centered text.
+   This intentionally excludes header/navigation/filter/copy controls. */
+html body :is(
+  a.sales-btn,
+  a.btn,
+  a.payment-btn,
+  a.sponsor-btn,
+  a.store-preview-link,
+  a.store-details-link,
+  a.product-details-btn,
+  a.product-primary-cta,
+  a.product-back-btn,
+  a.ebook-preview-link,
+  a.contact-page-btn,
+  a.contact-cta,
+  a.faq-link-btn,
+  a.hero-cta,
+  a.feature-cta
+) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Inline-level buttons ignore auto margins in normal flow. Make the main CTA
+   families real flex boxes so their horizontal auto margins actually work. */
+html body a.sales-btn {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+}
+html body :is(a.btn, a.store-preview-link, a.store-details-link, a.product-details-btn,
+  a.product-back-btn, a.ebook-preview-link, a.contact-page-btn, a.contact-cta,
+  a.faq-link-btn, a.hero-cta, a.feature-cta) {
+  display: flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+html body a.payment-btn,
+html body a.product-primary-cta {
+  display: flex !important;
+}
+html body a.sponsor-btn {
+  display: flex !important;
+  width: min(100%, 430px) !important;
+}
+html body a.starter-path-btn {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+/* Explicit fix for Store sections that live outside <main>. */
+html body .store-butsystem-free > a.sales-btn,
+html body .store-custom-offer > a.sales-btn,
+html body .store-sales-faq a.sales-btn {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Labels that are actual short sentences use sentence case and punctuation.
+   Heading/category labels remain uppercase and do not use a trailing period. */
+html body .sales-section-label.sales-sentence-label {
+  text-transform: none !important;
+  letter-spacing: .035em !important;
+}
+
+
+/* Native-button CTA parity for Assistance and legacy content controls. */
+html body :is(button.starter-path-btn, button.assistance-report-btn, button.assistance-expand-btn) {
+  display: flex !important;
+  width: min(100%, 520px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+/* === MOBILE RELATED-ACTION CENTERING 20260807o ===
+   Related Assistance links are content actions, so on phone they stack as one
+   centered column instead of looking like left/right-aligned buttons. */
+@media (max-width: 700px) {
+  html body .assistance-page .assistance-related-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    align-items: stretch !important;
+  }
+  html body .assistance-page .assistance-related-grid > .starter-path-btn {
+    width: min(100%, 520px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* === CONTEXTUAL JOURNEY & CONVERSION FLOW 20260807p === */
+.home-hero-support-line{margin:8px auto 0;max-width:760px;text-align:center;font-family:var(--font-mono);font-weight:800;color:var(--nm-text-accent)}
+.home-github-cta{margin-top:10px!important}.home-github-star-count:empty{display:none}.home-github-star-symbol{font-size:1.05em}
+.github-discovery-block,.post-install-value-block,.assistance-contextual-recommendation,.academy-github-bridge,.academy-sponsor-after-value,.product-preview-before-buy,.product-choice-calculus,.product-companion-section{border:1px solid var(--nm-border);background:var(--nm-container);padding:clamp(16px,3vw,24px);margin:18px auto;text-align:center}
+.github-discovery-block{max-width:820px}.github-discovery-block h4,.product-preview-before-buy h3,.product-choice-calculus h3,.assistance-contextual-recommendation h3{margin:0 0 8px}.github-discovery-block p,.post-install-value-block p,.academy-github-bridge p,.academy-sponsor-after-value p,.product-preview-before-buy p,.product-companion-section p,.assistance-contextual-recommendation p{max-width:760px;margin:0 auto 12px;line-height:1.65}
+.post-install-value-block,.academy-github-bridge,.academy-sponsor-after-value,.product-companion-section{max-width:1000px}.post-install-sponsor-note{margin-top:16px!important;font-size:.92rem}.post-install-sponsor-note a,.assistance-github-followup a{font-weight:800}
+.assistance-contextual-recommendation{max-width:780px;margin:16px auto}.assistance-github-followup{max-width:760px;margin:14px auto 0;text-align:center;line-height:1.6}
+.academy-contextual-bridge{max-width:980px;margin:20px auto}.academy-contextual-bridge .starter-path-btn,.academy-github-bridge .starter-path-btn,.academy-sponsor-after-value .starter-path-btn,.product-companion-section .starter-path-btn{width:min(100%,520px)!important}
+.product-preview-before-buy{width:100%;margin:4px 0 0}.product-preview-before-buy .product-preview-actions{margin:12px 0 0!important;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.product-preview-before-buy .ebook-preview-link{flex:1 1 230px!important;max-width:360px!important}
+.product-choice-calculus{width:100%;margin:0}.product-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left}.product-choice-item{border:1px solid var(--nm-border);padding:14px}.product-choice-item strong{display:block;margin-bottom:7px;color:var(--nm-text-accent)}.product-choice-item p{margin:0;line-height:1.55}
+.product-companion-section{margin-bottom:22px}
+@media(max-width:700px){.product-choice-grid{grid-template-columns:1fr}.product-preview-before-buy .product-preview-actions{flex-direction:column}.product-preview-before-buy .ebook-preview-link{width:100%!important;max-width:none!important;flex:0 0 auto!important}.github-discovery-block,.post-install-value-block,.academy-github-bridge,.academy-sponsor-after-value,.product-preview-before-buy,.product-choice-calculus,.product-companion-section{padding:16px 14px}}
+

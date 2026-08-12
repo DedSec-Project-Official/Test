@@ -122,9 +122,13 @@ def main() -> int:
         robots = soup.find("meta", attrs={"name": "robots"})
         if robots:
             value = robots.get("content", "").lower()
-            if config["indexable"] and "noindex" in value:
+            # A custom 404 page must stay out of search indexes on every deployment.
+            if rel == "404.html":
+                if "noindex" not in value:
+                    issues.append((rel, "404 page must contain noindex"))
+            elif config["indexable"] and "noindex" in value:
                 issues.append((rel, "indexable deployment contains noindex"))
-            if not config["indexable"] and "noindex" not in value:
+            elif not config["indexable"] and "noindex" not in value:
                 issues.append((rel, "test deployment is indexable"))
 
     cname = root / "CNAME"

@@ -245,7 +245,13 @@ def rewrite_html(path: Path, root: Path, config: dict, repository: str) -> None:
         soup.html["data-repository"] = repository
 
     current_url = page_url(config["site_url"], relative)
-    robots = "index,follow,max-image-preview:large" if config["indexable"] else "noindex,nofollow,noarchive"
+    # Error pages must never be indexed, even on an otherwise indexable deployment.
+    # Keeping this exception in the repository builder prevents the main-site build
+    # from overwriting 404.html's source-level noindex directive.
+    if relative.as_posix() == "404.html":
+        robots = "noindex,follow"
+    else:
+        robots = "index,follow,max-image-preview:large" if config["indexable"] else "noindex,nofollow,noarchive"
     set_meta(soup, name="robots", content=robots)
     set_meta(soup, prop="og:url", content=current_url)
     set_meta(soup, name="twitter:url", content=current_url)

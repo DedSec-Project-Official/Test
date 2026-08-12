@@ -1789,10 +1789,39 @@ return file;
         window.addEventListener('hashchange', () => scrollToHash('smooth'));
     }
 
+
+    function initializeGitHubStarCounts() {
+        const targets = Array.from(document.querySelectorAll('[data-github-star-count]'));
+        if (!targets.length || typeof fetch !== 'function') return;
+        const render = (value) => {
+            if (!Number.isFinite(value)) return;
+            targets.forEach((el) => { el.textContent = value.toLocaleString(); });
+        };
+        try {
+            const cached = JSON.parse(sessionStorage.getItem('dedsec-github-stars') || 'null');
+            if (cached && Number.isFinite(cached.count) && Date.now() - cached.time < 1800000) {
+                render(cached.count);
+                return;
+            }
+        } catch (_) {}
+        fetch('https://api.github.com/repos/dedsec1121fk/DedSec', {
+            headers: { 'Accept': 'application/vnd.github+json' }
+        })
+            .then((response) => response.ok ? response.json() : Promise.reject(new Error('GitHub API unavailable')))
+            .then((data) => {
+                const count = Number(data && data.stargazers_count);
+                if (!Number.isFinite(count)) return;
+                render(count);
+                try { sessionStorage.setItem('dedsec-github-stars', JSON.stringify({ count, time: Date.now() })); } catch (_) {}
+            })
+            .catch(() => {});
+    }
+
 // --- MAIN INIT ---
     function init() {
         initializeNavigation();
         initializeFeaturedArticle();
+        initializeGitHubStarCounts();
         initializePreferredSourceButton();
         initializeDeepLinks();
         initializeThemeSwitcher();
