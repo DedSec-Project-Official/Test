@@ -93,10 +93,9 @@
 - https://ded-sec.space/Pages/contact-credits.html — Contact & Credits - DedSec Project — Contact the DedSec Project team, find official links, and see the creators, contributors, artists, legal help, and past supporters.
 - https://ded-sec.space/Pages/faq.html — DedSec Project FAQ — Project Questions, Tools, Sponsors & Support — Answers about DedSec Project tools, safety, installation, GitHub Sponsor tiers, the ebook library, support, downloads, and how to start.
 - https://ded-sec.space/Pages/guide-for-installation.html — Guide For Installation - DedSec Project — Install DedSec Project on Android with a clear Termux setup guide, storage steps, GitHub clone help, and safe first-run instructions.
-- https://ded-sec.space/Pages/learn-about-the-tools.html — Learn About The Tools - DedSec Project — Explore DedSec Project tools for Termux, OSINT awareness, safe testing, automation, privacy, and Android no-root workflows.
+- https://ded-sec.space/Pages/learn-about-the-tools.html — Learn About The Tools - DedSec Project — Explore DedSec tools, no-root Termux workflows, sponsor-only utilities, and the $25 Ultimate Supporter five-ebook library.
 - https://ded-sec.space/Pages/about-founder.html — Founder's Story & Project's Vision — DedSec Project — The founder's story and the DedSec Project vision, from Loukas Floros's early inspiration to practical learning, digital freedom, and human-first technology.
 - https://ded-sec.space/Pages/privacy-policy.html — Privacy Policy - DedSec Project — Read the DedSec Project privacy policy, including what the website uses, what it avoids collecting, and how user privacy is handled.
-- https://ded-sec.space/Pages/sponsors.html — GitHub Sponsors — DedSec Project — Compare the $3, $9 and $25 GitHub Sponsor tiers and explore the five-ebook library included with the $25 Ultimate Supporter tier.
 - https://ded-sec.space/el/ — DedSec Project — DedSec Project — Δεν χρειάζεται να είστε προγραμματιστής — μόνο κάποιος που θέλει έναν πιο καθαρό τρόπο να μάθει Termux, να διορθώνει προβλήματα και να κάνει κάτι να δουλέψει.
 - https://ded-sec.space/el/Assistance/fix-dedsec-broken-install.html — Διόρθωσε Broken DedSec Εγκατάστησε — DedSec Project — Αναλυτικός οδηγός για διόρθωσε broken dedsec εγκατάστησε στο Termux και στο DedSec Project, με εξήγηση, αντιγράψιμες εντολές, συχνά λάθη και ασφαλή επόμενα βήματα.
 - https://ded-sec.space/el/Assistance/fix-github-ssh-authentication-termux.html — GitHub SSH/auth — DedSec Project — Αναλυτικός οδηγός για github ssh/auth στο Termux και στο DedSec Project, με εξήγηση, αντιγράψιμες εντολές, συχνά λάθη και ασφαλή επόμενα βήματα.
@@ -179,10 +178,9 @@
 - https://ded-sec.space/el/Pages/contact-credits.html — Επικοινωνία & Συντελεστές — DedSec Project — Επικοινωνήστε με την ομάδα μας και γνωρίστε τα ταλαντούχα άτομα πίσω από το DedSec Project.
 - https://ded-sec.space/el/Pages/faq.html — Συχνές Ερωτήσεις — DedSec Project — Απαντήσεις για το DedSec Project, τη Βοήθεια, τα GitHub Sponsors tiers και τη βιβλιοθήκη ebooks του $25 Ultimate Supporter tier.
 - https://ded-sec.space/el/Pages/guide-for-installation.html — Οδηγός Εγκατάστασης — DedSec Project — Βήμα-βήμα οδηγίες για την εγκατάσταση και ρύθμιση του DedSec Project στη συσκευή σας Android.
-- https://ded-sec.space/el/Pages/learn-about-the-tools.html — Μάθετε για τα Εργαλεία — DedSec Project — Αυτή η σελίδα είναι ο χάρτης του project: τι κάνει κάθε εργαλείο, γιατί υπάρχει και ποιο πραγματικό πρόβλημα με έσπρωξε να το φτιάξω. Ξεκίνα από τη λίστα, άνοιξε ό,τι σου τραβάει το μάτι και άσε τα εργαλεία να εξηγήσουν μόνα τους το project.
+- https://ded-sec.space/el/Pages/learn-about-the-tools.html — Μάθετε για τα Εργαλεία — DedSec Project — Εργαλεία DedSec, no-root ροές Termux, sponsor-only utilities και η βιβλιοθήκη πέντε ebooks του $25 Ultimate Supporter.
 - https://ded-sec.space/el/Pages/about-founder.html — Η Ιστορία του Ιδρυτή & Το Όραμα του Project — DedSec Project — Η ιστορία του Λουκά Φλώρου και το όραμα του DedSec Project για πρακτική μάθηση, ψηφιακή ελευθερία και τεχνολογία με επίκεντρο τον άνθρωπο.
 - https://ded-sec.space/el/Pages/privacy-policy.html — Πολιτική Απορρήτου — DedSec Project — This Privacy Policy explains, at a high level, how DedSec Project ("we," "our," or "us") handles data in connection with the website and related services. It should be read together with the updated Legal Disclaimer & Statement on this page.
-- https://ded-sec.space/el/Pages/sponsors.html — Κατάστημα — DedSec Project — Χρησιμοποίησε αυτή τη σελίδα όταν θέλεις να στηρίξεις το project, να ξεκλειδώσεις sponsor-only access, να κλείσεις setup ή repair help, να προγραμματίσεις Direct Chat Support με τον creator ή να παραγγείλεις custom DedSec-style δουλειά χωρίς χάσιμο χρόνου.
 
 ## Usage note
 

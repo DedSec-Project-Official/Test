@@ -766,15 +766,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ded-sec.space/Pages/privacy-policy.html"/>
   </url>
   <url>
-    <loc>https://ded-sec.space/Pages/sponsors.html</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ded-sec.space/Pages/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://ded-sec.space/el/Pages/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ded-sec.space/Pages/sponsors.html"/>
-  </url>
-  <url>
     <loc>https://ded-sec.space/Smartphone-Academy/Pages/Android-Foundations/Apps-Apks-Bundles.html</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -3662,15 +3653,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ded-sec.space/Pages/privacy-policy.html"/>
     <xhtml:link rel="alternate" hreflang="el" href="https://ded-sec.space/el/Pages/privacy-policy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ded-sec.space/Pages/privacy-policy.html"/>
-  </url>
-  <url>
-    <loc>https://ded-sec.space/el/Pages/sponsors.html</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ded-sec.space/Pages/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://ded-sec.space/el/Pages/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ded-sec.space/Pages/sponsors.html"/>
   </url>
   <url>
     <loc>https://ded-sec.space/el/Smartphone-Academy/Pages/Android-Foundations/Apps-Apks-Bundles.html</loc>

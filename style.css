@@ -10807,13 +10807,20 @@ body.founder-page .founder-github-stat-card img {
   }
 }
 
-/* GitHub Sponsors page */
+/* GitHub Sponsors tier and ebook components */
 .sponsors-page .sponsor-hero{max-width:980px;margin:0 auto;}
 .sponsor-eyebrow,.sponsor-card-kicker,.sponsor-tier-price{display:inline-block;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-color,#9d5cff);}
 .sponsor-tier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px;}
 .sponsor-tier-card,.sponsor-ebook-card,.sponsor-access-note{border:1px solid rgba(173,117,255,.28);background:rgba(20,15,31,.72);border-radius:18px;padding:22px;box-shadow:0 16px 36px rgba(0,0,0,.18);}
 .sponsor-tier-card--featured{border-color:rgba(173,117,255,.72);box-shadow:0 18px 44px rgba(123,72,214,.2);}
 .sponsor-tier-card h3,.sponsor-ebook-card h3,.sponsor-access-note h3{margin:10px 0 12px;}
+.sponsor-tier-card h4,.sponsor-ebook-card h4{margin:10px 0 12px;font-size:1.08rem;}
+.sponsor-inline-library{padding:6px 18px 24px;border-top:1px solid rgba(173,117,255,.18);}
+.sponsor-inline-library .academy-section-heading{margin:0 0 18px;}
+.sponsor-inline-library .sponsor-inline-tier-card{margin:0 0 18px;}
+.sponsor-inline-library .sponsor-library-intro{margin:18px 0 0;line-height:1.7;opacity:.92;}
+.sponsor-inline-library .anchor-target{display:block;position:relative;top:-84px;visibility:hidden;}
+body.light-theme .sponsor-inline-library .sponsor-tier-card,body.light-theme .sponsor-inline-library .sponsor-ebook-card{background:rgba(255,255,255,.92);border-color:rgba(94,52,153,.22);}
 .sponsor-tier-card ul{margin:16px 0 0;padding-left:20px;}
 .sponsor-tier-card li{margin:.55rem 0;line-height:1.55;}
 .sponsor-tier-card .starter-path-btn{margin-top:18px;}
@@ -10824,3 +10831,113 @@ body.founder-page .founder-github-stat-card img {
 .sponsor-access-note .btn{margin-top:10px;}
 body.light-theme.sponsors-page .sponsor-tier-card,body.light-theme.sponsors-page .sponsor-ebook-card,body.light-theme.sponsors-page .sponsor-access-note{background:rgba(255,255,255,.92);border-color:rgba(94,52,153,.22);}
 @media(max-width:900px){.sponsor-tier-grid{grid-template-columns:1fr;}.sponsor-ebook-grid{grid-template-columns:1fr;}}
+
+/* === DARK LAVENDER THEME + CENTERED INTERACTIVE LABELS (2026-09-18) ===
+   Requested polish:
+   - Dark mode uses a dark purple/lavender surface system instead of pure black.
+   - Accordion/category/tool labels and standard button labels are visually centered.
+*/
+html body.dark-theme {
+  --ded-page-surface: #17101f !important;
+  --ded-card-surface-dark: #21172d !important;
+  --nm-abyss-blue: #17101f !important;
+  --nm-darkest: #1b1326 !important;
+  --nm-nav-solid: #1d1529 !important;
+  --nm-menu-solid: #21172d !important;
+  --nm-dark: #21172d !important;
+  --nm-container: #261b33 !important;
+  --nm-disclaimer-bg: #1d1529 !important;
+  --nm-fade: rgba(23, 16, 31, 0) !important;
+  background: #17101f !important;
+  background-color: #17101f !important;
+  background-image: none !important;
+}
+
+/* Fixed navigation and menu surfaces now match the lavender-dark palette. */
+html body.dark-theme :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link):not(#dedsec-nav-surface-lock) {
+  background: #1d1529 !important;
+  background-color: #1d1529 !important;
+  background-image: none !important;
+}
+
+/* Boxed surfaces stay dark, but no longer collapse into pure black. */
+html body.dark-theme :is(
+  .page-header, .hero-section, .content-section,
+  .feature-card, .community-card, .tool-card, .stat-card, .glance-card, .step-card,
+  .trust-item, .category, .category-header, .tool-item,
+  [class*="-card"], [class*="_card"], [class*="Card"],
+  [class*="-box"], [class*="_box"],
+  [class*="-panel"], [class*="_panel"],
+  .callout, .note, .warning, .note-warning, .danger, .tip, details,
+  .cookie-banner, .modal-content, .modal-disclaimer,
+  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
+  .search-modal, .dedsec-cookie-settings,
+  .academy-main-header, .academy-lesson-header,
+  .academy-meta-row span, .academy-filter, .academy-command-list > div,
+  .academy-table-wrap, .academy-table-wrap table, .academy-table-wrap th,
+  .academy-brief-card, .academy-platform-card, .academy-evidence-box,
+  .academy-callout, .academy-quality-item
+) {
+  background: #21172d !important;
+  background-color: #21172d !important;
+  background-image: none !important;
+}
+
+/* Keep code areas slightly deeper for contrast while retaining the purple cast. */
+html body.dark-theme :is(.code-container, pre) {
+  background: #140f1b !important;
+  background-color: #140f1b !important;
+  background-image: none !important;
+}
+
+/* Accordion/category buttons: true visual centering with the chevron pinned right. */
+html body .category-header,
+html body .tool-header {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+html body .category-header > :is(h2, h3),
+html body .tool-header > .tool-title {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 2.75rem !important;
+  padding-right: 2.75rem !important;
+  text-align: center !important;
+  overflow-wrap: anywhere;
+}
+html body .category-header > .toggle-icon,
+html body .tool-header > .tool-expand-icon {
+  position: absolute !important;
+  right: 1rem !important;
+  top: 50% !important;
+  margin: 0 !important;
+  transform: translateY(-50%);
+}
+html body .category.active .category-header > .toggle-icon,
+html body .tool-item.active .tool-header > .tool-expand-icon {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Standard controls: keep their labels centered across desktop and mobile. */
+html body :is(
+  button,
+  .btn,
+  .btn-primary,
+  .sales-btn,
+  .starter-path-btn,
+  .faq-link-btn,
+  .footer-mini-btn,
+  .copy-btn,
+  .contact-page-btn,
+  .contact-cta,
+  .hero-cta,
+  .feature-cta
+) {
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

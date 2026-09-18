@@ -74,14 +74,14 @@ print('Source audit passed.')
 for _removed in ('Smartphone-Academy/Home.html','el/Smartphone-Academy/Home.html'):
     if (ROOT/_removed).exists():
         raise SystemExit(f'Removed duplicate Academy route still exists: {_removed}')
-for _rel in ('Pages/sponsors.html','el/Pages/sponsors.html'):
-    _path=ROOT/_rel
-    if not _path.exists():
-        raise SystemExit(f'Missing sponsor page: {_rel}')
-    _raw=_path.read_text(encoding='utf-8',errors='replace')
-    for _required in ('$25', 'ebook-data-analytics', 'ebook-faith', 'ebook-termux', 'ebook-website', 'ebook-ai-prompts'):
+for _removed in ('Pages/sponsors.html','el/Pages/sponsors.html'):
+    if (ROOT/_removed).exists():
+        raise SystemExit(f'Removed sponsor page still exists: {_removed}')
+for _rel in ('Pages/learn-about-the-tools.html','el/Pages/learn-about-the-tools.html'):
+    _raw=(ROOT/_rel).read_text(encoding='utf-8',errors='replace')
+    for _required in ('$25', 'sponsor-ebooks', 'ebook-data-analytics', 'ebook-faith', 'ebook-termux', 'ebook-website', 'ebook-ai-prompts'):
         if _required not in _raw:
-            raise SystemExit(f'{_rel} missing sponsor-library marker: {_required}')
+            raise SystemExit(f'{_rel} missing embedded $25 sponsor-library marker: {_required}')
 for _html in ROOT.rglob('*.html'):
     _raw=_html.read_text(encoding='utf-8',errors='ignore')
     if '/Smartphone-Academy/Home.html' in _raw:
