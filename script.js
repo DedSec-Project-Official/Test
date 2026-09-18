@@ -416,10 +416,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.querySelectorAll('.tool-header').forEach((header) => {
-            attachToggle(header, (e) => {
+            const toggleTool = (e) => {
                 e.stopPropagation();
-                header.parentElement?.classList.toggle('active');
-            });
+                const item = header.parentElement;
+                item?.classList.toggle('active');
+                if (header.hasAttribute('aria-expanded')) {
+                    header.setAttribute('aria-expanded', item?.classList.contains('active') ? 'true' : 'false');
+                }
+            };
+            attachToggle(header, toggleTool);
+            if (header.getAttribute('role') === 'button' && header.dataset.keyToggleInit !== '1') {
+                header.dataset.keyToggleInit = '1';
+                header.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleTool(e);
+                    }
+                });
+            }
         });
     }
 

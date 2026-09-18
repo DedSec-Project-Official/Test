@@ -10833,30 +10833,31 @@ body.light-theme.sponsors-page .sponsor-tier-card,body.light-theme.sponsors-page
 @media(max-width:900px){.sponsor-tier-grid{grid-template-columns:1fr;}.sponsor-ebook-grid{grid-template-columns:1fr;}}
 
 /* === DARK LAVENDER THEME + CENTERED INTERACTIVE LABELS (2026-09-18) ===
+   Dark palette reduced by 15% from the previous lavender-dark values.
    Requested polish:
    - Dark mode uses a dark purple/lavender surface system instead of pure black.
    - Accordion/category/tool labels and standard button labels are visually centered.
 */
 html body.dark-theme {
-  --ded-page-surface: #17101f !important;
-  --ded-card-surface-dark: #21172d !important;
-  --nm-abyss-blue: #17101f !important;
-  --nm-darkest: #1b1326 !important;
-  --nm-nav-solid: #1d1529 !important;
-  --nm-menu-solid: #21172d !important;
-  --nm-dark: #21172d !important;
-  --nm-container: #261b33 !important;
-  --nm-disclaimer-bg: #1d1529 !important;
-  --nm-fade: rgba(23, 16, 31, 0) !important;
-  background: #17101f !important;
-  background-color: #17101f !important;
+  --ded-page-surface: #140e1a !important;
+  --ded-card-surface-dark: #1c1426 !important;
+  --nm-abyss-blue: #140e1a !important;
+  --nm-darkest: #171020 !important;
+  --nm-nav-solid: #191223 !important;
+  --nm-menu-solid: #1c1426 !important;
+  --nm-dark: #1c1426 !important;
+  --nm-container: #20172b !important;
+  --nm-disclaimer-bg: #191223 !important;
+  --nm-fade: rgba(20, 14, 26, 0) !important;
+  background: #140e1a !important;
+  background-color: #140e1a !important;
   background-image: none !important;
 }
 
 /* Fixed navigation and menu surfaces now match the lavender-dark palette. */
 html body.dark-theme :is(.main-nav, .nav-menu, .nav-action-btn, .burger-menu, .nav-menu .nav-link):not(#dedsec-nav-surface-lock) {
-  background: #1d1529 !important;
-  background-color: #1d1529 !important;
+  background: #191223 !important;
+  background-color: #191223 !important;
   background-image: none !important;
 }
 
@@ -10878,15 +10879,15 @@ html body.dark-theme :is(
   .academy-brief-card, .academy-platform-card, .academy-evidence-box,
   .academy-callout, .academy-quality-item
 ) {
-  background: #21172d !important;
-  background-color: #21172d !important;
+  background: #1c1426 !important;
+  background-color: #1c1426 !important;
   background-image: none !important;
 }
 
 /* Keep code areas slightly deeper for contrast while retaining the purple cast. */
 html body.dark-theme :is(.code-container, pre) {
-  background: #140f1b !important;
-  background-color: #140f1b !important;
+  background: #110d17 !important;
+  background-color: #110d17 !important;
   background-image: none !important;
 }
 
@@ -10941,3 +10942,55 @@ html body :is(
   justify-content: center !important;
   align-items: center !important;
 }
+
+/* === SPONSOR TIER SUB-BUTTONS (2026-09-18) === */
+.sponsor-tier-summary-group{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  padding:0 18px 20px;
+}
+.sponsor-tier-summary-group .sponsor-tier-summary{
+  margin:0 !important;
+  border:1px solid rgba(173,117,255,.42) !important;
+  border-radius:14px !important;
+  overflow:hidden;
+}
+.sponsor-tier-summary-group .sponsor-tier-summary-header{
+  min-height:66px;
+  padding:16px 18px !important;
+  cursor:pointer;
+  user-select:none;
+}
+.sponsor-tier-summary-group .sponsor-tier-summary-header:focus-visible{
+  outline:3px solid var(--nm-secondary, #a855f7) !important;
+  outline-offset:-3px;
+}
+.sponsor-tier-summary-group .sponsor-tier-summary-body{
+  padding-left:18px;
+  padding-right:18px;
+}
+.sponsor-tier-summary-group .sponsor-tier-summary-copy{
+  margin-bottom:12px !important;
+  text-align:center;
+  line-height:1.55 !important;
+}
+.sponsor-tier-summary-group .sponsor-tier-benefits{
+  margin:0 0 18px;
+  padding-left:1.25rem;
+  text-align:left;
+}
+.sponsor-tier-summary-group .sponsor-tier-benefits li{
+  margin:.55rem 0;
+  line-height:1.55;
+  color:var(--nm-text-muted);
+}
+.sponsor-tier-summary-group .sponsor-tier-open-btn{
+  display:flex !important;
+  width:100%;
+  margin:0 0 18px !important;
+}
+body.light-theme .sponsor-tier-summary-group .sponsor-tier-benefits li{
+  color:var(--nm-text-muted);
+}
+
