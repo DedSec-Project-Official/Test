@@ -171,9 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     function reorderNavigationLinks() {
         document.querySelectorAll('.nav-menu').forEach(menu => {
-            const store = Array.from(menu.querySelectorAll('.nav-link')).find(link => /\/store\.html(?:[?#]|$)/i.test(link.getAttribute('href') || ''));
+            const sponsors = Array.from(menu.querySelectorAll('.nav-link')).find(link => /\/sponsors\.html(?:[?#]|$)/i.test(link.getAttribute('href') || ''));
             const assistance = Array.from(menu.querySelectorAll('.nav-link')).find(link => /\/assistance\.html(?:[?#]|$)/i.test(link.getAttribute('href') || ''));
-            if (store && assistance && store.nextElementSibling !== assistance) menu.insertBefore(store, assistance);
+            if (sponsors && assistance && sponsors.nextElementSibling !== assistance) menu.insertBefore(sponsors, assistance);
         });
     }
 
@@ -325,8 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.toggle('hidden-by-default', !isMatch);
         });
 
-        // Update dynamic links that change by language (downloads, Stripe, etc.)
-        document.querySelectorAll('[data-en-link], [data-gr-link], .payment-btn').forEach(link => {
+        // Update dynamic links that change by language.
+        document.querySelectorAll('[data-en-link], [data-gr-link]').forEach(link => {
             const newLink = link.getAttribute(`data-${lang}-link`);
             if (newLink) link.href = newLink;
         });
@@ -1023,7 +1023,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'button', 'a.btn', '.btn', '.btn-primary', '.btn-ghost', '.nav-action-btn', '.nav-lang-btn', '.nav-theme-btn', '#nav-search',
             '.burger-menu', '.nav-link', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.copy-btn', '.footer-mini-btn',
             '.app-icon', '.assistant-chip', '.assistant-open-link', '.assistant-home', '.assistant-refresh', '.assistant-close',
-            '.assistant-trigger', '.search-close', '.close-modal', '.payment-btn', '.sponsor-btn', '.faq-link-btn', '.language-selection-btn',
+            '.assistant-trigger', '.search-close', '.close-modal', '.sponsor-btn', '.faq-link-btn', '.language-selection-btn',
             '.theme-selection-btn', '.accept-btn', '.decline-btn', '.nm-btn'
         ].join(',');
         document.querySelectorAll(selectors).forEach((el) => {
@@ -1045,7 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '.assistant-bubble', '.assistant-chip', '.assistant-open-link', '.assistant-inline-code', '.assistant-rich-section',
             '.code-container', '.modal-content', '.screen', '.phone-container', '.search-modal', '.search-input', '.search-close',
             '.nav-menu', '.nav-action-btn', '#nav-search', '.burger-menu', '.nav-menu .nav-link', '.copy-btn', '.btn', '.btn-primary',
-            '.btn-ghost', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.payment-btn', '.faq-link-btn',
+            '.btn-ghost', '.hero-cta', '.feature-cta', '.contact-cta', '.contact-page-btn', '.faq-link-btn',
             '.language-selection-btn', '.theme-selection-btn', '.accept-btn', '.decline-btn',
             '.next-btn', '.nm-btn'
         ].join(',');

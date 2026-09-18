@@ -10,7 +10,7 @@
 - https://ded-sec.space/Pages/assistance.html — Free Termux and Android troubleshooting guides
 - https://ded-sec.space/Pages/faq.html — Project FAQ
 - https://ded-sec.space/Pages/about-founder.html — Founder's story and the complete DedSec Project vision
-- https://ded-sec.space/Pages/store.html — Sponsorship and direct services
+- https://ded-sec.space/Pages/sponsors.html — GitHub Sponsor tiers and the $25 five-ebook supporter library
 - https://ded-sec.space/Pages/privacy-policy.html — Privacy, legal, and acceptable-use information
 
 ## Greek versions
@@ -38,5 +38,5 @@
 ## Smartphone Academy
 - English: https://ded-sec.space/Pages/Smartphone-Academy.html
 - Greek: https://ded-sec.space/el/Pages/Smartphone-Academy.html
-- Academy: https://ded-sec.space/Smartphone-Academy/Home.html
-- 43 practical labs, 126 estimated hands-on hours, Android with Termux only.
+- Academy: https://ded-sec.space/Smartphone-Academy/index.html
+- 123 practical labs, 382 estimated hands-on hours, Android with Termux only.

@@ -2,7 +2,7 @@
 
 ## Shared page parity
 
-- Smartphone Academy pages use the same main navigation, theme/language controls, footer links, analytics notice, privacy/contact/store paths, icons, typography, and square-corner visual system as the rest of the DedSec Project website.
+- Smartphone Academy pages use the same main navigation, theme/language controls, footer links, analytics notice, privacy/contact/Sponsors paths, icons, typography, and square-corner visual system as the rest of the DedSec Project website.
 - Every button has an explicit non-submit type where appropriate.
 - External links that open a new tab include `noopener` and `noreferrer`.
 - Every page includes a title, description, viewport, language, canonical URL, robots directive, main navigation, and main footer in the generated deployment.
@@ -23,7 +23,7 @@ The workflow builds and validates all three deployment modes. Validation covers 
 
 Current source audit:
 
-- 622 HTML pages
-- 449 Smartphone Academy/public Academy pages
-- 29,342 deployment references checked in each target build
+- 648 HTML pages
+- 475 Smartphone Academy/public Academy pages
+- 26,532 deployment references checked in the main target build
 - zero broken internal references in main, backup, and test builds

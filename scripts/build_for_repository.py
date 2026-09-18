@@ -436,7 +436,7 @@ def generate_search_index(root: Path) -> None:
             continue
         if path.name in excluded_names:
             continue
-        if rel == "Smartphone-Academy/Home.html":
+        if rel == "Smartphone-Academy/index.html":
             continue
         if not (
             rel == "index.html"

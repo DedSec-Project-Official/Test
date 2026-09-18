@@ -62,11 +62,11 @@ def cmd_check(args):
     if not x or x.get('kind')!='practical':raise SystemExit('Practical lab not found.')
     raise SystemExit(subprocess.call([sys.executable,str(ROOT/'Practice'/'Labkit.py'),'check',x['id']]))
 def cmd_open(args):
-    x=find(args.lesson) if args.lesson else None;target=ROOT/(x[state()['language']]['path'] if x else 'Home.html')
+    x=find(args.lesson) if args.lesson else None;target=ROOT/(x[state()['language']]['path'] if x else 'index.html')
     if not target.exists():raise SystemExit(f'Missing page: {target}')
     url=target.as_uri();open_url(url);print(url)
 def cmd_serve(args):
-    os.chdir(ROOT.parent);server=ThreadingHTTPServer((args.host,args.port),SimpleHTTPRequestHandler);url=f'http://127.0.0.1:{args.port}/Smartphone-Academy/Home.html';print(url)
+    os.chdir(ROOT.parent);server=ThreadingHTTPServer((args.host,args.port),SimpleHTTPRequestHandler);url=f'http://127.0.0.1:{args.port}/Smartphone-Academy/index.html';print(url)
     if not args.no_browser:open_url(url)
     try:server.serve_forever()
     except KeyboardInterrupt:pass

@@ -128,30 +128,11 @@
 
 .sales-hero-actions .sales-btn { min-width: 210px; }
 
-.sales-proof-strip,
-.store-trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
 
-.sales-proof-strip span,
-.store-trust-row span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 34px;
-  padding: 7px 10px;
-  border: 1px solid rgba(var(--glow-rgb), .24);
-  border-radius: 0px !important;
-  color: var(--nm-text-muted);
-  background: rgba(var(--glow-rgb), .045);
-  font-size: .78rem;
-}
 
-.sales-proof-strip b,
-.store-trust-row b { font-weight: 750; }
+
+
+
 
 /* Three-step path */
 .home-screen .sales-steps-section,
@@ -194,15 +175,7 @@
   text-align: center !important;
 }
 
-.sales-step-number,
-.product-sales-argument-grid article > span,
-.product-process-grid article > span {
-  color: var(--nm-accent);
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-}
+
 
 .sales-step-card h3,
 .sales-argument-grid h3 {
@@ -344,466 +317,142 @@
 .sales-transparency-card details { margin-top: 12px; }
 .sales-transparency-card summary { cursor: pointer; color: var(--nm-accent); font-weight: 800; }
 
-/* Store header and chooser */
-.store-page .page-content {
-  width: min(100%, 1180px);
-  margin: 0 auto;
-  padding-inline: clamp(10px, 3vw, 24px);
-}
 
-.store-page .store-sales-header {
-  width: 100% !important;
-  max-width: 980px !important;
-  margin: 0 auto 16px !important;
-  padding: clamp(22px, 4vw, 38px) !important;
-  border: 1px solid var(--nm-border) !important;
-  border-radius: 0px !important;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(var(--glow-rgb), .15), transparent 44%),
-    var(--nm-container) !important;
-  text-align: center !important;
-}
 
-.store-sales-header h1 {
-  max-width: 850px;
-  margin: 10px auto 12px !important;
-  font-size: clamp(1.9rem, 5vw, 3.6rem) !important;
-  line-height: 1.05 !important;
-  letter-spacing: -.035em;
-  text-wrap: balance;
-}
 
-.store-sales-header > p {
-  max-width: 760px;
-  margin: 0 auto 18px !important;
-  color: var(--nm-text-muted);
-  font-size: 1rem;
-  line-height: 1.65;
-}
 
-.store-page .store-chooser,
-.store-page .store-products,
-.store-page .store-custom-section,
-.store-page .store-sales-faq,
-.store-page .store-featured-section,
-.store-page .store-note-section,
-.store-page .store-policy-section,
-.store-page .assistance-path-section {
-  width: min(calc(100% - 20px), 1120px) !important;
-  max-width: 1120px !important;
-  margin: 16px auto !important;
-  padding: clamp(18px, 3.5vw, 30px) !important;
-  border-radius: 0px !important;
-}
 
-.store-chooser { text-align: center; }
-.store-chooser h2,
-.store-products > h2,
-.store-sales-faq > h2 {
-  margin: 8px auto 10px;
-  text-align: center;
-}
 
-.store-chooser-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 16px;
-}
 
-.store-chooser-grid a {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  min-width: 0;
-  padding: 13px;
-  border: 1px solid rgba(var(--glow-rgb), .25);
-  border-radius: 0px !important;
-  color: var(--nm-text);
-  background: rgba(var(--glow-rgb), .035);
-  text-align: center !important;
-  text-decoration: none;
-}
 
-.store-chooser-grid a:hover { border-color: var(--nm-accent); }
-.store-chooser-grid i { flex: 0 0 auto; font-size: 1.1rem; }
-.store-chooser-grid span { min-width: 0; }
-.store-chooser-grid strong,
-.store-chooser-grid small { display: block; }
-.store-chooser-grid strong { font-size: .89rem; }
-.store-chooser-grid small { margin-top: 3px; color: var(--nm-text-muted); font-size: .74rem; }
 
-.store-products { text-align: center; }
-.store-page .store-section-kicker {
-  max-width: 760px !important;
-  margin: 0 auto 18px !important;
-  color: var(--nm-text-muted);
-  line-height: 1.6;
-}
 
-.store-product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
 
-.store-product-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid rgba(var(--glow-rgb), .28);
-  border-radius: 0px !important;
-  background: rgba(var(--glow-rgb), .035);
-  text-align: center !important;
-}
 
-.store-product-media {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  min-height: 178px;
-  padding: 15px 15px 0;
-  background: linear-gradient(180deg, rgba(var(--glow-rgb), .09), transparent);
-}
 
-.store-product-media img {
-  width: 126px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border: 1px solid rgba(var(--glow-rgb), .35);
-  border-radius: 0px !important;
-  box-shadow: 0 13px 28px rgba(0,0,0,.28);
-}
 
-.store-product-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  max-width: 46%;
-  padding: 5px 7px;
-  border: 1px solid rgba(var(--glow-rgb), .32);
-  border-radius: 0px !important;
-  color: var(--nm-text);
-  background: var(--nm-nav-solid);
-  font-family: var(--font-mono);
-  font-size: .6rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-}
 
-.store-product-content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 15px;
-}
 
-.store-product-content h3 {
-  margin: 7px 0 8px;
-  font-size: 1.03rem;
-  line-height: 1.28;
-}
 
-.store-product-content > p {
-  margin: 0 0 10px;
-  color: var(--nm-text-muted);
-  font-size: .84rem;
-  line-height: 1.5;
-}
 
-.store-product-content ul {
-  display: grid;
-  gap: 6px;
-  margin: 0 0 13px;
-  padding: 0;
-  list-style: none;
-}
 
-.store-product-content li {
-  position: relative;
-  padding-left: 20px;
-  color: var(--nm-text-muted);
-  font-size: .8rem;
-  line-height: 1.4;
-}
 
-.store-product-content li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--nm-accent);
-  font-weight: 900;
-}
 
-.store-product-actions {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid rgba(var(--glow-rgb), .18);
-}
 
-.store-product-actions > strong {
-  color: var(--nm-accent);
-  font-size: 1.15rem;
-}
 
-.store-product-actions .sales-btn {
-  min-height: 42px;
-  padding: .63rem .75rem;
-  font-size: .82rem;
-}
 
-.store-details-link {
-  grid-column: 1 / -1;
-  color: var(--nm-text-muted);
-  font-size: .76rem;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Custom offer */
-.store-page .store-custom-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(250px, .7fr);
-  gap: 18px;
-  align-items: center;
-}
 
-.store-custom-copy h2 { margin: 8px 0 9px; }
-.store-custom-copy > p { color: var(--nm-text-muted); line-height: 1.6; }
 
-.store-custom-process {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: 15px;
-}
 
-.store-custom-process span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-  padding: 9px;
-  border: 1px solid rgba(var(--glow-rgb), .23);
-  border-radius: 0px !important;
-}
 
-.store-custom-process b {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 26px;
-  width: 26px;
-  height: 26px;
-  border-radius: 0px !important;
-  color: var(--nm-text-on-accent);
-  background: var(--nm-accent);
-}
 
-.store-custom-process em {
-  font-size: .75rem;
-  font-style: normal;
-  font-weight: 750;
-  line-height: 1.3;
-}
 
-.store-custom-offer {
-  padding: 19px;
-  border: 1px solid var(--nm-border);
-  border-radius: 0px !important;
-  background: rgba(var(--glow-rgb), .055);
-  text-align: center;
-}
 
-.store-custom-offer > span {
-  color: var(--nm-accent);
-  font-family: var(--font-mono);
-  font-size: .7rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-}
 
-.store-custom-offer > strong {
-  display: block;
-  margin: 8px 0;
-  color: var(--nm-accent);
-  font-size: 2rem;
-}
 
-.store-custom-offer p { color: var(--nm-text-muted); line-height: 1.5; }
-.store-custom-offer .sales-btn { width: 100%; }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Existing sponsor cards made compact and consistent */
-.store-page .store-featured-section { text-align: center; }
-.store-page .store-featured-section .features-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-}
 
-.store-page .store-featured-section .store-card {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 0 !important;
-  padding: 17px !important;
-  border-radius: 0px !important;
-  text-align: center !important;
-}
 
-.store-page .store-featured-section .store-action-row {
-  display: grid !important;
-  grid-template-columns: auto 1fr !important;
-  gap: 8px !important;
-  margin-top: auto !important;
-}
 
-.store-page .store-featured-section .payment-btn {
-  min-height: 42px !important;
-  padding: .62rem .72rem !important;
-  border-radius: 0px !important;
-  font-size: .8rem !important;
-}
 
-/* Store FAQ and policy */
-.store-sales-faq details,
-.store-policy-section details {
-  margin: 9px 0;
-  border: 1px solid rgba(var(--glow-rgb), .24);
-  border-radius: 0px !important;
-  background: rgba(var(--glow-rgb), .025);
-}
 
-.store-sales-faq summary,
-.store-policy-section summary {
-  padding: 13px 14px;
-  cursor: pointer;
-  font-weight: 800;
-}
 
-.store-sales-faq details p,
-.store-policy-section .store-note-card {
-  margin: 0;
-  padding: 0 14px 14px;
-  color: var(--nm-text-muted);
-  line-height: 1.58;
-}
 
-.store-policy-section .store-note-card {
-  border: 0 !important;
-  background: transparent !important;
-}
+
+
+
+
+
+
+
+
+
+
 
 /* Product-page sales flow */
-.product-sales-argument,
-.product-process-section,
-.product-fit-section {
-  max-width: 1000px !important;
-  margin: 0 auto 22px !important;
-  padding: clamp(18px, 4vw, 30px) !important;
-  border-radius: 0px !important;
-}
 
-.product-sales-argument > h2,
-.product-process-section > h2 {
-  margin: 8px 0 16px;
-  text-align: center;
-}
 
-.product-sales-argument > .sales-section-label,
-.product-process-section > .sales-section-label {
-  display: flex;
-  justify-content: center;
-}
 
-.product-sales-argument-grid,
-.product-process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
 
-.product-sales-argument-grid article,
-.product-process-grid article {
-  padding: 16px;
-  border: 1px solid rgba(var(--glow-rgb), .25);
-  border-radius: 0px !important;
-  background: rgba(var(--glow-rgb), .035);
-}
 
-.product-sales-argument-grid h3,
-.product-process-grid h3 {
-  margin: 8px 0 7px;
-  font-size: .98rem;
-}
 
-.product-sales-argument-grid p {
-  margin: 0;
-  color: var(--nm-text-muted);
-  font-size: .88rem;
-  line-height: 1.55;
-}
 
-.product-process-grid article {
-  text-align: center;
-}
 
-.product-fit-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
-  gap: 18px;
-  align-items: center;
-}
 
-.product-fit-section h2 {
-  margin: 8px 0 0;
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  line-height: 1.25;
-}
 
-.product-fit-section > p {
-  margin: 0;
-  padding: 14px;
-  border-left: 3px solid var(--nm-accent);
-  color: var(--nm-text-muted);
-  background: rgba(var(--glow-rgb), .04);
-  line-height: 1.58;
-}
 
-.product-reassurance-list {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 7px;
-  padding-top: 4px;
-}
 
-.product-reassurance-list span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--nm-text-muted);
-  font-size: .73rem;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Improve the existing product hero without making it tall on mobile */
-.product-page-header { padding-top: 12px !important; }
-.product-page-header h1 { text-wrap: balance; }
-.product-hero-section { border-radius: 0px !important; }
-.product-purchase-box { border-radius: 0px !important; }
-.product-primary-cta { border-radius: 0px !important; }
+
+
+
+
+
 
 @media (max-width: 1060px) {
-  .home-product-grid,
-  .store-product-grid { grid-template-columns: 1fr; }
+  
 
   .home-product-card {
     grid-template-columns: 94px minmax(0, 1fr);
@@ -811,40 +460,19 @@
 
   .home-product-card > img { width: 94px; }
 
-  .store-product-card {
-    display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
-  }
+  
 
-  .store-product-media {
-    align-items: center;
-    min-height: 100%;
-    padding: 14px;
-  }
+  
 
-  .store-product-media img { width: 118px; }
+  
 }
 
 @media (max-width: 820px) {
-  .sales-steps-grid,
-  .sales-argument-grid,
-  .store-chooser-grid,
-  .product-sales-argument-grid,
-  .product-process-grid,
-  .store-custom-process,
-  .store-page .store-featured-section .features-grid {
-    grid-template-columns: 1fr !important;
-  }
+  
 
-  .home-screen .sales-service-section,
-  .store-page .store-custom-section,
-  .product-fit-section {
-    grid-template-columns: 1fr;
-  }
+  
 
-  .store-page .store-featured-section .store-action-row {
-    grid-template-columns: 1fr !important;
-  }
+  
 }
 
 @media (max-width: 620px) {
@@ -895,26 +523,7 @@
     font-size: .68rem;
   }
 
-  .home-screen .sales-steps-section,
-  .home-screen .sales-products-section,
-  .home-screen .sales-argument-section,
-  .home-screen .sales-service-section,
-  .store-page .store-chooser,
-  .store-page .store-products,
-  .store-page .store-custom-section,
-  .store-page .store-sales-faq,
-  .store-page .store-featured-section,
-  .store-page .store-note-section,
-  .store-page .store-policy-section,
-  .store-page .assistance-path-section,
-  .product-sales-argument,
-  .product-process-section,
-  .product-fit-section {
-    width: calc(100% - 12px) !important;
-    margin: 12px auto !important;
-    padding: 16px 13px !important;
-    border-radius: 0px !important;
-  }
+  
 
   .sales-step-card,
   .sales-argument-grid article {
@@ -933,215 +542,93 @@
   .home-product-tag { font-size: .59rem; }
   .home-product-bottom { align-items: flex-start; flex-direction: column; gap: 4px; }
 
-  .store-sales-header {
-    width: calc(100% - 12px) !important;
-    padding: 20px 13px !important;
-    border-radius: 0px !important;
-  }
+  
 
-  .store-sales-header h1 {
-    font-size: clamp(1.55rem, 7.7vw, 2rem) !important;
-  }
+  
 
-  .store-trust-row {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+  
 
-  .store-trust-row span { justify-content: center; }
+  
 
-  .store-product-card {
-    grid-template-columns: 92px minmax(0, 1fr);
-    border-radius: 0px !important;
-  }
+  
 
-  .store-product-media {
-    align-items: flex-start;
-    min-height: 0;
-    padding: 10px 0 10px 10px;
-    background: transparent;
-  }
+  
 
-  .store-product-media img {
-    width: 82px;
-    border-radius: 0px !important;
-  }
+  
 
-  .store-product-badge { display: none; }
+  
 
-  .store-product-content {
-    padding: 10px;
-  }
+  
 
-  .store-product-content h3 {
-    margin: 5px 0 6px;
-    font-size: .88rem;
-  }
+  
 
-  .store-product-content > p {
-    font-size: .75rem;
-    line-height: 1.4;
-  }
+  
 
-  .store-product-content ul { gap: 4px; margin-bottom: 9px; }
-  .store-product-content li { font-size: .71rem; }
+  
+  
 
-  .store-product-actions {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
+  
 
-  .store-product-actions > strong { font-size: 1rem; }
-  .store-product-actions .sales-btn { min-height: 38px; font-size: .75rem; }
-  .store-details-link { grid-column: 1; font-size: .7rem; text-align: center !important; }
+  
+  
+  
 
-  .store-custom-process { gap: 6px; }
-  .store-custom-offer > strong { font-size: 1.65rem; }
+  
+  
 
-  .product-sales-argument-grid article,
-  .product-process-grid article { padding: 13px; }
+  
 
-  .product-fit-section > p { font-size: .86rem; }
-  .product-reassurance-list { display: grid; grid-template-columns: 1fr; width: 100%; }
-  .product-reassurance-list span { justify-content: center; }
+  
+  
+  
 }
 
 @media (max-width: 390px) {
   .sales-proof-strip { grid-template-columns: 1fr; }
   .home-product-card { grid-template-columns: 74px minmax(0, 1fr); }
   .home-product-card > img { width: 74px; }
-  .store-product-card { grid-template-columns: 82px minmax(0, 1fr); }
-  .store-product-media img { width: 72px; }
+  
+  
 }
 
 
-/* Mobile refinement pass: compact cards, larger product artwork, standard Store title. */
-.store-page .store-page-title {
-  width: min(calc(100% - 20px), 1120px);
-  max-width: 1120px;
-  margin: 0 auto 14px;
-}
 
-.store-page .store-page-title h1 {
-  margin-bottom: 8px;
-}
 
-.store-page .store-page-title p {
-  max-width: 760px;
-}
 
-.store-page .store-sales-header {
-  max-width: 1120px !important;
-  padding-block: clamp(18px, 3vw, 28px) !important;
-}
 
-.store-sales-header h2 {
-  max-width: 850px;
-  margin: 8px auto 10px !important;
-  font-size: clamp(1.55rem, 4vw, 2.7rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -.03em;
-  text-wrap: balance;
-}
 
-.store-page .store-featured-section .feature-title {
-  margin: 6px 0 7px !important;
-  font-size: 1.03rem !important;
-  line-height: 1.28 !important;
-}
 
-.store-page .store-featured-section .feature-description {
-  margin-bottom: 10px !important;
-  font-size: .84rem !important;
-  line-height: 1.48 !important;
-}
 
-.store-page .store-featured-section .sponsor-benefits {
-  display: grid !important;
-  gap: 6px !important;
-  margin: 4px 0 12px !important;
-  padding: 0 !important;
-}
 
-.store-page .store-featured-section .sponsor-benefits li {
-  font-size: .79rem !important;
-  line-height: 1.38 !important;
-}
 
-.store-page .store-featured-section .product-price {
-  font-size: 1.2rem !important;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 620px) {
-  .home-screen .sales-steps-section > h2,
-  .home-screen .sales-products-section > h2,
-  .home-screen .sales-argument-section > h2,
-  .home-screen .sales-service-section h2,
-  .store-page .store-chooser > h2,
-  .store-page .store-products > h2,
-  .store-page .store-custom-section h2,
-  .store-page .store-featured-section > h2,
-  .store-page .store-sales-faq > h2,
-  .store-page .assistance-path-section > h2 {
-    margin: 6px auto 9px !important;
-    font-size: clamp(1.25rem, 6.2vw, 1.72rem) !important;
-    line-height: 1.14 !important;
-    letter-spacing: -.025em !important;
-  }
+  
 
-  .sales-section-intro,
-  .home-sales-intro,
-  .store-page .store-section-kicker {
-    margin-bottom: 13px !important;
-    font-size: .82rem !important;
-    line-height: 1.48 !important;
-  }
+  
 
-  .home-screen .sales-steps-section,
-  .home-screen .sales-products-section,
-  .home-screen .sales-argument-section,
-  .home-screen .sales-service-section,
-  .store-page .store-sales-header,
-  .store-page .store-chooser,
-  .store-page .store-products,
-  .store-page .store-custom-section,
-  .store-page .store-sales-faq,
-  .store-page .store-featured-section,
-  .store-page .store-note-section,
-  .store-page .store-policy-section,
-  .store-page .assistance-path-section {
-    margin: 9px auto !important;
-    padding: 13px 11px !important;
-  }
+  
 
-  .store-page .store-page-title {
-    width: calc(100% - 12px) !important;
-    margin: 8px auto 9px !important;
-    padding: 14px 12px !important;
-  }
+  
 
-  .store-page .store-page-title h1 {
-    margin-bottom: 5px !important;
-    font-size: 1.65rem !important;
-  }
+  
 
-  .store-page .store-page-title p {
-    margin: 0 !important;
-    font-size: .84rem !important;
-    line-height: 1.45 !important;
-  }
+  
 
-  .store-sales-header h2 {
-    margin: 6px auto 8px !important;
-    font-size: clamp(1.32rem, 6.5vw, 1.78rem) !important;
-    line-height: 1.12 !important;
-  }
+  
 
-  .store-sales-header > p {
-    margin-bottom: 12px !important;
-    font-size: .82rem !important;
-    line-height: 1.48 !important;
-  }
+  
 
   .sales-section-label,
   .sales-eyebrow,
@@ -1204,143 +691,52 @@
   .home-product-bottom strong { font-size: .9rem !important; }
   .home-product-bottom a { font-size: .68rem !important; }
 
-  .sales-service-copy > p,
-  .sales-transparency-card p,
-  .store-custom-copy > p,
-  .store-custom-offer p,
-  .store-page .store-featured-section > p {
-    font-size: .8rem !important;
-    line-height: 1.45 !important;
-  }
+  
 
-  .sales-transparency-card,
-  .store-custom-offer {
-    padding: 12px !important;
-  }
+  
 
-  .store-chooser-grid {
-    gap: 7px !important;
-    margin-top: 11px !important;
-  }
+  
 
-  .store-chooser-grid a {
-    gap: 10px !important;
-    padding: 10px !important;
-    border-radius: 0px !important;
-  }
+  
 
-  .store-chooser-grid i {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(var(--glow-rgb), .25);
-    border-radius: 0px !important;
-    background: rgba(var(--glow-rgb), .06);
-    font-size: 1.35rem !important;
-  }
+  
 
-  .store-chooser-grid strong { font-size: .82rem !important; }
-  .store-chooser-grid small { font-size: .69rem !important; }
+  
+  
 
-  .store-product-card {
-    grid-template-columns: 122px minmax(0, 1fr) !important;
-    border-radius: 0px !important;
-  }
+  
 
-  .store-product-media {
-    align-items: flex-start !important;
-    justify-content: center !important;
-    padding: 10px 5px 10px 9px !important;
-  }
+  
 
-  .store-product-media img {
-    width: 108px !important;
-    border-radius: 0px !important;
-  }
+  
 
-  .store-product-content {
-    padding: 9px 9px 9px 7px !important;
-  }
+  
 
-  .store-product-content h3 {
-    margin: 4px 0 5px !important;
-    font-size: .82rem !important;
-    line-height: 1.24 !important;
-  }
+  
 
-  .store-product-content > p {
-    margin-bottom: 7px !important;
-    font-size: .68rem !important;
-    line-height: 1.36 !important;
-  }
+  
 
-  .store-product-content ul {
-    gap: 3px !important;
-    margin-bottom: 7px !important;
-  }
+  
 
-  .store-product-content li {
-    padding-left: 16px !important;
-    font-size: .66rem !important;
-    line-height: 1.3 !important;
-  }
+  
 
-  .store-product-actions {
-    grid-template-columns: auto 1fr !important;
-    gap: 6px !important;
-    padding-top: 8px !important;
-  }
+  
 
-  .store-product-actions > strong { font-size: .92rem !important; }
-  .store-product-actions .sales-btn {
-    min-height: 36px !important;
-    padding: .5rem .55rem !important;
-    font-size: .68rem !important;
-  }
-  .store-details-link {
-    grid-column: 1 / -1 !important;
-    font-size: .65rem !important;
-    text-align: center !important;
-  }
+  
+  
+  
 
-  .store-custom-process span {
-    padding: 7px !important;
-  }
-  .store-custom-process b {
-    flex-basis: 24px !important;
-    width: 24px !important;
-    height: 24px !important;
-    font-size: .72rem !important;
-  }
-  .store-custom-process em { font-size: .69rem !important; }
-  .store-custom-offer > strong { font-size: 1.45rem !important; }
+  
+  
+  
+  
 
-  .store-page .store-featured-section .store-card {
-    padding: 12px !important;
-    border-radius: 0px !important;
-  }
-  .store-page .store-featured-section .feature-title {
-    font-size: .92rem !important;
-  }
-  .store-page .store-featured-section .feature-description {
-    font-size: .75rem !important;
-    line-height: 1.42 !important;
-  }
-  .store-page .store-featured-section .sponsor-benefits li {
-    font-size: .71rem !important;
-    line-height: 1.32 !important;
-  }
-  .store-page .store-featured-section .product-price {
-    font-size: 1.02rem !important;
-  }
-  .store-page .store-featured-section .payment-btn {
-    min-height: 38px !important;
-    padding: .52rem .58rem !important;
-    font-size: .7rem !important;
-  }
+  
+  
+  
+  
+  
+  
 
   .dedsec-cookie-settings {
     right: 7px !important;
@@ -1359,10 +755,8 @@
     grid-template-columns: 94px minmax(0, 1fr) !important;
   }
   .home-product-card > img { width: 94px !important; }
-  .store-product-card {
-    grid-template-columns: 112px minmax(0, 1fr) !important;
-  }
-  .store-product-media img { width: 98px !important; }
+  
+  
 }
 
 
@@ -1478,56 +872,19 @@
 }
 
 /* Final sales-layout enforcement v5: centered copy and pointy corners. */
-.store-page .store-custom-copy,
-.store-page .store-custom-copy > p,
-.store-page .store-custom-copy h2,
-.store-page .store-custom-section,
-.store-page .store-custom-section *,
-.store-page .store-product-card,
-.store-page .store-product-card *,
-.home-screen .sales-service-section,
-.home-screen .sales-service-section *,
-.home-screen .sales-argument-section,
-.home-screen .sales-argument-section * {
-  text-align: center !important;
-}
 
-.store-page .store-custom-copy,
-.store-page .store-product-content,
-.home-screen .sales-service-copy,
-.home-screen .sales-transparency-card {
-  align-items: center !important;
-}
 
-.store-page .store-custom-process span,
-.store-page .store-chooser-grid a {
-  justify-content: center !important;
-}
 
-.store-page .store-product-content :is(.home-product-tag, h3, p),
-.home-screen .home-product-copy :is(.home-product-tag, h3, p) {
-  width: 100% !important;
-  text-align: center !important;
-  justify-content: center !important;
-}
 
-.store-page .store-product-actions {
-  justify-items: center !important;
-}
 
-.store-page .store-product-content li,
-.store-page .sponsor-benefits li {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  padding-left: 0 !important;
-  text-align: center !important;
-}
 
-.store-page .store-product-content li::before,
-.store-page .sponsor-benefits li::before {
-  position: static !important;
-}
+
+
+
+
+
+
+
 
 /* This file loads after style.css on sales pages, so repeat the sharp-corner
    rule here to override all legacy component and media-query declarations. */
@@ -1542,54 +899,25 @@ html body input[type="checkbox"] {
   border-radius: 0px !important;
 }
 
-/* Mobile store-cover alignment v6: covers sit above the copy and are truly centered. */
-.store-page .store-product-media {
-  justify-content: center !important;
-}
 
-.store-page .store-product-media img {
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+
+
+
 
 @media (max-width: 620px) {
-  .store-page .store-product-card {
-    grid-template-columns: minmax(0, 1fr) !important;
-    align-items: center !important;
-  }
+  
 
-  .store-page .store-product-media {
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    min-height: 0 !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 14px 10px 3px !important;
-  }
+  
 
-  .store-page .store-product-media img {
-    width: 126px !important;
-    max-width: 40vw !important;
-    margin: 0 auto !important;
-  }
+  
 
-  .store-page .store-product-content {
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    padding: 8px 12px 12px !important;
-  }
+  
 }
 
 @media (max-width: 390px) {
-  .store-page .store-product-card {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
+  
 
-  .store-page .store-product-media img {
-    width: 118px !important;
-    max-width: 42vw !important;
-  }
+  
 }
 
 /* The homepage hero now starts directly with the DedSec Project title. */
@@ -1598,7 +926,7 @@ html body input[type="checkbox"] {
 }
 
 
-/* Store + homepage refinement v7: faster product access and a separate assurance box. */
+
 .home-screen .home-proof-section {
   width: min(100%, 1120px) !important;
   margin: -10px auto 22px !important;
@@ -1610,52 +938,18 @@ html body input[type="checkbox"] {
   width: 100%;
 }
 
-/* Match the Store heading to the standard page-heading typography. */
-.store-page .page-header.store-page-title {
-  width: min(100%, 900px) !important;
-  margin: 0 auto 18px !important;
-  padding: 0 !important;
-}
 
-.store-page .page-header.store-page-title h1 {
-  margin: 0 0 10px !important;
-  font-family: var(--font-secondary) !important;
-  font-size: 2.125rem !important;
-  line-height: 1.15 !important;
-  letter-spacing: normal !important;
-}
 
-.store-page .page-header.store-page-title > p {
-  max-width: 600px !important;
-  margin: 0 auto 13px !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-}
 
-.store-page .store-compact-trust {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  width: min(100%, 720px);
-  margin: 0 auto !important;
-  gap: 7px !important;
-}
 
-.store-page .store-compact-trust span {
-  display: flex !important;
-  min-width: 0 !important;
-  min-height: 44px !important;
-  padding: 7px 6px !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 6px !important;
-  text-align: center !important;
-  font-size: .72rem !important;
-  line-height: 1.25 !important;
-}
 
-.store-page .store-products {
-  margin-top: 10px !important;
-}
+
+
+
+
+
+
+
 
 @media (max-width: 620px) {
   .home-screen .home-proof-section {
@@ -1686,49 +980,23 @@ html body input[type="checkbox"] {
     font-size: .9rem !important;
   }
 
-  .store-page .page-header.store-page-title {
-    width: calc(100% - 18px) !important;
-    margin: 8px auto 12px !important;
-    padding: 0 !important;
-  }
+  
 
-  .store-page .page-header.store-page-title h1 {
-    margin-bottom: 7px !important;
-    font-size: 2.125rem !important;
-  }
+  
 
-  .store-page .page-header.store-page-title > p {
-    max-width: 32rem !important;
-    margin-bottom: 10px !important;
-    font-size: .86rem !important;
-    line-height: 1.42 !important;
-  }
+  
 
-  .store-page .store-compact-trust {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 5px !important;
-  }
+  
 
-  .store-page .store-compact-trust span {
-    min-height: 48px !important;
-    padding: 6px 3px !important;
-    flex-direction: column !important;
-    gap: 3px !important;
-    font-size: .61rem !important;
-    line-height: 1.18 !important;
-  }
+  
 
-  .store-page .store-compact-trust i {
-    font-size: .82rem !important;
-  }
+  
 
-  .store-page .store-products {
-    margin-top: 8px !important;
-  }
+  
 }
 
 
-/* Final homepage benefit box and Store header parity fix. */
+
 .home-screen .home-benefits-box {
   width: min(calc(100% - 24px), 900px) !important;
   margin: 18px auto 24px !important;
@@ -1765,42 +1033,10 @@ html body input[type="checkbox"] {
   font-size: .86rem !important;
   font-weight: 800 !important;
 }
-html body.store-page .store-page-title {
-  width: auto !important;
-  max-width: none !important;
-  margin: 0 0 30px !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-html body.store-page .store-page-title h1 {
-  margin: 0 0 10px !important;
-  color: var(--nm-text-accent) !important;
-  font-family: var(--font-secondary) !important;
-  font-size: 2.125rem !important;
-  line-height: 1.4 !important;
-  letter-spacing: normal !important;
-  text-align: center !important;
-}
-html body.store-page .store-page-title p {
-  max-width: 600px !important;
-  margin: 0 auto !important;
-  color: var(--nm-text) !important;
-  font-family: inherit !important;
-  font-size: 1.1rem !important;
-  line-height: 1.4 !important;
-  letter-spacing: normal !important;
-  text-align: center !important;
-}
-html body.store-page .store-trust-box {
-  width: min(calc(100% - 24px), 900px) !important;
-  margin: -8px auto 20px !important;
-  padding: 12px !important;
-  border: 1px solid var(--nm-border) !important;
-  border-radius: 0 !important;
-  background: var(--nm-container) !important;
-}
+
+
+
+
 @media (max-width: 620px) {
   .home-screen .home-benefits-box {
     width: calc(100% - 20px) !important;
@@ -1815,30 +1051,14 @@ html body.store-page .store-trust-box {
     min-height: 48px !important;
     padding: 9px 10px !important;
   }
-  html body.store-page .store-page-title {
-    width: auto !important;
-    margin: 0 0 30px !important;
-    padding: 0 !important;
-  }
-  html body.store-page .store-page-title h1 {
-    margin: 0 0 10px !important;
-    font-size: 2.125rem !important;
-  }
-  html body.store-page .store-page-title p {
-    max-width: 600px !important;
-    margin: 0 auto !important;
-    font-size: 1.1rem !important;
-    line-height: 1.4 !important;
-  }
-  html body.store-page .store-trust-box {
-    width: calc(100% - 20px) !important;
-    margin: -12px auto 16px !important;
-    padding: 10px !important;
-  }
+  
+  
+  
+  
 }
 
 
-/* Precise correction: one separate homepage facts box and exact Store header parity. */
+
 .home-screen > .project-facts-box {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -1882,46 +1102,10 @@ html body.store-page .store-trust-box {
   line-height: 1.3 !important;
 }
 
-/* Store header must calculate to the same typography as ordinary .page-header blocks. */
-html body.store-page .page-content > .page-header {
-  width: auto !important;
-  max-width: none !important;
-  margin: 0 0 30px !important;
-  padding: 0 !important;
-  text-align: center !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-html body.store-page .page-content > .page-header h1 {
-  display: block !important;
-  max-width: none !important;
-  margin: .67em 0 10px !important;
-  padding: 0 !important;
-  color: var(--nm-text-accent) !important;
-  font-family: var(--font-secondary) !important;
-  font-size: 2.125rem !important;
-  font-weight: 700 !important;
-  line-height: 1.4 !important;
-  letter-spacing: normal !important;
-  text-align: center !important;
-  text-transform: none !important;
-}
-html body.store-page .page-content > .page-header > p {
-  display: block !important;
-  max-width: 600px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  color: var(--nm-text) !important;
-  font-family: var(--font-primary) !important;
-  font-size: 1.1rem !important;
-  font-weight: 400 !important;
-  line-height: 1.2 !important;
-  letter-spacing: normal !important;
-  text-align: center !important;
-  text-transform: none !important;
-}
+
+
+
+
 @media (max-width: 620px) {
   .home-screen > .project-facts-box {
     grid-template-columns: 1fr !important;
@@ -1937,19 +1121,9 @@ html body.store-page .page-content > .page-header > p {
   .home-screen > .project-facts-box .project-fact-row:last-child {
     border-bottom: 0 !important;
   }
-  html body.store-page .page-content > .page-header {
-    margin-bottom: 30px !important;
-  }
-  html body.store-page .page-content > .page-header h1 {
-    margin: .67em 0 10px !important;
-    font-size: 2.125rem !important;
-    line-height: 1.4 !important;
-  }
-  html body.store-page .page-content > .page-header > p {
-    max-width: 600px !important;
-    font-size: 1.1rem !important;
-    line-height: 1.2 !important;
-  }
+  
+  
+  
 }
 
 
@@ -2301,34 +1475,9 @@ body.burger-menu-open .dedsec-cookie-settings {
 
 
 /* === FINAL SPONSOR CARD CENTERING (2026-08-06) === */
-.store-page .store-featured-section .store-action-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    gap: 14px !important;
-    margin-top: auto !important;
-    text-align: center !important;
-}
-.store-page .store-featured-section .store-action-row .product-price {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: fit-content !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-}
-.store-page .store-featured-section .store-action-row .payment-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: min(100%, 520px) !important;
-    max-width: 520px !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-}
+
+
+
 
 /* === GLOBAL THEME SURFACES + LAVENDER BORDER ACCENTS (2026-08-07c) ===
    Site-wide rule: cards/boxes/panels use the same solid surface as the page
@@ -2353,117 +1502,20 @@ html body.light-theme {
   --nm-container: #ffffff;
 }
 
-/* Shared boxed-surface set used across Home, Store, ButSystem, Assistance,
-   Academy, product pages, Founder/Vision and supporting pages. */
-html body.dark-theme :is(
-  .content-section,
-  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
-  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
-  [class*="-card"], [class*="_card"], [class*="Card"],
-  [class*="-box"], [class*="_box"],
-  [class*="-panel"], [class*="_panel"],
-  .callout, .note, .warning, .note-warning, .danger, .tip, details,
-  .code-container, pre, .cookie-banner, .modal-content, .modal-disclaimer,
-  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
-  .search-modal, .dedsec-cookie-settings,
-  .sales-hero, .sales-proof-strip span, .store-trust-row span,
-  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
-  .home-benefit-item, .home-facts-row, .project-fact-row,
-  .assistance-finder, .assistance-category-section, .assistance-warning-note,
-  .assistance-card-category, .assistance-card-signature, .assistance-signature-tag
-) {
-  background: var(--ded-card-surface-dark) !important;
-  background-color: var(--ded-card-surface-dark) !important;
-  background-image: none !important;
-  border-color: var(--ded-border-dark) !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
 
-html body.light-theme :is(
-  .content-section,
-  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
-  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
-  [class*="-card"], [class*="_card"], [class*="Card"],
-  [class*="-box"], [class*="_box"],
-  [class*="-panel"], [class*="_panel"],
-  .callout, .note, .warning, .note-warning, .danger, .tip, details,
-  .code-container, pre, .cookie-banner, .modal-content, .modal-disclaimer,
-  .butsystem-free-banner, .custom-scope-note, .founder-home-mark,
-  .search-modal, .dedsec-cookie-settings,
-  .sales-hero, .sales-proof-strip span, .store-trust-row span,
-  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
-  .home-benefit-item, .home-facts-row, .project-fact-row,
-  .assistance-finder, .assistance-category-section, .assistance-warning-note,
-  .assistance-card-category, .assistance-card-signature, .assistance-signature-tag
-) {
-  background: var(--ded-card-surface-light) !important;
-  background-color: var(--ded-card-surface-light) !important;
-  background-image: none !important;
-  border-color: var(--ded-border-light) !important;
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
+
+
+
 
 /* Make the lavender identity visible on the border while the interior stays
    neutral. A stronger left edge and softer top edge create the accent. */
-html body :is(
-  .content-section,
-  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
-  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
-  [class*="-card"], [class*="_card"], [class*="Card"],
-  [class*="-box"], [class*="_box"],
-  [class*="-panel"], [class*="_panel"],
-  .callout, .note, .warning, .note-warning, .danger, .tip, details,
-  .code-container, .butsystem-free-banner, .custom-scope-note,
-  .sales-hero, .sales-proof-strip span, .store-trust-row span,
-  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
-  .home-benefit-item, .home-facts-row,
-  .assistance-finder, .assistance-category-section, .assistance-warning-note
-) {
-  border-style: solid !important;
-  border-width: 1px 1px 1px 3px !important;
-  border-left-color: var(--ded-accent-purple) !important;
-  border-top-color: var(--ded-accent-lavender) !important;
-}
+
 
 /* Text follows the theme. Links and icons are deliberately excluded so the
    site can retain purple accent affordances. Buttons keep their own colors. */
-html body.dark-theme :is(
-  .content-section,
-  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
-  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
-  [class*="-card"], [class*="_card"], [class*="Card"],
-  [class*="-box"], [class*="_box"],
-  [class*="-panel"], [class*="_panel"],
-  .callout, .note, .warning, .note-warning, .danger, .tip, details,
-  .code-container, pre, .butsystem-free-banner, .custom-scope-note,
-  .sales-hero, .sales-proof-strip span, .store-trust-row span,
-  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
-  .home-benefit-item, .home-facts-row, .project-fact-row,
-  .assistance-finder, .assistance-category-section, .assistance-warning-note
-) :where(h1,h2,h3,h4,h5,h6,p,span,strong,em,li,label,small,code,blockquote) {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
 
-html body.light-theme :is(
-  .content-section,
-  .feature-card, .tool-card, .stat-card, .community-card, .portfolio-card, .job-experience-card,
-  .glance-card, .step-card, .trust-item, .category, .category-header, .tool-item,
-  [class*="-card"], [class*="_card"], [class*="Card"],
-  [class*="-box"], [class*="_box"],
-  [class*="-panel"], [class*="_panel"],
-  .callout, .note, .warning, .note-warning, .danger, .tip, details,
-  .code-container, pre, .butsystem-free-banner, .custom-scope-note,
-  .sales-hero, .sales-proof-strip span, .store-trust-row span,
-  .sales-argument-grid article, .product-sales-argument-grid article, .product-process-grid article,
-  .home-benefit-item, .home-facts-row, .project-fact-row,
-  .assistance-finder, .assistance-category-section, .assistance-warning-note
-) :where(h1,h2,h3,h4,h5,h6,p,span,strong,em,li,label,small,code,blockquote) {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
+
+
 
 /* Do not let the global surface rule recolor real controls. */
 html body :is(.btn, .sales-btn, .starter-path-btn, button, [role="button"]) {
@@ -2519,40 +1571,8 @@ body.founder-page .founder-page-header h1 { font-size: clamp(2rem, 7vw, 4.4rem) 
 
 /* === FINAL BORDER-ONLY SALES SURFACE LOCK 20260807k ===
    This file loads after style.css on sales pages, so the final invariant lives here too. */
-html body.dark-theme :is(
-  button,
-  a[class*="btn"], a[class*="button"], a[role="button"],
-  input[type="button"], input[type="submit"],
-  .app-icon, .payment-btn, .starter-path-btn, .sales-btn,
-  .product-primary-cta, .product-details-btn, .sponsor-tier-btn
-) {
-  background:#000000 !important;
-  background-color:#000000 !important;
-  background-image:none !important;
-  color:#ffffff !important;
-  -webkit-text-fill-color:#ffffff !important;
-  border-color:var(--ded-accent-purple,#a855f7) !important;
-  box-shadow:none !important;
-  text-shadow:none !important;
-  filter:none !important;
-}
-html body.light-theme :is(
-  button,
-  a[class*="btn"], a[class*="button"], a[role="button"],
-  input[type="button"], input[type="submit"],
-  .app-icon, .payment-btn, .starter-path-btn, .sales-btn,
-  .product-primary-cta, .product-details-btn, .sponsor-tier-btn
-) {
-  background:#ffffff !important;
-  background-color:#ffffff !important;
-  background-image:none !important;
-  color:#000000 !important;
-  -webkit-text-fill-color:#000000 !important;
-  border-color:var(--ded-accent-purple,#a855f7) !important;
-  box-shadow:none !important;
-  text-shadow:none !important;
-  filter:none !important;
-}
+
+
 html body.dark-theme :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon) :is(i,svg,span,strong) {
   color:#ffffff !important; -webkit-text-fill-color:#ffffff !important;
 }
@@ -2569,55 +1589,16 @@ html body :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-ic
 html body :is(button,a[class*="btn"],a[class*="button"],a[role="button"],.app-icon)::after {background:none!important;background-image:none!important;box-shadow:none!important}
 
 /* Sales cards/panels keep only the accent border; their interior follows the theme. */
-html body.dark-theme :is(
- .home-decision-card,.home-product-card,.sales-step-card,.sales-transparency-card,
- .store-product-card,.sponsor-tier-card,.product-hero-section,.product-purchase-box,
- .store-custom-section,.store-butsystem-free,.store-sales-faq,
- .product-solve-summary,.store-product-solve,.custom-scope-note
-) {background:#000!important;background-color:#000!important;background-image:none!important;box-shadow:none!important}
-html body.light-theme :is(
- .home-decision-card,.home-product-card,.sales-step-card,.sales-transparency-card,
- .store-product-card,.sponsor-tier-card,.product-hero-section,.product-purchase-box,
- .store-custom-section,.store-butsystem-free,.store-sales-faq,
- .product-solve-summary,.store-product-solve,.custom-scope-note
-) {background:#fff!important;background-color:#fff!important;background-image:none!important;box-shadow:none!important}
+
+
 
 /* === FINAL CTA CENTERING LOCK 20260807m ===
    This stylesheet loads after style.css on sales pages. */
-html body main :is(a.sales-btn, a.starter-path-btn, a.payment-btn, a.btn, button.btn) {
-  margin-left:auto !important;
-  margin-right:auto !important;
-  align-self:center !important;
-  justify-self:center !important;
-  justify-content:center !important;
-  text-align:center !important;
-}
-html body main .store-product-actions {
-  display:grid !important;
-  grid-template-columns:minmax(0,1fr) !important;
-  justify-items:center !important;
-  align-items:center !important;
-  text-align:center !important;
-  gap:10px !important;
-}
-html body main .store-product-actions > strong,
-html body main .store-product-actions .sales-btn,
-html body main .store-product-actions .store-preview-link,
-html body main .store-product-actions .store-details-link {
-  grid-column:1 !important;
-  justify-self:center !important;
-  text-align:center !important;
-}
-html body main .store-product-actions .sales-btn,
-html body main .store-product-actions .store-preview-link {width:min(100%,430px) !important}
-html body main .store-butsystem-free > .sales-btn,
-html body main .store-custom-offer > .sales-btn,
-html body main .store-sales-faq .sales-btn {
-  display:flex !important;
-  width:min(100%,520px) !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-}
+
+
+
+
+
 .home-decision-academy{display:flex!important;justify-content:center!important;width:100%!important;margin:14px auto 0!important}
 .home-decision-academy .sales-btn{width:min(100%,430px)!important;min-height:52px!important}
 
@@ -2625,96 +1606,19 @@ html body main .store-sales-faq .sales-btn {
 /* === GLOBAL CONTENT CTA CENTERING LOCK 20260807n ===
    Center every user-facing content CTA regardless of legacy page wrapper.
    Navigation, filters, modal controls and code-copy controls are intentionally excluded. */
-html body :is(
-  a.btn,
-  a.sales-btn,
-  a.starter-path-btn,
-  a.payment-btn,
-  a.sponsor-btn,
-  a.store-preview-link,
-  a.store-details-link,
-  a.product-details-btn,
-  a.product-primary-cta,
-  a.product-back-btn,
-  a.ebook-preview-link,
-  a.contact-page-btn,
-  a.contact-cta,
-  a.faq-link-btn,
-  a.hero-cta,
-  a.feature-cta,
-  button.assistance-report-btn,
-  button.assistance-expand-btn
-) {
-  margin-left:auto !important;
-  margin-right:auto !important;
-  align-self:center !important;
-  justify-self:center !important;
-  text-align:center !important;
-  justify-content:center !important;
-}
+
 
 /* Center the common action wrappers too, so legacy flex/grid rules cannot pin CTAs to an edge. */
-html body :is(
-  .hero-actions,
-  .sales-hero-actions,
-  .store-action-row,
-  .store-product-actions,
-  .product-secondary-actions,
-  .academy-entry-actions,
-  .academy-ebook-actions,
-  .inline-action-buttons,
-  .assistance-support-actions,
-  .assistance-quick-actions,
-  .home-decision-academy
-) {
-  justify-content:center !important;
-  justify-items:center !important;
-  text-align:center !important;
-}
+
 
 /* Single prominent CTAs should stay visibly centered instead of inheriting a start alignment. */
-html body :is(
-  .store-butsystem-free,
-  .store-custom-offer,
-  .store-sales-faq,
-  .installation-primary-next,
-  .installation-store-nudge,
-  .sponsor-conversion-note,
-  .product-final-cta
-) > :is(a.btn,a.sales-btn,a.starter-path-btn,a.payment-btn,a.sponsor-btn) {
-  margin-left:auto !important;
-  margin-right:auto !important;
-}
+
 
 
 /* === ABSOLUTE CONTENT CTA PHYSICAL CENTERING 20260807o ===
    A CTA must be centered as an element, not merely have centered text.
    This intentionally excludes header/navigation/filter/copy controls. */
-html body :is(
-  a.sales-btn,
-  a.btn,
-  a.payment-btn,
-  a.sponsor-btn,
-  a.store-preview-link,
-  a.store-details-link,
-  a.product-details-btn,
-  a.product-primary-cta,
-  a.product-back-btn,
-  a.ebook-preview-link,
-  a.contact-page-btn,
-  a.contact-cta,
-  a.faq-link-btn,
-  a.hero-cta,
-  a.feature-cta
-) {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  align-self: center !important;
-  justify-self: center !important;
-  text-align: center !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-}
+
 
 /* Inline-level buttons ignore auto margins in normal flow. Make the main CTA
    families real flex boxes so their horizontal auto margins actually work. */
@@ -2722,17 +1626,8 @@ html body a.sales-btn {
   display: flex !important;
   width: min(100%, 520px) !important;
 }
-html body :is(a.btn, a.store-preview-link, a.store-details-link, a.product-details-btn,
-  a.product-back-btn, a.ebook-preview-link, a.contact-page-btn, a.contact-cta,
-  a.faq-link-btn, a.hero-cta, a.feature-cta) {
-  display: flex !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-}
-html body a.payment-btn,
-html body a.product-primary-cta {
-  display: flex !important;
-}
+
+
 html body a.sponsor-btn {
   display: flex !important;
   width: min(100%, 430px) !important;
@@ -2746,15 +1641,8 @@ html body a.starter-path-btn {
   justify-content: center !important;
 }
 
-/* Explicit fix for Store sections that live outside <main>. */
-html body .store-butsystem-free > a.sales-btn,
-html body .store-custom-offer > a.sales-btn,
-html body .store-sales-faq a.sales-btn {
-  display: flex !important;
-  width: min(100%, 520px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+
+
 
 /* Labels that are actual short sentences use sentence case and punctuation.
    Heading/category labels remain uppercase and do not use a trailing period. */
@@ -2777,30 +1665,20 @@ html body :is(button.starter-path-btn, button.assistance-report-btn, button.assi
 }
 
 /* === PRODUCT PURCHASE CTA CENTERING 20260807o === */
-html body .product-purchase-box {
-  grid-template-columns: 1fr !important;
-  justify-items: center !important;
-  text-align: center !important;
-}
-html body .product-purchase-box .product-primary-cta {
-  display: flex !important;
-  width: min(100%, 520px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  justify-content: center !important;
-}
-html body .product-purchase-box .product-checkout-note { grid-column: 1 !important; }
+
+
+
 
 /* === CONTEXTUAL JOURNEY & CONVERSION FLOW 20260807p === */
 .home-hero-support-line{margin:8px auto 0;max-width:760px;text-align:center;font-family:var(--font-mono);font-weight:800;color:var(--nm-text-accent)}
 .home-github-cta{margin-top:10px!important}.home-github-star-count:empty{display:none}.home-github-star-symbol{font-size:1.05em}
-.github-discovery-block,.post-install-value-block,.assistance-contextual-recommendation,.academy-github-bridge,.academy-sponsor-after-value,.product-preview-before-buy,.product-choice-calculus,.product-companion-section{border:1px solid var(--nm-border);background:var(--nm-container);padding:clamp(16px,3vw,24px);margin:18px auto;text-align:center}
-.github-discovery-block{max-width:820px}.github-discovery-block h4,.product-preview-before-buy h3,.product-choice-calculus h3,.assistance-contextual-recommendation h3{margin:0 0 8px}.github-discovery-block p,.post-install-value-block p,.academy-github-bridge p,.academy-sponsor-after-value p,.product-preview-before-buy p,.product-companion-section p,.assistance-contextual-recommendation p{max-width:760px;margin:0 auto 12px;line-height:1.65}
-.post-install-value-block,.academy-github-bridge,.academy-sponsor-after-value,.product-companion-section{max-width:1000px}.post-install-sponsor-note{margin-top:16px!important;font-size:.92rem}.post-install-sponsor-note a,.assistance-github-followup a{font-weight:800}
+
+.github-discovery-block{max-width:820px}
+.post-install-sponsor-note{margin-top:16px!important;font-size:.92rem}.post-install-sponsor-note a,.assistance-github-followup a{font-weight:800}
 .assistance-contextual-recommendation{max-width:780px;margin:16px auto}.assistance-github-followup{max-width:760px;margin:14px auto 0;text-align:center;line-height:1.6}
-.academy-contextual-bridge{max-width:980px;margin:20px auto}.academy-contextual-bridge .starter-path-btn,.academy-github-bridge .starter-path-btn,.academy-sponsor-after-value .starter-path-btn,.product-companion-section .starter-path-btn{width:min(100%,520px)!important}
-.product-preview-before-buy{width:100%;margin:4px 0 0}.product-preview-before-buy .product-preview-actions{margin:12px 0 0!important;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.product-preview-before-buy .ebook-preview-link{flex:1 1 230px!important;max-width:360px!important}
-.product-choice-calculus{width:100%;margin:0}.product-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left}.product-choice-item{border:1px solid var(--nm-border);padding:14px}.product-choice-item strong{display:block;margin-bottom:7px;color:var(--nm-text-accent)}.product-choice-item p{margin:0;line-height:1.55}
-.product-companion-section{margin-bottom:22px}
-@media(max-width:700px){.product-choice-grid{grid-template-columns:1fr}.product-preview-before-buy .product-preview-actions{flex-direction:column}.product-preview-before-buy .ebook-preview-link{width:100%!important;max-width:none!important;flex:0 0 auto!important}.github-discovery-block,.post-install-value-block,.academy-github-bridge,.academy-sponsor-after-value,.product-preview-before-buy,.product-choice-calculus,.product-companion-section{padding:16px 14px}}
+.academy-contextual-bridge{max-width:980px;margin:20px auto}
+
+
+
+@media(max-width:700px){}
 
