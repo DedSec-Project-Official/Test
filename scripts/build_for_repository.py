@@ -375,6 +375,113 @@ def generate_sitemap(root: Path, config: dict) -> None:
     (root / "sitemap.xml").write_text(xml, encoding="utf-8")
 
 
+
+def _search_text(soup: BeautifulSoup, language: str) -> str:
+    """Return a compact, deduplicated keyword bag for the static site search index."""
+    scope = soup.find("main") or soup.body or soup
+    selector = "h1,h2,h3,h4,p,li,summary,.feature-title,.tool-title,.category-header,.assistance-card-title,.assistance-card-desc"
+    chunks: list[str] = []
+    for element in scope.select(selector):
+        preferred = element.get("data-gr") if language == "gr" else element.get("data-en")
+        value = (preferred or element.get_text(" ", strip=True) or "").strip()
+        if value:
+            chunks.append(value)
+
+    # Keep the index compact: unique words preserve topic coverage without storing full pages.
+    words: list[str] = []
+    seen: set[str] = set()
+    for chunk in chunks:
+        for word in chunk.split():
+            cleaned = word.strip(".,:;!?()[]{}<>\\/|\"'`~@#$%^&*_+=—–-")
+            key = cleaned.casefold()
+            if len(cleaned) < 2 or not key or key in seen:
+                continue
+            seen.add(key)
+            words.append(cleaned)
+            if len(words) >= 80:
+                return " ".join(words)
+    return " ".join(words)
+
+
+def _search_page_fields(path: Path, language: str) -> dict[str, str]:
+    soup = BeautifulSoup(path.read_text(encoding="utf-8", errors="replace"), "html.parser")
+    h1 = soup.select_one("main h1, h1")
+    title_attr = "data-gr" if language == "gr" else "data-en"
+    title = ""
+    if h1 is not None:
+        title = (h1.get(title_attr) or h1.get_text(" ", strip=True) or "").strip()
+    if not title and soup.title:
+        title = soup.title.get_text(" ", strip=True)
+    meta_tag = soup.find("meta", attrs={"name": "description"})
+    meta = (meta_tag.get("content") if meta_tag else "") or ""
+    return {
+        "title": title.strip(),
+        "meta": meta.strip(),
+        "keywords": _search_text(soup, language),
+    }
+
+
+def generate_search_index(root: Path) -> None:
+    """Build one lightweight JSON index so browsers never need to crawl HTML pages at search time."""
+    items: list[dict[str, object]] = []
+    excluded_names = {"404.html", "unused-template.html"}
+
+    for path in sorted(root.rglob("*.html")):
+        relative = path.relative_to(root)
+        rel = relative.as_posix()
+        parts = relative.parts
+
+        # Greek pages are paired with the canonical English page below instead of duplicated.
+        if parts and parts[0] == "el":
+            continue
+        if path.name in excluded_names:
+            continue
+        if rel == "Smartphone-Academy/index.html":
+            continue
+        if not (
+            rel == "index.html"
+            or rel.startswith("Pages/")
+            or rel.startswith("Assistance/")
+            or rel.startswith("Smartphone-Academy/")
+        ):
+            continue
+
+        english = _search_page_fields(path, "en")
+        if not english["title"]:
+            continue
+
+        greek_path = counterpart(relative, root)
+        if greek_path is not None and greek_path != relative:
+            greek = _search_page_fields(root / greek_path, "gr")
+            url_gr = greek_path.as_posix()
+        else:
+            greek = _search_page_fields(path, "gr")
+            url_gr = rel
+
+        items.append({
+            "title_en": english["title"],
+            "title_gr": greek["title"] or english["title"],
+            "meta_en": english["meta"],
+            "meta_gr": greek["meta"] or english["meta"],
+            "keywords_en": english["keywords"],
+            "keywords_gr": greek["keywords"] or english["keywords"],
+            "url_en": rel,
+            "url_gr": url_gr,
+            "isPageResult": True,
+        })
+
+    assets = root / "Assets"
+    assets.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "version": 1,
+        "generated_on": date.today().isoformat(),
+        "items": items,
+    }
+    (assets / "search-index.json").write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+
 def main() -> int:
     args = parse_args()
     repository = args.repository.strip()
@@ -403,6 +510,8 @@ def main() -> int:
 
     for p in sorted(output.rglob("*.html")):
         rewrite_html(p, output, config, repository)
+
+    generate_search_index(output)
 
     for stale in list(output.glob("sitemap*")) + list(output.glob("llms*.txt")) + [output / "CNAME"]:
         if stale.exists():

@@ -70,20 +70,22 @@ if issues:
 print('Source audit passed.')
 
 
-# Sales/store consistency invariant added 2026-08-07j.
-STALE_STORE_SUPPORT_PHRASES = (
-    "Open Store / Get Direct Help",
-    "Store / Direct Help",
-    "Direct Help Through The Store",
-    "Άνοιξε το Κατάστημα / Ζήτησε άμεση βοήθεια",
-    "Store / Άμεση Βοήθεια",
-    "Άμεση βοήθεια μέσω του Καταστήματος",
-)
-for _html in ROOT.rglob("*.html"):
-    _text = _html.read_text(encoding="utf-8", errors="ignore")
-    for _phrase in STALE_STORE_SUPPORT_PHRASES:
-        if _phrase in _text:
-            raise SystemExit(f"Stale Store/support wording remains in {_html.relative_to(ROOT)}: {_phrase}")
+# Sponsor-route and Academy canonicalization invariants.
+for _removed in ('Smartphone-Academy/Home.html','el/Smartphone-Academy/Home.html'):
+    if (ROOT/_removed).exists():
+        raise SystemExit(f'Removed duplicate Academy route still exists: {_removed}')
+for _removed in ('Pages/sponsors.html','el/Pages/sponsors.html'):
+    if (ROOT/_removed).exists():
+        raise SystemExit(f'Removed sponsor page still exists: {_removed}')
+for _rel in ('Pages/learn-about-the-tools.html','el/Pages/learn-about-the-tools.html'):
+    _raw=(ROOT/_rel).read_text(encoding='utf-8',errors='replace')
+    for _required in ('$25', 'sponsor-ebooks', 'ebook-data-analytics', 'ebook-faith', 'ebook-termux', 'ebook-website', 'ebook-ai-prompts'):
+        if _required not in _raw:
+            raise SystemExit(f'{_rel} missing embedded $25 sponsor-library marker: {_required}')
+for _html in ROOT.rglob('*.html'):
+    _raw=_html.read_text(encoding='utf-8',errors='ignore')
+    if '/Smartphone-Academy/Home.html' in _raw:
+        raise SystemExit(f'{_html.relative_to(ROOT)} references the removed duplicate Academy route')
 
 # Content CTA centering invariant added 2026-08-07n.
 CENTERING_MARKER = 'GLOBAL CONTENT CTA CENTERING LOCK 20260807n'
@@ -99,15 +101,6 @@ for _rel in ('style.css','Assets/sales-optimization.css','Assets/assistance.css'
     _css=(ROOT/_rel).read_text(encoding='utf-8',errors='ignore')
     if PHYSICAL_CENTER_MARKER not in _css:
         raise SystemExit(f'{_rel} missing physical CTA centering lock')
-
-for _rel in ('Pages/store.html','el/Pages/store.html'):
-    _s=BeautifulSoup((ROOT/_rel).read_text(encoding='utf-8',errors='replace'),'html.parser')
-    _lab=_s.select_one('.store-butsystem-free .sales-section-label.sales-sentence-label')
-    if not _lab:
-        raise SystemExit(f'{_rel} missing sentence-style ButSystem label')
-    _en=_lab.get('data-en','').strip(); _gr=_lab.get('data-gr','').strip()
-    if _en != 'Not a paid product.' or _gr != 'Δεν είναι πληρωμένο προϊόν.':
-        raise SystemExit(f'{_rel} has incorrect ButSystem sentence-label punctuation/casing')
 
 # Uppercase heading/category labels must not end in a period.
 for _html in ROOT.rglob('*.html'):

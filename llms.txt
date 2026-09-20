@@ -6,18 +6,17 @@
 
 - https://ded-sec.space/ — Project overview and starting point
 - https://ded-sec.space/Pages/guide-for-installation.html — Installation guide
-- https://ded-sec.space/Pages/learn-about-the-tools.html — Tool catalogue and descriptions
+- https://ded-sec.space/Pages/learn-about-the-tools.html — Tool catalogue, sponsor-only utilities, and the $25 Ultimate Supporter five-ebook library
 - https://ded-sec.space/Pages/assistance.html — Free Termux and Android troubleshooting guides
 - https://ded-sec.space/Pages/faq.html — Project FAQ
 - https://ded-sec.space/Pages/about-founder.html — Founder's story and the complete DedSec Project vision
-- https://ded-sec.space/Pages/store.html — Sponsorship and direct services
 - https://ded-sec.space/Pages/privacy-policy.html — Privacy, legal, and acceptable-use information
 
 ## Greek versions
 
 - https://ded-sec.space/el/ — Greek project overview
 - https://ded-sec.space/el/Pages/guide-for-installation.html — Greek installation guide
-- https://ded-sec.space/el/Pages/learn-about-the-tools.html — Greek tool catalogue
+- https://ded-sec.space/el/Pages/learn-about-the-tools.html — Greek tool catalogue, sponsor-only utilities, and the $25 Ultimate Supporter five-ebook library
 - https://ded-sec.space/el/Pages/assistance.html — Greek assistance hub
 - https://ded-sec.space/el/Pages/about-founder.html — Η ιστορία του ιδρυτή και το πλήρες όραμα του DedSec Project
 
@@ -38,5 +37,5 @@
 ## Smartphone Academy
 - English: https://ded-sec.space/Pages/Smartphone-Academy.html
 - Greek: https://ded-sec.space/el/Pages/Smartphone-Academy.html
-- Academy: https://ded-sec.space/Smartphone-Academy/Home.html
-- 43 practical labs, 126 estimated hands-on hours, Android with Termux only.
+- Academy: https://ded-sec.space/Smartphone-Academy/index.html
+- 123 practical labs, 382 estimated hands-on hours, Android with Termux only.

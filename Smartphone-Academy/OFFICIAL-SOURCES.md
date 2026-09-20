@@ -38,3 +38,19 @@ Individual lessons link to the relevant official page. Learners should verify ve
 - Motorola bootloader program information: https://en-us.support.motorola.com/app/answers/detail/a_id/89973
 - Sony Open Devices: https://opendevices.sony.net/
 - Samsung Knox Warranty Bit: https://docs.samsungknox.com/admin/fundamentals/whitepaper/samsung-knox-mobile-security/system-security/hw-backed-security/
+
+
+## Mobile application security standards
+
+- OWASP MASVS: https://mas.owasp.org/MASVS/
+- OWASP MASTG: https://mas.owasp.org/MASTG/
+- OWASP MASTG tests: https://mas.owasp.org/MASTG/tests/
+
+The Academy uses MASVS/MASTG as a reference for mobile-security terminology, evidence discipline and testing structure. It does **not** claim OWASP certification.
+
+
+## Termux version-sensitive networking note
+
+- Termux `dnsutils` regression reported 25 August 2026 (closed): https://github.com/termux/termux-packages/issues/31302
+
+The DNS lesson names the package that provides `dig`, `host` and `nslookup`, and requires learners to verify tool behavior on the installed Termux build rather than assuming version-independent behavior.
