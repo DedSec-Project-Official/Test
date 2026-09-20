@@ -5796,4 +5796,13 @@
     <xhtml:link rel="alternate" hreflang="el" href="https://ded-sec.space/el/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ded-sec.space/"/>
   </url>
+  <url>
+    <loc>https://ded-sec.space/Smartphone-Academy/assessment.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ded-sec.space/Smartphone-Academy/assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://ded-sec.space/el/Smartphone-Academy/assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ded-sec.space/Smartphone-Academy/assessment.html"/>
+  </url>
 </urlset>

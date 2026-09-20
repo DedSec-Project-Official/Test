@@ -185,3 +185,7 @@ All practical work is completed locally through Android settings and Termux. Pas
 - `ai-verification-notebook` — **Build an AI Answer Verification Notebook** (3h): A verification notebook containing claims, primary sources, local tests and final corrected conclusions.
 
 **Updated total: 123 practical laboratories and 382 estimated hands-on hours.**
+
+## Assessment and completion standard
+
+Practical work uses a **70-point documentation gate**. Six deterministic labs also have **30-point lab-specific technical validators** and form the final assessment set; they pass at 80/100. All other practical labs are review-mode: 56/70 means ready for review, not automatically correct, and an explicit self/peer/instructor review is required. The published count remains **123 practical laboratories and 382 estimated hands-on hours**. See `ASSESSMENT-STANDARD.md`.

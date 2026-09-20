@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "practical_hours": 382,
   "lessons": [
     {
@@ -453,7 +453,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Python Challenges",
+        "title": "Ασκήσεις Python",
         "path": "../el/Smartphone-Academy/Pages/Python-Basics/Challenges.html",
         "module": "05 · Βασικά Python",
         "icon": "code"
@@ -470,7 +470,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Επισκόπηση Ασφάλειας Web",
+        "title": "Επισκόπηση Ασφάλειας Ιστού",
         "path": "../el/Smartphone-Academy/Pages/Web-Security/index.html",
         "module": "06 · Ασφάλεια Web",
         "icon": "globe"
@@ -487,7 +487,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Πώς Λειτουργεί το Web",
+        "title": "Πώς Λειτουργεί ο Ιστός",
         "path": "../el/Smartphone-Academy/Pages/Web-Security/Web-Basics.html",
         "module": "06 · Ασφάλεια Web",
         "icon": "globe"
@@ -521,7 +521,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Ταυτοποίηση και Sessions",
+        "title": "Ταυτοποίηση και Συνεδρίες",
         "path": "../el/Smartphone-Academy/Pages/Web-Security/Authentication.html",
         "module": "06 · Ασφάλεια Web",
         "icon": "globe"
@@ -607,14 +607,14 @@
         "title": "382-Hour Practical Track",
         "path": "Pages/Practical/index.html",
         "module": "09–16 · Practical Curriculum",
-        "summary": "Fifty-five local laboratories with concrete evidence for Android with Termux.",
+        "summary": "123 local practical laboratories with concrete evidence for Android and Termux.",
         "icon": "terminal"
       },
       "el": {
-        "title": "Πρακτική Διαδρομή 165 Ωρών",
+        "title": "Πρακτική Διαδρομή 382 Ωρών",
         "path": "../el/Smartphone-Academy/Pages/Practical/index.html",
         "module": "09–16 · Πρακτικό Πρόγραμμα",
-        "summary": "Πενήντα πέντε τοπικά εργαστήρια με συγκεκριμένα παραδοτέα για Android με Termux.",
+        "summary": "123 τοπικά πρακτικά εργαστήρια με συγκεκριμένα τεκμήρια για Android και Termux.",
         "icon": "terminal"
       }
     },
@@ -687,7 +687,7 @@
         "icon": "shield"
       },
       "el": {
-        "title": "Δημιουργία Βάσης Hash Αρχείων",
+        "title": "Δημιουργία Βασικής Καταγραφής Κατακερματισμών Αρχείων",
         "path": "../el/Smartphone-Academy/Pages/Practical/Workspace/Hash-Baseline.html",
         "module": "09 · Θεμέλια Χώρου Εργασίας",
         "summary": "Χρησιμοποίησε κρυπτογραφικά hashes για αναγνώριση μεταβολών σε ελεγχόμενο σύνολο αρχείων.",
@@ -744,7 +744,7 @@
         "icon": "shield"
       },
       "el": {
-        "title": "Δημιουργία Baseline Ακεραιότητας Πακέτων Termux",
+        "title": "Δημιουργία Βασικής Καταγραφής Ακεραιότητας Πακέτων Termux",
         "path": "../el/Smartphone-Academy/Pages/Practical/Workspace/Package-Integrity-Baseline.html",
         "module": "09 · Θεμέλια Χώρου Εργασίας",
         "summary": "Κατέγραψε έμπιστες πηγές πακέτων, εγκατεστημένες εκδόσεις και hashes επιλεγμένων τοπικών ρυθμίσεων και όρισε επαναλήψιμο έλεγχο για απρόσμενες αλλαγές.",
@@ -820,7 +820,7 @@
         "icon": "terminal"
       },
       "el": {
-        "title": "Δημιουργία Επαναλήψιμων Pipelines",
+        "title": "Δημιουργία Επαναλήψιμων Ροών Εντολών",
         "path": "../el/Smartphone-Academy/Pages/Practical/Terminal/Pipeline-Builder.html",
         "module": "10 · Terminal και Αρχεία",
         "summary": "Συνδύασε μικρές εντολές σε διαφανή pipelines επεξεργασίας δεδομένων.",
@@ -877,7 +877,7 @@
         "icon": "terminal"
       },
       "el": {
-        "title": "Δημιουργία Επαναλήψιμου Ημερολογίου Shell",
+        "title": "Δημιουργία Επαναλήψιμου Ημερολογίου Κελύφους",
         "path": "../el/Smartphone-Academy/Pages/Practical/Terminal/Shell-Session-Journal.html",
         "module": "10 · Terminal και Αρχεία",
         "summary": "Τεκμηρίωσε μια συνεδρία διερεύνησης στο Termux ώστε άλλος εκπαιδευόμενος να επαναλάβει τις εντολές, να κατανοήσει το πλαίσιο και να ξεχωρίσει εντολές από αποτελέσματα.",
@@ -896,7 +896,7 @@
         "icon": "terminal"
       },
       "el": {
-        "title": "Ασφαλείς Μαζικές Ενέργειες Αρχείων με Rollback",
+        "title": "Ασφαλείς Μαζικές Ενέργειες Αρχείων με Δυνατότητα Επαναφοράς",
         "path": "../el/Smartphone-Academy/Pages/Practical/Terminal/Safe-Batch-Operations.html",
         "module": "10 · Terminal και Αρχεία",
         "summary": "Σχεδίασε και εκτέλεσε μαζική μετονομασία ή μετακίνηση σε disposable workspace του Termux με preview, manifest, επαλήθευση και δοκιμασμένο rollback.",
@@ -953,7 +953,7 @@
         "icon": "network"
       },
       "el": {
-        "title": "Έλεγχος Τοπικών Listening Ports",
+        "title": "Έλεγχος Τοπικών Θυρών Ακρόασης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Networking-Practical/Local-Ports.html",
         "module": "11 · Παρατήρηση Δικτύου",
         "summary": "Εντόπισε υπηρεσίες που ακούν στη συσκευή σου χωρίς probing άλλων μηχανημάτων.",
@@ -1048,7 +1048,7 @@
         "icon": "network"
       },
       "el": {
-        "title": "Εντοπισμός Αλλαγών Συνδεσιμότητας Χωρίς Scanning",
+        "title": "Εντοπισμός Αλλαγών Συνδεσιμότητας Χωρίς Σάρωση",
         "path": "../el/Smartphone-Academy/Pages/Practical/Networking-Practical/Connectivity-Change-Detection.html",
         "module": "11 · Παρατήρηση Δικτύου",
         "summary": "Σύγκρινε δύο τοπικά snapshots συνδεσιμότητας της δικής σου Android συσκευής και εξήγησε αλλαγές σε interfaces, routes, DNS και reachability χωρίς scanning άλλων συστημάτων.",
@@ -1067,7 +1067,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία Αξιόπιστου CLI",
+        "title": "Δημιουργία Αξιόπιστου Εργαλείου Γραμμής Εντολών",
         "path": "../el/Smartphone-Academy/Pages/Practical/Python-Automation/Cli-Arguments.html",
         "module": "12 · Αυτοματισμοί Python",
         "summary": "Γράψε εργαλείο Python γραμμής εντολών που ελέγχει input και αποτυγχάνει καθαρά.",
@@ -1105,7 +1105,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Ανάλυση Δομημένων Logs",
+        "title": "Ανάλυση Δομημένων Αρχείων Καταγραφής",
         "path": "../el/Smartphone-Academy/Pages/Practical/Python-Automation/Log-Parser.html",
         "module": "12 · Αυτοματισμοί Python",
         "summary": "Μετέτρεψε μικτό sample log σε κανονικοποιημένες εγγραφές και χρήσιμες μετρήσεις.",
@@ -1124,7 +1124,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Υλοποίηση Integrity Monitor",
+        "title": "Υλοποίηση Ελέγχου Ακεραιότητας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Python-Automation/Integrity-Monitor.html",
         "module": "12 · Αυτοματισμοί Python",
         "summary": "Δημιούργησε μικρό πρόγραμμα που συγκρίνει φάκελο με έμπιστο hash manifest.",
@@ -1143,7 +1143,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία HTTP Header Checker",
+        "title": "Δημιουργία Ελεγκτή Κεφαλίδων HTTP",
         "path": "../el/Smartphone-Academy/Pages/Practical/Python-Automation/Header-Checker.html",
         "module": "12 · Αυτοματισμοί Python",
         "summary": "Επιθεώρησε response headers για δικά σου URLs ή εγκεκριμένους documentation targets.",
@@ -1181,7 +1181,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία Καταγραφής Python Dependencies",
+        "title": "Δημιουργία Καταγραφής Εξαρτήσεων Python",
         "path": "../el/Smartphone-Academy/Pages/Practical/Python-Automation/Dependency-Inventory.html",
         "module": "12 · Αυτοματισμοί Python",
         "summary": "Δημιούργησε τοπικό εργαλείο Python που καταγράφει εγκατεστημένα πακέτα, imports έργου, εκδόσεις και ανεπίλυτα dependencies χωρίς upload του project ή του environment.",
@@ -1200,7 +1200,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία Αμυντικού JSON Configuration Validator",
+        "title": "Δημιουργία Αμυντικού Ελεγκτή Ρυθμίσεων JSON",
         "path": "../el/Smartphone-Academy/Pages/Practical/Python-Automation/Json-Config-Validator.html",
         "module": "12 · Αυτοματισμοί Python",
         "summary": "Γράψε validator χωρίς εξωτερικά dependencies που απορρίπτει κακοσχηματισμένες ή μη ασφαλείς τοπικές ρυθμίσεις και δίνει ακριβή, κατανοητά errors.",
@@ -1219,7 +1219,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Ανακατασκευή Web Request",
+        "title": "Ανακατασκευή Αιτήματος Ιστού",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Request-Anatomy.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Ανάλυσε δοσμένο request σε method, path, headers, body και trust boundaries.",
@@ -1238,7 +1238,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Μοντελοποίηση Cookies και Sessions",
+        "title": "Μοντελοποίηση Cookies και Συνεδριών",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Session-Model.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Δημιούργησε αμυντικό μοντέλο login state με τοπική toy εφαρμογή ή δοσμένα traces.",
@@ -1276,7 +1276,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Θωράκιση Response Headers",
+        "title": "Θωράκιση Κεφαλίδων Απόκρισης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Security-Headers.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Έλεγξε και βελτίωσε headers σε τοπικό sample server που ελέγχεις.",
@@ -1295,7 +1295,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Έλεγχος Τοπικού Web Handler",
+        "title": "Έλεγχος Τοπικού Χειριστή Web",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Local-Code-Review.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Διάβασε σκόπιμα απλό τοπικό handler και βρες αμυντικές βελτιώσεις.",
@@ -1314,7 +1314,7 @@
         "icon": "globe"
       },
       "el": {
-        "title": "Threat Modeling Μικρής Υπηρεσίας",
+        "title": "Μοντελοποίηση Απειλών Μικρής Υπηρεσίας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Threat-Model.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Χαρτογράφησε assets, actors, entry points και controls για φανταστική τοπική υπηρεσία.",
@@ -1333,7 +1333,7 @@
         "icon": "book-open"
       },
       "el": {
-        "title": "Αξιολόγηση Content Security Policy",
+        "title": "Αξιολόγηση Πολιτικής Ασφάλειας Περιεχομένου (CSP)",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Csp-Review.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Ανάλυσε παρεχόμενα response headers και HTML references για να προσδιορίσεις τι επιτρέπει, μπλοκάρει ή αφήνει απροστάτευτο μια Content Security Policy.",
@@ -1352,7 +1352,7 @@
         "icon": "book-open"
       },
       "el": {
-        "title": "Κατασκευή και Δοκιμή Τοπικού Input Validation",
+        "title": "Κατασκευή και Δοκιμή Τοπικής Επικύρωσης Εισόδου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Web-Defence/Local-Form-Validation.html",
         "module": "13 · Web και Ασφαλής Κώδικας",
         "summary": "Υλοποίησε server-side λογική validation σε τοπικό Python πρόγραμμα και δοκίμασε κανονικά, malformed, oversized και encoded inputs με φανταστικά δεδομένα.",
@@ -1371,7 +1371,7 @@
         "icon": "activity"
       },
       "el": {
-        "title": "Κανονικοποίηση Ετερογενών Logs",
+        "title": "Κανονικοποίηση Ετερογενών Αρχείων Καταγραφής",
         "path": "../el/Smartphone-Academy/Pages/Practical/Monitoring/Log-Normalization.html",
         "module": "14 · Αμυντική Παρακολούθηση",
         "summary": "Μετέφερε διαφορετικά δοσμένα log formats σε ενιαίο μοντέλο συμβάντων.",
@@ -1466,7 +1466,7 @@
         "icon": "activity"
       },
       "el": {
-        "title": "Σύνταξη και Δοκιμή Detection Rule",
+        "title": "Σύνταξη και Δοκιμή Κανόνα Ανίχνευσης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Monitoring/Detection-Rule.html",
         "module": "14 · Αμυντική Παρακολούθηση",
         "summary": "Δημιούργησε διαφανή τοπικό κανόνα για ένα μοτίβο στο συνθετικό dataset.",
@@ -1485,7 +1485,7 @@
         "icon": "activity"
       },
       "el": {
-        "title": "Σχεδίαση Τοπικού Log Retention και Threshold Alerts",
+        "title": "Σχεδίαση Τοπικής Διατήρησης Καταγραφών και Ορίων Ειδοποίησης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Monitoring/Log-Retention-Alerting.html",
         "module": "14 · Αμυντική Παρακολούθηση",
         "summary": "Δημιούργησε ελαφριά ροή Termux που κάνει rotation παρεχόμενων logs, διατηρεί hashes και παράγει διαφανή threshold alerts χωρίς background surveillance.",
@@ -1580,7 +1580,7 @@
         "icon": "lock"
       },
       "el": {
-        "title": "Έλεγχος Τοπικού Project για Εκτεθειμένα Secrets",
+        "title": "Έλεγχος Τοπικού Έργου για Εκτεθειμένα Μυστικά",
         "path": "../el/Smartphone-Academy/Pages/Practical/Hardening/Secret-Exposure-Scan.html",
         "module": "15 · Ταυτότητα και Θωράκιση",
         "summary": "Κατασκεύασε local-only scanner για φανταστικά tokens, private-key markers και επικίνδυνα environment files με διαχείριση false positives και χωρίς αποστολή source code.",
@@ -1599,7 +1599,7 @@
         "icon": "award"
       },
       "el": {
-        "title": "Capstone: Δημιουργία Baseline",
+        "title": "Τελική Εργασία: Δημιουργία Βασικής Καταγραφής",
         "path": "../el/Smartphone-Academy/Pages/Practical/Capstone/Capstone-Baseline.html",
         "module": "16 · Τελικές Αποστολές",
         "summary": "Δημιούργησε πλήρες, privacy-aware baseline του δοσμένου φανταστικού χώρου Android και Termux.",
@@ -1618,7 +1618,7 @@
         "icon": "award"
       },
       "el": {
-        "title": "Capstone: Διερεύνηση Περιστατικού",
+        "title": "Τελική Εργασία: Διερεύνηση Περιστατικού",
         "path": "../el/Smartphone-Academy/Pages/Practical/Capstone/Capstone-Incident.html",
         "module": "16 · Τελικές Αποστολές",
         "summary": "Ανάλυσε το δοσμένο συνθετικό περιστατικό χωρίς αλλαγή source evidence.",
@@ -1637,7 +1637,7 @@
         "icon": "award"
       },
       "el": {
-        "title": "Capstone: Δημιουργία Portfolio",
+        "title": "Τελική Εργασία: Δημιουργία Χαρτοφυλακίου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Capstone/Capstone-Portfolio.html",
         "module": "16 · Τελικές Αποστολές",
         "summary": "Μετέτρεψε την ολοκληρωμένη εργασία σε σαφές portfolio που δείχνει διαδικασία, όχι secrets.",
@@ -1656,7 +1656,7 @@
         "icon": "award"
       },
       "el": {
-        "title": "Capstone: Δημιουργία Mobile Incident Response Casefile",
+        "title": "Τελική Εργασία: Φάκελος Αντιμετώπισης Περιστατικού σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Practical/Capstone/Mobile-Response-Casefile.html",
         "module": "16 · Τελικές Αποστολές",
         "summary": "Συνδύασε evidence ακεραιότητας αρχείων, πακέτων, δικτύου, logs και ρυθμίσεων από παρεχόμενο φανταστικό περιστατικό Android και Termux σε ένα τεκμηριωμένο casefile.",
@@ -1713,7 +1713,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Εφαρμογές, APK και App Bundles",
+        "title": "Εφαρμογές, APK και Πακέτα Εφαρμογών",
         "path": "../el/Smartphone-Academy/Pages/Android-Foundations/Apps-Apks-Bundles.html",
         "module": "17 · Βάσεις Android",
         "summary": "Ξεχώρισε την εγκατεστημένη εφαρμογή, το package name, ένα απλό APK, τα split APK και τα App Bundles του Play.",
@@ -1732,7 +1732,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Sandbox Εφαρμογών και Όρια Δεδομένων",
+        "title": "Περιβάλλον Απομόνωσης Εφαρμογών και Όρια Δεδομένων",
         "path": "../el/Smartphone-Academy/Pages/Android-Foundations/Sandbox-And-App-Data.html",
         "module": "17 · Βάσεις Android",
         "summary": "Κατανόησε πώς το Android διαχωρίζει ταυτότητες εφαρμογών, ιδιωτικά δεδομένα, shared storage και προνομιούχες περιοχές συστήματος.",
@@ -1751,7 +1751,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Ενημερώσεις, Patch Levels και Υποστήριξη",
+        "title": "Ενημερώσεις, Επίπεδα Ασφάλειας και Υποστήριξη",
         "path": "../el/Smartphone-Academy/Pages/Android-Foundations/Updates-And-Support.html",
         "module": "17 · Βάσεις Android",
         "summary": "Διάβασε σωστά τις πληροφορίες ενημέρωσης και κατανόησε τη διαφορά ανάμεσα σε OS upgrades, μηνιαία patches και component updates.",
@@ -1827,7 +1827,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Split APK και Παραλλαγές Συσκευής",
+        "title": "Διαχωρισμένα APK και Παραλλαγές Συσκευής",
         "path": "../el/Smartphone-Academy/Pages/Apps-Apks/Split-Apks-And-Bundles.html",
         "module": "18 · Εφαρμογές και Εγκατάσταση APK",
         "summary": "Κατανόησε γιατί ορισμένες εφαρμογές δεν εγκαθίστανται σωστά από ένα μόνο base package.",
@@ -1846,7 +1846,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Updates, Downgrades και Συγκρούσεις Υπογραφής",
+        "title": "Ενημερώσεις, Υποβαθμίσεις και Συγκρούσεις Υπογραφής",
         "path": "../el/Smartphone-Academy/Pages/Apps-Apks/Updates-Downgrades-Signature-Conflicts.html",
         "module": "18 · Εφαρμογές και Εγκατάσταση APK",
         "summary": "Διάγνωσε συνηθισμένες αποτυχίες package manager χωρίς να διαγράψεις άσκοπα πολύτιμα δεδομένα εφαρμογών.",
@@ -1922,7 +1922,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Αξιολόγηση Stores και Developers",
+        "title": "Αξιολόγηση Καταστημάτων και Προγραμματιστών",
         "path": "../el/Smartphone-Academy/Pages/App-Discovery/Evaluate-Stores-And-Developers.html",
         "module": "19 · Εύρεση Κατάλληλων Εφαρμογών",
         "summary": "Σύγκρινε την υπευθυνότητα και τη διαδρομή ενημερώσεων μιας πηγής εφαρμογής πριν εμπιστευτείς το package.",
@@ -1998,7 +1998,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Ανάγνωση Android Security Bulletins",
+        "title": "Ανάγνωση Δελτίων Ασφάλειας Android",
         "path": "../el/Smartphone-Academy/Pages/Android-Security/Read-Android-Security-Bulletins.html",
         "module": "20 · Ασφάλεια Android και Ευπάθειες",
         "summary": "Ερμήνευσε vulnerability entries χωρίς να θεωρείς ότι κάθε CVE επηρεάζει κάθε κινητό με τον ίδιο τρόπο.",
@@ -2017,7 +2017,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Permissions, Special Access και Διαδρομές Κατάχρησης",
+        "title": "Δικαιώματα, Ειδική Πρόσβαση και Διαδρομές Κατάχρησης",
         "path": "../el/Smartphone-Academy/Pages/Android-Security/Permissions-Special-Access-And-Abuse.html",
         "module": "20 · Ασφάλεια Android και Ευπάθειες",
         "summary": "Κατανόησε γιατί ορισμένες δυνατότητες ελέγχονται από ειδικές ρυθμίσεις αντί για συνηθισμένα runtime permission prompts.",
@@ -2036,7 +2036,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Κίνδυνοι Overlay, Accessibility και Notifications",
+        "title": "Κίνδυνοι Επικαλύψεων, Προσβασιμότητας και Ειδοποιήσεων",
         "path": "../el/Smartphone-Academy/Pages/Android-Security/Overlay-Accessibility-Notification-Risks.html",
         "module": "20 · Ασφάλεια Android και Ευπάθειες",
         "summary": "Αναγνώρισε δυνατότητες υψηλού impact που χρησιμοποιούνται τόσο από νόμιμα automation tools όσο και από κακόβουλες εφαρμογές.",
@@ -2131,7 +2131,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Λογαριασμοί, Sessions και Εμπιστοσύνη Συσκευής",
+        "title": "Λογαριασμοί, Συνεδρίες και Εμπιστοσύνη Συσκευής",
         "path": "../el/Smartphone-Academy/Pages/Privacy-Permissions/Accounts-Sessions-And-Device-Trust.html",
         "module": "21 · Ιδιωτικότητα και Permissions",
         "summary": "Κατανόησε πώς η ασφάλεια κινητού εξαρτάται από account recovery, active sessions, screen lock και trusted devices.",
@@ -2188,7 +2188,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "SoC, CPU, GPU, NPU, Μνήμη και Storage",
+        "title": "SoC, CPU, GPU, NPU, Μνήμη και Αποθήκευση",
         "path": "../el/Smartphone-Academy/Pages/Phone-Technology/Soc-Cpu-Gpu-Npu-Memory-Storage.html",
         "module": "22 · Τεχνολογία και Συντήρηση Κινητού",
         "summary": "Κατανόησε τα components που καθορίζουν responsiveness, multitasking, gaming, emulation και δυνατότητα local AI.",
@@ -2207,7 +2207,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Οθόνες, Αφή, Κάμερες και Media",
+        "title": "Οθόνες, Αφή, Κάμερες και Πολυμέσα",
         "path": "../el/Smartphone-Academy/Pages/Phone-Technology/Displays-Touch-Cameras-And-Media.html",
         "module": "22 · Τεχνολογία και Συντήρηση Κινητού",
         "summary": "Σύγκρινε τα μέρη ενός κινητού που διαμορφώνουν θέαση, input, φωτογραφία, video και audio quality.",
@@ -2226,7 +2226,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Cellular, Wi-Fi, Bluetooth, NFC και GNSS",
+        "title": "Κινητή Τηλεφωνία, Wi‑Fi, Bluetooth, NFC και GNSS",
         "path": "../el/Smartphone-Academy/Pages/Phone-Technology/Cellular-Wifi-Bluetooth-Nfc-Gnss.html",
         "module": "22 · Τεχνολογία και Συντήρηση Κινητού",
         "summary": "Δημιούργησε σαφές μοντέλο των radios, bands, protocols και permissions πίσω από τη συνδεσιμότητα κινητού.",
@@ -2283,7 +2283,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Επαλήθευση APK Release",
+        "title": "Επαλήθευση Έκδοσης APK",
         "path": "../el/Smartphone-Academy/Pages/Practical/App-Installation/Apk-Source-Verification.html",
         "module": "23 · Εργαστήρια Εγκατάστασης Εφαρμογών",
         "summary": "Σύγκρινε παρεχόμενο release manifest, package metadata και hashes πριν εγκρίνεις ένα φανταστικό APK.",
@@ -2302,7 +2302,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Έλεγχος Πρόσβασης Εγκατάστασης Άγνωστων Apps",
+        "title": "Έλεγχος Πρόσβασης Εγκατάστασης από Άγνωστες Εφαρμογές",
         "path": "../el/Smartphone-Academy/Pages/Practical/App-Installation/Unknown-Source-Audit.html",
         "module": "23 · Εργαστήρια Εγκατάστασης Εφαρμογών",
         "summary": "Δημιούργησε least-privilege σχέδιο για τη ρύθμιση εγκατάστασης APK ανά πηγή του Android.",
@@ -2321,7 +2321,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Δημιουργία App Package Inventory",
+        "title": "Δημιουργία Απογραφής Πακέτων Εφαρμογών",
         "path": "../el/Smartphone-Academy/Pages/Practical/App-Installation/Package-Identity-Inventory.html",
         "module": "23 · Εργαστήρια Εγκατάστασης Εφαρμογών",
         "summary": "Κανονικοποίησε παρεχόμενη λίστα ορατών app names, package identifiers, versions και sources.",
@@ -2340,7 +2340,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Σχεδιασμός Εγκατάστασης Split APK",
+        "title": "Σχεδιασμός Εγκατάστασης Διαχωρισμένων APK",
         "path": "../el/Smartphone-Academy/Pages/Practical/App-Installation/Split-Package-Planning.html",
         "module": "23 · Εργαστήρια Εγκατάστασης Εφαρμογών",
         "summary": "Επίλεξε συνεπές φανταστικό split set για ένα Android device profile χωρίς εγκατάσταση.",
@@ -2359,7 +2359,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Διάγνωση Android Install Errors",
+        "title": "Διάγνωση Σφαλμάτων Εγκατάστασης Android",
         "path": "../el/Smartphone-Academy/Pages/Practical/App-Installation/Install-Failure-Triage.html",
         "module": "23 · Εργαστήρια Εγκατάστασης Εφαρμογών",
         "summary": "Κατάταξε συνθετικά μηνύματα parse, compatibility, storage, downgrade και signature conflict.",
@@ -2378,7 +2378,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Σχεδιασμός Ασφαλούς Αφαίρεσης App",
+        "title": "Σχεδιασμός Ασφαλούς Αφαίρεσης Εφαρμογής",
         "path": "../el/Smartphone-Academy/Pages/Practical/App-Installation/Safe-App-Removal.html",
         "module": "23 · Εργαστήρια Εγκατάστασης Εφαρμογών",
         "summary": "Επίλεξε ανάμεσα σε force stop, cache cleanup, reset, disable, archive και uninstall για παρεχόμενα scenarios.",
@@ -2397,7 +2397,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Αξιολόγηση Κινδύνου Permissions",
+        "title": "Αξιολόγηση Κινδύνου Δικαιωμάτων",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Security/Permission-Risk-Review.html",
         "module": "24 · Εργαστήρια Ασφάλειας και Privacy Android",
         "summary": "Αξιολόγησε ένα φανταστικό permission set σε σχέση με τα features που δηλώνει η εφαρμογή.",
@@ -2416,7 +2416,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Αξιολόγηση Έκθεσης βάσει Patch Level",
+        "title": "Αξιολόγηση Έκθεσης βάσει Επιπέδου Ενημερώσεων Ασφαλείας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Security/Patch-Exposure-Review.html",
         "module": "24 · Εργαστήρια Ασφάλειας και Privacy Android",
         "summary": "Αντιστοίχισε παρεχόμενες Android patch dates και components σε απλοποιημένο bulletin dataset.",
@@ -2435,7 +2435,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Έλεγχος Android Special Access",
+        "title": "Έλεγχος Ειδικής Πρόσβασης Android",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Security/Special-Access-Audit.html",
         "module": "24 · Εργαστήρια Ασφάλειας και Privacy Android",
         "summary": "Έλεγξε συνθετικές αναθέσεις overlay, accessibility, notification, VPN και install-source.",
@@ -2454,7 +2454,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Ανάλυση Χρονογραμμής Privacy Access",
+        "title": "Ανάλυση Χρονογραμμής Προσβάσεων Ιδιωτικότητας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Security/Privacy-Timeline-Analysis.html",
         "module": "24 · Εργαστήρια Ασφάλειας και Privacy Android",
         "summary": "Συσχέτισε μια φανταστική privacy-dashboard timeline με app usage και screen events.",
@@ -2473,7 +2473,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Σύγκριση App Provenance",
+        "title": "Σύγκριση Προέλευσης Εφαρμογών",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Security/App-Provenance-Comparison.html",
         "module": "24 · Εργαστήρια Ασφάλειας και Privacy Android",
         "summary": "Σύγκρινε official, mirror και repackaged φανταστικά release channels με επαληθεύσιμο evidence.",
@@ -2492,7 +2492,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Δημιουργία Casefile Ύποπτης Εφαρμογής",
+        "title": "Δημιουργία Φακέλου Υπόθεσης Ύποπτης Εφαρμογής",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Security/Suspicious-App-Casefile.html",
         "module": "24 · Εργαστήρια Ασφάλειας και Privacy Android",
         "summary": "Συνδύασε συμπτώματα, app metadata, permissions και network observations σε αμυντικό response record.",
@@ -2511,7 +2511,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Ανάλυση Smartphone Storage",
+        "title": "Ανάλυση Αποθήκευσης Smartphone",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Storage-Usage-Analysis.html",
         "module": "25 · Εργαστήρια Διάγνωσης και Συντήρησης",
         "summary": "Κατάταξε παρεχόμενο storage report σε apps, media, downloads, caches, offline content και unknown growth.",
@@ -2530,7 +2530,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Δημιουργία Baseline Χρήσης Μπαταρίας",
+        "title": "Δημιουργία Βασικής Καταγραφής Χρήσης Μπαταρίας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Battery-Baseline.html",
         "module": "25 · Εργαστήρια Διάγνωσης και Συντήρησης",
         "summary": "Ανάλυσε συνθετικές μετρήσεις screen, radio, app και standby σε μία φυσιολογική ημέρα.",
@@ -2549,7 +2549,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Ανάλυση Thermal Throttling",
+        "title": "Ανάλυση Θερμικού Περιορισμού Απόδοσης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Thermal-Performance.html",
         "module": "25 · Εργαστήρια Διάγνωσης και Συντήρησης",
         "summary": "Συσχέτισε παρεχόμενες παρατηρήσεις θερμοκρασίας, frequency, frame-time και charging.",
@@ -2568,7 +2568,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Διάγνωση Crashes και Background Closures",
+        "title": "Διάγνωση Καταρρεύσεων και Τερματισμών στο Παρασκήνιο",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Crash-Background-Triage.html",
         "module": "25 · Εργαστήρια Διάγνωσης και Συντήρησης",
         "summary": "Χρησιμοποίησε supplied event records για διάκριση app bugs, low memory, battery restrictions και storage pressure.",
@@ -2587,7 +2587,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Επαλήθευση Σχεδίου Backup και Restore",
+        "title": "Επαλήθευση Σχεδίου Αντιγράφων Ασφαλείας και Επαναφοράς",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Backup-Restore-Verification.html",
         "module": "25 · Εργαστήρια Διάγνωσης και Συντήρησης",
         "summary": "Έλεγξε φανταστικό phone backup plan και δοκίμασε sample restores χωρίς έκθεση προσωπικών δεδομένων.",
@@ -2606,7 +2606,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Προετοιμασία Smartphone Migration",
+        "title": "Προετοιμασία Μεταφοράς σε Νέο Smartphone",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Migration-Readiness.html",
         "module": "25 · Εργαστήρια Διάγνωσης και Συντήρησης",
         "summary": "Δημιούργησε πλήρες privacy-aware migration checklist για φανταστικό παλιό και νέο κινητό.",
@@ -2625,7 +2625,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Δημιουργία Device Specification Profile",
+        "title": "Δημιουργία Προφίλ Προδιαγραφών Συσκευής",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Device-Spec-Profile.html",
         "module": "26 · Εργαστήρια Τεχνολογίας Smartphone",
         "summary": "Κανονικοποίησε ένα φανταστικό specification sheet κινητού και εντόπισε ελλείψεις ή marketing-only claims.",
@@ -2644,7 +2644,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Δημιουργία App Compatibility Matrix",
+        "title": "Δημιουργία Πίνακα Συμβατότητας Εφαρμογών",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/App-Compatibility-Matrix.html",
         "module": "26 · Εργαστήρια Τεχνολογίας Smartphone",
         "summary": "Σύγκρινε supplied app requirements με πολλαπλά Android device profiles.",
@@ -2663,7 +2663,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Αξιολόγηση Συμβατότητας Charger και Cable",
+        "title": "Αξιολόγηση Συμβατότητας Φορτιστή και Καλωδίου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Charging-Compatibility.html",
         "module": "26 · Εργαστήρια Τεχνολογίας Smartphone",
         "summary": "Σύγκρινε φανταστικούς πίνακες δυνατοτήτων phone, charger, cable και power bank.",
@@ -2682,7 +2682,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Δημιουργία Connectivity Capability Profile",
+        "title": "Δημιουργία Προφίλ Δυνατοτήτων Συνδεσιμότητας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Connectivity-Profile.html",
         "module": "26 · Εργαστήρια Τεχνολογίας Smartphone",
         "summary": "Ανάλυσε cellular bands, Wi-Fi, Bluetooth, NFC και GNSS support για φανταστικό travel και accessory scenario.",
@@ -2701,7 +2701,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Σύγκριση Smartphones για Workload",
+        "title": "Σύγκριση Smartphone για Συγκεκριμένο Φόρτο Εργασίας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Comparison.html",
         "module": "26 · Εργαστήρια Τεχνολογίας Smartphone",
         "summary": "Σύγκρινε supplied devices για multitasking, Termux, gaming, camera, durability και support priorities.",
@@ -2720,7 +2720,7 @@
         "icon": "device"
       },
       "el": {
-        "title": "Capstone: Δημιουργία Smartphone Support Casefile",
+        "title": "Τελική Εργασία: Φάκελος Υποστήριξης Smartphone",
         "path": "../el/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Technology-Capstone.html",
         "module": "26 · Εργαστήρια Τεχνολογίας Smartphone",
         "summary": "Συνδύασε app selection, APK provenance, permissions, device compatibility, performance, charging και backup evidence σε ένα support case.",
@@ -2838,7 +2838,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Αλλαγή Charging Port, Κάμερας και Ηχείων",
+        "title": "Αλλαγή Θύρας Φόρτισης, Κάμερας και Ηχείων",
         "path": "../el/Smartphone-Academy/Pages/Phone-Repair/Replace-Ports-Cameras-Speakers.html",
         "module": "27 · Επισκευή Σύγχρονων Κινητών",
         "icon": "screwdriver-wrench"
@@ -2855,7 +2855,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Επανασφράγιση, Calibration και Έλεγχος Μετά την Επισκευή",
+        "title": "Επανασφράγιση, Βαθμονόμηση και Έλεγχος Μετά την Επισκευή",
         "path": "../el/Smartphone-Academy/Pages/Phone-Repair/Resealing-Calibration-Post-Repair.html",
         "module": "27 · Επισκευή Σύγχρονων Κινητών",
         "icon": "screwdriver-wrench"
@@ -2889,7 +2889,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Εξωτερικό Storage, Card Readers και Portable SSDs",
+        "title": "Εξωτερική Αποθήκευση, Αναγνώστες Καρτών και Φορητοί SSD",
         "path": "../el/Smartphone-Academy/Pages/Phone-Accessories/External-Storage-Card-Readers.html",
         "module": "28 · Χρήσιμα Αξεσουάρ Smartphone",
         "icon": "plug-circle-bolt"
@@ -2906,7 +2906,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Μικρόφωνα, USB DACs και Mobile Audio",
+        "title": "Μικρόφωνα, USB DAC και Ήχος σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Phone-Accessories/Mobile-Audio-Microphones-Dacs.html",
         "module": "28 · Χρήσιμα Αξεσουάρ Smartphone",
         "icon": "plug-circle-bolt"
@@ -2923,7 +2923,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Controllers, Keyboards, Ποντίκια και Desktop Use",
+        "title": "Χειριστήρια, Πληκτρολόγια, Ποντίκια και Χρήση ως Υπολογιστής",
         "path": "../el/Smartphone-Academy/Pages/Phone-Accessories/Controllers-Keyboards-Mice.html",
         "module": "28 · Χρήσιμα Αξεσουάρ Smartphone",
         "icon": "plug-circle-bolt"
@@ -2940,7 +2940,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Camera Lenses, Φώτα, Gimbals και Endoscopes",
+        "title": "Φακοί Κάμερας, Φώτα, Gimbal και Ενδοσκόπια",
         "path": "../el/Smartphone-Academy/Pages/Phone-Accessories/Camera-Lenses-Lights-Endoscopes.html",
         "module": "28 · Χρήσιμα Αξεσουάρ Smartphone",
         "icon": "plug-circle-bolt"
@@ -2957,7 +2957,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "USB Power Meters, Security Keys και Portable Monitors",
+        "title": "Μετρητές Ισχύος USB, Κλειδιά Ασφαλείας και Φορητές Οθόνες",
         "path": "../el/Smartphone-Academy/Pages/Phone-Accessories/Power-Meters-Security-Keys-Portable-Monitors.html",
         "module": "28 · Χρήσιμα Αξεσουάρ Smartphone",
         "icon": "plug-circle-bolt"
@@ -2974,7 +2974,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιούργησε Αξιόπιστο Coding Environment στο Termux",
+        "title": "Δημιούργησε Αξιόπιστο Περιβάλλον Ανάπτυξης στο Termux",
         "path": "../el/Smartphone-Academy/Pages/Mobile-Coding/index.html",
         "module": "29 · Προγραμματισμός σε Smartphone",
         "icon": "code"
@@ -3008,7 +3008,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιούργησε Python CLI Tools στο Android",
+        "title": "Δημιούργησε Εργαλεία Γραμμής Εντολών Python στο Android",
         "path": "../el/Smartphone-Academy/Pages/Mobile-Coding/Python-Cli-On-Phone.html",
         "module": "29 · Προγραμματισμός σε Smartphone",
         "icon": "code"
@@ -3025,7 +3025,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Φτιάξε Websites με HTML, CSS και JavaScript σε Κινητό",
+        "title": "Φτιάξε Ιστότοπους με HTML, CSS και JavaScript σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Mobile-Coding/Web-Development-On-Phone.html",
         "module": "29 · Προγραμματισμός σε Smartphone",
         "icon": "code"
@@ -3042,7 +3042,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιούργησε Local APIs και SQLite Projects",
+        "title": "Δημιούργησε Τοπικά API και Έργα SQLite",
         "path": "../el/Smartphone-Academy/Pages/Mobile-Coding/Local-Api-SQLite.html",
         "module": "29 · Προγραμματισμός σε Smartphone",
         "icon": "code"
@@ -3059,7 +3059,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Testing, Packaging και Release Projects από Κινητό",
+        "title": "Δοκιμή, Πακετάρισμα και Δημοσίευση Έργων από Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Mobile-Coding/Testing-Release-Automation.html",
         "module": "29 · Προγραμματισμός σε Smartphone",
         "icon": "code"
@@ -3076,7 +3076,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Επίλεξε Cloud ή On-Device AI",
+        "title": "Επίλεξε AI στο Cloud ή Επάνω στη Συσκευή",
         "path": "../el/Smartphone-Academy/Pages/Smartphone-Ai/index.html",
         "module": "30 · Χρήση AI σε Smartphones",
         "icon": "wand-magic-sparkles"
@@ -3110,7 +3110,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Γράψε Καλύτερα Prompts σε Κινητό",
+        "title": "Γράψε Καλύτερες Προτροπές AI σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Smartphone-Ai/Prompt-Design-Mobile.html",
         "module": "30 · Χρήση AI σε Smartphones",
         "icon": "wand-magic-sparkles"
@@ -3127,7 +3127,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Επαλήθευσε AI Απαντήσεις και Εντόπισε Hallucinations",
+        "title": "Επαλήθευσε Απαντήσεις AI και Εντόπισε Ψευδείς Ισχυρισμούς",
         "path": "../el/Smartphone-Academy/Pages/Smartphone-Ai/Verify-Ai-Answers.html",
         "module": "30 · Χρήση AI σε Smartphones",
         "icon": "wand-magic-sparkles"
@@ -3144,7 +3144,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Χρησιμοποίησε AI ως Coding Assistant σε Κινητό",
+        "title": "Χρησιμοποίησε AI ως Βοηθό Προγραμματισμού σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Smartphone-Ai/Ai-Assisted-Coding-On-Phone.html",
         "module": "30 · Χρήση AI σε Smartphones",
         "icon": "wand-magic-sparkles"
@@ -3161,7 +3161,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Τρέξε Local AI Models και Ταίριαξέ τα με το Hardware",
+        "title": "Τρέξε Τοπικά Μοντέλα AI και Ταίριαξέ τα με το Υλικό",
         "path": "../el/Smartphone-Academy/Pages/Smartphone-Ai/Local-Models-Phone-Hardware.html",
         "module": "30 · Χρήση AI σε Smartphones",
         "icon": "wand-magic-sparkles"
@@ -3178,7 +3178,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Δημιουργία Model-Specific Repair Dossier",
+        "title": "Δημιουργία Φακέλου Επισκευής ανά Μοντέλο",
         "path": "../el/Smartphone-Academy/Pages/Practical/Repair-Planning/Repair-Dossier.html",
         "module": "31 · Εργαστήρια Σχεδιασμού Επισκευής",
         "icon": "screwdriver-wrench"
@@ -3195,7 +3195,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Σχεδιασμός Ασφαλούς Repair Workspace",
+        "title": "Σχεδιασμός Ασφαλούς Χώρου Εργασίας Επισκευής",
         "path": "../el/Smartphone-Academy/Pages/Practical/Repair-Planning/Repair-Workspace-Risk-Check.html",
         "module": "31 · Εργαστήρια Σχεδιασμού Επισκευής",
         "icon": "screwdriver-wrench"
@@ -3212,7 +3212,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Προετοιμασία Battery Replacement Plan",
+        "title": "Προετοιμασία Σχεδίου Αντικατάστασης Μπαταρίας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Repair-Planning/Battery-Replacement-Plan.html",
         "module": "31 · Εργαστήρια Σχεδιασμού Επισκευής",
         "icon": "screwdriver-wrench"
@@ -3229,7 +3229,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Προετοιμασία Screen Replacement Plan",
+        "title": "Προετοιμασία Σχεδίου Αντικατάστασης Οθόνης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Repair-Planning/Screen-Replacement-Plan.html",
         "module": "31 · Εργαστήρια Σχεδιασμού Επισκευής",
         "icon": "screwdriver-wrench"
@@ -3246,7 +3246,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Επαλήθευση Compatibility Ανταλλακτικών",
+        "title": "Επαλήθευση Συμβατότητας Ανταλλακτικών",
         "path": "../el/Smartphone-Academy/Pages/Practical/Repair-Planning/Replacement-Part-Authenticity.html",
         "module": "31 · Εργαστήρια Σχεδιασμού Επισκευής",
         "icon": "screwdriver-wrench"
@@ -3263,7 +3263,7 @@
         "icon": "screwdriver-wrench"
       },
       "el": {
-        "title": "Δημιουργία Post-Repair Validation Checklist",
+        "title": "Δημιουργία Λίστας Ελέγχου Μετά την Επισκευή",
         "path": "../el/Smartphone-Academy/Pages/Practical/Repair-Planning/Post-Repair-Validation.html",
         "module": "31 · Εργαστήρια Σχεδιασμού Επισκευής",
         "icon": "screwdriver-wrench"
@@ -3280,7 +3280,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Δημιουργία USB-C Capability Matrix",
+        "title": "Δημιουργία Πίνακα Δυνατοτήτων USB-C",
         "path": "../el/Smartphone-Academy/Pages/Practical/Accessory-Labs/Usb-C-Capability-Matrix.html",
         "module": "32 · Εργαστήρια Compatibility Αξεσουάρ",
         "icon": "plug-circle-bolt"
@@ -3297,7 +3297,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Δημιουργία Charger και Cable Test Plan",
+        "title": "Δημιουργία Σχεδίου Δοκιμών Φορτιστή και Καλωδίου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Accessory-Labs/Charger-Cable-Test-Plan.html",
         "module": "32 · Εργαστήρια Compatibility Αξεσουάρ",
         "icon": "plug-circle-bolt"
@@ -3314,7 +3314,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Αξιόπιστο Benchmark OTG Storage",
+        "title": "Αξιόπιστη Συγκριτική Μέτρηση Αποθήκευσης OTG",
         "path": "../el/Smartphone-Academy/Pages/Practical/Accessory-Labs/Otg-Storage-Benchmark.html",
         "module": "32 · Εργαστήρια Compatibility Αξεσουάρ",
         "icon": "plug-circle-bolt"
@@ -3331,7 +3331,7 @@
         "icon": "plug-circle-bolt"
       },
       "el": {
-        "title": "Σχεδιασμός Χρήσιμου Smartphone Accessory Kit",
+        "title": "Σχεδιασμός Χρήσιμου Σετ Αξεσουάρ Smartphone",
         "path": "../el/Smartphone-Academy/Pages/Practical/Accessory-Labs/Smartphone-Accessory-Kit.html",
         "module": "32 · Εργαστήρια Compatibility Αξεσουάρ",
         "icon": "plug-circle-bolt"
@@ -3348,7 +3348,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία Reproducible Termux Dev Bootstrap",
+        "title": "Δημιουργία Αναπαραγώγιμης Αρχικής Ρύθμισης Ανάπτυξης Termux",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Coding/Termux-Dev-Bootstrap.html",
         "module": "33 · Εργαστήρια Mobile Coding",
         "icon": "code"
@@ -3365,7 +3365,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία Safe Python CLI σε Κινητό",
+        "title": "Δημιουργία Ασφαλούς Εργαλείου Γραμμής Εντολών Python σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Python-Cli.html",
         "module": "33 · Εργαστήρια Mobile Coding",
         "icon": "code"
@@ -3382,7 +3382,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία και Validation Static Site στο Termux",
+        "title": "Δημιουργία και Επικύρωση Στατικού Ιστοτόπου στο Termux",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Static-Site.html",
         "module": "33 · Εργαστήρια Mobile Coding",
         "icon": "code"
@@ -3399,7 +3399,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία Loopback-Only Local API",
+        "title": "Δημιουργία Τοπικού API Μόνο σε Loopback",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Local-Api.html",
         "module": "33 · Εργαστήρια Mobile Coding",
         "icon": "code"
@@ -3416,7 +3416,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Δημιουργία SQLite Notes Project",
+        "title": "Δημιουργία Εφαρμογής Σημειώσεων SQLite",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-SQLite-Project.html",
         "module": "33 · Εργαστήρια Mobile Coding",
         "icon": "code"
@@ -3433,7 +3433,7 @@
         "icon": "code"
       },
       "el": {
-        "title": "Ασφαλές Release Project που Φτιάχτηκε σε Κινητό",
+        "title": "Ασφαλής Δημοσίευση Έργου που Δημιουργήθηκε σε Κινητό",
         "path": "../el/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Project-Release.html",
         "module": "33 · Εργαστήρια Mobile Coding",
         "icon": "code"
@@ -3450,7 +3450,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Σύγκριση Prompts με Reproducibility",
+        "title": "Σύγκριση Προτροπών με Αναπαραγώγιμη Μεθοδολογία",
         "path": "../el/Smartphone-Academy/Pages/Practical/Smartphone-Ai/Ai-Prompt-Comparison.html",
         "module": "34 · Εργαστήρια AI σε Smartphone",
         "icon": "wand-magic-sparkles"
@@ -3467,7 +3467,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Δημιουργία AI Privacy Redaction Workflow",
+        "title": "Δημιουργία Ροής Απόκρυψης Ιδιωτικών Δεδομένων για AI",
         "path": "../el/Smartphone-Academy/Pages/Practical/Smartphone-Ai/Ai-Privacy-Redaction.html",
         "module": "34 · Εργαστήρια AI σε Smartphone",
         "icon": "wand-magic-sparkles"
@@ -3484,7 +3484,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Audit AI Answer για Hallucinations",
+        "title": "Έλεγχος Απάντησης AI για Ψευδείς Ισχυρισμούς",
         "path": "../el/Smartphone-Academy/Pages/Practical/Smartphone-Ai/Ai-Hallucination-Audit.html",
         "module": "34 · Εργαστήρια AI σε Smartphone",
         "icon": "wand-magic-sparkles"
@@ -3501,7 +3501,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Ασφαλές Review AI-Generated Code",
+        "title": "Ασφαλής Έλεγχος Κώδικα που Παράχθηκε από AI",
         "path": "../el/Smartphone-Academy/Pages/Practical/Smartphone-Ai/Ai-Code-Review-Lab.html",
         "module": "34 · Εργαστήρια AI σε Smartphone",
         "icon": "wand-magic-sparkles"
@@ -3518,7 +3518,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Εκτίμηση Feasibility Local Model",
+        "title": "Εκτίμηση Σκοπιμότητας Τοπικού Μοντέλου AI",
         "path": "../el/Smartphone-Academy/Pages/Practical/Smartphone-Ai/Local-Model-Feasibility.html",
         "module": "34 · Εργαστήρια AI σε Smartphone",
         "icon": "wand-magic-sparkles"
@@ -3535,7 +3535,7 @@
         "icon": "wand-magic-sparkles"
       },
       "el": {
-        "title": "Σχεδιασμός Responsible Smartphone AI Workflow",
+        "title": "Σχεδιασμός Υπεύθυνης Ροής Χρήσης AI σε Smartphone",
         "path": "../el/Smartphone-Academy/Pages/Practical/Smartphone-Ai/Responsible-Ai-Workflow.html",
         "module": "34 · Εργαστήρια AI σε Smartphone",
         "icon": "wand-magic-sparkles"
@@ -3552,7 +3552,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Κατανόησε τα Custom ROMs Πριν το Flashing",
+        "title": "Κατανόησε τις Custom ROM Πριν από Εγκατάσταση",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/index.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "mobile-screen-button"
@@ -3569,7 +3569,7 @@
         "icon": "barcode"
       },
       "el": {
-        "title": "Επαλήθευσε Ακριβές Μοντέλο, Codename και Περιοχή",
+        "title": "Επαλήθευσε Ακριβές Μοντέλο, Κωδική Ονομασία και Περιοχή",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Verify-Exact-Model-Codename-And-Region.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "barcode"
@@ -3603,7 +3603,7 @@
         "icon": "cloud-arrow-up"
       },
       "el": {
-        "title": "Κάνε Backup Δεδομένα, Accounts και Πρόσβαση 2FA",
+        "title": "Δημιούργησε Αντίγραφα Δεδομένων, Λογαριασμών και Πρόσβασης 2FA",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Back-Up-Data-Accounts-And-2FA.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "cloud-arrow-up"
@@ -3620,7 +3620,7 @@
         "icon": "terminal"
       },
       "el": {
-        "title": "Εγκατάστησε και Επαλήθευσε ADB και Fastboot Platform Tools",
+        "title": "Εγκατάστησε και Επαλήθευσε τα Εργαλεία Πλατφόρμας ADB και Fastboot",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Install-And-Verify-Platform-Tools.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "terminal"
@@ -3637,7 +3637,7 @@
         "icon": "layer-group"
       },
       "el": {
-        "title": "Κατανόησε Partitions, A/B Slots, Recovery και Verified Boot",
+        "title": "Κατανόησε Διαμερίσματα, A/B Slots, Recovery και Verified Boot",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Understand-Partitions-Slots-Recovery-And-Avb.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "layer-group"
@@ -3654,7 +3654,7 @@
         "icon": "shield-halved"
       },
       "el": {
-        "title": "Επίλεξε Αξιόπιστο ROM και Διάβασε το Device Guide",
+        "title": "Επίλεξε Αξιόπιστη ROM και Διάβασε τον Οδηγό Συσκευής",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Choose-A-Trustworthy-Rom-And-Read-Instructions.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "shield-halved"
@@ -3671,7 +3671,7 @@
         "icon": "rotate"
       },
       "el": {
-        "title": "Ακολούθησε Recovery, Sideload και First-Boot Flow",
+        "title": "Ακολούθησε τη Ροή Recovery, Sideload και Πρώτης Εκκίνησης",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Recovery-Sideload-And-First-Boot-Flow.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "rotate"
@@ -3807,7 +3807,7 @@
         "icon": "puzzle-piece"
       },
       "el": {
-        "title": "Επίλεξε Google Apps, microG ή Google-Free Setup",
+        "title": "Επίλεξε Google Apps, microG ή Ρύθμιση Χωρίς Google",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Choose-Google-Apps-Microg-Or-No-Google.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "puzzle-piece"
@@ -3824,7 +3824,7 @@
         "icon": "list-check"
       },
       "el": {
-        "title": "Επαλήθευσε Custom ROM Μετά την Εγκατάσταση",
+        "title": "Επαλήθευσε τη Custom ROM Μετά την Εγκατάσταση",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Validate-A-Custom-Rom-After-Installation.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "list-check"
@@ -3841,7 +3841,7 @@
         "icon": "arrow-rotate-left"
       },
       "el": {
-        "title": "Επαναφορά Stock Firmware και Ασφαλές Relock",
+        "title": "Επαναφορά Εργοστασιακού Firmware και Ασφαλές Κλείδωμα",
         "path": "../el/Smartphone-Academy/Pages/Custom-Roms/Restore-Stock-Firmware-And-Relock-Safely.html",
         "module": "35 · Custom ROMs και Android System Modding",
         "icon": "arrow-rotate-left"
@@ -3858,7 +3858,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε Custom-ROM Device Dossier",
+        "title": "Δημιούργησε Φάκελο Συσκευής για Custom ROM",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Custom-Rom-Device-Dossier.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "mobile-screen-button"
@@ -3875,7 +3875,7 @@
         "icon": "lock-open"
       },
       "el": {
-        "title": "Τεκμηρίωσε Bootloader Unlock Eligibility",
+        "title": "Τεκμηρίωσε τη Δυνατότητα Ξεκλειδώματος Bootloader",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Bootloader-Eligibility-Check.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "lock-open"
@@ -3892,7 +3892,7 @@
         "icon": "terminal"
       },
       "el": {
-        "title": "Δοκίμασε με Ασφάλεια ADB και Fastboot Connectivity",
+        "title": "Δοκίμασε με Ασφάλεια τη Σύνδεση ADB και Fastboot",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Platform-Tools-Connection-Test.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "terminal"
@@ -3909,7 +3909,7 @@
         "icon": "shield-halved"
       },
       "el": {
-        "title": "Έλεγξε ROM Source και Package Integrity",
+        "title": "Έλεγξε την Πηγή ROM και την Ακεραιότητα Πακέτου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Rom-Source-Integrity-Review.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "shield-halved"
@@ -3926,7 +3926,7 @@
         "icon": "cloud-arrow-up"
       },
       "el": {
-        "title": "Δημιούργησε Backup και Rollback Plan",
+        "title": "Δημιούργησε Σχέδιο Αντιγράφου Ασφαλείας και Επαναφοράς",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Backup-And-Rollback-Plan.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "cloud-arrow-up"
@@ -3943,7 +3943,7 @@
         "icon": "layer-group"
       },
       "el": {
-        "title": "Χαρτογράφησε Partitions, Slots και Recovery Paths",
+        "title": "Χαρτογράφησε Διαμερίσματα, Slots και Διαδρομές Recovery",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Partition-And-Slot-Map.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "layer-group"
@@ -3960,7 +3960,7 @@
         "icon": "list-ol"
       },
       "el": {
-        "title": "Κάνε Non-Destructive Flash Procedure Dry Run",
+        "title": "Κάνε Μη Καταστροφική Προσομοίωση Διαδικασίας Flash",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Flash-Procedure-Dry-Run.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "list-ol"
@@ -3977,7 +3977,7 @@
         "icon": "list-check"
       },
       "el": {
-        "title": "Δημιούργησε Post-Install Validation Plan",
+        "title": "Δημιούργησε Σχέδιο Ελέγχου Μετά την Εγκατάσταση",
         "path": "../el/Smartphone-Academy/Pages/Practical/Custom-Roms/Post-Install-Validation-Plan.html",
         "module": "36 · Εργαστήρια Σχεδιασμού Custom ROM",
         "icon": "list-check"
@@ -3994,7 +3994,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε Πλήρες Security Baseline Smartphone",
+        "title": "Δημιούργησε Πλήρη Βασική Καταγραφή Ασφάλειας Smartphone",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Smartphone-Baseline-Assessment.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4011,7 +4011,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Ασφαλής Ανάκτηση από Προβλήματα Storage και Permissions",
+        "title": "Ασφαλής Ανάκτηση από Προβλήματα Αποθήκευσης και Δικαιωμάτων",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Storage-Permission-Recovery.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4028,7 +4028,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Σχεδίασε Updates Πακέτων και Ασφαλές Rollback",
+        "title": "Σχεδίασε Ενημερώσεις Πακέτων και Ασφαλή Επαναφορά",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Package-Update-Rollback-Plan.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4045,7 +4045,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Σύγκρινε DNS Resolvers και Privacy Trade-offs",
+        "title": "Σύγκρινε Επιλύτες DNS και Συμβιβασμούς Ιδιωτικότητας",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Dns-Resolver-Comparison.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4062,7 +4062,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Εντόπισε Σημαντικές Αλλαγές Network Configuration",
+        "title": "Εντόπισε Σημαντικές Αλλαγές Ρυθμίσεων Δικτύου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Network-Change-Diff.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4079,7 +4079,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε Configurable Python Log Normalizer",
+        "title": "Δημιούργησε Παραμετροποιήσιμο Κανονικοποιητή Καταγραφών Python",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Python-Log-Normalizer.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4096,7 +4096,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε Ασφαλές Configuration Backup Utility",
+        "title": "Δημιούργησε Ασφαλές Εργαλείο Αντιγράφου Ρυθμίσεων",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Python-Config-Backup.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4113,7 +4113,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Έλεγξε Web Input Handling και Output Encoding",
+        "title": "Έλεγξε τον Χειρισμό Εισόδου Ιστού και την Κωδικοποίηση Εξόδου",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Web-Input-Output-Review.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4130,7 +4130,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Έλεγξε Website για Αξιόπιστα Offline Assets",
+        "title": "Έλεγξε Ιστότοπο για Αξιόπιστους Πόρους Εκτός Σύνδεσης",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Offline-Asset-Audit.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4147,7 +4147,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε Android Permission Change Journal",
+        "title": "Δημιούργησε Ημερολόγιο Αλλαγών Δικαιωμάτων Android",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Permission-Change-Journal.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4164,7 +4164,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε APK Provenance και Integrity Report",
+        "title": "Δημιούργησε Αναφορά Προέλευσης και Ακεραιότητας APK",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Apk-Provenance-Report.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4181,7 +4181,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Διερεύνησε Battery Drain με Επαναλήψιμα Evidence",
+        "title": "Διερεύνησε Κατανάλωση Μπαταρίας με Αναπαραγώγιμα Τεκμήρια",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Battery-Drain-Evidence.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4198,7 +4198,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Επαλήθευσε USB-C Data, Power και Accessory Modes",
+        "title": "Επαλήθευσε Δεδομένα, Τροφοδοσία και Λειτουργίες Αξεσουάρ USB-C",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Usb-C-Data-Power-Validation.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
@@ -4215,7 +4215,7 @@
         "icon": "mobile-screen-button"
       },
       "el": {
-        "title": "Δημιούργησε AI Answer Verification Notebook",
+        "title": "Δημιούργησε Σημειωματάριο Επαλήθευσης Απαντήσεων AI",
         "path": "../el/Smartphone-Academy/Pages/Practical/Extended/Ai-Verification-Notebook.html",
         "module": "37 · Εκτεταμένη Πρακτική Smartphone",
         "icon": "mobile-screen-button"
